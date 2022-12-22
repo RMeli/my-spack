@@ -1,0 +1,22 @@
+# From Piz Daint (system) packages.yaml file
+packages:
+  all:
+    providers:
+      mpi:
+      - cray-mpich
+      pkgconfig:
+      - pkg-config
+      - pkgconf
+  pkg-config:
+    externals:
+    - spec: pkg-config@0.29.2
+  cray-libsci:
+    externals:
+    - spec: cray-libsci@21.08.1.2
+      modules:
+      - cray-libsci/21.08.1.2
+  cray-mpich:
+    externals:
+    - spec: cray-mpich@8.1.12
+      modules:
+      - cray-mpich/8.1.12
