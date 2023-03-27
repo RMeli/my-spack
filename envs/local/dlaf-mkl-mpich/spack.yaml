@@ -1,6 +1,6 @@
 spack:
   specs:
-  - dla-future@develop ~cuda +miniapps ^amdblis ^amblibm ^openmpi
+  - dla-future@develop ~cuda +miniapps ^intel-mkl ^mpich device=ch3 netmod=tcp
   view: false
   packages:
     all:
