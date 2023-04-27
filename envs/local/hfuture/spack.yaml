@@ -1,0 +1,8 @@
+spack:
+  specs:
+  - hfuture ^intel-mkl ^mpich device=ch3 netmod=tcp
+  repos:
+  - ~/git/HFuture/repo
+  - ~/git/DLA-Future/spack
+  concretizer:
+    unify: true
