@@ -1,0 +1,20 @@
+spack:
+  specs:
+  - cp2k@master %gcc@11.3.0 +dlaf +mpi +libint +libxc +spglib ^fftw ^[virtuals=blas,lapack,scalapack]
+    intel-mkl threads=openmp ^mpich@4.0.1 device=ch3 netmod=tcp
+  view: false
+  packages:
+    all:
+      variants:
+      - cxxstd=17
+  repos:
+  - ~/git/DLA-Future/spack
+  develop:
+    dla-future:
+      path: ~/git/DLA-Future
+      spec: dla-future@develop %gcc@11.3.0
+    pika:
+      path: ~/git/pika
+      spec: pika@main %gcc@11.3.0
+  concretizer:
+    unify: true
