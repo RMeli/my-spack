@@ -1,6 +1,6 @@
 spack:
   specs:
-  - dla-future@master +miniapps ^intel-mkl threads=openmp ^cray-mpich
+  - dla-future@develop +miniapps ^intel-mkl threads=openmp ^cray-mpich
   view: false
   packages:
     all:
