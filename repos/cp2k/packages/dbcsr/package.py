@@ -65,7 +65,7 @@ class Dbcsr(CMakePackage, CudaPackage, ROCmPackage):
     # for optimal kernels. Note that we don't override the parent class arch
     # properties, since the parent class defines constraints for different archs
     # Instead just mark all unsupported cuda archs as conflicting.
-    dbcsr_cuda_archs = ("35", "37", "60", "70", "80")
+    dbcsr_cuda_archs = ("35", "37", "60", "70")
     cuda_msg = "dbcsr only supports cuda_arch {0}".format(dbcsr_cuda_archs)
 
     for arch in CudaPackage.cuda_arch_values:
@@ -92,7 +92,7 @@ class Dbcsr(CMakePackage, CudaPackage, ROCmPackage):
 
     conflicts("smm=blas", when="+opencl")
 
-    generator = "Ninja"
+    generator("ninja")
     depends_on("ninja@1.10:", type="build")
 
     def cmake_args(self):
@@ -105,6 +105,8 @@ class Dbcsr(CMakePackage, CudaPackage, ROCmPackage):
             raise InstallError("DBCSR supports only one amdgpu_arch at a time")
 
         args = [
+	    "-DBUILD_TESTING=NO",
+	    "-DWITH_EXAMPLES=NO",
             "-DUSE_SMM=%s" % ("libxsmm" if "smm=libxsmm" in spec else "blas"),
             self.define_from_variant("USE_MPI", "mpi"),
             self.define_from_variant("USE_OPENMP", "openmp"),
