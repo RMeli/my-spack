@@ -56,9 +56,9 @@ class Cp2k(MakefilePackage, CudaPackage, CMakePackage, ROCmPackage):
     )
     variant("plumed", default=False, description="Enable PLUMED support")
     variant(
-        "libint", default=True, description="Use libint, required for HFX (and possibly others)"
+        "libint", default=False, description="Use libint, required for HFX (and possibly others)"
     )
-    variant("libxc", default=True, description="Support additional functionals via libxc")
+    variant("libxc", default=False, description="Support additional functionals via libxc")
     variant(
         "pexsi",
         default=False,
@@ -90,6 +90,9 @@ class Cp2k(MakefilePackage, CudaPackage, CMakePackage, ROCmPackage):
     )
     variant("pytorch", default=False, description="Enable libtorch support")
     variant("quip", default=False, description=("Enable quip support"))
+    variant("dlaf", default=False, description="Use DLA-Future")
+    depends_on("dla-future", when="+dlaf")
+    depends_on("dla-future+cuda", when="+cuda")
 
     variant(
         "enable_regtests",
@@ -802,9 +805,12 @@ class Cp2k(MakefilePackage, CudaPackage, CMakePackage, ROCmPackage):
         """
         Default build procedure generates libcp2k.pc with invalid paths,
         because they are collected from temporary directory.
+
         Ignoring invalid paths, most library-related switches are correct
         except for fftw and openblas.
+
         This procedure is appending two missing switches (tested with GROMACS 2022.2 + CP2K).
+
         In case such approach causes issues in the future, it might be necessary
         to generate and override entire libcp2k.pc.
         """
