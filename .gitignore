@@ -1,1 +1,5 @@
+# spack
 .spack-env
+
+# python
+__pycache__
