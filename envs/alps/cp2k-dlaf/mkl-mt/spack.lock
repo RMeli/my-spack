@@ -1,17 +1,22 @@
 {
   "_meta": {
     "file-type": "spack-lockfile",
-    "lockfile-version": 5,
-    "specfile-version": 4
+    "lockfile-version": 4,
+    "specfile-version": 3
+  },
+  "spack": {
+    "version": "0.20.0.dev0",
+    "type": "git",
+    "commit": "05232034f5808b344f7e977d4fe3f441f175702c"
   },
   "roots": [
     {
-      "hash": "fufusod5vobuzdktstx6x7sjfs646ldh",
-      "spec": "cp2k@master+dlaf+libint+libxc+spglib build_system=cmake ^cray-mpich ^fftw ^[virtuals=blas,lapack,scalapack] intel-mkl@2020.4.304 threads=openmp"
+      "hash": "ovvlokxytjwmtxyrpfgpya4zoxzedequ",
+      "spec": "cp2k@master+dlaf+libint+libxc+spglib build_system=cmake ^cray-mpich ^fftw ^intel-mkl@2020.4.304 threads=openmp"
     }
   ],
   "concrete_specs": {
-    "fufusod5vobuzdktstx6x7sjfs646ldh": {
+    "ovvlokxytjwmtxyrpfgpya4zoxzedequ": {
       "name": "cp2k",
       "version": "master",
       "arch": {
@@ -58,14 +63,15 @@
         "name": "gcc",
         "version": "11.3.0"
       },
-      "namespace": "builtin",
+      "namespace": "cp2k",
       "parameters": {
         "build_system": "cmake",
-        "build_type": "RelWithDebInfo",
+        "build_type": "Release",
         "cosma": false,
         "cuda": false,
         "dlaf": true,
         "elpa": false,
+        "enable_regtests": false,
         "generator": "make",
         "ipo": false,
         "libint": true,
@@ -90,160 +96,111 @@
         "ldflags": [],
         "ldlibs": []
       },
-      "package_hash": "ey4evjp5t6myvvuxlna4zuldteqrmdotw2oghlwcdfkfawf6q25q====",
+      "package_hash": "c5d6kvtezrfyz4hygvwnwuo2bnkna3pxtorhvsojtrtcb4l2763a====",
       "dependencies": [
         {
           "name": "cmake",
-          "hash": "evboqia5t3poocvdjrdsex4i4k3btein",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "qpr5cswi75ksv3ltfmgg2gd6b7cdll4a",
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "cray-mpich",
           "hash": "4kfse26fsaibq23z23a5ahjagneezuil",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": [
-              "mpi"
-            ]
-          }
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "dbcsr",
-          "hash": "hgzwhcjhr7vktaespilpwxx4edw42ov7",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "hash": "beclor4hded7ovfptmaxdj4exgedn5ww",
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "dla-future",
-          "hash": "wzvelcojbymo7kxw6jb54v53vj5lfg7n",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "hash": "xdhqtgfqyynegcralzbfelr7zzfxwlbx",
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "fftw",
-          "hash": "yojr3mgho7lycwuvfpqn5uwyqrq73pz2",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": [
-              "fftw-api"
-            ]
-          }
+          "hash": "r24r2plsvkojvf7wppaixenot6gb564u",
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "gmake",
-          "hash": "krwa77hvq3jchpxgp43vljb4kiljpoda",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "ogazywgjj4c3f5azsdkq4crenea7tbht",
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "intel-mkl",
-          "hash": "az4mri6hdsybzv4aghxp3oiq5c2t62hb",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": [
-              "blas",
-              "lapack",
-              "scalapack"
-            ]
-          }
+          "hash": "hh5utnjhlkaoosf64ojlndxncmaqoaql",
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "libint",
-          "hash": "xlycdbdbq26xvzakdyvqurfkmgptatqe",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "hash": "5bmqogw476ptqapo4ocrzzmgraikokdl",
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "libxc",
-          "hash": "d7efueigdnxfgqc7qrpuwepiellvvrik",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "cxmcpsgoyr3bhzfjsvluttfvxh6t3b6x",
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "libxsmm",
-          "hash": "d4ebzxbamcjjbqhtt7y5tb6wtqsxbrmt",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "hash": "znwnwu7p7e2eouceuctr6bgokvnyjvyc",
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "pkgconf",
-          "hash": "tmbnb2pnmhtanvqc3lptxoz7t4jesnk6",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": [
-              "pkgconfig"
-            ]
-          }
+          "hash": "2cxf6rnd2wt2iugtxwi5r3k6d55yfgub",
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "python",
-          "hash": "3zbsaxakg7ehxozfoummjrfsimfsvqxe",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "aqwgvaqvbf5q4uzo2elz2cbc35xmfo6s",
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "spglib",
-          "hash": "vzizn32j7ldjzuv6rktbotd6r4pnmrgq",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "hash": "h7v5ii4uztplhrvsqsp53xpndcrihjli",
+          "type": [
+            "build",
+            "link"
+          ]
         }
       ],
-      "hash": "fufusod5vobuzdktstx6x7sjfs646ldh"
+      "hash": "ovvlokxytjwmtxyrpfgpya4zoxzedequ"
     },
-    "evboqia5t3poocvdjrdsex4i4k3btein": {
+    "qpr5cswi75ksv3ltfmgg2gd6b7cdll4a": {
       "name": "cmake",
       "version": "3.26.3",
       "arch": {
@@ -309,30 +266,24 @@
       "dependencies": [
         {
           "name": "ncurses",
-          "hash": "c2hxiajm4tmqv6hjhfv4slrppbay36cn",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "hash": "w7a3tordv47nxxvusp3l3ij2smkgzl7o",
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "openssl",
-          "hash": "h5zphsmh2esgakx5p5h22rruqhvyrzgi",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "hash": "6vtxa4p66fdjki6z6fhyjurfxp2hionu",
+          "type": [
+            "build",
+            "link"
+          ]
         }
       ],
-      "hash": "evboqia5t3poocvdjrdsex4i4k3btein"
+      "hash": "qpr5cswi75ksv3ltfmgg2gd6b7cdll4a"
     },
-    "c2hxiajm4tmqv6hjhfv4slrppbay36cn": {
+    "w7a3tordv47nxxvusp3l3ij2smkgzl7o": {
       "name": "ncurses",
       "version": "6.4",
       "arch": {
@@ -396,20 +347,17 @@
       "dependencies": [
         {
           "name": "pkgconf",
-          "hash": "tmbnb2pnmhtanvqc3lptxoz7t4jesnk6",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "2cxf6rnd2wt2iugtxwi5r3k6d55yfgub",
+          "type": [
+            "build"
+          ]
         }
       ],
-      "hash": "c2hxiajm4tmqv6hjhfv4slrppbay36cn"
+      "hash": "w7a3tordv47nxxvusp3l3ij2smkgzl7o"
     },
-    "tmbnb2pnmhtanvqc3lptxoz7t4jesnk6": {
+    "2cxf6rnd2wt2iugtxwi5r3k6d55yfgub": {
       "name": "pkgconf",
-      "version": "1.8.0",
+      "version": "1.9.5",
       "arch": {
         "platform": "linux",
         "platform_os": "sles15",
@@ -464,10 +412,10 @@
         "ldflags": [],
         "ldlibs": []
       },
-      "package_hash": "olr5zscvqru56pgiiqlnzc4ud5e7iuyntj6fsplcrjh3jngqjpja====",
-      "hash": "tmbnb2pnmhtanvqc3lptxoz7t4jesnk6"
+      "package_hash": "mwcvsiv3j27l74xz4dejqp54ushfxa36bj25mwwg4dciaphqzpca====",
+      "hash": "2cxf6rnd2wt2iugtxwi5r3k6d55yfgub"
     },
-    "h5zphsmh2esgakx5p5h22rruqhvyrzgi": {
+    "6vtxa4p66fdjki6z6fhyjurfxp2hionu": {
       "name": "openssl",
       "version": "1.1.1t",
       "arch": {
@@ -532,36 +480,27 @@
         {
           "name": "ca-certificates-mozilla",
           "hash": "ypktsjht3kcmcdw7tknats26wbwy5tfz",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "perl",
-          "hash": "xobzbn4qz2a3wvxcqummjurr7bmz2wak",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "xdu4o6rlpugilhqs23cozj75jlbngcz6",
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "zlib",
           "hash": "lmzqmzlxafo6xwlx47sz3z2ljfhibo2p",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build",
+            "link"
+          ]
         }
       ],
-      "hash": "h5zphsmh2esgakx5p5h22rruqhvyrzgi"
+      "hash": "6vtxa4p66fdjki6z6fhyjurfxp2hionu"
     },
     "ypktsjht3kcmcdw7tknats26wbwy5tfz": {
       "name": "ca-certificates-mozilla",
@@ -623,7 +562,7 @@
       "package_hash": "rjs43v3dkqcisnwgzsiy3qo64oeqwpgmzncy6ypa4ckhtswcwhqa====",
       "hash": "ypktsjht3kcmcdw7tknats26wbwy5tfz"
     },
-    "xobzbn4qz2a3wvxcqummjurr7bmz2wak": {
+    "xdu4o6rlpugilhqs23cozj75jlbngcz6": {
       "name": "perl",
       "version": "5.36.0",
       "arch": {
@@ -684,54 +623,42 @@
         "ldflags": [],
         "ldlibs": []
       },
-      "package_hash": "fkw72butdr7vfz33rsfyquzlgqtvewdycbassz4gzru6orzcjlva====",
+      "package_hash": "ywkatqmyz34tewgjaqscwyveok3tixrju7eq56dwu4q4wdj7g6da====",
       "dependencies": [
         {
           "name": "berkeley-db",
           "hash": "7nj4axd3zx6sd26yqld7bzjhxvldgau5",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "bzip2",
           "hash": "4udv7st4xpbi4afqgzewxp3k3rg77jnn",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "gdbm",
-          "hash": "7veqkkl4dgsfqpncsnaxf3ac25ytbpjx",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "hash": "tz66zd2lpqt2jacdktmfmsuxyn7wwcqs",
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "zlib",
           "hash": "lmzqmzlxafo6xwlx47sz3z2ljfhibo2p",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build",
+            "link"
+          ]
         }
       ],
-      "hash": "xobzbn4qz2a3wvxcqummjurr7bmz2wak"
+      "hash": "xdu4o6rlpugilhqs23cozj75jlbngcz6"
     },
     "7nj4axd3zx6sd26yqld7bzjhxvldgau5": {
       "name": "berkeley-db",
@@ -869,12 +796,9 @@
         {
           "name": "diffutils",
           "hash": "4pfqueamsx2fl5ithrx65alu2ltwdlzd",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build"
+          ]
         }
       ],
       "hash": "4udv7st4xpbi4afqgzewxp3k3rg77jnn"
@@ -941,13 +865,10 @@
         {
           "name": "libiconv",
           "hash": "ux66ocoam24bo7zgdg4rbqnq362cz6jz",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build",
+            "link"
+          ]
         }
       ],
       "hash": "4pfqueamsx2fl5ithrx65alu2ltwdlzd"
@@ -1016,7 +937,7 @@
       "package_hash": "b7u3icizfdwbv2p2bsoazku4gbodr4ww3p2ah5jcxuvnjsrb7sha====",
       "hash": "ux66ocoam24bo7zgdg4rbqnq362cz6jz"
     },
-    "7veqkkl4dgsfqpncsnaxf3ac25ytbpjx": {
+    "tz66zd2lpqt2jacdktmfmsuxyn7wwcqs": {
       "name": "gdbm",
       "version": "1.23",
       "arch": {
@@ -1077,19 +998,16 @@
       "dependencies": [
         {
           "name": "readline",
-          "hash": "cjieaibfw46g3pvgtgscrclnfzwajnv7",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "hash": "bdsp6wgqpchqlub7kkxi7vnamsngdy3q",
+          "type": [
+            "build",
+            "link"
+          ]
         }
       ],
-      "hash": "7veqkkl4dgsfqpncsnaxf3ac25ytbpjx"
+      "hash": "tz66zd2lpqt2jacdktmfmsuxyn7wwcqs"
     },
-    "cjieaibfw46g3pvgtgscrclnfzwajnv7": {
+    "bdsp6wgqpchqlub7kkxi7vnamsngdy3q": {
       "name": "readline",
       "version": "8.2",
       "arch": {
@@ -1156,17 +1074,14 @@
       "dependencies": [
         {
           "name": "ncurses",
-          "hash": "c2hxiajm4tmqv6hjhfv4slrppbay36cn",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "hash": "w7a3tordv47nxxvusp3l3ij2smkgzl7o",
+          "type": [
+            "build",
+            "link"
+          ]
         }
       ],
-      "hash": "cjieaibfw46g3pvgtgscrclnfzwajnv7"
+      "hash": "bdsp6wgqpchqlub7kkxi7vnamsngdy3q"
     },
     "lmzqmzlxafo6xwlx47sz3z2ljfhibo2p": {
       "name": "zlib",
@@ -1295,22 +1210,16 @@
         {
           "name": "libfabric",
           "hash": "5dkqgq3mfsvz4jfmowzz4cqfdudl377r",
-          "parameters": {
-            "deptypes": [
-              "link"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "link"
+          ]
         },
         {
           "name": "patchelf",
           "hash": "gpd5wtxoa62myykfnnspg3ee7hptwxv2",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build"
+          ]
         }
       ],
       "hash": "4kfse26fsaibq23z23a5ahjagneezuil"
@@ -1447,7 +1356,7 @@
       "package_hash": "7xich7y7tsybt5cqyrs52om2spme44v5sjrefju3khepki6s3qwq====",
       "hash": "gpd5wtxoa62myykfnnspg3ee7hptwxv2"
     },
-    "hgzwhcjhr7vktaespilpwxx4edw42ov7": {
+    "beclor4hded7ovfptmaxdj4exgedn5ww": {
       "name": "dbcsr",
       "version": "2.5.0",
       "arch": {
@@ -1494,10 +1403,10 @@
         "name": "gcc",
         "version": "11.3.0"
       },
-      "namespace": "builtin",
+      "namespace": "cp2k",
       "parameters": {
         "build_system": "cmake",
-        "build_type": "RelWithDebInfo",
+        "build_type": "Release",
         "cuda": false,
         "cuda_arch_35_k20x": false,
         "generator": "ninja",
@@ -1515,92 +1424,64 @@
         "ldflags": [],
         "ldlibs": []
       },
-      "package_hash": "z7stg5ojyyfqvudq6r4bdsjf3tvjfmikscqh6gegoofgjw3vsiba====",
+      "package_hash": "gr2zkngbcxy4n3bbro7xx6eoe32mwgb4zqcgowb4vvxtqy5fuilq====",
       "dependencies": [
         {
           "name": "cmake",
-          "hash": "evboqia5t3poocvdjrdsex4i4k3btein",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "qpr5cswi75ksv3ltfmgg2gd6b7cdll4a",
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "cray-mpich",
           "hash": "4kfse26fsaibq23z23a5ahjagneezuil",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": [
-              "mpi"
-            ]
-          }
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "intel-mkl",
-          "hash": "az4mri6hdsybzv4aghxp3oiq5c2t62hb",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": [
-              "blas",
-              "lapack"
-            ]
-          }
+          "hash": "hh5utnjhlkaoosf64ojlndxncmaqoaql",
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "libxsmm",
-          "hash": "d4ebzxbamcjjbqhtt7y5tb6wtqsxbrmt",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "hash": "znwnwu7p7e2eouceuctr6bgokvnyjvyc",
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "ninja",
-          "hash": "xjafoh7psqge7jdk3tnk3wcgvrt6lu2y",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "4uttr7qcrugjrawoz2ewgsljmqwlt4ht",
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "pkgconf",
-          "hash": "tmbnb2pnmhtanvqc3lptxoz7t4jesnk6",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": [
-              "pkgconfig"
-            ]
-          }
+          "hash": "2cxf6rnd2wt2iugtxwi5r3k6d55yfgub",
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "py-fypp",
-          "hash": "6wgib7w5tgvztxjtpuqmld4zjkvoqtzf",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "ecchhn3l6onfmue457gaajhvbt67drft",
+          "type": [
+            "build"
+          ]
         }
       ],
-      "hash": "hgzwhcjhr7vktaespilpwxx4edw42ov7"
+      "hash": "beclor4hded7ovfptmaxdj4exgedn5ww"
     },
-    "az4mri6hdsybzv4aghxp3oiq5c2t62hb": {
+    "hh5utnjhlkaoosf64ojlndxncmaqoaql": {
       "name": "intel-mkl",
       "version": "2020.4.304",
       "arch": {
@@ -1647,7 +1528,7 @@
         "name": "gcc",
         "version": "11.3.0"
       },
-      "namespace": "builtin",
+      "namespace": "alps",
       "parameters": {
         "build_system": "generic",
         "ilp64": false,
@@ -1665,15 +1546,12 @@
         {
           "name": "cpio",
           "hash": "d275yzzpb43yml4hdxn35pzj4amwt5gf",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build"
+          ]
         }
       ],
-      "hash": "az4mri6hdsybzv4aghxp3oiq5c2t62hb"
+      "hash": "hh5utnjhlkaoosf64ojlndxncmaqoaql"
     },
     "d275yzzpb43yml4hdxn35pzj4amwt5gf": {
       "name": "cpio",
@@ -1735,7 +1613,7 @@
       "package_hash": "pliagad7gnuqlgjd5x3x6kb3cso36qsi5uvp4h2paz47clk3edvq====",
       "hash": "d275yzzpb43yml4hdxn35pzj4amwt5gf"
     },
-    "d4ebzxbamcjjbqhtt7y5tb6wtqsxbrmt": {
+    "znwnwu7p7e2eouceuctr6bgokvnyjvyc": {
       "name": "libxsmm",
       "version": "1.17",
       "arch": {
@@ -1802,28 +1680,22 @@
       "dependencies": [
         {
           "name": "binutils",
-          "hash": "hlknkib6ngj6ijbct7ppkl2kjqhaqy4w",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "joce2zmnkfgd5z2wcbj2pstegxwsibjy",
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "python",
-          "hash": "3zbsaxakg7ehxozfoummjrfsimfsvqxe",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "aqwgvaqvbf5q4uzo2elz2cbc35xmfo6s",
+          "type": [
+            "build"
+          ]
         }
       ],
-      "hash": "d4ebzxbamcjjbqhtt7y5tb6wtqsxbrmt"
+      "hash": "znwnwu7p7e2eouceuctr6bgokvnyjvyc"
     },
-    "hlknkib6ngj6ijbct7ppkl2kjqhaqy4w": {
+    "joce2zmnkfgd5z2wcbj2pstegxwsibjy": {
       "name": "binutils",
       "version": "2.40",
       "arch": {
@@ -1873,6 +1745,7 @@
       "namespace": "builtin",
       "parameters": {
         "build_system": "autotools",
+        "compress_debug_sections": "zlib",
         "gas": true,
         "gold": false,
         "gprofng": false,
@@ -1895,66 +1768,51 @@
         "ldflags": [],
         "ldlibs": []
       },
-      "package_hash": "o4hjo5r3quchmept3nwl3zwvk3u2y7mjfz3rbsvl4o2u3widzvla====",
+      "package_hash": "elfj552vuwyg7jdjahebimzd62ryas4mvk4snrhjixbaoxed6wja====",
       "dependencies": [
         {
           "name": "diffutils",
           "hash": "4pfqueamsx2fl5ithrx65alu2ltwdlzd",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "pkgconf",
-          "hash": "tmbnb2pnmhtanvqc3lptxoz7t4jesnk6",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "2cxf6rnd2wt2iugtxwi5r3k6d55yfgub",
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "texinfo",
-          "hash": "y7mfgs243lichwbrbabwirhudgnldhyr",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "oyjd6tvjrmgycnib7h75avufferasf5d",
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "zlib",
           "hash": "lmzqmzlxafo6xwlx47sz3z2ljfhibo2p",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "zstd",
           "hash": "dpq3ljtys6bbptrpuf5xokf3zgagoppv",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build",
+            "link"
+          ]
         }
       ],
-      "hash": "hlknkib6ngj6ijbct7ppkl2kjqhaqy4w"
+      "hash": "joce2zmnkfgd5z2wcbj2pstegxwsibjy"
     },
-    "y7mfgs243lichwbrbabwirhudgnldhyr": {
+    "oyjd6tvjrmgycnib7h75avufferasf5d": {
       "name": "texinfo",
-      "version": "7.0",
+      "version": "7.0.3",
       "arch": {
         "platform": "linux",
         "platform_os": "sles15",
@@ -2009,45 +1867,36 @@
         "ldflags": [],
         "ldlibs": []
       },
-      "package_hash": "umu3vko65gddckcpjv4frvw5pit5vubzx37wq7ho2g5wetssvqeq====",
+      "package_hash": "6znrdrtm4uxttopi5wbtgk6mzxvmmycpbymkniuaruqe42rocckq====",
       "dependencies": [
         {
           "name": "gettext",
-          "hash": "672hwruapg7wg5wqztfyrtrwnl2v7xgw",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "hash": "g5o54x3sr7ngh26s72qpqgzwhi3ui4w7",
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "ncurses",
-          "hash": "c2hxiajm4tmqv6hjhfv4slrppbay36cn",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "hash": "w7a3tordv47nxxvusp3l3ij2smkgzl7o",
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "perl",
-          "hash": "xobzbn4qz2a3wvxcqummjurr7bmz2wak",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "hash": "xdu4o6rlpugilhqs23cozj75jlbngcz6",
+          "type": [
+            "build",
+            "link"
+          ]
         }
       ],
-      "hash": "y7mfgs243lichwbrbabwirhudgnldhyr"
+      "hash": "oyjd6tvjrmgycnib7h75avufferasf5d"
     },
-    "672hwruapg7wg5wqztfyrtrwnl2v7xgw": {
+    "g5o54x3sr7ngh26s72qpqgzwhi3ui4w7": {
       "name": "gettext",
       "version": "0.21.1",
       "arch": {
@@ -2111,79 +1960,61 @@
         "ldflags": [],
         "ldlibs": []
       },
-      "package_hash": "xu3qgc4x5mjlvzywiyh3aifltzurwmvjzqfq3gurzkffveeawp3q====",
+      "package_hash": "oppfualu4oiazqtmii6fys6pvskq2phehgtpruy5wivbbzj4b6bq====",
       "dependencies": [
         {
           "name": "bzip2",
           "hash": "4udv7st4xpbi4afqgzewxp3k3rg77jnn",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "libiconv",
           "hash": "ux66ocoam24bo7zgdg4rbqnq362cz6jz",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "libxml2",
-          "hash": "mpy23lb4yuugwuw6rfaagmzj5zjh6ycy",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "hash": "n3z2rcwz263a2hzxhqx5tzmr5r2kff7u",
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "ncurses",
-          "hash": "c2hxiajm4tmqv6hjhfv4slrppbay36cn",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "hash": "w7a3tordv47nxxvusp3l3ij2smkgzl7o",
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "tar",
-          "hash": "wy25wzw7ew5kxn3jx227ljrzkzappuvz",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "hash": "xtegafpte7vsh2romeeuhkxcmhcs5gvp",
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "xz",
           "hash": "rywasrfpzzop6e2z7nlidxbxfatp2urb",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link",
-              "run"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build",
+            "link",
+            "run"
+          ]
         }
       ],
-      "hash": "672hwruapg7wg5wqztfyrtrwnl2v7xgw"
+      "hash": "g5o54x3sr7ngh26s72qpqgzwhi3ui4w7"
     },
-    "mpy23lb4yuugwuw6rfaagmzj5zjh6ycy": {
+    "n3z2rcwz263a2hzxhqx5tzmr5r2kff7u": {
       "name": "libxml2",
       "version": "2.10.3",
       "arch": {
@@ -2241,53 +2072,41 @@
         "ldflags": [],
         "ldlibs": []
       },
-      "package_hash": "7hsmxtbm2qfkqbhn4fu3twcndxdevjvuboydj5475mrcc4nn26ca====",
+      "package_hash": "uzgvvclypo7qqmrcqzhgn6ddbq7qqlbzcyuapwl64n4uh275j7pa====",
       "dependencies": [
         {
           "name": "libiconv",
           "hash": "ux66ocoam24bo7zgdg4rbqnq362cz6jz",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "pkgconf",
-          "hash": "tmbnb2pnmhtanvqc3lptxoz7t4jesnk6",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "2cxf6rnd2wt2iugtxwi5r3k6d55yfgub",
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "xz",
           "hash": "rywasrfpzzop6e2z7nlidxbxfatp2urb",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "zlib",
           "hash": "lmzqmzlxafo6xwlx47sz3z2ljfhibo2p",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build",
+            "link"
+          ]
         }
       ],
-      "hash": "mpy23lb4yuugwuw6rfaagmzj5zjh6ycy"
+      "hash": "n3z2rcwz263a2hzxhqx5tzmr5r2kff7u"
     },
     "rywasrfpzzop6e2z7nlidxbxfatp2urb": {
       "name": "xz",
@@ -2354,7 +2173,7 @@
       "package_hash": "ads43zrvkj7am47nzsnp3kilt5wuci7zema6daamp2guqq2kcqha====",
       "hash": "rywasrfpzzop6e2z7nlidxbxfatp2urb"
     },
-    "wy25wzw7ew5kxn3jx227ljrzkzappuvz": {
+    "xtegafpte7vsh2romeeuhkxcmhcs5gvp": {
       "name": "tar",
       "version": "1.34",
       "arch": {
@@ -2412,61 +2231,46 @@
         "ldflags": [],
         "ldlibs": []
       },
-      "package_hash": "uroxlrgy5nrgbemzhcechjroxo7ycyniyi2geepv66v2hi2mn53q====",
+      "package_hash": "lenbnsjf43v4emz5uiadpdganwxydlkzcci4cue7qwyx7cfuz2jq====",
       "dependencies": [
         {
           "name": "bzip2",
           "hash": "4udv7st4xpbi4afqgzewxp3k3rg77jnn",
-          "parameters": {
-            "deptypes": [
-              "run"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "run"
+          ]
         },
         {
           "name": "libiconv",
           "hash": "ux66ocoam24bo7zgdg4rbqnq362cz6jz",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "pigz",
           "hash": "adh4hyh5hdnfv6w6rceodne5pzaak4pj",
-          "parameters": {
-            "deptypes": [
-              "run"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "run"
+          ]
         },
         {
           "name": "xz",
           "hash": "rywasrfpzzop6e2z7nlidxbxfatp2urb",
-          "parameters": {
-            "deptypes": [
-              "run"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "run"
+          ]
         },
         {
           "name": "zstd",
           "hash": "dpq3ljtys6bbptrpuf5xokf3zgagoppv",
-          "parameters": {
-            "deptypes": [
-              "run"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "run"
+          ]
         }
       ],
-      "hash": "wy25wzw7ew5kxn3jx227ljrzkzappuvz"
+      "hash": "xtegafpte7vsh2romeeuhkxcmhcs5gvp"
     },
     "adh4hyh5hdnfv6w6rceodne5pzaak4pj": {
       "name": "pigz",
@@ -2530,13 +2334,10 @@
         {
           "name": "zlib",
           "hash": "lmzqmzlxafo6xwlx47sz3z2ljfhibo2p",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build",
+            "link"
+          ]
         }
       ],
       "hash": "adh4hyh5hdnfv6w6rceodne5pzaak4pj"
@@ -2609,7 +2410,7 @@
       "package_hash": "siyun7fbztstttmpvj6uca26svglxhtltno7se4cputoimuejuwq====",
       "hash": "dpq3ljtys6bbptrpuf5xokf3zgagoppv"
     },
-    "3zbsaxakg7ehxozfoummjrfsimfsvqxe": {
+    "aqwgvaqvbf5q4uzo2elz2cbc35xmfo6s": {
       "name": "python",
       "version": "3.10.10",
       "arch": {
@@ -2700,158 +2501,116 @@
         {
           "name": "bzip2",
           "hash": "4udv7st4xpbi4afqgzewxp3k3rg77jnn",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "expat",
           "hash": "vhwq7akdvnr3gcrjixjg32m74cepncbw",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "gdbm",
-          "hash": "7veqkkl4dgsfqpncsnaxf3ac25ytbpjx",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "hash": "tz66zd2lpqt2jacdktmfmsuxyn7wwcqs",
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "gettext",
-          "hash": "672hwruapg7wg5wqztfyrtrwnl2v7xgw",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "hash": "g5o54x3sr7ngh26s72qpqgzwhi3ui4w7",
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "libffi",
           "hash": "ih6dz6l3uz5vasl6q2f4tchzgmbus6pd",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "libxcrypt",
-          "hash": "ja4wktlct3jgrhwnb3z2ndbbdhxumwxk",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "hash": "ehb6mwd746gvmf3okm3z4wg52exq37dw",
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "ncurses",
-          "hash": "c2hxiajm4tmqv6hjhfv4slrppbay36cn",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "hash": "w7a3tordv47nxxvusp3l3ij2smkgzl7o",
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "openssl",
-          "hash": "h5zphsmh2esgakx5p5h22rruqhvyrzgi",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "hash": "6vtxa4p66fdjki6z6fhyjurfxp2hionu",
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "pkgconf",
-          "hash": "tmbnb2pnmhtanvqc3lptxoz7t4jesnk6",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "2cxf6rnd2wt2iugtxwi5r3k6d55yfgub",
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "readline",
-          "hash": "cjieaibfw46g3pvgtgscrclnfzwajnv7",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "hash": "bdsp6wgqpchqlub7kkxi7vnamsngdy3q",
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "sqlite",
-          "hash": "llhdsxikrlafjncrwhkdhih4e6f5t7ms",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "hash": "4jrhgtvk6oj4ndgovo7voafitbl2becf",
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "util-linux-uuid",
-          "hash": "dy3svsepqrde5fq7yeicwnsofu2ibrs4",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "hash": "nflfk7etltemsas5loy4saygjvgyf265",
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "xz",
           "hash": "rywasrfpzzop6e2z7nlidxbxfatp2urb",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "zlib",
           "hash": "lmzqmzlxafo6xwlx47sz3z2ljfhibo2p",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build",
+            "link"
+          ]
         }
       ],
-      "hash": "3zbsaxakg7ehxozfoummjrfsimfsvqxe"
+      "hash": "aqwgvaqvbf5q4uzo2elz2cbc35xmfo6s"
     },
     "vhwq7akdvnr3gcrjixjg32m74cepncbw": {
       "name": "expat",
@@ -2916,13 +2675,10 @@
         {
           "name": "libbsd",
           "hash": "lnadtez2dnazdwdm75giofzyz7j6vzt3",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build",
+            "link"
+          ]
         }
       ],
       "hash": "vhwq7akdvnr3gcrjixjg32m74cepncbw"
@@ -2989,13 +2745,10 @@
         {
           "name": "libmd",
           "hash": "dpva2mpahrpf6xmaarnrsfeydnaykuq5",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build",
+            "link"
+          ]
         }
       ],
       "hash": "lnadtez2dnazdwdm75giofzyz7j6vzt3"
@@ -3120,7 +2873,7 @@
       "package_hash": "a6r5uk6dr5qawbvz45pamhh7xywespt5jo43t5se33pmmcwnm7oa====",
       "hash": "ih6dz6l3uz5vasl6q2f4tchzgmbus6pd"
     },
-    "ja4wktlct3jgrhwnb3z2ndbbdhxumwxk": {
+    "ehb6mwd746gvmf3okm3z4wg52exq37dw": {
       "name": "libxcrypt",
       "version": "4.4.33",
       "arch": {
@@ -3182,18 +2935,15 @@
       "dependencies": [
         {
           "name": "perl",
-          "hash": "xobzbn4qz2a3wvxcqummjurr7bmz2wak",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "xdu4o6rlpugilhqs23cozj75jlbngcz6",
+          "type": [
+            "build"
+          ]
         }
       ],
-      "hash": "ja4wktlct3jgrhwnb3z2ndbbdhxumwxk"
+      "hash": "ehb6mwd746gvmf3okm3z4wg52exq37dw"
     },
-    "llhdsxikrlafjncrwhkdhih4e6f5t7ms": {
+    "4jrhgtvk6oj4ndgovo7voafitbl2becf": {
       "name": "sqlite",
       "version": "3.40.1",
       "arch": {
@@ -3259,30 +3009,24 @@
       "dependencies": [
         {
           "name": "readline",
-          "hash": "cjieaibfw46g3pvgtgscrclnfzwajnv7",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "hash": "bdsp6wgqpchqlub7kkxi7vnamsngdy3q",
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "zlib",
           "hash": "lmzqmzlxafo6xwlx47sz3z2ljfhibo2p",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build",
+            "link"
+          ]
         }
       ],
-      "hash": "llhdsxikrlafjncrwhkdhih4e6f5t7ms"
+      "hash": "4jrhgtvk6oj4ndgovo7voafitbl2becf"
     },
-    "dy3svsepqrde5fq7yeicwnsofu2ibrs4": {
+    "nflfk7etltemsas5loy4saygjvgyf265": {
       "name": "util-linux-uuid",
       "version": "2.38.1",
       "arch": {
@@ -3343,18 +3087,15 @@
       "dependencies": [
         {
           "name": "pkgconf",
-          "hash": "tmbnb2pnmhtanvqc3lptxoz7t4jesnk6",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "2cxf6rnd2wt2iugtxwi5r3k6d55yfgub",
+          "type": [
+            "build"
+          ]
         }
       ],
-      "hash": "dy3svsepqrde5fq7yeicwnsofu2ibrs4"
+      "hash": "nflfk7etltemsas5loy4saygjvgyf265"
     },
-    "xjafoh7psqge7jdk3tnk3wcgvrt6lu2y": {
+    "4uttr7qcrugjrawoz2ewgsljmqwlt4ht": {
       "name": "ninja",
       "version": "1.11.1",
       "arch": {
@@ -3416,26 +3157,20 @@
       "dependencies": [
         {
           "name": "python",
-          "hash": "3zbsaxakg7ehxozfoummjrfsimfsvqxe",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "aqwgvaqvbf5q4uzo2elz2cbc35xmfo6s",
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "re2c",
           "hash": "qetsxsgovpky3forbbxutik3ukj3aotm",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build"
+          ]
         }
       ],
-      "hash": "xjafoh7psqge7jdk3tnk3wcgvrt6lu2y"
+      "hash": "4uttr7qcrugjrawoz2ewgsljmqwlt4ht"
     },
     "qetsxsgovpky3forbbxutik3ukj3aotm": {
       "name": "re2c",
@@ -3497,7 +3232,7 @@
       "package_hash": "kh26rqs3cdi5efd3po3idkw7mop3fudtxlfomeun5vt47ent3y4q====",
       "hash": "qetsxsgovpky3forbbxutik3ukj3aotm"
     },
-    "6wgib7w5tgvztxjtpuqmld4zjkvoqtzf": {
+    "ecchhn3l6onfmue457gaajhvbt67drft": {
       "name": "py-fypp",
       "version": "2.1.1",
       "arch": {
@@ -3558,49 +3293,37 @@
       "dependencies": [
         {
           "name": "py-pip",
-          "hash": "z5yl2xgmnz2nee2sbfsr4wc5zw25tbqg",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "qrsangbonem2h5xm7gluiee4nibqwsfc",
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "py-setuptools",
-          "hash": "pin6npi4rxpmnl5hyi4yxc7pqrv6rvk5",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "nzassftgqpyqv2rrnfmcjl6drmzr34hq",
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "py-wheel",
-          "hash": "yeb44buagwtq33bdksp2vnkec3c3lxc4",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "bxvjfumtxrhtfkse5k52lx3hajfjpb4w",
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "python",
-          "hash": "3zbsaxakg7ehxozfoummjrfsimfsvqxe",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "run"
-            ],
-            "virtuals": []
-          }
+          "hash": "aqwgvaqvbf5q4uzo2elz2cbc35xmfo6s",
+          "type": [
+            "build",
+            "run"
+          ]
         }
       ],
-      "hash": "6wgib7w5tgvztxjtpuqmld4zjkvoqtzf"
+      "hash": "ecchhn3l6onfmue457gaajhvbt67drft"
     },
-    "z5yl2xgmnz2nee2sbfsr4wc5zw25tbqg": {
+    "qrsangbonem2h5xm7gluiee4nibqwsfc": {
       "name": "py-pip",
       "version": "23.0",
       "arch": {
@@ -3661,19 +3384,16 @@
       "dependencies": [
         {
           "name": "python",
-          "hash": "3zbsaxakg7ehxozfoummjrfsimfsvqxe",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "run"
-            ],
-            "virtuals": []
-          }
+          "hash": "aqwgvaqvbf5q4uzo2elz2cbc35xmfo6s",
+          "type": [
+            "build",
+            "run"
+          ]
         }
       ],
-      "hash": "z5yl2xgmnz2nee2sbfsr4wc5zw25tbqg"
+      "hash": "qrsangbonem2h5xm7gluiee4nibqwsfc"
     },
-    "pin6npi4rxpmnl5hyi4yxc7pqrv6rvk5": {
+    "nzassftgqpyqv2rrnfmcjl6drmzr34hq": {
       "name": "py-setuptools",
       "version": "67.6.0",
       "arch": {
@@ -3734,29 +3454,23 @@
       "dependencies": [
         {
           "name": "py-pip",
-          "hash": "z5yl2xgmnz2nee2sbfsr4wc5zw25tbqg",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "qrsangbonem2h5xm7gluiee4nibqwsfc",
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "python",
-          "hash": "3zbsaxakg7ehxozfoummjrfsimfsvqxe",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "run"
-            ],
-            "virtuals": []
-          }
+          "hash": "aqwgvaqvbf5q4uzo2elz2cbc35xmfo6s",
+          "type": [
+            "build",
+            "run"
+          ]
         }
       ],
-      "hash": "pin6npi4rxpmnl5hyi4yxc7pqrv6rvk5"
+      "hash": "nzassftgqpyqv2rrnfmcjl6drmzr34hq"
     },
-    "yeb44buagwtq33bdksp2vnkec3c3lxc4": {
+    "bxvjfumtxrhtfkse5k52lx3hajfjpb4w": {
       "name": "py-wheel",
       "version": "0.37.1",
       "arch": {
@@ -3817,31 +3531,25 @@
       "dependencies": [
         {
           "name": "py-pip",
-          "hash": "z5yl2xgmnz2nee2sbfsr4wc5zw25tbqg",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "qrsangbonem2h5xm7gluiee4nibqwsfc",
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "python",
-          "hash": "3zbsaxakg7ehxozfoummjrfsimfsvqxe",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "run"
-            ],
-            "virtuals": []
-          }
+          "hash": "aqwgvaqvbf5q4uzo2elz2cbc35xmfo6s",
+          "type": [
+            "build",
+            "run"
+          ]
         }
       ],
-      "hash": "yeb44buagwtq33bdksp2vnkec3c3lxc4"
+      "hash": "bxvjfumtxrhtfkse5k52lx3hajfjpb4w"
     },
-    "wzvelcojbymo7kxw6jb54v53vj5lfg7n": {
+    "xdhqtgfqyynegcralzbfelr7zzfxwlbx": {
       "name": "dla-future",
-      "version": "master",
+      "version": "develop",
       "arch": {
         "platform": "linux",
         "platform_os": "sles15",
@@ -3889,7 +3597,7 @@
       "namespace": "dlaf",
       "parameters": {
         "build_system": "cmake",
-        "build_type": "RelWithDebInfo",
+        "build_type": "Release",
         "ci-test": false,
         "cuda": false,
         "cxxstd": "17",
@@ -3911,96 +3619,70 @@
       "dependencies": [
         {
           "name": "blaspp",
-          "hash": "fckpuj55tp5tsgqo2wlzzwraocbg5lrx",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "hash": "d4k5acffoib7g6v4es4ovlpsgj4hiflk",
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "cmake",
-          "hash": "evboqia5t3poocvdjrdsex4i4k3btein",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "qpr5cswi75ksv3ltfmgg2gd6b7cdll4a",
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "cray-mpich",
           "hash": "4kfse26fsaibq23z23a5ahjagneezuil",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": [
-              "mpi"
-            ]
-          }
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "gmake",
-          "hash": "krwa77hvq3jchpxgp43vljb4kiljpoda",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "ogazywgjj4c3f5azsdkq4crenea7tbht",
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "lapackpp",
-          "hash": "4mijqjphpohvr3kpqjvik3tb7re73m7n",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "hash": "eimysflon47jzmbzbmjb26sqjq4yjmt7",
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "pika",
-          "hash": "loag6wngwqfdzpgdvddmfr6a4zjmpfc3",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "hash": "3opckg53zluesfleamxygtk6a3sarokx",
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "pika-algorithms",
-          "hash": "6e5fu7y7monfsh7w562g7fjhf6lwjccr",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "hash": "jlz4c7wjeqyo3jy7jz6jhsowzn7e74va",
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "umpire",
-          "hash": "6lzywbacatb3bcwgaeh7qufm65qctmje",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "hash": "agqpzriwgbaydzuyj5mieynetnr6ipru",
+          "type": [
+            "build",
+            "link"
+          ]
         }
       ],
-      "hash": "wzvelcojbymo7kxw6jb54v53vj5lfg7n"
+      "hash": "xdhqtgfqyynegcralzbfelr7zzfxwlbx"
     },
-    "fckpuj55tp5tsgqo2wlzzwraocbg5lrx": {
+    "d4k5acffoib7g6v4es4ovlpsgj4hiflk": {
       "name": "blaspp",
       "version": "2022.07.00",
       "arch": {
@@ -4050,7 +3732,7 @@
       "namespace": "builtin",
       "parameters": {
         "build_system": "cmake",
-        "build_type": "RelWithDebInfo",
+        "build_type": "Release",
         "cuda": false,
         "generator": "make",
         "ipo": false,
@@ -4068,41 +3750,30 @@
       "dependencies": [
         {
           "name": "cmake",
-          "hash": "evboqia5t3poocvdjrdsex4i4k3btein",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "qpr5cswi75ksv3ltfmgg2gd6b7cdll4a",
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "gmake",
-          "hash": "krwa77hvq3jchpxgp43vljb4kiljpoda",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "ogazywgjj4c3f5azsdkq4crenea7tbht",
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "intel-mkl",
-          "hash": "az4mri6hdsybzv4aghxp3oiq5c2t62hb",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": [
-              "blas"
-            ]
-          }
+          "hash": "hh5utnjhlkaoosf64ojlndxncmaqoaql",
+          "type": [
+            "build",
+            "link"
+          ]
         }
       ],
-      "hash": "fckpuj55tp5tsgqo2wlzzwraocbg5lrx"
+      "hash": "d4k5acffoib7g6v4es4ovlpsgj4hiflk"
     },
-    "krwa77hvq3jchpxgp43vljb4kiljpoda": {
+    "ogazywgjj4c3f5azsdkq4crenea7tbht": {
       "name": "gmake",
       "version": "4.4.1",
       "arch": {
@@ -4160,10 +3831,10 @@
         "ldflags": [],
         "ldlibs": []
       },
-      "package_hash": "jlridsmz6v5yezm7lhkqjgx6x6ksuferunkz3635nkdrraigjrfa====",
-      "hash": "krwa77hvq3jchpxgp43vljb4kiljpoda"
+      "package_hash": "jgxc6xacluqca7oq2e75slswupysz3lm3e3yseblt3r5be4szyjq====",
+      "hash": "ogazywgjj4c3f5azsdkq4crenea7tbht"
     },
-    "4mijqjphpohvr3kpqjvik3tb7re73m7n": {
+    "eimysflon47jzmbzbmjb26sqjq4yjmt7": {
       "name": "lapackpp",
       "version": "2022.07.00",
       "arch": {
@@ -4213,7 +3884,7 @@
       "namespace": "builtin",
       "parameters": {
         "build_system": "cmake",
-        "build_type": "RelWithDebInfo",
+        "build_type": "Release",
         "cuda": false,
         "generator": "make",
         "ipo": false,
@@ -4230,55 +3901,40 @@
       "dependencies": [
         {
           "name": "blaspp",
-          "hash": "fckpuj55tp5tsgqo2wlzzwraocbg5lrx",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "hash": "d4k5acffoib7g6v4es4ovlpsgj4hiflk",
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "cmake",
-          "hash": "evboqia5t3poocvdjrdsex4i4k3btein",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "qpr5cswi75ksv3ltfmgg2gd6b7cdll4a",
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "gmake",
-          "hash": "krwa77hvq3jchpxgp43vljb4kiljpoda",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "ogazywgjj4c3f5azsdkq4crenea7tbht",
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "intel-mkl",
-          "hash": "az4mri6hdsybzv4aghxp3oiq5c2t62hb",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": [
-              "blas",
-              "lapack"
-            ]
-          }
+          "hash": "hh5utnjhlkaoosf64ojlndxncmaqoaql",
+          "type": [
+            "build",
+            "link"
+          ]
         }
       ],
-      "hash": "4mijqjphpohvr3kpqjvik3tb7re73m7n"
+      "hash": "eimysflon47jzmbzbmjb26sqjq4yjmt7"
     },
-    "loag6wngwqfdzpgdvddmfr6a4zjmpfc3": {
+    "3opckg53zluesfleamxygtk6a3sarokx": {
       "name": "pika",
-      "version": "main",
+      "version": "0.15.1",
       "arch": {
         "platform": "linux",
         "platform_os": "sles15",
@@ -4327,7 +3983,7 @@
       "parameters": {
         "apex": false,
         "build_system": "cmake",
-        "build_type": "RelWithDebInfo",
+        "build_type": "Release",
         "cuda": false,
         "cxxstd": "17",
         "examples": false,
@@ -4346,97 +4002,71 @@
         "ldflags": [],
         "ldlibs": []
       },
-      "package_hash": "vwrdl7v6r3ykkimn5khfjudk5vqycdo3oud32s7chrnqiqzxouga====",
+      "package_hash": "3dmgjxtviwf2zu6i6qhfrzksqr53iw7zjfqqhlgp4fmbvhyp7iea====",
       "dependencies": [
         {
           "name": "boost",
           "hash": "fma367xdifas2uye66lzlpawuaa7uhlg",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "cmake",
-          "hash": "evboqia5t3poocvdjrdsex4i4k3btein",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "qpr5cswi75ksv3ltfmgg2gd6b7cdll4a",
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "cray-mpich",
           "hash": "4kfse26fsaibq23z23a5ahjagneezuil",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": [
-              "mpi"
-            ]
-          }
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "fmt",
-          "hash": "ubuekw3oiava7womgzawlqgersgqywpd",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "hash": "4ril2u5hm65c6oalertmfhuguckmebdi",
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "git",
-          "hash": "upgeq57rcdbhc54fzisoilxmit3e7f3j",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "4bfwvcy4a2mrlmmuvnxbb24xl5hmnfix",
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "hwloc",
-          "hash": "hrx3hdbpu4okdj75pxggmwbuihamhpyp",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "hash": "2k36uoj2vdacjhwqq6gkorabz2tdmemw",
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "mimalloc",
-          "hash": "mh5azof3vy4vglokuueq7jt5wbaul7yk",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "hash": "tmq6o4xfgcp25gmwxcjyxilbsv5nhxac",
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "ninja",
-          "hash": "xjafoh7psqge7jdk3tnk3wcgvrt6lu2y",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "4uttr7qcrugjrawoz2ewgsljmqwlt4ht",
+          "type": [
+            "build"
+          ]
         }
       ],
-      "hash": "loag6wngwqfdzpgdvddmfr6a4zjmpfc3"
+      "hash": "3opckg53zluesfleamxygtk6a3sarokx"
     },
     "fma367xdifas2uye66lzlpawuaa7uhlg": {
       "name": "boost",
@@ -4552,53 +4182,41 @@
         {
           "name": "bzip2",
           "hash": "4udv7st4xpbi4afqgzewxp3k3rg77jnn",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "xz",
           "hash": "rywasrfpzzop6e2z7nlidxbxfatp2urb",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "zlib",
           "hash": "lmzqmzlxafo6xwlx47sz3z2ljfhibo2p",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "zstd",
           "hash": "dpq3ljtys6bbptrpuf5xokf3zgagoppv",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build",
+            "link"
+          ]
         }
       ],
       "hash": "fma367xdifas2uye66lzlpawuaa7uhlg"
     },
-    "ubuekw3oiava7womgzawlqgersgqywpd": {
+    "4ril2u5hm65c6oalertmfhuguckmebdi": {
       "name": "fmt",
-      "version": "9.1.0",
+      "version": "10.0.0",
       "arch": {
         "platform": "linux",
         "platform_os": "sles15",
@@ -4646,13 +4264,10 @@
       "namespace": "builtin",
       "parameters": {
         "build_system": "cmake",
-        "build_type": "RelWithDebInfo",
+        "build_type": "Release",
         "cxxstd": "17",
         "generator": "make",
         "ipo": false,
-        "patches": [
-          "08fb707bf8b4fc890d6eed29217ead666558cbae38f9249e22ddb82212f0eb4a"
-        ],
         "pic": true,
         "shared": false,
         "cflags": [],
@@ -4662,35 +4277,26 @@
         "ldflags": [],
         "ldlibs": []
       },
-      "patches": [
-        "08fb707bf8b4fc890d6eed29217ead666558cbae38f9249e22ddb82212f0eb4a"
-      ],
-      "package_hash": "vojtjskyfpp6f5zeedd62sjg2vt2jbhdm7uigrnf2bzoljl4du5q====",
+      "package_hash": "2qy4oj5vetngyku3ox777g2jvxkocfx6a2bvnsu7ea5t4s7tlxxq====",
       "dependencies": [
         {
           "name": "cmake",
-          "hash": "evboqia5t3poocvdjrdsex4i4k3btein",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "qpr5cswi75ksv3ltfmgg2gd6b7cdll4a",
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "gmake",
-          "hash": "krwa77hvq3jchpxgp43vljb4kiljpoda",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "ogazywgjj4c3f5azsdkq4crenea7tbht",
+          "type": [
+            "build"
+          ]
         }
       ],
-      "hash": "ubuekw3oiava7womgzawlqgersgqywpd"
+      "hash": "4ril2u5hm65c6oalertmfhuguckmebdi"
     },
-    "upgeq57rcdbhc54fzisoilxmit3e7f3j": {
+    "4bfwvcy4a2mrlmmuvnxbb24xl5hmnfix": {
       "name": "git",
       "version": "2.40.0",
       "arch": {
@@ -4753,161 +4359,119 @@
         "ldflags": [],
         "ldlibs": []
       },
-      "package_hash": "e6ie73badbrmbhgswjgwg3xqtrnh5oyjzuqbk2g2zwdtjdisnoia====",
+      "package_hash": "wge6rkoedscdyxcndvwvulrpm2lhahkerryf3x3mn4hqonsnz7pq====",
       "dependencies": [
         {
           "name": "autoconf",
-          "hash": "yyjdvyzskzwvxvh32jp6vsphuazyxjkn",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "4wmandtv6r3bcimtgtv6iibrhkw3v2xz",
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "automake",
-          "hash": "cpmhiyu3p2vfwzuayj6x5nbbf22heo7x",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "xgwliutzmvikxjr5cqsstrnqi2sfk4ec",
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "curl",
-          "hash": "s5qjvdglmumtyi2wcvqaly2qww4eb47w",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "hash": "nk75q5tfr3yq37uwzv44ofnlmfugptfn",
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "expat",
           "hash": "vhwq7akdvnr3gcrjixjg32m74cepncbw",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "gettext",
-          "hash": "672hwruapg7wg5wqztfyrtrwnl2v7xgw",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "hash": "g5o54x3sr7ngh26s72qpqgzwhi3ui4w7",
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "libiconv",
           "hash": "ux66ocoam24bo7zgdg4rbqnq362cz6jz",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "libidn2",
           "hash": "4ijusaps6p4vu7fmx2xrkb5zrc7jplbd",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "libtool",
           "hash": "itdzhtuikcqjqlzekfdmgyz44sf6luo5",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "m4",
           "hash": "xchlc5xbf5m3mag5bj56ydk2ozquz6o2",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "openssh",
-          "hash": "qjjzvzl7eym6r7e6m2xn3vhrkuilto54",
-          "parameters": {
-            "deptypes": [
-              "run"
-            ],
-            "virtuals": []
-          }
+          "hash": "tv6kbbpitwrbc3d4bzwnnot24yib3666",
+          "type": [
+            "run"
+          ]
         },
         {
           "name": "openssl",
-          "hash": "h5zphsmh2esgakx5p5h22rruqhvyrzgi",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "hash": "6vtxa4p66fdjki6z6fhyjurfxp2hionu",
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "pcre2",
           "hash": "ld7jxe4xk2besmao322t7mzsch46whgt",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "perl",
-          "hash": "xobzbn4qz2a3wvxcqummjurr7bmz2wak",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "hash": "xdu4o6rlpugilhqs23cozj75jlbngcz6",
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "zlib",
           "hash": "lmzqmzlxafo6xwlx47sz3z2ljfhibo2p",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build",
+            "link"
+          ]
         }
       ],
-      "hash": "upgeq57rcdbhc54fzisoilxmit3e7f3j"
+      "hash": "4bfwvcy4a2mrlmmuvnxbb24xl5hmnfix"
     },
-    "yyjdvyzskzwvxvh32jp6vsphuazyxjkn": {
+    "4wmandtv6r3bcimtgtv6iibrhkw3v2xz": {
       "name": "autoconf",
       "version": "2.69",
       "arch": {
@@ -4979,27 +4543,21 @@
         {
           "name": "m4",
           "hash": "xchlc5xbf5m3mag5bj56ydk2ozquz6o2",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "run"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build",
+            "run"
+          ]
         },
         {
           "name": "perl",
-          "hash": "xobzbn4qz2a3wvxcqummjurr7bmz2wak",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "run"
-            ],
-            "virtuals": []
-          }
+          "hash": "xdu4o6rlpugilhqs23cozj75jlbngcz6",
+          "type": [
+            "build",
+            "run"
+          ]
         }
       ],
-      "hash": "yyjdvyzskzwvxvh32jp6vsphuazyxjkn"
+      "hash": "4wmandtv6r3bcimtgtv6iibrhkw3v2xz"
     },
     "xchlc5xbf5m3mag5bj56ydk2ozquz6o2": {
       "name": "m4",
@@ -5072,23 +4630,17 @@
         {
           "name": "diffutils",
           "hash": "4pfqueamsx2fl5ithrx65alu2ltwdlzd",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "libsigsegv",
           "hash": "yc63frtkydq4dg22txtk5cr7f34ektmg",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build",
+            "link"
+          ]
         }
       ],
       "hash": "xchlc5xbf5m3mag5bj56ydk2ozquz6o2"
@@ -5153,7 +4705,7 @@
       "package_hash": "g3lezcbp2gbfpmy543owfqnklxafzbthrhz324pmzxuixqbrqywq====",
       "hash": "yc63frtkydq4dg22txtk5cr7f34ektmg"
     },
-    "cpmhiyu3p2vfwzuayj6x5nbbf22heo7x": {
+    "xgwliutzmvikxjr5cqsstrnqi2sfk4ec": {
       "name": "automake",
       "version": "1.16.5",
       "arch": {
@@ -5214,29 +4766,23 @@
       "dependencies": [
         {
           "name": "autoconf",
-          "hash": "yyjdvyzskzwvxvh32jp6vsphuazyxjkn",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "4wmandtv6r3bcimtgtv6iibrhkw3v2xz",
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "perl",
-          "hash": "xobzbn4qz2a3wvxcqummjurr7bmz2wak",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "run"
-            ],
-            "virtuals": []
-          }
+          "hash": "xdu4o6rlpugilhqs23cozj75jlbngcz6",
+          "type": [
+            "build",
+            "run"
+          ]
         }
       ],
-      "hash": "cpmhiyu3p2vfwzuayj6x5nbbf22heo7x"
+      "hash": "xgwliutzmvikxjr5cqsstrnqi2sfk4ec"
     },
-    "s5qjvdglmumtyi2wcvqaly2qww4eb47w": {
+    "nk75q5tfr3yq37uwzv44ofnlmfugptfn": {
       "name": "curl",
       "version": "8.0.1",
       "arch": {
@@ -5311,38 +4857,29 @@
       "dependencies": [
         {
           "name": "openssl",
-          "hash": "h5zphsmh2esgakx5p5h22rruqhvyrzgi",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "hash": "6vtxa4p66fdjki6z6fhyjurfxp2hionu",
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "pkgconf",
-          "hash": "tmbnb2pnmhtanvqc3lptxoz7t4jesnk6",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "2cxf6rnd2wt2iugtxwi5r3k6d55yfgub",
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "zlib",
           "hash": "lmzqmzlxafo6xwlx47sz3z2ljfhibo2p",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build",
+            "link"
+          ]
         }
       ],
-      "hash": "s5qjvdglmumtyi2wcvqaly2qww4eb47w"
+      "hash": "nk75q5tfr3yq37uwzv44ofnlmfugptfn"
     },
     "4ijusaps6p4vu7fmx2xrkb5zrc7jplbd": {
       "name": "libidn2",
@@ -5406,13 +4943,10 @@
         {
           "name": "libunistring",
           "hash": "3bwsscarexjhtsnuyqkc5vt6ioqntvfg",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build",
+            "link"
+          ]
         }
       ],
       "hash": "4ijusaps6p4vu7fmx2xrkb5zrc7jplbd"
@@ -5479,13 +5013,10 @@
         {
           "name": "libiconv",
           "hash": "ux66ocoam24bo7zgdg4rbqnq362cz6jz",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build",
+            "link"
+          ]
         }
       ],
       "hash": "3bwsscarexjhtsnuyqkc5vt6ioqntvfg"
@@ -5552,17 +5083,14 @@
         {
           "name": "m4",
           "hash": "xchlc5xbf5m3mag5bj56ydk2ozquz6o2",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build"
+          ]
         }
       ],
       "hash": "itdzhtuikcqjqlzekfdmgyz44sf6luo5"
     },
-    "qjjzvzl7eym6r7e6m2xn3vhrkuilto54": {
+    "tv6kbbpitwrbc3d4bzwnnot24yib3666": {
       "name": "openssh",
       "version": "9.3p1",
       "arch": {
@@ -5624,73 +5152,55 @@
       "dependencies": [
         {
           "name": "krb5",
-          "hash": "6z5cvh2uztkh3ojkedw75wzfiz757f4w",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "hash": "d7fti522bg3hwmhbphvl43zbjiqylf7c",
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "libedit",
-          "hash": "kvyqhdtzaifwlhfbsmquqskvqoi25spy",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "hash": "zk36lb4ut4nr5iufvxn3rleni2ilsfir",
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "libxcrypt",
-          "hash": "ja4wktlct3jgrhwnb3z2ndbbdhxumwxk",
-          "parameters": {
-            "deptypes": [
-              "link"
-            ],
-            "virtuals": []
-          }
+          "hash": "ehb6mwd746gvmf3okm3z4wg52exq37dw",
+          "type": [
+            "link"
+          ]
         },
         {
           "name": "ncurses",
-          "hash": "c2hxiajm4tmqv6hjhfv4slrppbay36cn",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "hash": "w7a3tordv47nxxvusp3l3ij2smkgzl7o",
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "openssl",
-          "hash": "h5zphsmh2esgakx5p5h22rruqhvyrzgi",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "hash": "6vtxa4p66fdjki6z6fhyjurfxp2hionu",
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "zlib",
           "hash": "lmzqmzlxafo6xwlx47sz3z2ljfhibo2p",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build",
+            "link"
+          ]
         }
       ],
-      "hash": "qjjzvzl7eym6r7e6m2xn3vhrkuilto54"
+      "hash": "tv6kbbpitwrbc3d4bzwnnot24yib3666"
     },
-    "6z5cvh2uztkh3ojkedw75wzfiz757f4w": {
+    "d7fti522bg3hwmhbphvl43zbjiqylf7c": {
       "name": "krb5",
       "version": "1.20.1",
       "arch": {
@@ -5748,54 +5258,42 @@
         "ldflags": [],
         "ldlibs": []
       },
-      "package_hash": "r6ydpr3hyfrwadxlhvewyi66nyoc77evaise54n47su5t7xrzfka====",
+      "package_hash": "a4np43wfp3kz4lp6a6l6h2ah7wyyx75qvakp6qkoqeulenhlvm7q====",
       "dependencies": [
         {
           "name": "bison",
-          "hash": "3m5pimpzghaforpnbnvqdx5bverrxx3n",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "b7gbe7t5an2hkwz3klvat2hcog6w63gh",
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "diffutils",
           "hash": "4pfqueamsx2fl5ithrx65alu2ltwdlzd",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "gettext",
-          "hash": "672hwruapg7wg5wqztfyrtrwnl2v7xgw",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "hash": "g5o54x3sr7ngh26s72qpqgzwhi3ui4w7",
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "openssl",
-          "hash": "h5zphsmh2esgakx5p5h22rruqhvyrzgi",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "hash": "6vtxa4p66fdjki6z6fhyjurfxp2hionu",
+          "type": [
+            "build",
+            "link"
+          ]
         }
       ],
-      "hash": "6z5cvh2uztkh3ojkedw75wzfiz757f4w"
+      "hash": "d7fti522bg3hwmhbphvl43zbjiqylf7c"
     },
-    "3m5pimpzghaforpnbnvqdx5bverrxx3n": {
+    "b7gbe7t5an2hkwz3klvat2hcog6w63gh": {
       "name": "bison",
       "version": "3.8.2",
       "arch": {
@@ -5857,38 +5355,29 @@
         {
           "name": "diffutils",
           "hash": "4pfqueamsx2fl5ithrx65alu2ltwdlzd",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "m4",
           "hash": "xchlc5xbf5m3mag5bj56ydk2ozquz6o2",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "run"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build",
+            "run"
+          ]
         },
         {
           "name": "perl",
-          "hash": "xobzbn4qz2a3wvxcqummjurr7bmz2wak",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "xdu4o6rlpugilhqs23cozj75jlbngcz6",
+          "type": [
+            "build"
+          ]
         }
       ],
-      "hash": "3m5pimpzghaforpnbnvqdx5bverrxx3n"
+      "hash": "b7gbe7t5an2hkwz3klvat2hcog6w63gh"
     },
-    "kvyqhdtzaifwlhfbsmquqskvqoi25spy": {
+    "zk36lb4ut4nr5iufvxn3rleni2ilsfir": {
       "name": "libedit",
       "version": "3.1-20210216",
       "arch": {
@@ -5949,27 +5438,21 @@
       "dependencies": [
         {
           "name": "ncurses",
-          "hash": "c2hxiajm4tmqv6hjhfv4slrppbay36cn",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "hash": "w7a3tordv47nxxvusp3l3ij2smkgzl7o",
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "pkgconf",
-          "hash": "tmbnb2pnmhtanvqc3lptxoz7t4jesnk6",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "2cxf6rnd2wt2iugtxwi5r3k6d55yfgub",
+          "type": [
+            "build"
+          ]
         }
       ],
-      "hash": "kvyqhdtzaifwlhfbsmquqskvqoi25spy"
+      "hash": "zk36lb4ut4nr5iufvxn3rleni2ilsfir"
     },
     "ld7jxe4xk2besmao322t7mzsch46whgt": {
       "name": "pcre2",
@@ -6033,7 +5516,7 @@
       "package_hash": "77jpjhq7o4zbrhsjvmx4zvth46u4vmcldfhdiljpkgaq6kfovksq====",
       "hash": "ld7jxe4xk2besmao322t7mzsch46whgt"
     },
-    "hrx3hdbpu4okdj75pxggmwbuihamhpyp": {
+    "2k36uoj2vdacjhwqq6gkorabz2tdmemw": {
       "name": "hwloc",
       "version": "2.9.1",
       "arch": {
@@ -6105,55 +5588,43 @@
         "ldflags": [],
         "ldlibs": []
       },
-      "package_hash": "mycljz5ugpik6k3lijrscndbuem5s4pipg5lmtprxxeyiemldxva====",
+      "package_hash": "hir47frlnqog35tswqx57f2ncq3ymdf6gvi6mxhben2mxer3p4lq====",
       "dependencies": [
         {
           "name": "libpciaccess",
-          "hash": "hboebgrfowh46sv7zg574vq6craxxwpo",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "hash": "gkjevx37mlmyppcy4iohpf3gk7sjou5u",
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "libxml2",
-          "hash": "mpy23lb4yuugwuw6rfaagmzj5zjh6ycy",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "hash": "n3z2rcwz263a2hzxhqx5tzmr5r2kff7u",
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "ncurses",
-          "hash": "c2hxiajm4tmqv6hjhfv4slrppbay36cn",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "hash": "w7a3tordv47nxxvusp3l3ij2smkgzl7o",
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "pkgconf",
-          "hash": "tmbnb2pnmhtanvqc3lptxoz7t4jesnk6",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "2cxf6rnd2wt2iugtxwi5r3k6d55yfgub",
+          "type": [
+            "build"
+          ]
         }
       ],
-      "hash": "hrx3hdbpu4okdj75pxggmwbuihamhpyp"
+      "hash": "2k36uoj2vdacjhwqq6gkorabz2tdmemw"
     },
-    "hboebgrfowh46sv7zg574vq6craxxwpo": {
+    "gkjevx37mlmyppcy4iohpf3gk7sjou5u": {
       "name": "libpciaccess",
       "version": "0.17",
       "arch": {
@@ -6215,35 +5686,26 @@
         {
           "name": "libtool",
           "hash": "itdzhtuikcqjqlzekfdmgyz44sf6luo5",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "pkgconf",
-          "hash": "tmbnb2pnmhtanvqc3lptxoz7t4jesnk6",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "2cxf6rnd2wt2iugtxwi5r3k6d55yfgub",
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "util-macros",
           "hash": "fgful5vvp3pfwcgirxobszwfbhfyn6lv",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build"
+          ]
         }
       ],
-      "hash": "hboebgrfowh46sv7zg574vq6craxxwpo"
+      "hash": "gkjevx37mlmyppcy4iohpf3gk7sjou5u"
     },
     "fgful5vvp3pfwcgirxobszwfbhfyn6lv": {
       "name": "util-macros",
@@ -6305,7 +5767,7 @@
       "package_hash": "5atggv5uirdl2trmzmewkonyvzmzg6sg46zpvurdk43wi2gpr7pa====",
       "hash": "fgful5vvp3pfwcgirxobszwfbhfyn6lv"
     },
-    "mh5azof3vy4vglokuueq7jt5wbaul7yk": {
+    "tmq6o4xfgcp25gmwxcjyxilbsv5nhxac": {
       "name": "mimalloc",
       "version": "2.0.6",
       "arch": {
@@ -6356,7 +5818,7 @@
       "parameters": {
         "build_system": "cmake",
         "build_tests": false,
-        "build_type": "RelWithDebInfo",
+        "build_type": "Release",
         "debug_full": false,
         "generator": "make",
         "ipo": false,
@@ -6385,28 +5847,22 @@
       "dependencies": [
         {
           "name": "cmake",
-          "hash": "evboqia5t3poocvdjrdsex4i4k3btein",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "qpr5cswi75ksv3ltfmgg2gd6b7cdll4a",
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "gmake",
-          "hash": "krwa77hvq3jchpxgp43vljb4kiljpoda",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "ogazywgjj4c3f5azsdkq4crenea7tbht",
+          "type": [
+            "build"
+          ]
         }
       ],
-      "hash": "mh5azof3vy4vglokuueq7jt5wbaul7yk"
+      "hash": "tmq6o4xfgcp25gmwxcjyxilbsv5nhxac"
     },
-    "6e5fu7y7monfsh7w562g7fjhf6lwjccr": {
+    "jlz4c7wjeqyo3jy7jz6jhsowzn7e74va": {
       "name": "pika-algorithms",
       "version": "0.1.2",
       "arch": {
@@ -6456,7 +5912,7 @@
       "namespace": "builtin",
       "parameters": {
         "build_system": "cmake",
-        "build_type": "RelWithDebInfo",
+        "build_type": "Release",
         "cxxstd": "17",
         "generator": "ninja",
         "ipo": false,
@@ -6472,70 +5928,52 @@
         {
           "name": "boost",
           "hash": "fma367xdifas2uye66lzlpawuaa7uhlg",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "cmake",
-          "hash": "evboqia5t3poocvdjrdsex4i4k3btein",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "qpr5cswi75ksv3ltfmgg2gd6b7cdll4a",
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "fmt",
-          "hash": "ubuekw3oiava7womgzawlqgersgqywpd",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "hash": "4ril2u5hm65c6oalertmfhuguckmebdi",
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "git",
-          "hash": "upgeq57rcdbhc54fzisoilxmit3e7f3j",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "4bfwvcy4a2mrlmmuvnxbb24xl5hmnfix",
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "ninja",
-          "hash": "xjafoh7psqge7jdk3tnk3wcgvrt6lu2y",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "4uttr7qcrugjrawoz2ewgsljmqwlt4ht",
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "pika",
-          "hash": "loag6wngwqfdzpgdvddmfr6a4zjmpfc3",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "hash": "3opckg53zluesfleamxygtk6a3sarokx",
+          "type": [
+            "build",
+            "link"
+          ]
         }
       ],
-      "hash": "6e5fu7y7monfsh7w562g7fjhf6lwjccr"
+      "hash": "jlz4c7wjeqyo3jy7jz6jhsowzn7e74va"
     },
-    "6lzywbacatb3bcwgaeh7qufm65qctmje": {
+    "agqpzriwgbaydzuyj5mieynetnr6ipru": {
       "name": "umpire",
       "version": "5.0.1",
       "arch": {
@@ -6585,7 +6023,7 @@
       "namespace": "builtin",
       "parameters": {
         "build_system": "cmake",
-        "build_type": "RelWithDebInfo",
+        "build_type": "Release",
         "c": true,
         "cuda": false,
         "device_alloc": false,
@@ -6618,49 +6056,37 @@
       "dependencies": [
         {
           "name": "blt",
-          "hash": "uf2ehpy66afpqyaxtj6rs2up65y26vhs",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "suygy3hwzsvimeaukhy4mtc2vp5gsdcg",
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "camp",
-          "hash": "yztghem6unfd5646ij7vgeyliowwnzwl",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "hash": "crt7vyb3xdtyeq7vvcgx2vvomkuw3xqm",
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "cmake",
-          "hash": "evboqia5t3poocvdjrdsex4i4k3btein",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "qpr5cswi75ksv3ltfmgg2gd6b7cdll4a",
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "gmake",
-          "hash": "krwa77hvq3jchpxgp43vljb4kiljpoda",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "ogazywgjj4c3f5azsdkq4crenea7tbht",
+          "type": [
+            "build"
+          ]
         }
       ],
-      "hash": "6lzywbacatb3bcwgaeh7qufm65qctmje"
+      "hash": "agqpzriwgbaydzuyj5mieynetnr6ipru"
     },
-    "uf2ehpy66afpqyaxtj6rs2up65y26vhs": {
+    "suygy3hwzsvimeaukhy4mtc2vp5gsdcg": {
       "name": "blt",
       "version": "0.5.2",
       "arch": {
@@ -6721,18 +6147,15 @@
       "dependencies": [
         {
           "name": "cmake",
-          "hash": "evboqia5t3poocvdjrdsex4i4k3btein",
-          "parameters": {
-            "deptypes": [
-              "run"
-            ],
-            "virtuals": []
-          }
+          "hash": "qpr5cswi75ksv3ltfmgg2gd6b7cdll4a",
+          "type": [
+            "run"
+          ]
         }
       ],
-      "hash": "uf2ehpy66afpqyaxtj6rs2up65y26vhs"
+      "hash": "suygy3hwzsvimeaukhy4mtc2vp5gsdcg"
     },
-    "yztghem6unfd5646ij7vgeyliowwnzwl": {
+    "crt7vyb3xdtyeq7vvcgx2vvomkuw3xqm": {
       "name": "camp",
       "version": "0.1.0",
       "arch": {
@@ -6782,7 +6205,7 @@
       "namespace": "builtin",
       "parameters": {
         "build_system": "cmake",
-        "build_type": "RelWithDebInfo",
+        "build_type": "Release",
         "cuda": false,
         "generator": "make",
         "ipo": false,
@@ -6800,39 +6223,30 @@
       "dependencies": [
         {
           "name": "blt",
-          "hash": "uf2ehpy66afpqyaxtj6rs2up65y26vhs",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "hash": "suygy3hwzsvimeaukhy4mtc2vp5gsdcg",
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "cmake",
-          "hash": "evboqia5t3poocvdjrdsex4i4k3btein",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "qpr5cswi75ksv3ltfmgg2gd6b7cdll4a",
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "gmake",
-          "hash": "krwa77hvq3jchpxgp43vljb4kiljpoda",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "ogazywgjj4c3f5azsdkq4crenea7tbht",
+          "type": [
+            "build"
+          ]
         }
       ],
-      "hash": "yztghem6unfd5646ij7vgeyliowwnzwl"
+      "hash": "crt7vyb3xdtyeq7vvcgx2vvomkuw3xqm"
     },
-    "yojr3mgho7lycwuvfpqn5uwyqrq73pz2": {
+    "r24r2plsvkojvf7wppaixenot6gb564u": {
       "name": "fftw",
       "version": "3.3.10",
       "arch": {
@@ -6901,20 +6315,15 @@
         {
           "name": "cray-mpich",
           "hash": "4kfse26fsaibq23z23a5ahjagneezuil",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": [
-              "mpi"
-            ]
-          }
+          "type": [
+            "build",
+            "link"
+          ]
         }
       ],
-      "hash": "yojr3mgho7lycwuvfpqn5uwyqrq73pz2"
+      "hash": "r24r2plsvkojvf7wppaixenot6gb564u"
     },
-    "xlycdbdbq26xvzakdyvqurfkmgptatqe": {
+    "5bmqogw476ptqapo4ocrzzmgraikokdl": {
       "name": "libint",
       "version": "2.6.0",
       "arch": {
@@ -6979,70 +6388,52 @@
       "dependencies": [
         {
           "name": "autoconf",
-          "hash": "yyjdvyzskzwvxvh32jp6vsphuazyxjkn",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "4wmandtv6r3bcimtgtv6iibrhkw3v2xz",
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "automake",
-          "hash": "cpmhiyu3p2vfwzuayj6x5nbbf22heo7x",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "xgwliutzmvikxjr5cqsstrnqi2sfk4ec",
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "boost",
           "hash": "fma367xdifas2uye66lzlpawuaa7uhlg",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "gmp",
-          "hash": "z4b4cnedkk2dqr5c5fejoxsyojzshv3h",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
+          "hash": "kefwjwfuhulzzfelfxpmm4r7wiyimo7h",
+          "type": [
+            "build",
+            "link"
+          ]
         },
         {
           "name": "libtool",
           "hash": "itdzhtuikcqjqlzekfdmgyz44sf6luo5",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "python",
-          "hash": "3zbsaxakg7ehxozfoummjrfsimfsvqxe",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "aqwgvaqvbf5q4uzo2elz2cbc35xmfo6s",
+          "type": [
+            "build"
+          ]
         }
       ],
-      "hash": "xlycdbdbq26xvzakdyvqurfkmgptatqe"
+      "hash": "5bmqogw476ptqapo4ocrzzmgraikokdl"
     },
-    "z4b4cnedkk2dqr5c5fejoxsyojzshv3h": {
+    "kefwjwfuhulzzfelfxpmm4r7wiyimo7h": {
       "name": "gmp",
       "version": "6.2.1",
       "arch": {
@@ -7114,48 +6505,36 @@
       "dependencies": [
         {
           "name": "autoconf",
-          "hash": "yyjdvyzskzwvxvh32jp6vsphuazyxjkn",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "4wmandtv6r3bcimtgtv6iibrhkw3v2xz",
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "automake",
-          "hash": "cpmhiyu3p2vfwzuayj6x5nbbf22heo7x",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "xgwliutzmvikxjr5cqsstrnqi2sfk4ec",
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "libtool",
           "hash": "itdzhtuikcqjqlzekfdmgyz44sf6luo5",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "m4",
           "hash": "xchlc5xbf5m3mag5bj56ydk2ozquz6o2",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build"
+          ]
         }
       ],
-      "hash": "z4b4cnedkk2dqr5c5fejoxsyojzshv3h"
+      "hash": "kefwjwfuhulzzfelfxpmm4r7wiyimo7h"
     },
-    "d7efueigdnxfgqc7qrpuwepiellvvrik": {
+    "cxmcpsgoyr3bhzfjsvluttfvxh6t3b6x": {
       "name": "libxc",
       "version": "6.1.0",
       "arch": {
@@ -7218,48 +6597,36 @@
       "dependencies": [
         {
           "name": "autoconf",
-          "hash": "yyjdvyzskzwvxvh32jp6vsphuazyxjkn",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "4wmandtv6r3bcimtgtv6iibrhkw3v2xz",
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "automake",
-          "hash": "cpmhiyu3p2vfwzuayj6x5nbbf22heo7x",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "xgwliutzmvikxjr5cqsstrnqi2sfk4ec",
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "libtool",
           "hash": "itdzhtuikcqjqlzekfdmgyz44sf6luo5",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "perl",
-          "hash": "xobzbn4qz2a3wvxcqummjurr7bmz2wak",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "xdu4o6rlpugilhqs23cozj75jlbngcz6",
+          "type": [
+            "build"
+          ]
         }
       ],
-      "hash": "d7efueigdnxfgqc7qrpuwepiellvvrik"
+      "hash": "cxmcpsgoyr3bhzfjsvluttfvxh6t3b6x"
     },
-    "vzizn32j7ldjzuv6rktbotd6r4pnmrgq": {
+    "h7v5ii4uztplhrvsqsp53xpndcrihjli": {
       "name": "spglib",
       "version": "2.0.2",
       "arch": {
@@ -7309,7 +6676,7 @@
       "namespace": "builtin",
       "parameters": {
         "build_system": "cmake",
-        "build_type": "RelWithDebInfo",
+        "build_type": "Release",
         "generator": "make",
         "ipo": false,
         "openmp": true,
@@ -7324,26 +6691,20 @@
       "dependencies": [
         {
           "name": "cmake",
-          "hash": "evboqia5t3poocvdjrdsex4i4k3btein",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "qpr5cswi75ksv3ltfmgg2gd6b7cdll4a",
+          "type": [
+            "build"
+          ]
         },
         {
           "name": "gmake",
-          "hash": "krwa77hvq3jchpxgp43vljb4kiljpoda",
-          "parameters": {
-            "deptypes": [
-              "build"
-            ],
-            "virtuals": []
-          }
+          "hash": "ogazywgjj4c3f5azsdkq4crenea7tbht",
+          "type": [
+            "build"
+          ]
         }
       ],
-      "hash": "vzizn32j7ldjzuv6rktbotd6r4pnmrgq"
+      "hash": "h7v5ii4uztplhrvsqsp53xpndcrihjli"
     }
   }
 }
