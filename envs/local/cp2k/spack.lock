@@ -1,0 +1,6551 @@
+{
+  "_meta": {
+    "file-type": "spack-lockfile",
+    "lockfile-version": 4,
+    "specfile-version": 3
+  },
+  "roots": [
+    {
+      "hash": "46vq24yn5psyk4siqpeprk7b6slqbioi",
+      "spec": "cp2k@develop~cuda+libint+libxc~mpi+spglib ^dbcsr~mpi+openmp ^fftw"
+    }
+  ],
+  "concrete_specs": {
+    "46vq24yn5psyk4siqpeprk7b6slqbioi": {
+      "name": "cp2k",
+      "version": "develop",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "makefile",
+        "cosma": false,
+        "cuda": false,
+        "elpa": false,
+        "libint": true,
+        "libvori": false,
+        "libxc": true,
+        "lmax": "5",
+        "mpi": false,
+        "openmp": true,
+        "pexsi": false,
+        "plumed": false,
+        "sirius": false,
+        "smm": "libxsmm",
+        "spglib": true,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "is7txgkavst7p5y4i7flxftv5lizwuoao4jrik37xj46k3ljibea====",
+      "dependencies": [
+        {
+          "name": "dbcsr",
+          "hash": "xqdvefci4ml32frqenebn4szgdx7lokk",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "fftw",
+          "hash": "fsz5csscemrwmsritmy35lrpdaaopc3w",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "libint",
+          "hash": "dkysipte4cly34s7jl6ntg3jdrjuzbzn",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "libxc",
+          "hash": "x6i4pv6gpsyx4jmltib42gvw4fnvq3fz",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "libxsmm",
+          "hash": "2gkafuyy2wxzzb5dvuuoitaffhtpxp3o",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "openblas",
+          "hash": "66eme3vkzi5y6axw6o3qrtqdni7cjipc",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "pkgconf",
+          "hash": "hn6cogntia7lcumhbbthh6ohf3qmfknz",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "python",
+          "hash": "tzc5zf27xj2h5ztisjlzhh5fidouptba",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "spglib",
+          "hash": "vxo4bl2lwkmj3efzrktyh6h3j6mp53cm",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "46vq24yn5psyk4siqpeprk7b6slqbioi"
+    },
+    "xqdvefci4ml32frqenebn4szgdx7lokk": {
+      "name": "dbcsr",
+      "version": "2.5.0",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "cmake",
+        "build_type": "RelWithDebInfo",
+        "cuda": false,
+        "cuda_arch_35_k20x": false,
+        "generator": "ninja",
+        "ipo": false,
+        "mpi": false,
+        "opencl": false,
+        "openmp": true,
+        "rocm": false,
+        "shared": true,
+        "smm": "libxsmm",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "z7stg5ojyyfqvudq6r4bdsjf3tvjfmikscqh6gegoofgjw3vsiba====",
+      "dependencies": [
+        {
+          "name": "cmake",
+          "hash": "5qdl66iaz5dhhjwn2mzzzge4urr7qivq",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "libxsmm",
+          "hash": "2gkafuyy2wxzzb5dvuuoitaffhtpxp3o",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "ninja",
+          "hash": "2qu546qhxfmijafyokyefmsiuw3g32uz",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "openblas",
+          "hash": "66eme3vkzi5y6axw6o3qrtqdni7cjipc",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "pkgconf",
+          "hash": "hn6cogntia7lcumhbbthh6ohf3qmfknz",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "py-fypp",
+          "hash": "j4qhxqnkg5sn3c7ber6fjunpd53fcwxb",
+          "type": [
+            "build"
+          ]
+        }
+      ],
+      "hash": "xqdvefci4ml32frqenebn4szgdx7lokk"
+    },
+    "5qdl66iaz5dhhjwn2mzzzge4urr7qivq": {
+      "name": "cmake",
+      "version": "3.25.2",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "generic",
+        "build_type": "Release",
+        "doc": false,
+        "ncurses": true,
+        "ownlibs": true,
+        "qt": false,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "ysf62cck7ys4vib7w24wd5fml52wsgyptvpjjmqdheeiwc65y5xq====",
+      "dependencies": [
+        {
+          "name": "ncurses",
+          "hash": "tzwcktq3z2k4pkrctt535i67tozx7fan",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "openssl",
+          "hash": "p6qr7l5bf25volblhlpmr3n7tp2kd5ye",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "5qdl66iaz5dhhjwn2mzzzge4urr7qivq"
+    },
+    "tzwcktq3z2k4pkrctt535i67tozx7fan": {
+      "name": "ncurses",
+      "version": "6.4",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "abi": "none",
+        "build_system": "autotools",
+        "symlinks": false,
+        "termlib": true,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "f4dhngazdplwea3xivbf2xuepc7i5j76amw6cy32ykyaa6k7uqda====",
+      "dependencies": [
+        {
+          "name": "pkgconf",
+          "hash": "hn6cogntia7lcumhbbthh6ohf3qmfknz",
+          "type": [
+            "build"
+          ]
+        }
+      ],
+      "hash": "tzwcktq3z2k4pkrctt535i67tozx7fan"
+    },
+    "hn6cogntia7lcumhbbthh6ohf3qmfknz": {
+      "name": "pkgconf",
+      "version": "1.8.0",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "olr5zscvqru56pgiiqlnzc4ud5e7iuyntj6fsplcrjh3jngqjpja====",
+      "hash": "hn6cogntia7lcumhbbthh6ohf3qmfknz"
+    },
+    "p6qr7l5bf25volblhlpmr3n7tp2kd5ye": {
+      "name": "openssl",
+      "version": "1.1.1t",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "generic",
+        "certs": "mozilla",
+        "docs": false,
+        "shared": false,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "3blropifzqprsgylxdwapevahivdtsjvmabx5cjh3ex2leyh7lqq====",
+      "dependencies": [
+        {
+          "name": "ca-certificates-mozilla",
+          "hash": "yzif4l74qm7flajaq6znkxko7ziisbab",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "perl",
+          "hash": "2j65jjsrdfmfqx5gd5g24lhdqwskkarp",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "zlib",
+          "hash": "fvdgumwwq25x33xxgmo4p57kfnttugtw",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "p6qr7l5bf25volblhlpmr3n7tp2kd5ye"
+    },
+    "yzif4l74qm7flajaq6znkxko7ziisbab": {
+      "name": "ca-certificates-mozilla",
+      "version": "2023-01-10",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "generic",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "rjs43v3dkqcisnwgzsiy3qo64oeqwpgmzncy6ypa4ckhtswcwhqa====",
+      "hash": "yzif4l74qm7flajaq6znkxko7ziisbab"
+    },
+    "2j65jjsrdfmfqx5gd5g24lhdqwskkarp": {
+      "name": "perl",
+      "version": "5.36.0",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "generic",
+        "cpanm": true,
+        "open": true,
+        "shared": true,
+        "threads": true,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "abm4arnxtzuu4pdlvydbvunk35ppmmzegmgsknkkes6m74me26qa====",
+      "dependencies": [
+        {
+          "name": "berkeley-db",
+          "hash": "hnat3jl4gdotmwdmwle2fivzlooygja2",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "bzip2",
+          "hash": "rj34k5t2umgr7tg2afeudirkvxtokgj2",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "gdbm",
+          "hash": "43a2lkvsn6iuuo7opo2l6jyykrdmbiop",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "zlib",
+          "hash": "fvdgumwwq25x33xxgmo4p57kfnttugtw",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "2j65jjsrdfmfqx5gd5g24lhdqwskkarp"
+    },
+    "hnat3jl4gdotmwdmwle2fivzlooygja2": {
+      "name": "berkeley-db",
+      "version": "18.1.40",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "cxx": true,
+        "docs": false,
+        "patches": [
+          "26090f418891757af46ac3b89a9f43d6eb5989f7a3dce3d1cfc99fba547203b3",
+          "b231fcc4d5cff05e5c3a4814f6a5af0e9a966428dc2176540d2c05aff41de522"
+        ],
+        "stl": true,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "patches": [
+        "b231fcc4d5cff05e5c3a4814f6a5af0e9a966428dc2176540d2c05aff41de522",
+        "26090f418891757af46ac3b89a9f43d6eb5989f7a3dce3d1cfc99fba547203b3"
+      ],
+      "package_hash": "vpd5eetcurni5woqzl6jrukuo4a6fr5yoluxz32gxezgx5ftpxza====",
+      "hash": "hnat3jl4gdotmwdmwle2fivzlooygja2"
+    },
+    "rj34k5t2umgr7tg2afeudirkvxtokgj2": {
+      "name": "bzip2",
+      "version": "1.0.8",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "generic",
+        "debug": false,
+        "pic": false,
+        "shared": true,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "uzbfzh3bgm44pop46fdhw5gm7bqbprjrq7uqe2ulgqpjsm5q553q====",
+      "dependencies": [
+        {
+          "name": "diffutils",
+          "hash": "k6ispfp54qap24ewbrbaawxt4wrxvqgh",
+          "type": [
+            "build"
+          ]
+        }
+      ],
+      "hash": "rj34k5t2umgr7tg2afeudirkvxtokgj2"
+    },
+    "k6ispfp54qap24ewbrbaawxt4wrxvqgh": {
+      "name": "diffutils",
+      "version": "3.9",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "4g5iq64vkozpp7pt3rtdkgieyjgtwwqphwqyjds3vik72jsjge7a====",
+      "dependencies": [
+        {
+          "name": "libiconv",
+          "hash": "cvxxsircwbwr54qq253lpyvbdsmewunl",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "k6ispfp54qap24ewbrbaawxt4wrxvqgh"
+    },
+    "cvxxsircwbwr54qq253lpyvbdsmewunl": {
+      "name": "libiconv",
+      "version": "1.17",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "libs": [
+          "shared",
+          "static"
+        ],
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "b7u3icizfdwbv2p2bsoazku4gbodr4ww3p2ah5jcxuvnjsrb7sha====",
+      "hash": "cvxxsircwbwr54qq253lpyvbdsmewunl"
+    },
+    "43a2lkvsn6iuuo7opo2l6jyykrdmbiop": {
+      "name": "gdbm",
+      "version": "1.23",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "liepxl6phlcxbgfmibxafhewtihlgaa4x3hko37ckqlafhxkrgdq====",
+      "dependencies": [
+        {
+          "name": "readline",
+          "hash": "2wegmaaf6m6el3ss3uenln3h3biwqldh",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "43a2lkvsn6iuuo7opo2l6jyykrdmbiop"
+    },
+    "2wegmaaf6m6el3ss3uenln3h3biwqldh": {
+      "name": "readline",
+      "version": "8.2",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "patches": [
+          "bbf97f1ec40a929edab5aa81998c1e2ef435436c597754916e6a5868f273aff7"
+        ],
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "patches": [
+        "bbf97f1ec40a929edab5aa81998c1e2ef435436c597754916e6a5868f273aff7"
+      ],
+      "package_hash": "n4irfyzctyywbpjkipmeqzyqbmvpcl3l2ce6c475x6y7cmiy7aaq====",
+      "dependencies": [
+        {
+          "name": "ncurses",
+          "hash": "tzwcktq3z2k4pkrctt535i67tozx7fan",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "2wegmaaf6m6el3ss3uenln3h3biwqldh"
+    },
+    "fvdgumwwq25x33xxgmo4p57kfnttugtw": {
+      "name": "zlib",
+      "version": "1.2.13",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "makefile",
+        "optimize": true,
+        "pic": true,
+        "shared": true,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "y6ahhnjjjsfh5dx2y7sci7fhthq5aolyl5dgwif57qqbtjxwdwbq====",
+      "hash": "fvdgumwwq25x33xxgmo4p57kfnttugtw"
+    },
+    "2gkafuyy2wxzzb5dvuuoitaffhtpxp3o": {
+      "name": "libxsmm",
+      "version": "1.17",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "blas": "default",
+        "build_system": "makefile",
+        "debug": false,
+        "generator": false,
+        "header-only": false,
+        "large_jit_buffer": false,
+        "shared": false,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "6m4xgqqh2iyyvlarxvxk2lpjkvrsruuktzppx4vdbwo6lqvkgora====",
+      "dependencies": [
+        {
+          "name": "binutils",
+          "hash": "wdh7ndzl4n6jbkt4q5b3s6q5x7uitgls",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "python",
+          "hash": "tzc5zf27xj2h5ztisjlzhh5fidouptba",
+          "type": [
+            "build"
+          ]
+        }
+      ],
+      "hash": "2gkafuyy2wxzzb5dvuuoitaffhtpxp3o"
+    },
+    "wdh7ndzl4n6jbkt4q5b3s6q5x7uitgls": {
+      "name": "binutils",
+      "version": "2.40",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "gas": true,
+        "gold": false,
+        "gprofng": false,
+        "headers": false,
+        "interwork": false,
+        "ld": true,
+        "libiberty": false,
+        "libs": [
+          "shared",
+          "static"
+        ],
+        "lto": false,
+        "nls": false,
+        "pgo": false,
+        "plugins": true,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "o4hjo5r3quchmept3nwl3zwvk3u2y7mjfz3rbsvl4o2u3widzvla====",
+      "dependencies": [
+        {
+          "name": "diffutils",
+          "hash": "k6ispfp54qap24ewbrbaawxt4wrxvqgh",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "texinfo",
+          "hash": "zc4j5sk6p24dzclsfzdia5y77adgnql6",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "zlib",
+          "hash": "fvdgumwwq25x33xxgmo4p57kfnttugtw",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "wdh7ndzl4n6jbkt4q5b3s6q5x7uitgls"
+    },
+    "zc4j5sk6p24dzclsfzdia5y77adgnql6": {
+      "name": "texinfo",
+      "version": "7.0",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "umu3vko65gddckcpjv4frvw5pit5vubzx37wq7ho2g5wetssvqeq====",
+      "dependencies": [
+        {
+          "name": "gettext",
+          "hash": "snf3zglvacergecil6nkuice3iqqkjyw",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "ncurses",
+          "hash": "tzwcktq3z2k4pkrctt535i67tozx7fan",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "perl",
+          "hash": "2j65jjsrdfmfqx5gd5g24lhdqwskkarp",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "zc4j5sk6p24dzclsfzdia5y77adgnql6"
+    },
+    "snf3zglvacergecil6nkuice3iqqkjyw": {
+      "name": "gettext",
+      "version": "0.21.1",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "bzip2": true,
+        "curses": true,
+        "git": true,
+        "libunistring": false,
+        "libxml2": true,
+        "tar": true,
+        "xz": true,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "xu3qgc4x5mjlvzywiyh3aifltzurwmvjzqfq3gurzkffveeawp3q====",
+      "dependencies": [
+        {
+          "name": "bzip2",
+          "hash": "rj34k5t2umgr7tg2afeudirkvxtokgj2",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "libiconv",
+          "hash": "cvxxsircwbwr54qq253lpyvbdsmewunl",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "libxml2",
+          "hash": "raxyjdwc2tninyiq4ao7dyqyqcrtd6w4",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "ncurses",
+          "hash": "tzwcktq3z2k4pkrctt535i67tozx7fan",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "tar",
+          "hash": "nzvxckgsnwciyr3xylelpqz2ogoietac",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "xz",
+          "hash": "b2ijlwy5b6bbnceu2r5slyupmtqmtqtr",
+          "type": [
+            "build",
+            "link",
+            "run"
+          ]
+        }
+      ],
+      "hash": "snf3zglvacergecil6nkuice3iqqkjyw"
+    },
+    "raxyjdwc2tninyiq4ao7dyqyqcrtd6w4": {
+      "name": "libxml2",
+      "version": "2.10.3",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "python": false,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "7hsmxtbm2qfkqbhn4fu3twcndxdevjvuboydj5475mrcc4nn26ca====",
+      "dependencies": [
+        {
+          "name": "libiconv",
+          "hash": "cvxxsircwbwr54qq253lpyvbdsmewunl",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "pkgconf",
+          "hash": "hn6cogntia7lcumhbbthh6ohf3qmfknz",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "xz",
+          "hash": "b2ijlwy5b6bbnceu2r5slyupmtqmtqtr",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "zlib",
+          "hash": "fvdgumwwq25x33xxgmo4p57kfnttugtw",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "raxyjdwc2tninyiq4ao7dyqyqcrtd6w4"
+    },
+    "b2ijlwy5b6bbnceu2r5slyupmtqmtqtr": {
+      "name": "xz",
+      "version": "5.4.1",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "libs": [
+          "shared",
+          "static"
+        ],
+        "pic": false,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "2rb22kpvzjmn2b54zydvvja6nwuwdzv44lp4ptzfbszing56qsoq====",
+      "hash": "b2ijlwy5b6bbnceu2r5slyupmtqmtqtr"
+    },
+    "nzvxckgsnwciyr3xylelpqz2ogoietac": {
+      "name": "tar",
+      "version": "1.34",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "zip": "pigz",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "uroxlrgy5nrgbemzhcechjroxo7ycyniyi2geepv66v2hi2mn53q====",
+      "dependencies": [
+        {
+          "name": "bzip2",
+          "hash": "rj34k5t2umgr7tg2afeudirkvxtokgj2",
+          "type": [
+            "run"
+          ]
+        },
+        {
+          "name": "libiconv",
+          "hash": "cvxxsircwbwr54qq253lpyvbdsmewunl",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "pigz",
+          "hash": "2qubdavi3qv5lyarwvyjlm2nekp73fsw",
+          "type": [
+            "run"
+          ]
+        },
+        {
+          "name": "xz",
+          "hash": "b2ijlwy5b6bbnceu2r5slyupmtqmtqtr",
+          "type": [
+            "run"
+          ]
+        },
+        {
+          "name": "zstd",
+          "hash": "k27w4ikfzdgt55pj2c3k76acz4dubzf3",
+          "type": [
+            "run"
+          ]
+        }
+      ],
+      "hash": "nzvxckgsnwciyr3xylelpqz2ogoietac"
+    },
+    "2qubdavi3qv5lyarwvyjlm2nekp73fsw": {
+      "name": "pigz",
+      "version": "2.7",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "makefile",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "qsaexggeegq3vvlfb52f627syjifgkn6cl5a7krpc7gokavzjtiq====",
+      "dependencies": [
+        {
+          "name": "zlib",
+          "hash": "fvdgumwwq25x33xxgmo4p57kfnttugtw",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "2qubdavi3qv5lyarwvyjlm2nekp73fsw"
+    },
+    "k27w4ikfzdgt55pj2c3k76acz4dubzf3": {
+      "name": "zstd",
+      "version": "1.5.4",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "cmake",
+        "build_type": "RelWithDebInfo",
+        "compression": [
+          "none"
+        ],
+        "generator": "make",
+        "ipo": false,
+        "libs": [
+          "shared",
+          "static"
+        ],
+        "programs": true,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "32xe6tmlrz7vqd4y4uirib3mxkqavi556scvho4ypqhqywpxxnpq====",
+      "dependencies": [
+        {
+          "name": "cmake",
+          "hash": "5qdl66iaz5dhhjwn2mzzzge4urr7qivq",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "gmake",
+          "hash": "4ari3wwxx7rwyj6r5f7frypty3bu47by",
+          "type": [
+            "build"
+          ]
+        }
+      ],
+      "hash": "k27w4ikfzdgt55pj2c3k76acz4dubzf3"
+    },
+    "4ari3wwxx7rwyj6r5f7frypty3bu47by": {
+      "name": "gmake",
+      "version": "4.4.1",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "guile": false,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "jlridsmz6v5yezm7lhkqjgx6x6ksuferunkz3635nkdrraigjrfa====",
+      "hash": "4ari3wwxx7rwyj6r5f7frypty3bu47by"
+    },
+    "tzc5zf27xj2h5ztisjlzhh5fidouptba": {
+      "name": "python",
+      "version": "3.10.10",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "generic",
+        "bz2": true,
+        "crypt": true,
+        "ctypes": true,
+        "dbm": true,
+        "debug": false,
+        "libxml2": true,
+        "lzma": true,
+        "nis": false,
+        "optimizations": false,
+        "patches": [
+          "0d98e93189bc278fbc37a50ed7f183bd8aaf249a8e1670a465f0db6bb4f8cf87",
+          "7d4092366f2e9c19ba85132402e70eb96cac94fdda6a33810c2a980a129c7a22",
+          "f2fd060afc4b4618fe8104c4c5d771f36dc55b1db5a4623785a4ea707ec72fb4"
+        ],
+        "pic": true,
+        "pyexpat": true,
+        "pythoncmd": true,
+        "readline": true,
+        "shared": true,
+        "sqlite3": true,
+        "ssl": true,
+        "tkinter": false,
+        "uuid": true,
+        "zlib": true,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "patches": [
+        "0d98e93189bc278fbc37a50ed7f183bd8aaf249a8e1670a465f0db6bb4f8cf87",
+        "f2fd060afc4b4618fe8104c4c5d771f36dc55b1db5a4623785a4ea707ec72fb4",
+        "7d4092366f2e9c19ba85132402e70eb96cac94fdda6a33810c2a980a129c7a22"
+      ],
+      "package_hash": "4yb2xno3gusozq6axcrptgk7b7bgonf5bcbuwvfmzn5sufrbrbpq====",
+      "dependencies": [
+        {
+          "name": "bzip2",
+          "hash": "rj34k5t2umgr7tg2afeudirkvxtokgj2",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "expat",
+          "hash": "5gnr3egbavmgvqaftzxxldtvmmkdenlj",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "gdbm",
+          "hash": "43a2lkvsn6iuuo7opo2l6jyykrdmbiop",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "gettext",
+          "hash": "snf3zglvacergecil6nkuice3iqqkjyw",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "libffi",
+          "hash": "6ipe6m35g7jlmokw5guav2art7qp7zsr",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "libxcrypt",
+          "hash": "l5pppnfwdx7ysxaju32xlkvw4nj4fitf",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "ncurses",
+          "hash": "tzwcktq3z2k4pkrctt535i67tozx7fan",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "openssl",
+          "hash": "p6qr7l5bf25volblhlpmr3n7tp2kd5ye",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "pkgconf",
+          "hash": "hn6cogntia7lcumhbbthh6ohf3qmfknz",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "readline",
+          "hash": "2wegmaaf6m6el3ss3uenln3h3biwqldh",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "sqlite",
+          "hash": "vhkwszfr35jyeutdlenaqb6ghz3v7n6f",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "util-linux-uuid",
+          "hash": "txm5fub7624yedn7in6qwefhd5jrncgi",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "xz",
+          "hash": "b2ijlwy5b6bbnceu2r5slyupmtqmtqtr",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "zlib",
+          "hash": "fvdgumwwq25x33xxgmo4p57kfnttugtw",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "tzc5zf27xj2h5ztisjlzhh5fidouptba"
+    },
+    "5gnr3egbavmgvqaftzxxldtvmmkdenlj": {
+      "name": "expat",
+      "version": "2.5.0",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "libbsd": true,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "4rsim7s5vam5tscucwbdhwjj2gt2zssg4qv3ks4lr7soxi3j2zjq====",
+      "dependencies": [
+        {
+          "name": "libbsd",
+          "hash": "7hz4qjtdnn2vxrfgrozovji3wn22z52d",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "5gnr3egbavmgvqaftzxxldtvmmkdenlj"
+    },
+    "7hz4qjtdnn2vxrfgrozovji3wn22z52d": {
+      "name": "libbsd",
+      "version": "0.11.7",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "2egz24sk3nuiedv4y5ku2s6hqscsftjymmzt7mfsgkt6ddin3cuq====",
+      "dependencies": [
+        {
+          "name": "libmd",
+          "hash": "2r5lvtrp6janii7hcorhgjgqkpvesnfe",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "7hz4qjtdnn2vxrfgrozovji3wn22z52d"
+    },
+    "2r5lvtrp6janii7hcorhgjgqkpvesnfe": {
+      "name": "libmd",
+      "version": "1.0.4",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "zs2e7fqr4dzthpj5fascqvfn7xcahf7dtc5bzdwfv6vqkzi7oncq====",
+      "hash": "2r5lvtrp6janii7hcorhgjgqkpvesnfe"
+    },
+    "6ipe6m35g7jlmokw5guav2art7qp7zsr": {
+      "name": "libffi",
+      "version": "3.4.4",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "jnfxlz7sxbpqdqtdoarjxzytihb4r36s7zokc4yujiakiwydgcra====",
+      "hash": "6ipe6m35g7jlmokw5guav2art7qp7zsr"
+    },
+    "l5pppnfwdx7ysxaju32xlkvw4nj4fitf": {
+      "name": "libxcrypt",
+      "version": "4.4.33",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "obsolete_api": false,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "sbp4xqkq2edwikrept7ifq5g4jq33kpnfb3w6tymgh4sznol44mq====",
+      "dependencies": [
+        {
+          "name": "perl",
+          "hash": "2j65jjsrdfmfqx5gd5g24lhdqwskkarp",
+          "type": [
+            "build"
+          ]
+        }
+      ],
+      "hash": "l5pppnfwdx7ysxaju32xlkvw4nj4fitf"
+    },
+    "vhkwszfr35jyeutdlenaqb6ghz3v7n6f": {
+      "name": "sqlite",
+      "version": "3.40.1",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "column_metadata": true,
+        "dynamic_extensions": true,
+        "fts": true,
+        "functions": false,
+        "rtree": true,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "okceekbtbfi37rbxf6nf5ztkiuepft5dr546fgqq2apxq5vdpgsq====",
+      "dependencies": [
+        {
+          "name": "readline",
+          "hash": "2wegmaaf6m6el3ss3uenln3h3biwqldh",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "zlib",
+          "hash": "fvdgumwwq25x33xxgmo4p57kfnttugtw",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "vhkwszfr35jyeutdlenaqb6ghz3v7n6f"
+    },
+    "txm5fub7624yedn7in6qwefhd5jrncgi": {
+      "name": "util-linux-uuid",
+      "version": "2.38.1",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "4jp7kdd57mds63hemompvj5ffay2ry5xvuol2b6vs3ldnduwyona====",
+      "dependencies": [
+        {
+          "name": "pkgconf",
+          "hash": "hn6cogntia7lcumhbbthh6ohf3qmfknz",
+          "type": [
+            "build"
+          ]
+        }
+      ],
+      "hash": "txm5fub7624yedn7in6qwefhd5jrncgi"
+    },
+    "2qu546qhxfmijafyokyefmsiuw3g32uz": {
+      "name": "ninja",
+      "version": "1.11.1",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "generic",
+        "re2c": true,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "m4qytcmdffb4wjd5wppdkefidb44kldmg46psjso7f3jkrwrcrjq====",
+      "dependencies": [
+        {
+          "name": "python",
+          "hash": "tzc5zf27xj2h5ztisjlzhh5fidouptba",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "re2c",
+          "hash": "txamkstfz5lczf2pphxrzyzibuq7q4qh",
+          "type": [
+            "build"
+          ]
+        }
+      ],
+      "hash": "2qu546qhxfmijafyokyefmsiuw3g32uz"
+    },
+    "txamkstfz5lczf2pphxrzyzibuq7q4qh": {
+      "name": "re2c",
+      "version": "2.2",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "generic",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "kh26rqs3cdi5efd3po3idkw7mop3fudtxlfomeun5vt47ent3y4q====",
+      "hash": "txamkstfz5lczf2pphxrzyzibuq7q4qh"
+    },
+    "66eme3vkzi5y6axw6o3qrtqdni7cjipc": {
+      "name": "openblas",
+      "version": "0.3.21",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "bignuma": false,
+        "build_system": "makefile",
+        "consistent_fpcsr": false,
+        "fortran": true,
+        "ilp64": false,
+        "locking": true,
+        "patches": [
+          "114f95f6dae86da66e1ab2b97a1ca157b9ef3c8089948bc3e3ac5dc3a4de0417",
+          "d3d9b15fa39e18cdf972e1e5c78b320e36a24a481abd44e440eaf81bad227edd"
+        ],
+        "pic": true,
+        "shared": true,
+        "symbol_suffix": "none",
+        "threads": "openmp",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "patches": [
+        "d3d9b15fa39e18cdf972e1e5c78b320e36a24a481abd44e440eaf81bad227edd",
+        "114f95f6dae86da66e1ab2b97a1ca157b9ef3c8089948bc3e3ac5dc3a4de0417"
+      ],
+      "package_hash": "eev7t4pyearchtvzvd45kbsjjota6kplipnsr5pcfob5ou2ch34a====",
+      "dependencies": [
+        {
+          "name": "perl",
+          "hash": "2j65jjsrdfmfqx5gd5g24lhdqwskkarp",
+          "type": [
+            "build"
+          ]
+        }
+      ],
+      "hash": "66eme3vkzi5y6axw6o3qrtqdni7cjipc"
+    },
+    "j4qhxqnkg5sn3c7ber6fjunpd53fcwxb": {
+      "name": "py-fypp",
+      "version": "2.1.1",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "python_pip",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "27cqeo4lialc5ppltxozn6istvhzknkgxue4uqy6wwli3kjphasa====",
+      "dependencies": [
+        {
+          "name": "py-pip",
+          "hash": "cv2xojldb3eyjbjxvvxg3iylujkzhlmm",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "py-setuptools",
+          "hash": "wobmx3xnj445x43bfw2ft3accgu6xdjm",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "py-wheel",
+          "hash": "zjtdugvddnkyfa4zaodv6x4oddrq5ucg",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "python",
+          "hash": "tzc5zf27xj2h5ztisjlzhh5fidouptba",
+          "type": [
+            "build",
+            "run"
+          ]
+        }
+      ],
+      "hash": "j4qhxqnkg5sn3c7ber6fjunpd53fcwxb"
+    },
+    "cv2xojldb3eyjbjxvvxg3iylujkzhlmm": {
+      "name": "py-pip",
+      "version": "23.0",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "generic",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "o33nwakwk3e6jgwxtb5raiyq7ixxjzmqmkkwvircyhxaztty2yzq====",
+      "dependencies": [
+        {
+          "name": "python",
+          "hash": "tzc5zf27xj2h5ztisjlzhh5fidouptba",
+          "type": [
+            "build",
+            "run"
+          ]
+        }
+      ],
+      "hash": "cv2xojldb3eyjbjxvvxg3iylujkzhlmm"
+    },
+    "wobmx3xnj445x43bfw2ft3accgu6xdjm": {
+      "name": "py-setuptools",
+      "version": "63.0.0",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "generic",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "dmipefcbcgtadfddv2osttsw7kpdesppgqrg6sfstyxjvlufowea====",
+      "dependencies": [
+        {
+          "name": "py-pip",
+          "hash": "cv2xojldb3eyjbjxvvxg3iylujkzhlmm",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "python",
+          "hash": "tzc5zf27xj2h5ztisjlzhh5fidouptba",
+          "type": [
+            "build",
+            "run"
+          ]
+        }
+      ],
+      "hash": "wobmx3xnj445x43bfw2ft3accgu6xdjm"
+    },
+    "zjtdugvddnkyfa4zaodv6x4oddrq5ucg": {
+      "name": "py-wheel",
+      "version": "0.37.1",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "generic",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "nrjlpe43ohfmqeuo3mawag2kwnq2hno3ebshmfy6pn7vtklynvdq====",
+      "dependencies": [
+        {
+          "name": "py-pip",
+          "hash": "cv2xojldb3eyjbjxvvxg3iylujkzhlmm",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "python",
+          "hash": "tzc5zf27xj2h5ztisjlzhh5fidouptba",
+          "type": [
+            "build",
+            "run"
+          ]
+        }
+      ],
+      "hash": "zjtdugvddnkyfa4zaodv6x4oddrq5ucg"
+    },
+    "fsz5csscemrwmsritmy35lrpdaaopc3w": {
+      "name": "fftw",
+      "version": "3.3.10",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "mpi": true,
+        "openmp": true,
+        "pfft_patches": false,
+        "precision": [
+          "double",
+          "float"
+        ],
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "b5bkvwfcfqyx7ankdqcm4v7cqwyxavvafi2js6ztj7myfnsf2qzq====",
+      "dependencies": [
+        {
+          "name": "openmpi",
+          "hash": "tb6vxlokfca2vtb3smgknrtlhx7isvex",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "fsz5csscemrwmsritmy35lrpdaaopc3w"
+    },
+    "tb6vxlokfca2vtb3smgknrtlhx7isvex": {
+      "name": "openmpi",
+      "version": "4.1.5",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "atomics": false,
+        "build_system": "autotools",
+        "cuda": false,
+        "cxx": false,
+        "cxx_exceptions": false,
+        "fabrics": [
+          "none"
+        ],
+        "gpfs": false,
+        "internal-hwloc": false,
+        "java": false,
+        "legacylaunchers": false,
+        "lustre": false,
+        "memchecker": false,
+        "orterunprefix": false,
+        "romio": true,
+        "rsh": true,
+        "schedulers": [
+          "none"
+        ],
+        "singularity": false,
+        "static": true,
+        "vt": true,
+        "wrapper-rpath": true,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "y2xkr6rqy276zebbvszvek3kwnopvjbfdpnvqv7vku2bienc7bfq====",
+      "dependencies": [
+        {
+          "name": "hwloc",
+          "hash": "mb7pnz4wqwpsdppxvdnbfzo6dotjzc3l",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "numactl",
+          "hash": "rfgz2y53dxe2toilvofhbj6yj3jkgnue",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "openssh",
+          "hash": "wps5baiabfavnpcbrdcxbtygpexqef3p",
+          "type": [
+            "run"
+          ]
+        },
+        {
+          "name": "perl",
+          "hash": "2j65jjsrdfmfqx5gd5g24lhdqwskkarp",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "pkgconf",
+          "hash": "hn6cogntia7lcumhbbthh6ohf3qmfknz",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "pmix",
+          "hash": "5sy5olj5ofrs2huxmv55yyd7dbhk2jua",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "zlib",
+          "hash": "fvdgumwwq25x33xxgmo4p57kfnttugtw",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "tb6vxlokfca2vtb3smgknrtlhx7isvex"
+    },
+    "mb7pnz4wqwpsdppxvdnbfzo6dotjzc3l": {
+      "name": "hwloc",
+      "version": "2.9.0",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "cairo": false,
+        "cuda": false,
+        "gl": false,
+        "libs": [
+          "shared",
+          "static"
+        ],
+        "libudev": false,
+        "libxml2": true,
+        "netloc": false,
+        "nvml": false,
+        "oneapi-level-zero": false,
+        "opencl": false,
+        "pci": true,
+        "rocm": false,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "zt64smv7qvwopmocdgmlfgopbk3yza7rrbwkmu5t3mnofeq4fjlq====",
+      "dependencies": [
+        {
+          "name": "libpciaccess",
+          "hash": "oc7fmqkd5y5w4gxfr5o3abstsu564ose",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "libxml2",
+          "hash": "raxyjdwc2tninyiq4ao7dyqyqcrtd6w4",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "ncurses",
+          "hash": "tzwcktq3z2k4pkrctt535i67tozx7fan",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "pkgconf",
+          "hash": "hn6cogntia7lcumhbbthh6ohf3qmfknz",
+          "type": [
+            "build"
+          ]
+        }
+      ],
+      "hash": "mb7pnz4wqwpsdppxvdnbfzo6dotjzc3l"
+    },
+    "oc7fmqkd5y5w4gxfr5o3abstsu564ose": {
+      "name": "libpciaccess",
+      "version": "0.17",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "zjibztp7iq2h3hgdgjs2dvk75m5nhxd2fwjr4cmpwvkidwbwk2dq====",
+      "dependencies": [
+        {
+          "name": "libtool",
+          "hash": "iwvzym224gysn65djvo3rdmh3jyczzuz",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "pkgconf",
+          "hash": "hn6cogntia7lcumhbbthh6ohf3qmfknz",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "util-macros",
+          "hash": "ruesgtds5p55is6co6nsl23g3t73hnqi",
+          "type": [
+            "build"
+          ]
+        }
+      ],
+      "hash": "oc7fmqkd5y5w4gxfr5o3abstsu564ose"
+    },
+    "iwvzym224gysn65djvo3rdmh3jyczzuz": {
+      "name": "libtool",
+      "version": "2.4.7",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "7lyavyiwpnrhw7tfv5vgri32at345gdegbixiskk63ext2f5rzza====",
+      "dependencies": [
+        {
+          "name": "m4",
+          "hash": "4vx5oufq5yoofthprjecvpdyld4dqtrk",
+          "type": [
+            "build"
+          ]
+        }
+      ],
+      "hash": "iwvzym224gysn65djvo3rdmh3jyczzuz"
+    },
+    "4vx5oufq5yoofthprjecvpdyld4dqtrk": {
+      "name": "m4",
+      "version": "1.4.19",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "patches": [
+          "9dc5fbd0d5cb1037ab1e6d0ecc74a30df218d0a94bdd5a02759a97f62daca573",
+          "bfdffa7c2eb01021d5849b36972c069693654ad826c1a20b53534009a4ec7a89"
+        ],
+        "sigsegv": true,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "patches": [
+        "bfdffa7c2eb01021d5849b36972c069693654ad826c1a20b53534009a4ec7a89",
+        "9dc5fbd0d5cb1037ab1e6d0ecc74a30df218d0a94bdd5a02759a97f62daca573"
+      ],
+      "package_hash": "sqgbfqha5alfkehw2p7okvlj6zwtfvnp7i6k2wpqjcm3iexzchfq====",
+      "dependencies": [
+        {
+          "name": "diffutils",
+          "hash": "k6ispfp54qap24ewbrbaawxt4wrxvqgh",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "libsigsegv",
+          "hash": "trghq6yq6tdh7midfroyn47c73w7cpg4",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "4vx5oufq5yoofthprjecvpdyld4dqtrk"
+    },
+    "trghq6yq6tdh7midfroyn47c73w7cpg4": {
+      "name": "libsigsegv",
+      "version": "2.14",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "g3lezcbp2gbfpmy543owfqnklxafzbthrhz324pmzxuixqbrqywq====",
+      "hash": "trghq6yq6tdh7midfroyn47c73w7cpg4"
+    },
+    "ruesgtds5p55is6co6nsl23g3t73hnqi": {
+      "name": "util-macros",
+      "version": "1.19.3",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "5atggv5uirdl2trmzmewkonyvzmzg6sg46zpvurdk43wi2gpr7pa====",
+      "hash": "ruesgtds5p55is6co6nsl23g3t73hnqi"
+    },
+    "rfgz2y53dxe2toilvofhbj6yj3jkgnue": {
+      "name": "numactl",
+      "version": "2.0.14",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "patches": [
+          "4e1d78cbbb85de625bad28705e748856033eaafab92a66dffd383a3d7e00cc94",
+          "62fc8a8bf7665a60e8f4c93ebbd535647cebf74198f7afafec4c085a8825c006",
+          "ff37630df599cfabf0740518b91ec8daaf18e8f288b19adaae5364dc1f6b2296"
+        ],
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "patches": [
+        "4e1d78cbbb85de625bad28705e748856033eaafab92a66dffd383a3d7e00cc94",
+        "62fc8a8bf7665a60e8f4c93ebbd535647cebf74198f7afafec4c085a8825c006",
+        "ff37630df599cfabf0740518b91ec8daaf18e8f288b19adaae5364dc1f6b2296"
+      ],
+      "package_hash": "yfrelh4vcagcl7wantudtwpccnburhkpgqyvhgmxrzeo3wdmck4q====",
+      "dependencies": [
+        {
+          "name": "autoconf",
+          "hash": "q2f6pnwwictbhdgwfdccnr3ioasqdsc3",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "automake",
+          "hash": "e2ofbqwgt5pxt75xpyvpxclhtbhfrwd3",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "libtool",
+          "hash": "iwvzym224gysn65djvo3rdmh3jyczzuz",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "m4",
+          "hash": "4vx5oufq5yoofthprjecvpdyld4dqtrk",
+          "type": [
+            "build"
+          ]
+        }
+      ],
+      "hash": "rfgz2y53dxe2toilvofhbj6yj3jkgnue"
+    },
+    "q2f6pnwwictbhdgwfdccnr3ioasqdsc3": {
+      "name": "autoconf",
+      "version": "2.69",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "patches": [
+          "35c449281546376449766f92d49fc121ca50e330e60fefcfc9be2af3253082c2",
+          "7793209b33013dc0f81208718c68440c5aae80e7a1c4b8d336e382525af791a7",
+          "a49dd5bac3b62daa0ff688ab4d508d71dbd2f4f8d7e2a02321926346161bf3ee"
+        ],
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "patches": [
+        "7793209b33013dc0f81208718c68440c5aae80e7a1c4b8d336e382525af791a7",
+        "35c449281546376449766f92d49fc121ca50e330e60fefcfc9be2af3253082c2",
+        "a49dd5bac3b62daa0ff688ab4d508d71dbd2f4f8d7e2a02321926346161bf3ee"
+      ],
+      "package_hash": "omuzyufumpevg2fgaxzkjlnht57dr6wctezgr2hikyg5o5ygoacq====",
+      "dependencies": [
+        {
+          "name": "m4",
+          "hash": "4vx5oufq5yoofthprjecvpdyld4dqtrk",
+          "type": [
+            "build",
+            "run"
+          ]
+        },
+        {
+          "name": "perl",
+          "hash": "2j65jjsrdfmfqx5gd5g24lhdqwskkarp",
+          "type": [
+            "build",
+            "run"
+          ]
+        }
+      ],
+      "hash": "q2f6pnwwictbhdgwfdccnr3ioasqdsc3"
+    },
+    "e2ofbqwgt5pxt75xpyvpxclhtbhfrwd3": {
+      "name": "automake",
+      "version": "1.16.5",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "mwdviv4g6xu2ttfs6dnzmwbofpxa4vke3y5egbb6w4fesykvnbda====",
+      "dependencies": [
+        {
+          "name": "autoconf",
+          "hash": "q2f6pnwwictbhdgwfdccnr3ioasqdsc3",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "perl",
+          "hash": "2j65jjsrdfmfqx5gd5g24lhdqwskkarp",
+          "type": [
+            "build",
+            "run"
+          ]
+        }
+      ],
+      "hash": "e2ofbqwgt5pxt75xpyvpxclhtbhfrwd3"
+    },
+    "wps5baiabfavnpcbrdcxbtygpexqef3p": {
+      "name": "openssh",
+      "version": "9.3p1",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "gssapi": true,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "a7i32ub3nlzssfwb7b5txutx42lztmiy2mql4egore5dmpqs3r5a====",
+      "dependencies": [
+        {
+          "name": "krb5",
+          "hash": "fg7woqmm2egse5ngrgznpelomp7kvtpn",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "libedit",
+          "hash": "nyubwxwhd3q4rkvws5jvnxvpj66u5ozy",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "libxcrypt",
+          "hash": "l5pppnfwdx7ysxaju32xlkvw4nj4fitf",
+          "type": [
+            "link"
+          ]
+        },
+        {
+          "name": "ncurses",
+          "hash": "tzwcktq3z2k4pkrctt535i67tozx7fan",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "openssl",
+          "hash": "p6qr7l5bf25volblhlpmr3n7tp2kd5ye",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "zlib",
+          "hash": "fvdgumwwq25x33xxgmo4p57kfnttugtw",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "wps5baiabfavnpcbrdcxbtygpexqef3p"
+    },
+    "fg7woqmm2egse5ngrgznpelomp7kvtpn": {
+      "name": "krb5",
+      "version": "1.20.1",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "shared": true,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "r6ydpr3hyfrwadxlhvewyi66nyoc77evaise54n47su5t7xrzfka====",
+      "dependencies": [
+        {
+          "name": "bison",
+          "hash": "7dki62pvlfmxxept4p4bhr26j2mhff5v",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "diffutils",
+          "hash": "k6ispfp54qap24ewbrbaawxt4wrxvqgh",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "gettext",
+          "hash": "snf3zglvacergecil6nkuice3iqqkjyw",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "openssl",
+          "hash": "p6qr7l5bf25volblhlpmr3n7tp2kd5ye",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "fg7woqmm2egse5ngrgznpelomp7kvtpn"
+    },
+    "7dki62pvlfmxxept4p4bhr26j2mhff5v": {
+      "name": "bison",
+      "version": "3.8.2",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "d4j62fwvuxqbiez32ltjnhu47ac425wjebsy6fhoptv6saxazcxq====",
+      "dependencies": [
+        {
+          "name": "diffutils",
+          "hash": "k6ispfp54qap24ewbrbaawxt4wrxvqgh",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "m4",
+          "hash": "4vx5oufq5yoofthprjecvpdyld4dqtrk",
+          "type": [
+            "build",
+            "run"
+          ]
+        },
+        {
+          "name": "perl",
+          "hash": "2j65jjsrdfmfqx5gd5g24lhdqwskkarp",
+          "type": [
+            "build"
+          ]
+        }
+      ],
+      "hash": "7dki62pvlfmxxept4p4bhr26j2mhff5v"
+    },
+    "nyubwxwhd3q4rkvws5jvnxvpj66u5ozy": {
+      "name": "libedit",
+      "version": "3.1-20210216",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "ninqmmvykou34qav4dotjyhs5xmqulqxvmhebpbr5nv3y6slsxva====",
+      "dependencies": [
+        {
+          "name": "ncurses",
+          "hash": "tzwcktq3z2k4pkrctt535i67tozx7fan",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "pkgconf",
+          "hash": "hn6cogntia7lcumhbbthh6ohf3qmfknz",
+          "type": [
+            "build"
+          ]
+        }
+      ],
+      "hash": "nyubwxwhd3q4rkvws5jvnxvpj66u5ozy"
+    },
+    "5sy5olj5ofrs2huxmv55yyd7dbhk2jua": {
+      "name": "pmix",
+      "version": "4.1.2",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "docs": false,
+        "pmi_backwards_compatibility": true,
+        "python": false,
+        "restful": false,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "pgxqyih2hk2jlac2feyhdsxssydwmxouyaq7wjtvttp5lfi2rmjq====",
+      "dependencies": [
+        {
+          "name": "hwloc",
+          "hash": "mb7pnz4wqwpsdppxvdnbfzo6dotjzc3l",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "libevent",
+          "hash": "o7xgivz5flnmf5z5ll3t5bqrcnsx5r3f",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "pkgconf",
+          "hash": "hn6cogntia7lcumhbbthh6ohf3qmfknz",
+          "type": [
+            "build"
+          ]
+        }
+      ],
+      "hash": "5sy5olj5ofrs2huxmv55yyd7dbhk2jua"
+    },
+    "o7xgivz5flnmf5z5ll3t5bqrcnsx5r3f": {
+      "name": "libevent",
+      "version": "2.1.12",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "openssl": true,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "chtoynanib2eblvcdjcw7wxhpssxzovtbuewl3ygjqi56lhd3uka====",
+      "dependencies": [
+        {
+          "name": "openssl",
+          "hash": "p6qr7l5bf25volblhlpmr3n7tp2kd5ye",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "o7xgivz5flnmf5z5ll3t5bqrcnsx5r3f"
+    },
+    "dkysipte4cly34s7jl6ntg3jdrjuzbzn": {
+      "name": "libint",
+      "version": "2.6.0",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "debug": false,
+        "fma": false,
+        "fortran": true,
+        "tune": "cp2k-lmax-5",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "5on4fhqggvd7zrnrozm7kixwimdun4azec4k3arszp4hjxn2x7zq====",
+      "dependencies": [
+        {
+          "name": "autoconf",
+          "hash": "q2f6pnwwictbhdgwfdccnr3ioasqdsc3",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "automake",
+          "hash": "e2ofbqwgt5pxt75xpyvpxclhtbhfrwd3",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "boost",
+          "hash": "vu7agpd7sixcfc5wqmbznsxhi4ggksjj",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "gmp",
+          "hash": "uzclznqdnju7edes7gf2maevmls3pvic",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "libtool",
+          "hash": "iwvzym224gysn65djvo3rdmh3jyczzuz",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "python",
+          "hash": "tzc5zf27xj2h5ztisjlzhh5fidouptba",
+          "type": [
+            "build"
+          ]
+        }
+      ],
+      "hash": "dkysipte4cly34s7jl6ntg3jdrjuzbzn"
+    },
+    "vu7agpd7sixcfc5wqmbznsxhi4ggksjj": {
+      "name": "boost",
+      "version": "1.81.0",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "atomic": true,
+        "build_system": "generic",
+        "chrono": true,
+        "clanglibcpp": false,
+        "container": false,
+        "context": false,
+        "contract": false,
+        "coroutine": false,
+        "cxxstd": "98",
+        "date_time": true,
+        "debug": false,
+        "exception": true,
+        "fiber": false,
+        "filesystem": true,
+        "graph": true,
+        "graph_parallel": false,
+        "icu": false,
+        "iostreams": true,
+        "json": false,
+        "locale": true,
+        "log": true,
+        "math": true,
+        "mpi": false,
+        "multithreaded": true,
+        "nowide": false,
+        "numpy": false,
+        "patches": [
+          "a440f9696d3bbb77e7eab1516c004730f622e59c71d39960b472026ef92f88e8",
+          "a7c807fcd855aa70ba839c0bdfcf5877dc9a37f8026211ccda9c676b42431b17",
+          "b8569d7d4c3ef0501a39857126a2b0a88519bf256c29f3252a6958916ce82255"
+        ],
+        "pic": false,
+        "program_options": true,
+        "python": true,
+        "random": true,
+        "regex": true,
+        "serialization": true,
+        "shared": true,
+        "signals": true,
+        "singlethreaded": false,
+        "stacktrace": false,
+        "system": true,
+        "taggedlayout": false,
+        "test": true,
+        "thread": true,
+        "timer": true,
+        "type_erasure": false,
+        "versionedlayout": false,
+        "visibility": "hidden",
+        "wave": true,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "patches": [
+        "b8569d7d4c3ef0501a39857126a2b0a88519bf256c29f3252a6958916ce82255",
+        "a440f9696d3bbb77e7eab1516c004730f622e59c71d39960b472026ef92f88e8",
+        "a7c807fcd855aa70ba839c0bdfcf5877dc9a37f8026211ccda9c676b42431b17"
+      ],
+      "package_hash": "gc4sx7nsxybna3oflca5n3glfqn3iy7l56r6czw7f4btpuxtmsua====",
+      "dependencies": [
+        {
+          "name": "bzip2",
+          "hash": "rj34k5t2umgr7tg2afeudirkvxtokgj2",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "python",
+          "hash": "tzc5zf27xj2h5ztisjlzhh5fidouptba",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "xz",
+          "hash": "b2ijlwy5b6bbnceu2r5slyupmtqmtqtr",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "zlib",
+          "hash": "fvdgumwwq25x33xxgmo4p57kfnttugtw",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "zstd",
+          "hash": "k27w4ikfzdgt55pj2c3k76acz4dubzf3",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "vu7agpd7sixcfc5wqmbznsxhi4ggksjj"
+    },
+    "uzclznqdnju7edes7gf2maevmls3pvic": {
+      "name": "gmp",
+      "version": "6.2.1",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "cxx": true,
+        "libs": [
+          "shared",
+          "static"
+        ],
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "2hnkjjdwg373agw7iznt26ju6txaanwsii2c7bwbsnsqaqx4rjzq====",
+      "dependencies": [
+        {
+          "name": "autoconf",
+          "hash": "q2f6pnwwictbhdgwfdccnr3ioasqdsc3",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "automake",
+          "hash": "e2ofbqwgt5pxt75xpyvpxclhtbhfrwd3",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "libtool",
+          "hash": "iwvzym224gysn65djvo3rdmh3jyczzuz",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "m4",
+          "hash": "4vx5oufq5yoofthprjecvpdyld4dqtrk",
+          "type": [
+            "build"
+          ]
+        }
+      ],
+      "hash": "uzclznqdnju7edes7gf2maevmls3pvic"
+    },
+    "x6i4pv6gpsyx4jmltib42gvw4fnvq3fz": {
+      "name": "libxc",
+      "version": "6.1.0",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "cuda": false,
+        "shared": true,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "bfs33q2ei2pl6ghh2qehieur3cclkv6m7y2jsznaoa6ifi7ti7vq====",
+      "dependencies": [
+        {
+          "name": "autoconf",
+          "hash": "q2f6pnwwictbhdgwfdccnr3ioasqdsc3",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "automake",
+          "hash": "e2ofbqwgt5pxt75xpyvpxclhtbhfrwd3",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "libtool",
+          "hash": "iwvzym224gysn65djvo3rdmh3jyczzuz",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "perl",
+          "hash": "2j65jjsrdfmfqx5gd5g24lhdqwskkarp",
+          "type": [
+            "build"
+          ]
+        }
+      ],
+      "hash": "x6i4pv6gpsyx4jmltib42gvw4fnvq3fz"
+    },
+    "vxo4bl2lwkmj3efzrktyh6h3j6mp53cm": {
+      "name": "spglib",
+      "version": "2.0.2",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "cmake",
+        "build_type": "RelWithDebInfo",
+        "generator": "make",
+        "ipo": false,
+        "openmp": true,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "jdorfiniksp4b7t2wq2cx32jc2c7aluvk3dtjym3y6ntckgozuiq====",
+      "dependencies": [
+        {
+          "name": "cmake",
+          "hash": "5qdl66iaz5dhhjwn2mzzzge4urr7qivq",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "gmake",
+          "hash": "4ari3wwxx7rwyj6r5f7frypty3bu47by",
+          "type": [
+            "build"
+          ]
+        }
+      ],
+      "hash": "vxo4bl2lwkmj3efzrktyh6h3j6mp53cm"
+    }
+  }
+}

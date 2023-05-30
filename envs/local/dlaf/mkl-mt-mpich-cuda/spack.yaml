@@ -1,7 +1,7 @@
 spack:
   specs:
   - dla-future@develop +miniapps +cuda cuda_arch=89 ^intel-mkl threads=openmp ^mpich
-    device=ch3 netmod=tcp ^pika@0.15.1
+    device=ch3 netmod=tcp ^pika@0.15.1 ^umpire~device_alloc
   view: false
   packages:
     all:
