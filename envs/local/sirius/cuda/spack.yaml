@@ -1,0 +1,6 @@
+spack:
+  specs:
+  - sirius +cuda cuda_arch=89 +memory_pool +scalapack +tests
+  view: false
+  concretizer:
+    unify: true
