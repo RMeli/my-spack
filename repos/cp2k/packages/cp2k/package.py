@@ -91,8 +91,8 @@ class Cp2k(MakefilePackage, CudaPackage, CMakePackage, ROCmPackage):
     variant("pytorch", default=False, description="Enable libtorch support")
     variant("quip", default=False, description=("Enable quip support"))
     variant("dlaf", default=False, description="Use DLA-Future")
-    depends_on("dla-future", when="+dlaf")
-    depends_on("dla-future+cuda", when="+cuda")
+    depends_on("dla-future+interface", when="+dlaf")
+    depends_on("dla-future+interface+cuda", when="+cuda")
 
     variant(
         "enable_regtests",
