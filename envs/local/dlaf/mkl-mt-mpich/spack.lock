@@ -5,18 +5,18 @@
     "specfile-version": 3
   },
   "spack": {
-    "version": "0.20.0.dev0",
+    "version": "0.21.0.dev0",
     "type": "git",
-    "commit": "05232034f5808b344f7e977d4fe3f441f175702c"
+    "commit": "bd2f78ae9a0a27a72e4476c08e2587262e8d8efd"
   },
   "roots": [
     {
-      "hash": "avgw7el446e2s2npy6dsu7q66wpju2lq",
-      "spec": "dla-future@develop~~cuda+miniapps ^intel-mkl threads=openmp ^mpich device=ch3 netmod=tcp"
+      "hash": "b2rpsqekvyjutviadjwlzv24z4wj5sl2",
+      "spec": "dla-future@develop~~cuda+miniapps ^intel-mkl threads=openmp ^mpich device=ch3 netmod=tcp ^pika@0.16.0"
     }
   ],
   "concrete_specs": {
-    "avgw7el446e2s2npy6dsu7q66wpju2lq": {
+    "b2rpsqekvyjutviadjwlzv24z4wj5sl2": {
       "name": "dla-future",
       "version": "develop",
       "arch": {
@@ -87,6 +87,8 @@
       "parameters": {
         "build_system": "cmake",
         "build_type": "Release",
+        "c_api": false,
+        "ci-check-threads": false,
         "ci-test": false,
         "cuda": false,
         "cxxstd": "17",
@@ -103,7 +105,7 @@
         "ldflags": [],
         "ldlibs": []
       },
-      "package_hash": "c67cpama6p5utu3jbpn7pjnc374uo5ha6j2tzd5cr7tjalstgjza====",
+      "package_hash": "kz6efbvwohcfj6orcn5es7dmg2qpnzzbiqvkdenzu6ba52eug5fa====",
       "dependencies": [
         {
           "name": "blaspp",
@@ -145,7 +147,7 @@
         },
         {
           "name": "pika",
-          "hash": "3cp6ulfqjwn6oi4xwuksccppbh3uljlp",
+          "hash": "xu5pukhuo6qqlyrcipfthphaiq4wges5",
           "type": [
             "build",
             "link"
@@ -153,7 +155,7 @@
         },
         {
           "name": "pika-algorithms",
-          "hash": "lwqkyuuvpui7fhyfxmeayfzhni5seio3",
+          "hash": "zriy66in3hm4xirggvafmyjtwvvxmx2s",
           "type": [
             "build",
             "link"
@@ -168,7 +170,7 @@
           ]
         }
       ],
-      "hash": "avgw7el446e2s2npy6dsu7q66wpju2lq"
+      "hash": "b2rpsqekvyjutviadjwlzv24z4wj5sl2"
     },
     "7yveqw52triw4h736pj5ajwv7jgpkaay": {
       "name": "blaspp",
@@ -2866,9 +2868,9 @@
       "package_hash": "ads43zrvkj7am47nzsnp3kilt5wuci7zema6daamp2guqq2kcqha====",
       "hash": "e2yv5g6jrwxwxcpl3hyi3brey4jzhxuy"
     },
-    "3cp6ulfqjwn6oi4xwuksccppbh3uljlp": {
+    "xu5pukhuo6qqlyrcipfthphaiq4wges5": {
       "name": "pika",
-      "version": "0.15.1",
+      "version": "0.16.0",
       "arch": {
         "platform": "linux",
         "platform_os": "ubuntu23.04",
@@ -2956,7 +2958,7 @@
         "ldflags": [],
         "ldlibs": []
       },
-      "package_hash": "3dmgjxtviwf2zu6i6qhfrzksqr53iw7zjfqqhlgp4fmbvhyp7iea====",
+      "package_hash": "dlunxrfdwktwwpbg2xhsfvhcgliyzarte7s5uw6m3uuhhes4l7va====",
       "dependencies": [
         {
           "name": "boost",
@@ -3020,7 +3022,7 @@
           ]
         }
       ],
-      "hash": "3cp6ulfqjwn6oi4xwuksccppbh3uljlp"
+      "hash": "xu5pukhuo6qqlyrcipfthphaiq4wges5"
     },
     "vvbovviflijvmiauge2c3djzvf53bbag": {
       "name": "boost",
@@ -6053,9 +6055,9 @@
       "package_hash": "kh26rqs3cdi5efd3po3idkw7mop3fudtxlfomeun5vt47ent3y4q====",
       "hash": "vv7qiqr4nqllzayp3p4c3w7ucyq3erni"
     },
-    "lwqkyuuvpui7fhyfxmeayfzhni5seio3": {
+    "zriy66in3hm4xirggvafmyjtwvvxmx2s": {
       "name": "pika-algorithms",
-      "version": "0.1.2",
+      "version": "0.1.3",
       "arch": {
         "platform": "linux",
         "platform_os": "ubuntu23.04",
@@ -6134,7 +6136,7 @@
         "ldflags": [],
         "ldlibs": []
       },
-      "package_hash": "6ajs7ra7undo6cbo7di234jitvuiut3eeebwzjdhxxncojkh6riq====",
+      "package_hash": "nyxfizzyurnwlcy5a5vvv2k5y7ektihn6hyamrf4bhnhugrm3ktq====",
       "dependencies": [
         {
           "name": "boost",
@@ -6175,14 +6177,14 @@
         },
         {
           "name": "pika",
-          "hash": "3cp6ulfqjwn6oi4xwuksccppbh3uljlp",
+          "hash": "xu5pukhuo6qqlyrcipfthphaiq4wges5",
           "type": [
             "build",
             "link"
           ]
         }
       ],
-      "hash": "lwqkyuuvpui7fhyfxmeayfzhni5seio3"
+      "hash": "zriy66in3hm4xirggvafmyjtwvvxmx2s"
     },
     "jwousue6tkrf5iazon4rvi4z7efvubun": {
       "name": "umpire",
