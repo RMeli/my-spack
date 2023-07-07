@@ -56,9 +56,9 @@ class Cp2k(MakefilePackage, CudaPackage, CMakePackage, ROCmPackage):
     )
     variant("plumed", default=False, description="Enable PLUMED support")
     variant(
-        "libint", default=False, description="Use libint, required for HFX (and possibly others)"
+        "libint", default=True, description="Use libint, required for HFX (and possibly others)"
     )
-    variant("libxc", default=False, description="Support additional functionals via libxc")
+    variant("libxc", default=True, description="Support additional functionals via libxc")
     variant(
         "pexsi",
         default=False,
@@ -68,7 +68,7 @@ class Cp2k(MakefilePackage, CudaPackage, CMakePackage, ROCmPackage):
         "elpa",
         default=False,
         description="Enable optimised diagonalisation routines from ELPA",
-        when="@8.3:",
+        when="@6.1:",
     )
     variant(
         "sirius",
@@ -85,14 +85,11 @@ class Cp2k(MakefilePackage, CudaPackage, CMakePackage, ROCmPackage):
     variant(
         "spla",
         default=False,
-        description="Use SPLA off-loading functionality. Only"
-        " relevant when CUDA or ROCM are enabled",
+        description="Use SPLA off-loading functionality. Only relevant when CUDA or ROCM"
+        " are enabled",
     )
     variant("pytorch", default=False, description="Enable libtorch support")
-    variant("quip", default=False, description=("Enable quip support"))
-    variant("dlaf", default=False, description="Use DLA-Future")
-    depends_on("dla-future+interface", when="+dlaf")
-    depends_on("dla-future+interface+cuda", when="+cuda")
+    variant("quip", default=False, description="Enable quip support")
 
     variant(
         "enable_regtests",
@@ -176,13 +173,13 @@ class Cp2k(MakefilePackage, CudaPackage, CMakePackage, ROCmPackage):
             )
 
     with when("+libxc"):
-        depends_on("pkgconfig", type="build", when="@7.0:")
-        depends_on("libxc@2.2.2:3", when="@:5", type="build")
-        depends_on("libxc@4.0.3:4", when="@6.0:6.9", type="build")
+        depends_on("pkgconfig", when="@7.0:")
+        depends_on("libxc@2.2.2:3", when="@:5")
+        depends_on("libxc@4.0.3:4", when="@6.0:6.9")
         depends_on("libxc@4.0.3:4", when="@7.0:8.1")
         depends_on("libxc@5.1.3:5.1", when="@8.2:8")
-        depends_on("libxc@5.1.7:5.1", when="@9:2022")
-        depends_on("libxc@6:6.1", when="@2023:", type=("build"))
+        depends_on("libxc@5.1.7:5.1", when="@9:2022.2")
+        depends_on("libxc@6.1:", when="@2023.1:")
 
     with when("+mpi"):
         depends_on("mpi@2:")
@@ -190,7 +187,7 @@ class Cp2k(MakefilePackage, CudaPackage, CMakePackage, ROCmPackage):
         depends_on("scalapack")
 
     with when("+cosma"):
-        depends_on("cosma+scalapack+shared")
+        depends_on("cosma+scalapack")
         depends_on("cosma@2.5.1:", when="@9:")
         depends_on("cosma@2.6.3:", when="@master:")
         depends_on("cosma+cuda", when="+cuda")
@@ -234,29 +231,30 @@ class Cp2k(MakefilePackage, CudaPackage, CMakePackage, ROCmPackage):
         conflicts("@:6")
 
     with when("+libvori"):
-        depends_on("libvori@201219:", when="@8.1", type=("build"))
-        depends_on("libvori@210412:", when="@8.2:", type=("build"))
-        depends_on("libvori@220621:", when="@2023.1:", type=("build"))
+        depends_on("libvori@201219:", when="@8.1")
+        depends_on("libvori@210412:", when="@8.2:")
+        depends_on("libvori@220621:", when="@2023.1:")
         # libvori support was introduced in 8+
         conflicts("@:7")
 
     # the bundled libcusmm uses numpy in the parameter prediction (v7+)
     # which is written using Python 3
-    depends_on("py-numpy", when="@7:+cuda", type="build")
-    depends_on("python@3.6:", when="@7:+cuda", type="build")
+    depends_on("py-numpy", when="@7:+cuda")
+    depends_on("python@3.6:", when="@7:+cuda")
+    depends_on("py-fypp")
 
     depends_on("spglib", when="+spglib")
 
     # Apparently cp2k@4.1 needs an "experimental" version of libwannier.a
     # which is only available contacting the developer directly. See INSTALL
     # in the stage of cp2k@4.1
-    depends_on("wannier90", when="@3.0+mpi", type="build")
+    depends_on("wannier90", when="@3.0+mpi")
 
     with when("build_system=cmake"):
         depends_on("dbcsr")
-        depends_on("dbcsr+openmp", when="+openmp", type=("build"))
-        depends_on("dbcsr+cuda", when="+cuda", type=("build"))
-        depends_on("dbcsr+rocm", when="+rocm", type=("build"))
+        depends_on("dbcsr+openmp", when="+openmp")
+        depends_on("dbcsr+cuda", when="+cuda")
+        depends_on("dbcsr+rocm", when="+rocm")
 
     # CP2K needs compiler specific compilation flags, e.g. optflags
     conflicts("%apple-clang")
@@ -271,6 +269,7 @@ class Cp2k(MakefilePackage, CudaPackage, CMakePackage, ROCmPackage):
     # versions. Instead just mark all unsupported cuda archs as conflicting.
 
     supported_cuda_arch_list = ("35", "37", "60", "70", "80")
+    supported_rocm_arch_list = ("gfx906", "gfx908", "gfx90a", "gfx90a:xnack-", "gfx90a:xnack+")
     gpu_map = {
         "35": "K40",
         "37": "K80",
@@ -280,16 +279,25 @@ class Cp2k(MakefilePackage, CudaPackage, CMakePackage, ROCmPackage):
         "gfx906": "Mi50",
         "gfx908": "Mi100",
         "gfx90a": "Mi250",
+        "gfx90a:xnack-": "Mi250",
+        "gfx90a:xnack+": "Mi250",
     }
     cuda_msg = "cp2k only supports cuda_arch {0}".format(supported_cuda_arch_list)
+    rocm_msg = "cp2k only supports amdgpu_target {0}".format(supported_rocm_arch_list)
 
     conflicts("+cuda", when="cuda_arch=none")
-    # rocm already returns an error if amdgpu_target is not defined
+
+    # ROCm already emits an error if +rocm amdgpu_target=none is given
 
     with when("+cuda"):
         for arch in CudaPackage.cuda_arch_values:
             if arch not in supported_cuda_arch_list:
                 conflicts("+cuda", when="cuda_arch={0}".format(arch), msg=cuda_msg)
+
+    with when("+rocm"):
+        for arch in ROCmPackage.amdgpu_targets:
+            if arch not in supported_rocm_arch_list:
+                conflicts("+rocm", when="amdgpu_target={0}".format(arch), msg=rocm_msg)
 
     # Fix 2- and 3-center integral calls to libint
     patch(
@@ -297,6 +305,7 @@ class Cp2k(MakefilePackage, CudaPackage, CMakePackage, ROCmPackage):
         sha256="3617abb877812c4b933f601438c70f95e21c6161bea177277b1d4125fd1c0bf9",
         when="@8.2",
     )
+    patch("posix_c_source.patch", when="%aocc")
 
     def url_for_version(self, version):
         url = "https://github.com/cp2k/cp2k/releases/download/v{0}/cp2k-{0}.tar.bz2"
@@ -325,31 +334,14 @@ class Cp2k(MakefilePackage, CudaPackage, CMakePackage, ROCmPackage):
     def edit(self, spec, prefix):
         pkgconf = which("pkg-config")
 
-        if "^fftw" in spec:
-            fftw = spec["fftw:openmp" if "+openmp" in spec else "fftw"]
-            fftw_header_dir = fftw.headers.directories[0]
-        elif "^amdfftw" in spec:
-            fftw = spec["amdfftw:openmp" if "+openmp" in spec else "amdfftw"]
-            fftw_header_dir = fftw.headers.directories[0]
-        elif "^armpl-gcc" in spec:
-            fftw = spec["armpl-gcc:openmp" if "+openmp" in spec else "armpl-gcc"]
-            fftw_header_dir = fftw.headers.directories[0]
-        elif "^intel-mkl" in spec:
-            fftw = spec["intel-mkl"]
-            fftw_header_dir = fftw.headers.directories[0] + "/fftw"
-        elif "^intel-oneapi-mkl" in spec:
-            fftw = spec["intel-oneapi-mkl"]
-            fftw_header_dir = fftw.headers.directories[0] + "/fftw"
-        elif "^intel-parallel-studio+mkl" in spec:
-            fftw = spec["intel-parallel-studio"]
-            fftw_header_dir = "<NOTFOUND>"
-            for incdir in [join_path(f, "fftw") for f in fftw.headers.directories]:
-                if os.path.exists(incdir):
-                    fftw_header_dir = incdir
-                    break
-        elif "^cray-fftw" in spec:
-            fftw = spec["cray-fftw"]
-            fftw_header_dir = fftw.headers.directories[0]
+        fftw = spec["fftw-api:openmp" if "+openmp" in spec else "fftw-api"]
+        fftw_header_dir = fftw.headers.directories[0]
+
+        # some providers (mainly Intel) keep the fftw headers in a subdirectory, find it
+        for incdir in [join_path(f, "fftw") for f in fftw.headers.directories]:
+            if os.path.exists(incdir):
+                fftw_header_dir = incdir
+                break
 
         optimization_flags = {
             "gcc": ["-O2", "-funroll-loops", "-ftree-vectorize"],
@@ -451,11 +443,12 @@ class Cp2k(MakefilePackage, CudaPackage, CMakePackage, ROCmPackage):
         ldflags.append((lapack + blas).search_flags)
         libs.extend([str(x) for x in (fftw.libs, lapack, blas)])
 
-        if any(
-            p in spec for p in ("^intel-mkl", "^intel-parallel-studio+mkl", "^intel-oneapi-mkl")
-        ):
+        if self.spec.satisfies("platform=darwin"):
+            cppflags.extend(["-D__NO_STATM_ACCESS"])
+
+        if spec["blas"].name in ("intel-mkl", "intel-parallel-studio", "intel-oneapi-mkl"):
             cppflags += ["-D__MKL"]
-        elif "^accelerate" in spec:
+        elif spec["blas"].name == "accelerate":
             cppflags += ["-D__ACCELERATE"]
 
         if "+cosma" in spec:
@@ -468,15 +461,15 @@ class Cp2k(MakefilePackage, CudaPackage, CMakePackage, ROCmPackage):
         if "+mpi" in spec:
             cppflags.extend(["-D__parallel", "-D__SCALAPACK"])
 
-            if "^intel-oneapi-mpi" in spec:
+            if spec["mpi"].name == "intel-oneapi-mpi":
                 mpi = [join_path(spec["intel-oneapi-mpi"].libs.directories[0], "libmpi.so")]
             else:
                 mpi = spec["mpi:cxx"].libs
 
             # while intel-mkl has a mpi variant and adds the scalapack
             # libs to its libs, intel-oneapi-mkl does not.
-            if "^intel-oneapi-mkl" in spec:
-                mpi_impl = "openmpi" if "^openmpi" in spec else "intelmpi"
+            if spec["scalapack"].name == "intel-oneapi-mkl":
+                mpi_impl = "openmpi" if spec["mpi"] == "openmpi" else "intelmpi"
                 scalapack = [
                     join_path(
                         spec["intel-oneapi-mkl"].libs.directories[0], "libmkl_scalapack_lp64.so"
@@ -641,11 +634,12 @@ class Cp2k(MakefilePackage, CudaPackage, CMakePackage, ROCmPackage):
                     cppflags += ["-D__PW_CUDA"]
                     libs += ["-lcufft", "-lcublas"]
 
-            gpuver = gpu_map[spec.variants["cuda_arch"].value]
+            cuda_arch = spec.variants["cuda_arch"].value[0]
+            gpuver = gpu_map[cuda_arch]
             if cuda_arch == "35" and spec.satisfies("+cuda_arch_35_k20x"):
                 gpuver = "K20X"
 
-        if spec.satisfies(+rocm) and spec.satisfies("@2022:"):
+        if "@2022: +rocm" in spec:
             libs += [
                 "-L{}".format(spec["rocm"].libs.directories[0]),
                 "-L{}/stubs".format(spec["rocm"].libs.directories[0]),
@@ -659,7 +653,7 @@ class Cp2k(MakefilePackage, CudaPackage, CMakePackage, ROCmPackage):
             acc_flags_var = "NVFLAGS"
             cppflags += ["-D__ACC"]
             cppflags += ["-D__DBCSR_ACC"]
-            gpuver = gpu_map[spec.variants["amdgpu_target"].value]
+            gpuver = gpu_map[spec.variants["amdgpu_target"].value[0]]
 
         if "smm=libsmm" in spec:
             lib_dir = join_path("lib", self.makefile_architecture, self.makefile_version)
@@ -726,10 +720,10 @@ class Cp2k(MakefilePackage, CudaPackage, CMakePackage, ROCmPackage):
                 #
                 # and use `-fpp` instead
                 mkf.write("CPP = # {0} -P\n".format(spack_cc))
-                mkf.write("AR  = {0}/xiar -r\n".format(intel_bin_dir))
+                mkf.write("AR  = {0}/xiar -qs\n".format(intel_bin_dir))
             else:
                 mkf.write("CPP = # {0} -E\n".format(spack_cc))
-                mkf.write("AR  = ar -r\n")
+                mkf.write("AR  = ar -qs\n")  # r = qs is a GNU extension
 
             if "+cuda" in spec:
                 mkf.write(
@@ -784,7 +778,7 @@ class Cp2k(MakefilePackage, CudaPackage, CMakePackage, ROCmPackage):
         # Apparently the Makefile bases its paths on PWD
         # so we need to set PWD = self.build_directory
         with spack.util.environment.set_env(PWD=self.build_directory):
-            super(Cp2k, self).build(spec, prefix)
+            super().build(spec, prefix)
 
             with working_dir(self.build_directory):
                 make("libcp2k", *self.build_targets)
@@ -826,7 +820,7 @@ class Cp2k(MakefilePackage, CudaPackage, CMakePackage, ROCmPackage):
                 content += " " + self.spec["lapack"].libs.ld_flags
                 content += " " + self.spec["fftw-api"].libs.ld_flags
 
-                if "^fftw+openmp" in self.spec:
+                if (self.spec["fftw-api"].name == "fftw") and ("+openmp" in self.spec["fftw"]):
                     content += " -lfftw3_omp"
 
                 content += "\n"
@@ -850,29 +844,36 @@ class CMakeBuilder(spack.build_systems.cmake.CMakeBuilder):
 
     def cmake_args(self):
         spec = self.spec
-
-        if "+cuda" in spec and len(spec.variants["cuda_arch"].value) > 1:
-            raise InstallError("CP2K supports only one cuda_arch at a time")
-
-        if "+rocm" in spec and len(spec.variants["amdgpu_target"].value) > 1:
-            raise InstallError("CP2K supports only one amdgpu_arch at a time")
-
         args = []
 
-        if spec.satisfies("+cuda") or spec.satisfies("+rocm"):
-            if spec.satisfies("cuda_target"):
-                args += [self.define("CP2K_WITH_GPU", gpu_map[spec.variants["cuda_arch"].value])]
+        gpu_map = {
+            "35": "K40",
+            "37": "K80",
+            "60": "P100",
+            "70": "V100",
+            "80": "A100",
+            "gfx906": "Mi50",
+            "gfx908": "Mi100",
+            "gfx90a": "Mi250",
+            "gfx90a:xnack-": "Mi250",
+            "gfx90a:xnack+": "Mi250",
+        }
 
-            if spec.satisfies("amdgpu_target"):
-                args += [
-                    self.define("CP2K_WITH_GPU", gpu_map[spec.variants["amdgpu_target"].value])
-                ]
+        if "+cuda" in spec:
+            if (len(spec.variants["cuda_arch"].value) > 1) or spec.satisfies("cuda_arch=none"):
+                raise InstallError("CP2K supports only one cuda_arch at a time.")
+            else:
+                gpu_ver = gpu_map[spec.variants["cuda_arch"].value[0]]
+                args += ["-DCP2K_USE_ACCEL=CUDA"]
+                args += [self.define("CP2K_WITH_GPU", gpu_ver)]
 
-        if spec.satisfies("+cuda"):
-            args += ["-DCP2K_USE_ACCEL=cuda"]
-
-        if spec.satisfies("+rocm"):
-            args += ["-DCP2K_USE_ACCEL=hip"]
+        if "+rocm" in spec:
+            if len(spec.variants["amdgpu_target"].value) > 1:
+                raise InstallError("CP2K supports only one amdgpu_target at a time.")
+            else:
+                gpu_ver = gpu_map[spec.variants["amdgpu_target"].value[0]]
+                args += ["-DCP2K_USE_ACCEL=HIP"]
+                args += [self.define("CP2K_WITH_GPU", gpu_ver)]
 
         args += [
             self.define_from_variant("CP2K_ENABLE_REGTESTS", "enable_regtests"),
@@ -882,12 +883,7 @@ class CMakeBuilder(spack.build_systems.cmake.CMakeBuilder):
             self.define_from_variant("CP2K_USE_SPLA", "spla"),
             self.define_from_variant("CP2K_USE_COSMA", "cosma"),
             self.define_from_variant("CP2K_USE_LIBXC", "libxc"),
-        ]
-
-        if spec.satisfies("+pytorch"):
-            args += ["-DCP2K_USE_LIBTORCH=ON"]
-
-        args += [
+            self.define_from_variant("CP2K_USE_LIBTORCH", "pytorch"),
             self.define_from_variant("CP2K_USE_METIS", "pexsi"),
             self.define_from_variant("CP2K_USE_SUPERLU", "pexsi"),
             self.define_from_variant("CP2K_USE_PLUMED", "plumed"),
@@ -898,10 +894,12 @@ class CMakeBuilder(spack.build_systems.cmake.CMakeBuilder):
         ]
 
         # we force the use elpa openmp threading support. might need to be revisited though
-        if (spec.satisfies("+openmp") and spec.satisfies("+elpa")) or spec.satisfies(
-            "^elpa+openmp"
-        ):
-            args += ["-DCP2K_ENABLE_ELPA_OPENMP_SUPPORT=ON"]
+        args += [
+            self.define(
+                "CP2K_ENABLE_ELPA_OPENMP_SUPPORT",
+                ("+elpa +openmp" in spec) or ("^elpa +openmp" in spec),
+            )
+        ]
 
         if "spla" in spec and (spec.satisfies("+cuda") or spec.satisfies("+rocm")):
             args += ["-DCP2K_USE_SPLA_GEMM_OFFLOADING=ON"]
@@ -916,7 +914,7 @@ class CMakeBuilder(spack.build_systems.cmake.CMakeBuilder):
         lapack = spec["lapack"]
         blas = spec["blas"]
 
-        if spec["blas"].name in ["intel-mkl", "intel-parallel-studio"]:
+        if blas.name in ["intel-mkl", "intel-parallel-studio", "intel-oneapi-mkl"]:
             args += ["-DCP2K_BLAS_VENDOR=MKL"]
             if sys.platform == "darwin":
                 args += [
@@ -931,11 +929,11 @@ class CMakeBuilder(spack.build_systems.cmake.CMakeBuilder):
         else:
             args.extend(
                 [
-                    self.define("CP2K_LAPACK_FOUND", "true"),
+                    self.define("CP2K_LAPACK_FOUND", True),
                     self.define("CP2K_LAPACK_LINK_LIBRARIES", lapack.libs.joined(";")),
-                    self.define("CP2K_BLAS_FOUND", "true"),
+                    self.define("CP2K_BLAS_FOUND", True),
                     self.define("CP2K_BLAS_LINK_LIBRARIES", blas.libs.joined(";")),
-                    self.define("CP2K_SCALAPACK_FOUND", "true"),
+                    self.define("CP2K_SCALAPACK_FOUND", True),
                     self.define("CP2K_SCALAPACK_INCLUDE_DIRS", spec["scalapack"].prefix.include),
                     self.define("CP2K_BLAS_VENDOR", "CUSTOM"),
                     self.define("CP2K_SCALAPACK_VENDOR", "GENERIC"),
@@ -948,3 +946,4 @@ class CMakeBuilder(spack.build_systems.cmake.CMakeBuilder):
         return args
 
     pass
+
