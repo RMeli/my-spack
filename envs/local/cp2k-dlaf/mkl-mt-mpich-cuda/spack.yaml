@@ -1,0 +1,18 @@
+spack:
+  specs:
+  - cp2k@master +dlaf +cuda cuda_arch=89 +libint +libxc +spglib ^fftw ^[virtuals=blas,lapack,scalapack]
+    intel-mkl threads=openmp ^mpich@4.0.1 device=ch3 netmod=tcp ^cuda@11 ^dbcsr +cuda
+    cuda_arch=89
+  view: false
+  packages:
+    all:
+      variants:
+      - cxxstd=17
+  repos:
+  - ~/git/DLA-Future/spack
+  develop:
+    dla-future:
+      path: ~/git/DLA-Future
+      spec: dla-future@develop +cuda cuda_arch=89
+  concretizer:
+    unify: true

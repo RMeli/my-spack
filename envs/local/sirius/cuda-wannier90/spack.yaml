@@ -1,0 +1,15 @@
+spack:
+  specs:
+  - sirius@develop +cuda cuda_arch=89 +memory_pool +scalapack +tests +wannier90
+  view: false
+  repos:
+    - ~/git/SIRIUS/ci/spack/
+  develop:
+    sirius:
+      path: ~/git/SIRIUS/
+      spec: sirius@develop +cuda cuda_arch=89 +memory_pool +scalapack +tests +wannier90
+    wannier90:
+      path: ~/git/wannier90/
+      spec: wannier90@3.1.0
+  concretizer:
+    unify: true

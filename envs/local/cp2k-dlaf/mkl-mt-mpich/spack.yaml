@@ -1,7 +1,6 @@
 spack:
   specs:
-  - cp2k@master +dlaf +mpi +libint +libxc +spglib ^fftw ^[virtuals=blas,lapack,scalapack]
-    intel-mkl threads=openmp ^mpich@4.0.1 device=ch3 netmod=tcp
+  - cp2k@master +dlaf +mpi +libint +libxc +spglib ^fftw ^intel-mkl threads=openmp ^mpich@4.0.1 device=ch3 netmod=tcp
   view: false
   packages:
     all:
@@ -9,36 +8,10 @@ spack:
       - cxxstd=17
   repos:
   - ~/git/DLA-Future/spack
+  - ~/git/my-spack/repos/cp2k
   develop:
     dla-future:
       path: ~/git/DLA-Future
       spec: dla-future@develop
   concretizer:
     unify: true
-  compilers:
-  - compiler:
-      spec: gcc@11.3.0
-      paths:
-        cc: /usr/bin/gcc-11
-        cxx: null
-        f77: null
-        fc: null
-      flags: {}
-      operating_system: ubuntu23.04
-      target: x86_64
-      modules: []
-      environment: {}
-      extra_rpaths: []
-  - compiler:
-      spec: gcc@12.2.0
-      paths:
-        cc: /usr/bin/gcc
-        cxx: /usr/bin/g++
-        f77: /usr/bin/gfortran
-        fc: /usr/bin/gfortran
-      flags: {}
-      operating_system: ubuntu23.04
-      target: x86_64
-      modules: []
-      environment: {}
-      extra_rpaths: []

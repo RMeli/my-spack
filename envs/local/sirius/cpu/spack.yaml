@@ -1,0 +1,6 @@
+spack:
+  specs:
+  - sirius +scalapack +tests
+  view: false
+  concretizer:
+    unify: true
