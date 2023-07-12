@@ -99,6 +99,10 @@ class Cp2k(MakefilePackage, CudaPackage, CMakePackage, ROCmPackage):
         " conventional location. This option is only relevant when regtests need to be run.",
     )
 
+    variant("dlaf", default=False, description="Enable DLA-Future")
+    depends_on("dla-future", when="+dlaf")
+    depends_on("dla-future+cuda", when="+dlaf+cuda")
+
     with when("+cuda"):
         variant(
             "cuda_arch_35_k20x",
