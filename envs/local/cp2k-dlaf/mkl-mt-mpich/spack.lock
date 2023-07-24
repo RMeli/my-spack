@@ -1,22 +1,22 @@
 {
   "_meta": {
     "file-type": "spack-lockfile",
-    "lockfile-version": 4,
-    "specfile-version": 3
+    "lockfile-version": 5,
+    "specfile-version": 4
   },
   "spack": {
     "version": "0.21.0.dev0",
     "type": "git",
-    "commit": "2d0b21fc6d69f84f68e8f2c7778e8e6474abfd13"
+    "commit": "6a762501f8d465ff06ace3daba8441d842d327de"
   },
   "roots": [
     {
-      "hash": "gy4orwfsnidu3ntymj6bgfcyicdozgab",
-      "spec": "cp2k@master+dlaf+libint+libxc+mpi+spglib ^fftw ^intel-mkl threads=openmp ^mpich@4.0.1 device=ch3 netmod=tcp"
+      "hash": "2bi4xuxkie5vbcuozepfrxbnadt3b2iq",
+      "spec": "cp2k@master+cosma+dlaf+libint+libxc+spglib build_system=cmake ^cosma+scalapack+shared ^dbcsr@develop ^intel-mkl threads=openmp ^mpich@4.0.1 device=ch3 netmod=tcp"
     }
   ],
   "concrete_specs": {
-    "gy4orwfsnidu3ntymj6bgfcyicdozgab": {
+    "2bi4xuxkie5vbcuozepfrxbnadt3b2iq": {
       "name": "cp2k",
       "version": "master",
       "arch": {
@@ -87,7 +87,7 @@
       "parameters": {
         "build_system": "cmake",
         "build_type": "Release",
-        "cosma": false,
+        "cosma": true,
         "cuda": false,
         "dlaf": true,
         "elpa": false,
@@ -116,109 +116,182 @@
         "ldflags": [],
         "ldlibs": []
       },
-      "package_hash": "c5d6kvtezrfyz4hygvwnwuo2bnkna3pxtorhvsojtrtcb4l2763a====",
+      "package_hash": "7fvtzif6ifuhcrexwin6lgr6r32amg5r34xpwyr4fgcuat4otjrq====",
       "dependencies": [
         {
           "name": "cmake",
           "hash": "xm7jqizk3hey32gkxk7o6vg46l4giddn",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
+        },
+        {
+          "name": "cosma",
+          "hash": "3fvkdw3rwa7psf67ylrwgtqtifqzefbj",
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "dbcsr",
-          "hash": "go5c64cn4t5bloo22zw2hbxs7qpe4ach",
-          "type": [
-            "build",
-            "link"
-          ]
+          "hash": "gm7h4ekugykwlsdk5h6qmpdruaap4ycl",
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "dla-future",
-          "hash": "um55btzhv437shihyc2vendg3266ium5",
-          "type": [
-            "build",
-            "link"
-          ]
+          "hash": "misjtprkybjv4zfjeobckrtr4tguwlcl",
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "fftw",
-          "hash": "4s2yxhspls3ixtzjkst4rw2gwkxgmxxw",
-          "type": [
-            "build",
-            "link"
-          ]
+          "hash": "lc4hxwsj7wankw4kfnssazqxwkbuo2dh",
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": [
+              "fftw-api"
+            ]
+          }
         },
         {
           "name": "gmake",
           "hash": "2uwsz6npxa4yk7mm7kf2cyubsy5pio2t",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "intel-mkl",
           "hash": "7u25uvptiqjcgfrjeg3t22f3vq2use6i",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": [
+              "blas",
+              "lapack",
+              "scalapack"
+            ]
+          }
         },
         {
           "name": "libint",
           "hash": "7w7b7ni33qcnjooxrt5hkpaegvcjderi",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "libxc",
           "hash": "ff5w3fbeyx35gw3z35656mowiqggxf25",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "libxsmm",
           "hash": "6mgunlwnynlaj76s2ujychhedqhha7rm",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "mpich",
           "hash": "pc63eobodbxmiqrgqwy7yzpgfqjj5ut4",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": [
+              "mpi"
+            ]
+          }
         },
         {
           "name": "pkgconf",
           "hash": "kr5ioaaxydc7inri2nwbiutxjuexnouc",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": [
+              "pkgconfig"
+            ]
+          }
+        },
+        {
+          "name": "py-fypp",
+          "hash": "mmrejzgz4v3rgxj7jofpobo2s4kmfmdl",
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "python",
           "hash": "m5jn3pa5gdztwruuno6r5bbckhcfzo5m",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "spglib",
           "hash": "7q5ildu464hmadzclper44wupuda2qxf",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         }
       ],
-      "hash": "gy4orwfsnidu3ntymj6bgfcyicdozgab"
+      "hash": "2bi4xuxkie5vbcuozepfrxbnadt3b2iq"
     },
     "xm7jqizk3hey32gkxk7o6vg46l4giddn": {
       "name": "cmake",
@@ -307,18 +380,24 @@
         {
           "name": "ncurses",
           "hash": "v4b6dpifez7jmt2g5tr5ebfk7fylaytb",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "openssl",
           "hash": "f72npmczta7e5u4gfnquwu7bytfbkqo2",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         }
       ],
       "hash": "xm7jqizk3hey32gkxk7o6vg46l4giddn"
@@ -408,9 +487,12 @@
         {
           "name": "pkgconf",
           "hash": "kr5ioaaxydc7inri2nwbiutxjuexnouc",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         }
       ],
       "hash": "v4b6dpifez7jmt2g5tr5ebfk7fylaytb"
@@ -580,24 +662,33 @@
         {
           "name": "ca-certificates-mozilla",
           "hash": "r7timlzgfttcdwtlviebabt57rwczc34",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "perl",
           "hash": "svemmomsxhvqrmbq44r6z7rlbrsuqezd",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "zlib",
           "hash": "bfw5iv7pp4roogaaqg762nt524eyruya",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         }
       ],
       "hash": "f72npmczta7e5u4gfnquwu7bytfbkqo2"
@@ -768,34 +859,46 @@
         {
           "name": "berkeley-db",
           "hash": "pg27m3fmh5f3r32bzd64ot2lm36kgt5b",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "bzip2",
           "hash": "vlhz6pyw562rllg3kxoiq6rznlihjfs4",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "gdbm",
           "hash": "l4ky47gchymhw3rsxt42yztxoryb2vc5",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "zlib",
           "hash": "bfw5iv7pp4roogaaqg762nt524eyruya",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         }
       ],
       "hash": "svemmomsxhvqrmbq44r6z7rlbrsuqezd"
@@ -976,9 +1079,12 @@
         {
           "name": "diffutils",
           "hash": "dyaispdugy3hzb4otgpymvllclgnurqv",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         }
       ],
       "hash": "vlhz6pyw562rllg3kxoiq6rznlihjfs4"
@@ -1065,10 +1171,13 @@
         {
           "name": "libiconv",
           "hash": "zjrw4lzbazkqvb3y3vwcvv5bn5mbe3zp",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         }
       ],
       "hash": "dyaispdugy3hzb4otgpymvllclgnurqv"
@@ -1239,10 +1348,13 @@
         {
           "name": "readline",
           "hash": "qtuctjlx6umpjfsyfc4fuhdtxvs33gsn",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         }
       ],
       "hash": "l4ky47gchymhw3rsxt42yztxoryb2vc5"
@@ -1335,10 +1447,13 @@
         {
           "name": "ncurses",
           "hash": "v4b6dpifez7jmt2g5tr5ebfk7fylaytb",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         }
       ],
       "hash": "qtuctjlx6umpjfsyfc4fuhdtxvs33gsn"
@@ -1426,9 +1541,9 @@
       "package_hash": "y6ahhnjjjsfh5dx2y7sci7fhthq5aolyl5dgwif57qqbtjxwdwbq====",
       "hash": "bfw5iv7pp4roogaaqg762nt524eyruya"
     },
-    "go5c64cn4t5bloo22zw2hbxs7qpe4ach": {
-      "name": "dbcsr",
-      "version": "2.5.0",
+    "3fvkdw3rwa7psf67ylrwgtqtifqzefbj": {
+      "name": "cosma",
+      "version": "2.6.6",
       "arch": {
         "platform": "linux",
         "platform_os": "ubuntu23.04",
@@ -1493,20 +1608,20 @@
         "name": "gcc",
         "version": "11.3.0"
       },
-      "namespace": "cp2k",
+      "namespace": "builtin",
       "parameters": {
+        "apps": false,
         "build_system": "cmake",
         "build_type": "Release",
         "cuda": false,
-        "cuda_arch_35_k20x": false,
-        "generator": "ninja",
+        "generator": "make",
+        "gpu_direct": false,
         "ipo": false,
-        "mpi": true,
-        "opencl": false,
-        "openmp": true,
+        "profiling": false,
         "rocm": false,
+        "scalapack": true,
         "shared": true,
-        "smm": "libxsmm",
+        "tests": false,
         "cflags": [],
         "cppflags": [],
         "cxxflags": [],
@@ -1514,62 +1629,286 @@
         "ldflags": [],
         "ldlibs": []
       },
-      "package_hash": "gr2zkngbcxy4n3bbro7xx6eoe32mwgb4zqcgowb4vvxtqy5fuilq====",
+      "package_hash": "onfmbxrxjehgekdwms6uyprybkh3tejcqifdxoisucrk23v7oryq====",
       "dependencies": [
         {
           "name": "cmake",
           "hash": "xm7jqizk3hey32gkxk7o6vg46l4giddn",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
+        },
+        {
+          "name": "costa",
+          "hash": "grvnan2w4y6g6elempr2ta2ana2gphfg",
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
+        },
+        {
+          "name": "gmake",
+          "hash": "2uwsz6npxa4yk7mm7kf2cyubsy5pio2t",
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "intel-mkl",
           "hash": "7u25uvptiqjcgfrjeg3t22f3vq2use6i",
-          "type": [
-            "build",
-            "link"
-          ]
-        },
-        {
-          "name": "libxsmm",
-          "hash": "6mgunlwnynlaj76s2ujychhedqhha7rm",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": [
+              "blas",
+              "scalapack"
+            ]
+          }
         },
         {
           "name": "mpich",
           "hash": "pc63eobodbxmiqrgqwy7yzpgfqjj5ut4",
-          "type": [
-            "build",
-            "link"
-          ]
-        },
-        {
-          "name": "ninja",
-          "hash": "ftcwtfvdmxazlulgt7wdi4me5k5e4r6w",
-          "type": [
-            "build"
-          ]
-        },
-        {
-          "name": "pkgconf",
-          "hash": "kr5ioaaxydc7inri2nwbiutxjuexnouc",
-          "type": [
-            "build"
-          ]
-        },
-        {
-          "name": "py-fypp",
-          "hash": "mmrejzgz4v3rgxj7jofpobo2s4kmfmdl",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": [
+              "mpi"
+            ]
+          }
         }
       ],
-      "hash": "go5c64cn4t5bloo22zw2hbxs7qpe4ach"
+      "hash": "3fvkdw3rwa7psf67ylrwgtqtifqzefbj"
+    },
+    "grvnan2w4y6g6elempr2ta2ana2gphfg": {
+      "name": "costa",
+      "version": "2.2.2",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu23.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "apps": false,
+        "benchmarks": false,
+        "build_system": "cmake",
+        "build_type": "Release",
+        "generator": "make",
+        "ipo": false,
+        "profiling": false,
+        "scalapack": true,
+        "shared": false,
+        "tests": false,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "uwtz6fnqfeech3qzs6r374tcq6gvtcxrjaowphmesg4dlwrigqjq====",
+      "dependencies": [
+        {
+          "name": "cmake",
+          "hash": "xm7jqizk3hey32gkxk7o6vg46l4giddn",
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
+        },
+        {
+          "name": "gmake",
+          "hash": "2uwsz6npxa4yk7mm7kf2cyubsy5pio2t",
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
+        },
+        {
+          "name": "intel-mkl",
+          "hash": "7u25uvptiqjcgfrjeg3t22f3vq2use6i",
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": [
+              "scalapack"
+            ]
+          }
+        },
+        {
+          "name": "mpich",
+          "hash": "pc63eobodbxmiqrgqwy7yzpgfqjj5ut4",
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": [
+              "mpi"
+            ]
+          }
+        }
+      ],
+      "hash": "grvnan2w4y6g6elempr2ta2ana2gphfg"
+    },
+    "2uwsz6npxa4yk7mm7kf2cyubsy5pio2t": {
+      "name": "gmake",
+      "version": "4.4.1",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu23.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "guile": false,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "jlridsmz6v5yezm7lhkqjgx6x6ksuferunkz3635nkdrraigjrfa====",
+      "hash": "2uwsz6npxa4yk7mm7kf2cyubsy5pio2t"
     },
     "7u25uvptiqjcgfrjeg3t22f3vq2use6i": {
       "name": "intel-mkl",
@@ -1656,9 +1995,12 @@
         {
           "name": "cpio",
           "hash": "6bqoz3rxumqdwytvfqdwqk6iudflqvd7",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         }
       ],
       "hash": "7u25uvptiqjcgfrjeg3t22f3vq2use6i"
@@ -1742,6 +2084,1250 @@
       },
       "package_hash": "pliagad7gnuqlgjd5x3x6kb3cso36qsi5uvp4h2paz47clk3edvq====",
       "hash": "6bqoz3rxumqdwytvfqdwqk6iudflqvd7"
+    },
+    "pc63eobodbxmiqrgqwy7yzpgfqjj5ut4": {
+      "name": "mpich",
+      "version": "4.0.1",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu23.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "argobots": false,
+        "build_system": "autotools",
+        "cuda": false,
+        "datatype-engine": "auto",
+        "device": "ch3",
+        "fortran": true,
+        "hwloc": true,
+        "hydra": true,
+        "libxml2": true,
+        "netmod": "tcp",
+        "patches": [
+          "d4c0e99a80f6cb0cb0ced91f6ad5da776c4a70f70f805f08096939ec9a92483e"
+        ],
+        "pci": true,
+        "pmi": "pmi",
+        "rocm": false,
+        "romio": true,
+        "slurm": false,
+        "two_level_namespace": false,
+        "verbs": false,
+        "wrapperrpath": true,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "patches": [
+        "d4c0e99a80f6cb0cb0ced91f6ad5da776c4a70f70f805f08096939ec9a92483e"
+      ],
+      "package_hash": "xwa32hip74m6vzgz4plvelhi3hdj2k4u6rvfsuqhfkyqtsbpouua====",
+      "dependencies": [
+        {
+          "name": "findutils",
+          "hash": "6ghcxvnyr7zp3bu4siox45xy6ftvk5lo",
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
+        },
+        {
+          "name": "hwloc",
+          "hash": "pbavg2mmgexdgm5rulhk45tuuw6jdvbs",
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
+        },
+        {
+          "name": "libpciaccess",
+          "hash": "njwsnsm22gdbhuolobhjovdvg5eaafnk",
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
+        },
+        {
+          "name": "libxml2",
+          "hash": "l4kqbo7kesj35pd3spniatwvavsherfb",
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
+        },
+        {
+          "name": "pkgconf",
+          "hash": "kr5ioaaxydc7inri2nwbiutxjuexnouc",
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
+        }
+      ],
+      "hash": "pc63eobodbxmiqrgqwy7yzpgfqjj5ut4"
+    },
+    "6ghcxvnyr7zp3bu4siox45xy6ftvk5lo": {
+      "name": "findutils",
+      "version": "4.9.0",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu23.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "patches": [
+          "440b9543365b4692a2e6e0b5674809659846658d34d1dfc542c4397c8d668b92"
+        ],
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "patches": [
+        "440b9543365b4692a2e6e0b5674809659846658d34d1dfc542c4397c8d668b92"
+      ],
+      "package_hash": "2sgl24um676pxizvcju4i42f4k3bnpq7jdctrvxzceyikvaj2mra====",
+      "hash": "6ghcxvnyr7zp3bu4siox45xy6ftvk5lo"
+    },
+    "pbavg2mmgexdgm5rulhk45tuuw6jdvbs": {
+      "name": "hwloc",
+      "version": "2.9.1",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu23.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "cairo": false,
+        "cuda": false,
+        "gl": false,
+        "libs": [
+          "shared",
+          "static"
+        ],
+        "libudev": false,
+        "libxml2": true,
+        "netloc": false,
+        "nvml": false,
+        "oneapi-level-zero": false,
+        "opencl": false,
+        "pci": true,
+        "rocm": false,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "mycljz5ugpik6k3lijrscndbuem5s4pipg5lmtprxxeyiemldxva====",
+      "dependencies": [
+        {
+          "name": "libpciaccess",
+          "hash": "njwsnsm22gdbhuolobhjovdvg5eaafnk",
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
+        },
+        {
+          "name": "libxml2",
+          "hash": "l4kqbo7kesj35pd3spniatwvavsherfb",
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
+        },
+        {
+          "name": "ncurses",
+          "hash": "v4b6dpifez7jmt2g5tr5ebfk7fylaytb",
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
+        },
+        {
+          "name": "pkgconf",
+          "hash": "kr5ioaaxydc7inri2nwbiutxjuexnouc",
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
+        }
+      ],
+      "hash": "pbavg2mmgexdgm5rulhk45tuuw6jdvbs"
+    },
+    "njwsnsm22gdbhuolobhjovdvg5eaafnk": {
+      "name": "libpciaccess",
+      "version": "0.17",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu23.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "zjibztp7iq2h3hgdgjs2dvk75m5nhxd2fwjr4cmpwvkidwbwk2dq====",
+      "dependencies": [
+        {
+          "name": "libtool",
+          "hash": "t7snxxpsk74ewsox2qfwlzurmyrewlcb",
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
+        },
+        {
+          "name": "pkgconf",
+          "hash": "kr5ioaaxydc7inri2nwbiutxjuexnouc",
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
+        },
+        {
+          "name": "util-macros",
+          "hash": "feqhltrz3pvpg7mybruc2jn4ah2ovofz",
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
+        }
+      ],
+      "hash": "njwsnsm22gdbhuolobhjovdvg5eaafnk"
+    },
+    "t7snxxpsk74ewsox2qfwlzurmyrewlcb": {
+      "name": "libtool",
+      "version": "2.4.7",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu23.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "7lyavyiwpnrhw7tfv5vgri32at345gdegbixiskk63ext2f5rzza====",
+      "dependencies": [
+        {
+          "name": "m4",
+          "hash": "zq7px332avdaave7742bdrnsaw4nzorz",
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
+        }
+      ],
+      "hash": "t7snxxpsk74ewsox2qfwlzurmyrewlcb"
+    },
+    "zq7px332avdaave7742bdrnsaw4nzorz": {
+      "name": "m4",
+      "version": "1.4.19",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu23.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "patches": [
+          "9dc5fbd0d5cb1037ab1e6d0ecc74a30df218d0a94bdd5a02759a97f62daca573",
+          "bfdffa7c2eb01021d5849b36972c069693654ad826c1a20b53534009a4ec7a89"
+        ],
+        "sigsegv": true,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "patches": [
+        "bfdffa7c2eb01021d5849b36972c069693654ad826c1a20b53534009a4ec7a89",
+        "9dc5fbd0d5cb1037ab1e6d0ecc74a30df218d0a94bdd5a02759a97f62daca573"
+      ],
+      "package_hash": "kktxi3fk7sdur227baltmnsqnbqaxb4ey5utf3xciurlvqazccqa====",
+      "dependencies": [
+        {
+          "name": "diffutils",
+          "hash": "dyaispdugy3hzb4otgpymvllclgnurqv",
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
+        },
+        {
+          "name": "libsigsegv",
+          "hash": "m4it66lap6cxo2ki4p5vn7b3e6ildnn3",
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
+        }
+      ],
+      "hash": "zq7px332avdaave7742bdrnsaw4nzorz"
+    },
+    "m4it66lap6cxo2ki4p5vn7b3e6ildnn3": {
+      "name": "libsigsegv",
+      "version": "2.14",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu23.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "g3lezcbp2gbfpmy543owfqnklxafzbthrhz324pmzxuixqbrqywq====",
+      "hash": "m4it66lap6cxo2ki4p5vn7b3e6ildnn3"
+    },
+    "feqhltrz3pvpg7mybruc2jn4ah2ovofz": {
+      "name": "util-macros",
+      "version": "1.19.3",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu23.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "5atggv5uirdl2trmzmewkonyvzmzg6sg46zpvurdk43wi2gpr7pa====",
+      "hash": "feqhltrz3pvpg7mybruc2jn4ah2ovofz"
+    },
+    "l4kqbo7kesj35pd3spniatwvavsherfb": {
+      "name": "libxml2",
+      "version": "2.10.3",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu23.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "python": false,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "uzgvvclypo7qqmrcqzhgn6ddbq7qqlbzcyuapwl64n4uh275j7pa====",
+      "dependencies": [
+        {
+          "name": "libiconv",
+          "hash": "zjrw4lzbazkqvb3y3vwcvv5bn5mbe3zp",
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
+        },
+        {
+          "name": "pkgconf",
+          "hash": "kr5ioaaxydc7inri2nwbiutxjuexnouc",
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
+        },
+        {
+          "name": "xz",
+          "hash": "e2yv5g6jrwxwxcpl3hyi3brey4jzhxuy",
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
+        },
+        {
+          "name": "zlib",
+          "hash": "bfw5iv7pp4roogaaqg762nt524eyruya",
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
+        }
+      ],
+      "hash": "l4kqbo7kesj35pd3spniatwvavsherfb"
+    },
+    "e2yv5g6jrwxwxcpl3hyi3brey4jzhxuy": {
+      "name": "xz",
+      "version": "5.4.1",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu23.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "libs": [
+          "shared",
+          "static"
+        ],
+        "pic": false,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "ads43zrvkj7am47nzsnp3kilt5wuci7zema6daamp2guqq2kcqha====",
+      "hash": "e2yv5g6jrwxwxcpl3hyi3brey4jzhxuy"
+    },
+    "gm7h4ekugykwlsdk5h6qmpdruaap4ycl": {
+      "name": "dbcsr",
+      "version": "develop",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu23.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "cmake",
+        "build_type": "Release",
+        "cuda": false,
+        "cuda_arch_35_k20x": false,
+        "generator": "ninja",
+        "ipo": false,
+        "mpi": true,
+        "opencl": false,
+        "openmp": true,
+        "rocm": false,
+        "shared": true,
+        "smm": "libxsmm",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "w3aseeufr76bcybokhcctrf54cvxoawmyy675pygz5ssurekx5aq====",
+      "dependencies": [
+        {
+          "name": "cmake",
+          "hash": "xm7jqizk3hey32gkxk7o6vg46l4giddn",
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
+        },
+        {
+          "name": "intel-mkl",
+          "hash": "7u25uvptiqjcgfrjeg3t22f3vq2use6i",
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": [
+              "blas",
+              "lapack"
+            ]
+          }
+        },
+        {
+          "name": "libxsmm",
+          "hash": "6mgunlwnynlaj76s2ujychhedqhha7rm",
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
+        },
+        {
+          "name": "mpich",
+          "hash": "pc63eobodbxmiqrgqwy7yzpgfqjj5ut4",
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": [
+              "mpi"
+            ]
+          }
+        },
+        {
+          "name": "ninja",
+          "hash": "ftcwtfvdmxazlulgt7wdi4me5k5e4r6w",
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
+        },
+        {
+          "name": "pkgconf",
+          "hash": "kr5ioaaxydc7inri2nwbiutxjuexnouc",
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": [
+              "pkgconfig"
+            ]
+          }
+        },
+        {
+          "name": "py-fypp",
+          "hash": "mmrejzgz4v3rgxj7jofpobo2s4kmfmdl",
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
+        }
+      ],
+      "hash": "gm7h4ekugykwlsdk5h6qmpdruaap4ycl"
     },
     "6mgunlwnynlaj76s2ujychhedqhha7rm": {
       "name": "libxsmm",
@@ -1831,16 +3417,22 @@
         {
           "name": "binutils",
           "hash": "2jpcyd4vavol2szg7pvz3xj6yiemtspa",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "python",
           "hash": "m5jn3pa5gdztwruuno6r5bbckhcfzo5m",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         }
       ],
       "hash": "6mgunlwnynlaj76s2ujychhedqhha7rm"
@@ -1943,39 +3535,54 @@
         {
           "name": "diffutils",
           "hash": "dyaispdugy3hzb4otgpymvllclgnurqv",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "pkgconf",
           "hash": "kr5ioaaxydc7inri2nwbiutxjuexnouc",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "texinfo",
           "hash": "cwxeowceeseteawd6dzbq6q2dawxshu3",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "zlib",
           "hash": "bfw5iv7pp4roogaaqg762nt524eyruya",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "zstd",
           "hash": "rkkrv3itkjwka3ddsxzvywnpxqsgjy3z",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         }
       ],
       "hash": "2jpcyd4vavol2szg7pvz3xj6yiemtspa"
@@ -2062,26 +3669,35 @@
         {
           "name": "gettext",
           "hash": "f4jssygaiqbogae3amkdn4zmyk6azl4v",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "ncurses",
           "hash": "v4b6dpifez7jmt2g5tr5ebfk7fylaytb",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "perl",
           "hash": "svemmomsxhvqrmbq44r6z7rlbrsuqezd",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         }
       ],
       "hash": "cwxeowceeseteawd6dzbq6q2dawxshu3"
@@ -2175,253 +3791,72 @@
         {
           "name": "bzip2",
           "hash": "vlhz6pyw562rllg3kxoiq6rznlihjfs4",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "libiconv",
           "hash": "zjrw4lzbazkqvb3y3vwcvv5bn5mbe3zp",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "libxml2",
           "hash": "l4kqbo7kesj35pd3spniatwvavsherfb",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "ncurses",
           "hash": "v4b6dpifez7jmt2g5tr5ebfk7fylaytb",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "tar",
           "hash": "wajvd76urejqrrfkzibhu7z2uyvu6hqg",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "xz",
           "hash": "e2yv5g6jrwxwxcpl3hyi3brey4jzhxuy",
-          "type": [
-            "build",
-            "link",
-            "run"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link",
+              "run"
+            ],
+            "virtuals": []
+          }
         }
       ],
       "hash": "f4jssygaiqbogae3amkdn4zmyk6azl4v"
-    },
-    "l4kqbo7kesj35pd3spniatwvavsherfb": {
-      "name": "libxml2",
-      "version": "2.10.3",
-      "arch": {
-        "platform": "linux",
-        "platform_os": "ubuntu23.04",
-        "target": {
-          "name": "zen4",
-          "vendor": "AuthenticAMD",
-          "features": [
-            "abm",
-            "aes",
-            "avic",
-            "avx",
-            "avx2",
-            "avx512_bf16",
-            "avx512_bitalg",
-            "avx512_vbmi2",
-            "avx512_vnni",
-            "avx512_vpopcntdq",
-            "avx512bw",
-            "avx512cd",
-            "avx512dq",
-            "avx512f",
-            "avx512ifma",
-            "avx512vbmi",
-            "avx512vl",
-            "bmi1",
-            "bmi2",
-            "clflushopt",
-            "clwb",
-            "clzero",
-            "cx16",
-            "erms",
-            "f16c",
-            "flush_l1d",
-            "fma",
-            "fsgsbase",
-            "gfni",
-            "mmx",
-            "movbe",
-            "pclmulqdq",
-            "pku",
-            "popcnt",
-            "rdseed",
-            "sse",
-            "sse2",
-            "sse4_1",
-            "sse4_2",
-            "sse4a",
-            "ssse3",
-            "vaes",
-            "vpclmulqdq",
-            "xsavec",
-            "xsaveopt"
-          ],
-          "generation": 0,
-          "parents": [
-            "zen3",
-            "x86_64_v4"
-          ]
-        }
-      },
-      "compiler": {
-        "name": "gcc",
-        "version": "11.3.0"
-      },
-      "namespace": "builtin",
-      "parameters": {
-        "build_system": "autotools",
-        "python": false,
-        "cflags": [],
-        "cppflags": [],
-        "cxxflags": [],
-        "fflags": [],
-        "ldflags": [],
-        "ldlibs": []
-      },
-      "package_hash": "uzgvvclypo7qqmrcqzhgn6ddbq7qqlbzcyuapwl64n4uh275j7pa====",
-      "dependencies": [
-        {
-          "name": "libiconv",
-          "hash": "zjrw4lzbazkqvb3y3vwcvv5bn5mbe3zp",
-          "type": [
-            "build",
-            "link"
-          ]
-        },
-        {
-          "name": "pkgconf",
-          "hash": "kr5ioaaxydc7inri2nwbiutxjuexnouc",
-          "type": [
-            "build"
-          ]
-        },
-        {
-          "name": "xz",
-          "hash": "e2yv5g6jrwxwxcpl3hyi3brey4jzhxuy",
-          "type": [
-            "build",
-            "link"
-          ]
-        },
-        {
-          "name": "zlib",
-          "hash": "bfw5iv7pp4roogaaqg762nt524eyruya",
-          "type": [
-            "build",
-            "link"
-          ]
-        }
-      ],
-      "hash": "l4kqbo7kesj35pd3spniatwvavsherfb"
-    },
-    "e2yv5g6jrwxwxcpl3hyi3brey4jzhxuy": {
-      "name": "xz",
-      "version": "5.4.1",
-      "arch": {
-        "platform": "linux",
-        "platform_os": "ubuntu23.04",
-        "target": {
-          "name": "zen4",
-          "vendor": "AuthenticAMD",
-          "features": [
-            "abm",
-            "aes",
-            "avic",
-            "avx",
-            "avx2",
-            "avx512_bf16",
-            "avx512_bitalg",
-            "avx512_vbmi2",
-            "avx512_vnni",
-            "avx512_vpopcntdq",
-            "avx512bw",
-            "avx512cd",
-            "avx512dq",
-            "avx512f",
-            "avx512ifma",
-            "avx512vbmi",
-            "avx512vl",
-            "bmi1",
-            "bmi2",
-            "clflushopt",
-            "clwb",
-            "clzero",
-            "cx16",
-            "erms",
-            "f16c",
-            "flush_l1d",
-            "fma",
-            "fsgsbase",
-            "gfni",
-            "mmx",
-            "movbe",
-            "pclmulqdq",
-            "pku",
-            "popcnt",
-            "rdseed",
-            "sse",
-            "sse2",
-            "sse4_1",
-            "sse4_2",
-            "sse4a",
-            "ssse3",
-            "vaes",
-            "vpclmulqdq",
-            "xsavec",
-            "xsaveopt"
-          ],
-          "generation": 0,
-          "parents": [
-            "zen3",
-            "x86_64_v4"
-          ]
-        }
-      },
-      "compiler": {
-        "name": "gcc",
-        "version": "11.3.0"
-      },
-      "namespace": "builtin",
-      "parameters": {
-        "build_system": "autotools",
-        "libs": [
-          "shared",
-          "static"
-        ],
-        "pic": false,
-        "cflags": [],
-        "cppflags": [],
-        "cxxflags": [],
-        "fflags": [],
-        "ldflags": [],
-        "ldlibs": []
-      },
-      "package_hash": "ads43zrvkj7am47nzsnp3kilt5wuci7zema6daamp2guqq2kcqha====",
-      "hash": "e2yv5g6jrwxwxcpl3hyi3brey4jzhxuy"
     },
     "wajvd76urejqrrfkzibhu7z2uyvu6hqg": {
       "name": "tar",
@@ -2506,38 +3941,53 @@
         {
           "name": "bzip2",
           "hash": "vlhz6pyw562rllg3kxoiq6rznlihjfs4",
-          "type": [
-            "run"
-          ]
+          "parameters": {
+            "deptypes": [
+              "run"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "libiconv",
           "hash": "zjrw4lzbazkqvb3y3vwcvv5bn5mbe3zp",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "pigz",
           "hash": "djimfkrgpjsbebckw7mqsmxafpyr3htq",
-          "type": [
-            "run"
-          ]
+          "parameters": {
+            "deptypes": [
+              "run"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "xz",
           "hash": "e2yv5g6jrwxwxcpl3hyi3brey4jzhxuy",
-          "type": [
-            "run"
-          ]
+          "parameters": {
+            "deptypes": [
+              "run"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "zstd",
           "hash": "rkkrv3itkjwka3ddsxzvywnpxqsgjy3z",
-          "type": [
-            "run"
-          ]
+          "parameters": {
+            "deptypes": [
+              "run"
+            ],
+            "virtuals": []
+          }
         }
       ],
       "hash": "wajvd76urejqrrfkzibhu7z2uyvu6hqg"
@@ -2624,10 +4074,13 @@
         {
           "name": "zlib",
           "hash": "bfw5iv7pp4roogaaqg762nt524eyruya",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         }
       ],
       "hash": "djimfkrgpjsbebckw7mqsmxafpyr3htq"
@@ -2831,113 +4284,155 @@
         {
           "name": "bzip2",
           "hash": "vlhz6pyw562rllg3kxoiq6rznlihjfs4",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "expat",
           "hash": "232p4rjhuzgtxwfqs732i6p3s3azb6iy",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "gdbm",
           "hash": "l4ky47gchymhw3rsxt42yztxoryb2vc5",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "gettext",
           "hash": "f4jssygaiqbogae3amkdn4zmyk6azl4v",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "libffi",
           "hash": "fgckd6e7hiuc6swqqi3b7tf4pzybhdmw",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "libxcrypt",
           "hash": "5xam56l6vj6xhqvjeleknl5gttdba4l3",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "ncurses",
           "hash": "v4b6dpifez7jmt2g5tr5ebfk7fylaytb",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "openssl",
           "hash": "f72npmczta7e5u4gfnquwu7bytfbkqo2",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "pkgconf",
           "hash": "kr5ioaaxydc7inri2nwbiutxjuexnouc",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "readline",
           "hash": "qtuctjlx6umpjfsyfc4fuhdtxvs33gsn",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "sqlite",
           "hash": "6lwzoaucbx4wgckaod4iqwbsmjyxdqms",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "util-linux-uuid",
           "hash": "wq3wz5zpvglrm3g7foq3azteslgba5pt",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "xz",
           "hash": "e2yv5g6jrwxwxcpl3hyi3brey4jzhxuy",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "zlib",
           "hash": "bfw5iv7pp4roogaaqg762nt524eyruya",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         }
       ],
       "hash": "m5jn3pa5gdztwruuno6r5bbckhcfzo5m"
@@ -3025,10 +4520,13 @@
         {
           "name": "libbsd",
           "hash": "dzh4vc5fhw4bhdvbev4h2sglvlk2dwio",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         }
       ],
       "hash": "232p4rjhuzgtxwfqs732i6p3s3azb6iy"
@@ -3115,10 +4613,13 @@
         {
           "name": "libmd",
           "hash": "n5iam3u6q42osngpuivvaecmpurn5yjy",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         }
       ],
       "hash": "dzh4vc5fhw4bhdvbev4h2sglvlk2dwio"
@@ -3366,9 +4867,12 @@
         {
           "name": "perl",
           "hash": "svemmomsxhvqrmbq44r6z7rlbrsuqezd",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         }
       ],
       "hash": "5xam56l6vj6xhqvjeleknl5gttdba4l3"
@@ -3460,18 +4964,24 @@
         {
           "name": "readline",
           "hash": "qtuctjlx6umpjfsyfc4fuhdtxvs33gsn",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "zlib",
           "hash": "bfw5iv7pp4roogaaqg762nt524eyruya",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         }
       ],
       "hash": "6lwzoaucbx4wgckaod4iqwbsmjyxdqms"
@@ -3558,827 +5068,15 @@
         {
           "name": "pkgconf",
           "hash": "kr5ioaaxydc7inri2nwbiutxjuexnouc",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         }
       ],
       "hash": "wq3wz5zpvglrm3g7foq3azteslgba5pt"
-    },
-    "pc63eobodbxmiqrgqwy7yzpgfqjj5ut4": {
-      "name": "mpich",
-      "version": "4.0.1",
-      "arch": {
-        "platform": "linux",
-        "platform_os": "ubuntu23.04",
-        "target": {
-          "name": "zen4",
-          "vendor": "AuthenticAMD",
-          "features": [
-            "abm",
-            "aes",
-            "avic",
-            "avx",
-            "avx2",
-            "avx512_bf16",
-            "avx512_bitalg",
-            "avx512_vbmi2",
-            "avx512_vnni",
-            "avx512_vpopcntdq",
-            "avx512bw",
-            "avx512cd",
-            "avx512dq",
-            "avx512f",
-            "avx512ifma",
-            "avx512vbmi",
-            "avx512vl",
-            "bmi1",
-            "bmi2",
-            "clflushopt",
-            "clwb",
-            "clzero",
-            "cx16",
-            "erms",
-            "f16c",
-            "flush_l1d",
-            "fma",
-            "fsgsbase",
-            "gfni",
-            "mmx",
-            "movbe",
-            "pclmulqdq",
-            "pku",
-            "popcnt",
-            "rdseed",
-            "sse",
-            "sse2",
-            "sse4_1",
-            "sse4_2",
-            "sse4a",
-            "ssse3",
-            "vaes",
-            "vpclmulqdq",
-            "xsavec",
-            "xsaveopt"
-          ],
-          "generation": 0,
-          "parents": [
-            "zen3",
-            "x86_64_v4"
-          ]
-        }
-      },
-      "compiler": {
-        "name": "gcc",
-        "version": "11.3.0"
-      },
-      "namespace": "builtin",
-      "parameters": {
-        "argobots": false,
-        "build_system": "autotools",
-        "cuda": false,
-        "datatype-engine": "auto",
-        "device": "ch3",
-        "fortran": true,
-        "hwloc": true,
-        "hydra": true,
-        "libxml2": true,
-        "netmod": "tcp",
-        "patches": [
-          "d4c0e99a80f6cb0cb0ced91f6ad5da776c4a70f70f805f08096939ec9a92483e"
-        ],
-        "pci": true,
-        "pmi": "pmi",
-        "rocm": false,
-        "romio": true,
-        "slurm": false,
-        "two_level_namespace": false,
-        "verbs": false,
-        "wrapperrpath": true,
-        "cflags": [],
-        "cppflags": [],
-        "cxxflags": [],
-        "fflags": [],
-        "ldflags": [],
-        "ldlibs": []
-      },
-      "patches": [
-        "d4c0e99a80f6cb0cb0ced91f6ad5da776c4a70f70f805f08096939ec9a92483e"
-      ],
-      "package_hash": "xwa32hip74m6vzgz4plvelhi3hdj2k4u6rvfsuqhfkyqtsbpouua====",
-      "dependencies": [
-        {
-          "name": "findutils",
-          "hash": "6ghcxvnyr7zp3bu4siox45xy6ftvk5lo",
-          "type": [
-            "build"
-          ]
-        },
-        {
-          "name": "hwloc",
-          "hash": "pbavg2mmgexdgm5rulhk45tuuw6jdvbs",
-          "type": [
-            "build",
-            "link"
-          ]
-        },
-        {
-          "name": "libpciaccess",
-          "hash": "njwsnsm22gdbhuolobhjovdvg5eaafnk",
-          "type": [
-            "build",
-            "link"
-          ]
-        },
-        {
-          "name": "libxml2",
-          "hash": "l4kqbo7kesj35pd3spniatwvavsherfb",
-          "type": [
-            "build",
-            "link"
-          ]
-        },
-        {
-          "name": "pkgconf",
-          "hash": "kr5ioaaxydc7inri2nwbiutxjuexnouc",
-          "type": [
-            "build"
-          ]
-        }
-      ],
-      "hash": "pc63eobodbxmiqrgqwy7yzpgfqjj5ut4"
-    },
-    "6ghcxvnyr7zp3bu4siox45xy6ftvk5lo": {
-      "name": "findutils",
-      "version": "4.9.0",
-      "arch": {
-        "platform": "linux",
-        "platform_os": "ubuntu23.04",
-        "target": {
-          "name": "zen4",
-          "vendor": "AuthenticAMD",
-          "features": [
-            "abm",
-            "aes",
-            "avic",
-            "avx",
-            "avx2",
-            "avx512_bf16",
-            "avx512_bitalg",
-            "avx512_vbmi2",
-            "avx512_vnni",
-            "avx512_vpopcntdq",
-            "avx512bw",
-            "avx512cd",
-            "avx512dq",
-            "avx512f",
-            "avx512ifma",
-            "avx512vbmi",
-            "avx512vl",
-            "bmi1",
-            "bmi2",
-            "clflushopt",
-            "clwb",
-            "clzero",
-            "cx16",
-            "erms",
-            "f16c",
-            "flush_l1d",
-            "fma",
-            "fsgsbase",
-            "gfni",
-            "mmx",
-            "movbe",
-            "pclmulqdq",
-            "pku",
-            "popcnt",
-            "rdseed",
-            "sse",
-            "sse2",
-            "sse4_1",
-            "sse4_2",
-            "sse4a",
-            "ssse3",
-            "vaes",
-            "vpclmulqdq",
-            "xsavec",
-            "xsaveopt"
-          ],
-          "generation": 0,
-          "parents": [
-            "zen3",
-            "x86_64_v4"
-          ]
-        }
-      },
-      "compiler": {
-        "name": "gcc",
-        "version": "11.3.0"
-      },
-      "namespace": "builtin",
-      "parameters": {
-        "build_system": "autotools",
-        "patches": [
-          "440b9543365b4692a2e6e0b5674809659846658d34d1dfc542c4397c8d668b92"
-        ],
-        "cflags": [],
-        "cppflags": [],
-        "cxxflags": [],
-        "fflags": [],
-        "ldflags": [],
-        "ldlibs": []
-      },
-      "patches": [
-        "440b9543365b4692a2e6e0b5674809659846658d34d1dfc542c4397c8d668b92"
-      ],
-      "package_hash": "2sgl24um676pxizvcju4i42f4k3bnpq7jdctrvxzceyikvaj2mra====",
-      "hash": "6ghcxvnyr7zp3bu4siox45xy6ftvk5lo"
-    },
-    "pbavg2mmgexdgm5rulhk45tuuw6jdvbs": {
-      "name": "hwloc",
-      "version": "2.9.1",
-      "arch": {
-        "platform": "linux",
-        "platform_os": "ubuntu23.04",
-        "target": {
-          "name": "zen4",
-          "vendor": "AuthenticAMD",
-          "features": [
-            "abm",
-            "aes",
-            "avic",
-            "avx",
-            "avx2",
-            "avx512_bf16",
-            "avx512_bitalg",
-            "avx512_vbmi2",
-            "avx512_vnni",
-            "avx512_vpopcntdq",
-            "avx512bw",
-            "avx512cd",
-            "avx512dq",
-            "avx512f",
-            "avx512ifma",
-            "avx512vbmi",
-            "avx512vl",
-            "bmi1",
-            "bmi2",
-            "clflushopt",
-            "clwb",
-            "clzero",
-            "cx16",
-            "erms",
-            "f16c",
-            "flush_l1d",
-            "fma",
-            "fsgsbase",
-            "gfni",
-            "mmx",
-            "movbe",
-            "pclmulqdq",
-            "pku",
-            "popcnt",
-            "rdseed",
-            "sse",
-            "sse2",
-            "sse4_1",
-            "sse4_2",
-            "sse4a",
-            "ssse3",
-            "vaes",
-            "vpclmulqdq",
-            "xsavec",
-            "xsaveopt"
-          ],
-          "generation": 0,
-          "parents": [
-            "zen3",
-            "x86_64_v4"
-          ]
-        }
-      },
-      "compiler": {
-        "name": "gcc",
-        "version": "11.3.0"
-      },
-      "namespace": "builtin",
-      "parameters": {
-        "build_system": "autotools",
-        "cairo": false,
-        "cuda": false,
-        "gl": false,
-        "libs": [
-          "shared",
-          "static"
-        ],
-        "libudev": false,
-        "libxml2": true,
-        "netloc": false,
-        "nvml": false,
-        "oneapi-level-zero": false,
-        "opencl": false,
-        "pci": true,
-        "rocm": false,
-        "cflags": [],
-        "cppflags": [],
-        "cxxflags": [],
-        "fflags": [],
-        "ldflags": [],
-        "ldlibs": []
-      },
-      "package_hash": "mycljz5ugpik6k3lijrscndbuem5s4pipg5lmtprxxeyiemldxva====",
-      "dependencies": [
-        {
-          "name": "libpciaccess",
-          "hash": "njwsnsm22gdbhuolobhjovdvg5eaafnk",
-          "type": [
-            "build",
-            "link"
-          ]
-        },
-        {
-          "name": "libxml2",
-          "hash": "l4kqbo7kesj35pd3spniatwvavsherfb",
-          "type": [
-            "build",
-            "link"
-          ]
-        },
-        {
-          "name": "ncurses",
-          "hash": "v4b6dpifez7jmt2g5tr5ebfk7fylaytb",
-          "type": [
-            "build",
-            "link"
-          ]
-        },
-        {
-          "name": "pkgconf",
-          "hash": "kr5ioaaxydc7inri2nwbiutxjuexnouc",
-          "type": [
-            "build"
-          ]
-        }
-      ],
-      "hash": "pbavg2mmgexdgm5rulhk45tuuw6jdvbs"
-    },
-    "njwsnsm22gdbhuolobhjovdvg5eaafnk": {
-      "name": "libpciaccess",
-      "version": "0.17",
-      "arch": {
-        "platform": "linux",
-        "platform_os": "ubuntu23.04",
-        "target": {
-          "name": "zen4",
-          "vendor": "AuthenticAMD",
-          "features": [
-            "abm",
-            "aes",
-            "avic",
-            "avx",
-            "avx2",
-            "avx512_bf16",
-            "avx512_bitalg",
-            "avx512_vbmi2",
-            "avx512_vnni",
-            "avx512_vpopcntdq",
-            "avx512bw",
-            "avx512cd",
-            "avx512dq",
-            "avx512f",
-            "avx512ifma",
-            "avx512vbmi",
-            "avx512vl",
-            "bmi1",
-            "bmi2",
-            "clflushopt",
-            "clwb",
-            "clzero",
-            "cx16",
-            "erms",
-            "f16c",
-            "flush_l1d",
-            "fma",
-            "fsgsbase",
-            "gfni",
-            "mmx",
-            "movbe",
-            "pclmulqdq",
-            "pku",
-            "popcnt",
-            "rdseed",
-            "sse",
-            "sse2",
-            "sse4_1",
-            "sse4_2",
-            "sse4a",
-            "ssse3",
-            "vaes",
-            "vpclmulqdq",
-            "xsavec",
-            "xsaveopt"
-          ],
-          "generation": 0,
-          "parents": [
-            "zen3",
-            "x86_64_v4"
-          ]
-        }
-      },
-      "compiler": {
-        "name": "gcc",
-        "version": "11.3.0"
-      },
-      "namespace": "builtin",
-      "parameters": {
-        "build_system": "autotools",
-        "cflags": [],
-        "cppflags": [],
-        "cxxflags": [],
-        "fflags": [],
-        "ldflags": [],
-        "ldlibs": []
-      },
-      "package_hash": "zjibztp7iq2h3hgdgjs2dvk75m5nhxd2fwjr4cmpwvkidwbwk2dq====",
-      "dependencies": [
-        {
-          "name": "libtool",
-          "hash": "t7snxxpsk74ewsox2qfwlzurmyrewlcb",
-          "type": [
-            "build"
-          ]
-        },
-        {
-          "name": "pkgconf",
-          "hash": "kr5ioaaxydc7inri2nwbiutxjuexnouc",
-          "type": [
-            "build"
-          ]
-        },
-        {
-          "name": "util-macros",
-          "hash": "feqhltrz3pvpg7mybruc2jn4ah2ovofz",
-          "type": [
-            "build"
-          ]
-        }
-      ],
-      "hash": "njwsnsm22gdbhuolobhjovdvg5eaafnk"
-    },
-    "t7snxxpsk74ewsox2qfwlzurmyrewlcb": {
-      "name": "libtool",
-      "version": "2.4.7",
-      "arch": {
-        "platform": "linux",
-        "platform_os": "ubuntu23.04",
-        "target": {
-          "name": "zen4",
-          "vendor": "AuthenticAMD",
-          "features": [
-            "abm",
-            "aes",
-            "avic",
-            "avx",
-            "avx2",
-            "avx512_bf16",
-            "avx512_bitalg",
-            "avx512_vbmi2",
-            "avx512_vnni",
-            "avx512_vpopcntdq",
-            "avx512bw",
-            "avx512cd",
-            "avx512dq",
-            "avx512f",
-            "avx512ifma",
-            "avx512vbmi",
-            "avx512vl",
-            "bmi1",
-            "bmi2",
-            "clflushopt",
-            "clwb",
-            "clzero",
-            "cx16",
-            "erms",
-            "f16c",
-            "flush_l1d",
-            "fma",
-            "fsgsbase",
-            "gfni",
-            "mmx",
-            "movbe",
-            "pclmulqdq",
-            "pku",
-            "popcnt",
-            "rdseed",
-            "sse",
-            "sse2",
-            "sse4_1",
-            "sse4_2",
-            "sse4a",
-            "ssse3",
-            "vaes",
-            "vpclmulqdq",
-            "xsavec",
-            "xsaveopt"
-          ],
-          "generation": 0,
-          "parents": [
-            "zen3",
-            "x86_64_v4"
-          ]
-        }
-      },
-      "compiler": {
-        "name": "gcc",
-        "version": "11.3.0"
-      },
-      "namespace": "builtin",
-      "parameters": {
-        "build_system": "autotools",
-        "cflags": [],
-        "cppflags": [],
-        "cxxflags": [],
-        "fflags": [],
-        "ldflags": [],
-        "ldlibs": []
-      },
-      "package_hash": "7lyavyiwpnrhw7tfv5vgri32at345gdegbixiskk63ext2f5rzza====",
-      "dependencies": [
-        {
-          "name": "m4",
-          "hash": "zq7px332avdaave7742bdrnsaw4nzorz",
-          "type": [
-            "build"
-          ]
-        }
-      ],
-      "hash": "t7snxxpsk74ewsox2qfwlzurmyrewlcb"
-    },
-    "zq7px332avdaave7742bdrnsaw4nzorz": {
-      "name": "m4",
-      "version": "1.4.19",
-      "arch": {
-        "platform": "linux",
-        "platform_os": "ubuntu23.04",
-        "target": {
-          "name": "zen4",
-          "vendor": "AuthenticAMD",
-          "features": [
-            "abm",
-            "aes",
-            "avic",
-            "avx",
-            "avx2",
-            "avx512_bf16",
-            "avx512_bitalg",
-            "avx512_vbmi2",
-            "avx512_vnni",
-            "avx512_vpopcntdq",
-            "avx512bw",
-            "avx512cd",
-            "avx512dq",
-            "avx512f",
-            "avx512ifma",
-            "avx512vbmi",
-            "avx512vl",
-            "bmi1",
-            "bmi2",
-            "clflushopt",
-            "clwb",
-            "clzero",
-            "cx16",
-            "erms",
-            "f16c",
-            "flush_l1d",
-            "fma",
-            "fsgsbase",
-            "gfni",
-            "mmx",
-            "movbe",
-            "pclmulqdq",
-            "pku",
-            "popcnt",
-            "rdseed",
-            "sse",
-            "sse2",
-            "sse4_1",
-            "sse4_2",
-            "sse4a",
-            "ssse3",
-            "vaes",
-            "vpclmulqdq",
-            "xsavec",
-            "xsaveopt"
-          ],
-          "generation": 0,
-          "parents": [
-            "zen3",
-            "x86_64_v4"
-          ]
-        }
-      },
-      "compiler": {
-        "name": "gcc",
-        "version": "11.3.0"
-      },
-      "namespace": "builtin",
-      "parameters": {
-        "build_system": "autotools",
-        "patches": [
-          "9dc5fbd0d5cb1037ab1e6d0ecc74a30df218d0a94bdd5a02759a97f62daca573",
-          "bfdffa7c2eb01021d5849b36972c069693654ad826c1a20b53534009a4ec7a89"
-        ],
-        "sigsegv": true,
-        "cflags": [],
-        "cppflags": [],
-        "cxxflags": [],
-        "fflags": [],
-        "ldflags": [],
-        "ldlibs": []
-      },
-      "patches": [
-        "bfdffa7c2eb01021d5849b36972c069693654ad826c1a20b53534009a4ec7a89",
-        "9dc5fbd0d5cb1037ab1e6d0ecc74a30df218d0a94bdd5a02759a97f62daca573"
-      ],
-      "package_hash": "kktxi3fk7sdur227baltmnsqnbqaxb4ey5utf3xciurlvqazccqa====",
-      "dependencies": [
-        {
-          "name": "diffutils",
-          "hash": "dyaispdugy3hzb4otgpymvllclgnurqv",
-          "type": [
-            "build"
-          ]
-        },
-        {
-          "name": "libsigsegv",
-          "hash": "m4it66lap6cxo2ki4p5vn7b3e6ildnn3",
-          "type": [
-            "build",
-            "link"
-          ]
-        }
-      ],
-      "hash": "zq7px332avdaave7742bdrnsaw4nzorz"
-    },
-    "m4it66lap6cxo2ki4p5vn7b3e6ildnn3": {
-      "name": "libsigsegv",
-      "version": "2.14",
-      "arch": {
-        "platform": "linux",
-        "platform_os": "ubuntu23.04",
-        "target": {
-          "name": "zen4",
-          "vendor": "AuthenticAMD",
-          "features": [
-            "abm",
-            "aes",
-            "avic",
-            "avx",
-            "avx2",
-            "avx512_bf16",
-            "avx512_bitalg",
-            "avx512_vbmi2",
-            "avx512_vnni",
-            "avx512_vpopcntdq",
-            "avx512bw",
-            "avx512cd",
-            "avx512dq",
-            "avx512f",
-            "avx512ifma",
-            "avx512vbmi",
-            "avx512vl",
-            "bmi1",
-            "bmi2",
-            "clflushopt",
-            "clwb",
-            "clzero",
-            "cx16",
-            "erms",
-            "f16c",
-            "flush_l1d",
-            "fma",
-            "fsgsbase",
-            "gfni",
-            "mmx",
-            "movbe",
-            "pclmulqdq",
-            "pku",
-            "popcnt",
-            "rdseed",
-            "sse",
-            "sse2",
-            "sse4_1",
-            "sse4_2",
-            "sse4a",
-            "ssse3",
-            "vaes",
-            "vpclmulqdq",
-            "xsavec",
-            "xsaveopt"
-          ],
-          "generation": 0,
-          "parents": [
-            "zen3",
-            "x86_64_v4"
-          ]
-        }
-      },
-      "compiler": {
-        "name": "gcc",
-        "version": "11.3.0"
-      },
-      "namespace": "builtin",
-      "parameters": {
-        "build_system": "autotools",
-        "cflags": [],
-        "cppflags": [],
-        "cxxflags": [],
-        "fflags": [],
-        "ldflags": [],
-        "ldlibs": []
-      },
-      "package_hash": "g3lezcbp2gbfpmy543owfqnklxafzbthrhz324pmzxuixqbrqywq====",
-      "hash": "m4it66lap6cxo2ki4p5vn7b3e6ildnn3"
-    },
-    "feqhltrz3pvpg7mybruc2jn4ah2ovofz": {
-      "name": "util-macros",
-      "version": "1.19.3",
-      "arch": {
-        "platform": "linux",
-        "platform_os": "ubuntu23.04",
-        "target": {
-          "name": "zen4",
-          "vendor": "AuthenticAMD",
-          "features": [
-            "abm",
-            "aes",
-            "avic",
-            "avx",
-            "avx2",
-            "avx512_bf16",
-            "avx512_bitalg",
-            "avx512_vbmi2",
-            "avx512_vnni",
-            "avx512_vpopcntdq",
-            "avx512bw",
-            "avx512cd",
-            "avx512dq",
-            "avx512f",
-            "avx512ifma",
-            "avx512vbmi",
-            "avx512vl",
-            "bmi1",
-            "bmi2",
-            "clflushopt",
-            "clwb",
-            "clzero",
-            "cx16",
-            "erms",
-            "f16c",
-            "flush_l1d",
-            "fma",
-            "fsgsbase",
-            "gfni",
-            "mmx",
-            "movbe",
-            "pclmulqdq",
-            "pku",
-            "popcnt",
-            "rdseed",
-            "sse",
-            "sse2",
-            "sse4_1",
-            "sse4_2",
-            "sse4a",
-            "ssse3",
-            "vaes",
-            "vpclmulqdq",
-            "xsavec",
-            "xsaveopt"
-          ],
-          "generation": 0,
-          "parents": [
-            "zen3",
-            "x86_64_v4"
-          ]
-        }
-      },
-      "compiler": {
-        "name": "gcc",
-        "version": "11.3.0"
-      },
-      "namespace": "builtin",
-      "parameters": {
-        "build_system": "autotools",
-        "cflags": [],
-        "cppflags": [],
-        "cxxflags": [],
-        "fflags": [],
-        "ldflags": [],
-        "ldlibs": []
-      },
-      "package_hash": "5atggv5uirdl2trmzmewkonyvzmzg6sg46zpvurdk43wi2gpr7pa====",
-      "hash": "feqhltrz3pvpg7mybruc2jn4ah2ovofz"
     },
     "ftcwtfvdmxazlulgt7wdi4me5k5e4r6w": {
       "name": "ninja",
@@ -4463,16 +5161,22 @@
         {
           "name": "python",
           "hash": "m5jn3pa5gdztwruuno6r5bbckhcfzo5m",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "re2c",
           "hash": "vv7qiqr4nqllzayp3p4c3w7ucyq3erni",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         }
       ],
       "hash": "ftcwtfvdmxazlulgt7wdi4me5k5e4r6w"
@@ -4639,31 +5343,43 @@
         {
           "name": "py-pip",
           "hash": "cg4uve5oocwcr6cei5niqy5gdzwkq6oq",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "py-setuptools",
           "hash": "uapyroxpuvrlzscuwf6cqasgi6gshoeg",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "py-wheel",
           "hash": "j3otjzjgwbkzew3v5safkkdo4ohtpvqv",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "python",
           "hash": "m5jn3pa5gdztwruuno6r5bbckhcfzo5m",
-          "type": [
-            "build",
-            "run"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "run"
+            ],
+            "virtuals": []
+          }
         }
       ],
       "hash": "mmrejzgz4v3rgxj7jofpobo2s4kmfmdl"
@@ -4750,10 +5466,13 @@
         {
           "name": "python",
           "hash": "m5jn3pa5gdztwruuno6r5bbckhcfzo5m",
-          "type": [
-            "build",
-            "run"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "run"
+            ],
+            "virtuals": []
+          }
         }
       ],
       "hash": "cg4uve5oocwcr6cei5niqy5gdzwkq6oq"
@@ -4840,17 +5559,23 @@
         {
           "name": "py-pip",
           "hash": "cg4uve5oocwcr6cei5niqy5gdzwkq6oq",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "python",
           "hash": "m5jn3pa5gdztwruuno6r5bbckhcfzo5m",
-          "type": [
-            "build",
-            "run"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "run"
+            ],
+            "virtuals": []
+          }
         }
       ],
       "hash": "uapyroxpuvrlzscuwf6cqasgi6gshoeg"
@@ -4937,24 +5662,30 @@
         {
           "name": "py-pip",
           "hash": "cg4uve5oocwcr6cei5niqy5gdzwkq6oq",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "python",
           "hash": "m5jn3pa5gdztwruuno6r5bbckhcfzo5m",
-          "type": [
-            "build",
-            "run"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "run"
+            ],
+            "virtuals": []
+          }
         }
       ],
       "hash": "j3otjzjgwbkzew3v5safkkdo4ohtpvqv"
     },
-    "um55btzhv437shihyc2vendg3266ium5": {
+    "misjtprkybjv4zfjeobckrtr4tguwlcl": {
       "name": "dla-future",
-      "version": "develop",
+      "version": "master",
       "arch": {
         "platform": "linux",
         "platform_os": "ubuntu23.04",
@@ -5023,16 +5754,18 @@
       "parameters": {
         "build_system": "cmake",
         "build_type": "Release",
+        "ci-check-threads": false,
         "ci-test": false,
         "cuda": false,
         "cxxstd": "17",
         "dev_path": "/home/rmeli/git/DLA-Future",
         "doc": false,
         "generator": "make",
-        "interface": true,
+        "hdf5": false,
         "ipo": false,
         "miniapps": false,
         "rocm": false,
+        "scalapack": true,
         "shared": true,
         "cflags": [],
         "cppflags": [],
@@ -5041,82 +5774,113 @@
         "ldflags": [],
         "ldlibs": []
       },
-      "package_hash": "fxh3gbiid6vfc7jtph6fyqst5jf2dsxvtwmb3qhevjetuqpnjmta====",
+      "package_hash": "zannjh4ikh6dnmpolggc2ettri3u46wa5ssuvu5ufhgnhdsu5r2q====",
       "dependencies": [
         {
           "name": "blaspp",
-          "hash": "7yveqw52triw4h736pj5ajwv7jgpkaay",
-          "type": [
-            "build",
-            "link"
-          ]
+          "hash": "pywc2qlifn5ipl6hwrilnkyqutd3ti4c",
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "cmake",
           "hash": "xm7jqizk3hey32gkxk7o6vg46l4giddn",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "gmake",
           "hash": "2uwsz6npxa4yk7mm7kf2cyubsy5pio2t",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "intel-mkl",
           "hash": "7u25uvptiqjcgfrjeg3t22f3vq2use6i",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": [
+              "scalapack"
+            ]
+          }
         },
         {
           "name": "lapackpp",
-          "hash": "og5zrtkgpige27u5255ransiczfvvs4z",
-          "type": [
-            "build",
-            "link"
-          ]
+          "hash": "vsijvicxac2x2ico5jp3iaxfzfcsd24v",
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "mpich",
           "hash": "pc63eobodbxmiqrgqwy7yzpgfqjj5ut4",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": [
+              "mpi"
+            ]
+          }
         },
         {
           "name": "pika",
-          "hash": "be6rrc4itne3ey3a2d47qa276ri57lgv",
-          "type": [
-            "build",
-            "link"
-          ]
+          "hash": "bhsld44c7ealwlpvzpp44cogqwidlvhq",
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "pika-algorithms",
-          "hash": "ze54agcb7rkvhc77ako4t3msxj24s54m",
-          "type": [
-            "build",
-            "link"
-          ]
+          "hash": "trrengr7vx2q7ihqkvvtm5lvlxxfufwl",
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "umpire",
-          "hash": "jwousue6tkrf5iazon4rvi4z7efvubun",
-          "type": [
-            "build",
-            "link"
-          ]
+          "hash": "cskcc4rwocfvz367et62ujavap2repgg",
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         }
       ],
-      "hash": "um55btzhv437shihyc2vendg3266ium5"
+      "hash": "misjtprkybjv4zfjeobckrtr4tguwlcl"
     },
-    "7yveqw52triw4h736pj5ajwv7jgpkaay": {
+    "pywc2qlifn5ipl6hwrilnkyqutd3ti4c": {
       "name": "blaspp",
       "version": "2022.07.00",
       "arch": {
@@ -5205,110 +5969,40 @@
         {
           "name": "cmake",
           "hash": "xm7jqizk3hey32gkxk7o6vg46l4giddn",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "gmake",
           "hash": "2uwsz6npxa4yk7mm7kf2cyubsy5pio2t",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "intel-mkl",
           "hash": "7u25uvptiqjcgfrjeg3t22f3vq2use6i",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": [
+              "blas"
+            ]
+          }
         }
       ],
-      "hash": "7yveqw52triw4h736pj5ajwv7jgpkaay"
+      "hash": "pywc2qlifn5ipl6hwrilnkyqutd3ti4c"
     },
-    "2uwsz6npxa4yk7mm7kf2cyubsy5pio2t": {
-      "name": "gmake",
-      "version": "4.4.1",
-      "arch": {
-        "platform": "linux",
-        "platform_os": "ubuntu23.04",
-        "target": {
-          "name": "zen4",
-          "vendor": "AuthenticAMD",
-          "features": [
-            "abm",
-            "aes",
-            "avic",
-            "avx",
-            "avx2",
-            "avx512_bf16",
-            "avx512_bitalg",
-            "avx512_vbmi2",
-            "avx512_vnni",
-            "avx512_vpopcntdq",
-            "avx512bw",
-            "avx512cd",
-            "avx512dq",
-            "avx512f",
-            "avx512ifma",
-            "avx512vbmi",
-            "avx512vl",
-            "bmi1",
-            "bmi2",
-            "clflushopt",
-            "clwb",
-            "clzero",
-            "cx16",
-            "erms",
-            "f16c",
-            "flush_l1d",
-            "fma",
-            "fsgsbase",
-            "gfni",
-            "mmx",
-            "movbe",
-            "pclmulqdq",
-            "pku",
-            "popcnt",
-            "rdseed",
-            "sse",
-            "sse2",
-            "sse4_1",
-            "sse4_2",
-            "sse4a",
-            "ssse3",
-            "vaes",
-            "vpclmulqdq",
-            "xsavec",
-            "xsaveopt"
-          ],
-          "generation": 0,
-          "parents": [
-            "zen3",
-            "x86_64_v4"
-          ]
-        }
-      },
-      "compiler": {
-        "name": "gcc",
-        "version": "11.3.0"
-      },
-      "namespace": "builtin",
-      "parameters": {
-        "build_system": "autotools",
-        "guile": false,
-        "cflags": [],
-        "cppflags": [],
-        "cxxflags": [],
-        "fflags": [],
-        "ldflags": [],
-        "ldlibs": []
-      },
-      "package_hash": "jlridsmz6v5yezm7lhkqjgx6x6ksuferunkz3635nkdrraigjrfa====",
-      "hash": "2uwsz6npxa4yk7mm7kf2cyubsy5pio2t"
-    },
-    "og5zrtkgpige27u5255ransiczfvvs4z": {
+    "vsijvicxac2x2ico5jp3iaxfzfcsd24v": {
       "name": "lapackpp",
       "version": "2022.07.00",
       "arch": {
@@ -5395,40 +6089,55 @@
       "dependencies": [
         {
           "name": "blaspp",
-          "hash": "7yveqw52triw4h736pj5ajwv7jgpkaay",
-          "type": [
-            "build",
-            "link"
-          ]
+          "hash": "pywc2qlifn5ipl6hwrilnkyqutd3ti4c",
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "cmake",
           "hash": "xm7jqizk3hey32gkxk7o6vg46l4giddn",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "gmake",
           "hash": "2uwsz6npxa4yk7mm7kf2cyubsy5pio2t",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "intel-mkl",
           "hash": "7u25uvptiqjcgfrjeg3t22f3vq2use6i",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": [
+              "blas",
+              "lapack"
+            ]
+          }
         }
       ],
-      "hash": "og5zrtkgpige27u5255ransiczfvvs4z"
+      "hash": "vsijvicxac2x2ico5jp3iaxfzfcsd24v"
     },
-    "be6rrc4itne3ey3a2d47qa276ri57lgv": {
+    "bhsld44c7ealwlpvzpp44cogqwidlvhq": {
       "name": "pika",
-      "version": "0.15.1",
+      "version": "0.16.0",
       "arch": {
         "platform": "linux",
         "platform_os": "ubuntu23.04",
@@ -5498,7 +6207,10 @@
         "apex": false,
         "build_system": "cmake",
         "build_type": "Release",
-        "cuda": false,
+        "cuda": true,
+        "cuda_arch": [
+          "89"
+        ],
         "cxxstd": "17",
         "examples": false,
         "generator": "ninja",
@@ -5516,71 +6228,119 @@
         "ldflags": [],
         "ldlibs": []
       },
-      "package_hash": "3dmgjxtviwf2zu6i6qhfrzksqr53iw7zjfqqhlgp4fmbvhyp7iea====",
+      "package_hash": "dlunxrfdwktwwpbg2xhsfvhcgliyzarte7s5uw6m3uuhhes4l7va====",
       "dependencies": [
         {
           "name": "boost",
           "hash": "y2kg4b7fglnx2fubpchjoi74nphvcthu",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "cmake",
           "hash": "xm7jqizk3hey32gkxk7o6vg46l4giddn",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
+        },
+        {
+          "name": "cuda",
+          "hash": "yaw6tnioz4fpkkahppa464hc4yzghq36",
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "fmt",
           "hash": "ndzhuiuuzxq5oiq2uqwpnf73qlkb2o5q",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "git",
           "hash": "5z64vgbcrmkc2upw22lueja73dju577b",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "hwloc",
           "hash": "pbavg2mmgexdgm5rulhk45tuuw6jdvbs",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "mimalloc",
           "hash": "imbpkz6fgi3wzlsssx2u42nvj5uba5c5",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "mpich",
           "hash": "pc63eobodbxmiqrgqwy7yzpgfqjj5ut4",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": [
+              "mpi"
+            ]
+          }
         },
         {
           "name": "ninja",
           "hash": "ftcwtfvdmxazlulgt7wdi4me5k5e4r6w",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
+        },
+        {
+          "name": "whip",
+          "hash": "ybti2nu5hgnkaeku4xa27l634fyacsbp",
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         }
       ],
-      "hash": "be6rrc4itne3ey3a2d47qa276ri57lgv"
+      "hash": "bhsld44c7ealwlpvzpp44cogqwidlvhq"
     },
     "y2kg4b7fglnx2fubpchjoi74nphvcthu": {
       "name": "boost",
@@ -5716,37 +6476,144 @@
         {
           "name": "bzip2",
           "hash": "vlhz6pyw562rllg3kxoiq6rznlihjfs4",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "xz",
           "hash": "e2yv5g6jrwxwxcpl3hyi3brey4jzhxuy",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "zlib",
           "hash": "bfw5iv7pp4roogaaqg762nt524eyruya",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "zstd",
           "hash": "rkkrv3itkjwka3ddsxzvywnpxqsgjy3z",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         }
       ],
       "hash": "y2kg4b7fglnx2fubpchjoi74nphvcthu"
+    },
+    "yaw6tnioz4fpkkahppa464hc4yzghq36": {
+      "name": "cuda",
+      "version": "11.8.0",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu23.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "allow-unsupported-compilers": false,
+        "build_system": "generic",
+        "dev": false,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "my5qz2uw2nt4jfrfeuqj2664yeo6yxvzjxd3xrlgpluaokvzwx5q====",
+      "dependencies": [
+        {
+          "name": "libxml2",
+          "hash": "l4kqbo7kesj35pd3spniatwvavsherfb",
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
+        }
+      ],
+      "hash": "yaw6tnioz4fpkkahppa464hc4yzghq36"
     },
     "ndzhuiuuzxq5oiq2uqwpnf73qlkb2o5q": {
       "name": "fmt",
@@ -5836,16 +6703,22 @@
         {
           "name": "cmake",
           "hash": "xm7jqizk3hey32gkxk7o6vg46l4giddn",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "gmake",
           "hash": "2uwsz6npxa4yk7mm7kf2cyubsy5pio2t",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         }
       ],
       "hash": "ndzhuiuuzxq5oiq2uqwpnf73qlkb2o5q"
@@ -5938,109 +6811,151 @@
         {
           "name": "autoconf",
           "hash": "pzbgqchelk5xmulhv6jrgqayacsgxnc2",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "automake",
           "hash": "37ckghdzejt5pn24ue7qsihebpkcnqf2",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "curl",
           "hash": "lne6kggbwu6exu4v6vua5ivkv3j3w3ei",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "expat",
           "hash": "232p4rjhuzgtxwfqs732i6p3s3azb6iy",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "gettext",
           "hash": "f4jssygaiqbogae3amkdn4zmyk6azl4v",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "libiconv",
           "hash": "zjrw4lzbazkqvb3y3vwcvv5bn5mbe3zp",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "libidn2",
           "hash": "4vqzjlf35sa2bcniltppk5bi74xn4nbi",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "libtool",
           "hash": "t7snxxpsk74ewsox2qfwlzurmyrewlcb",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "m4",
           "hash": "zq7px332avdaave7742bdrnsaw4nzorz",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "openssh",
           "hash": "s5y6odywkidzvqrrw7vd5mgipordk53f",
-          "type": [
-            "run"
-          ]
+          "parameters": {
+            "deptypes": [
+              "run"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "openssl",
           "hash": "f72npmczta7e5u4gfnquwu7bytfbkqo2",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "pcre2",
           "hash": "ahmq4hegguhrro7ucyo6y45zgecxe2fy",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "perl",
           "hash": "svemmomsxhvqrmbq44r6z7rlbrsuqezd",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "zlib",
           "hash": "bfw5iv7pp4roogaaqg762nt524eyruya",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         }
       ],
       "hash": "5z64vgbcrmkc2upw22lueja73dju577b"
@@ -6137,18 +7052,24 @@
         {
           "name": "m4",
           "hash": "zq7px332avdaave7742bdrnsaw4nzorz",
-          "type": [
-            "build",
-            "run"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "run"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "perl",
           "hash": "svemmomsxhvqrmbq44r6z7rlbrsuqezd",
-          "type": [
-            "build",
-            "run"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "run"
+            ],
+            "virtuals": []
+          }
         }
       ],
       "hash": "pzbgqchelk5xmulhv6jrgqayacsgxnc2"
@@ -6235,17 +7156,23 @@
         {
           "name": "autoconf",
           "hash": "pzbgqchelk5xmulhv6jrgqayacsgxnc2",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "perl",
           "hash": "svemmomsxhvqrmbq44r6z7rlbrsuqezd",
-          "type": [
-            "build",
-            "run"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "run"
+            ],
+            "virtuals": []
+          }
         }
       ],
       "hash": "37ckghdzejt5pn24ue7qsihebpkcnqf2"
@@ -6346,25 +7273,34 @@
         {
           "name": "openssl",
           "hash": "f72npmczta7e5u4gfnquwu7bytfbkqo2",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "pkgconf",
           "hash": "kr5ioaaxydc7inri2nwbiutxjuexnouc",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "zlib",
           "hash": "bfw5iv7pp4roogaaqg762nt524eyruya",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         }
       ],
       "hash": "lne6kggbwu6exu4v6vua5ivkv3j3w3ei"
@@ -6451,10 +7387,13 @@
         {
           "name": "libunistring",
           "hash": "aldnet6thj3qr2a6qrldokfhtqp2rzp4",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         }
       ],
       "hash": "4vqzjlf35sa2bcniltppk5bi74xn4nbi"
@@ -6541,10 +7480,13 @@
         {
           "name": "libiconv",
           "hash": "zjrw4lzbazkqvb3y3vwcvv5bn5mbe3zp",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         }
       ],
       "hash": "aldnet6thj3qr2a6qrldokfhtqp2rzp4"
@@ -6632,49 +7574,67 @@
         {
           "name": "krb5",
           "hash": "rbvfyjojs5y6v3bqpwnsfv6j5qvzlbsa",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "libedit",
           "hash": "qiykrrj7sybffezmuuinaif3m5wrux7n",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "libxcrypt",
           "hash": "5xam56l6vj6xhqvjeleknl5gttdba4l3",
-          "type": [
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "ncurses",
           "hash": "v4b6dpifez7jmt2g5tr5ebfk7fylaytb",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "openssl",
           "hash": "f72npmczta7e5u4gfnquwu7bytfbkqo2",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "zlib",
           "hash": "bfw5iv7pp4roogaaqg762nt524eyruya",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         }
       ],
       "hash": "s5y6odywkidzvqrrw7vd5mgipordk53f"
@@ -6762,32 +7722,44 @@
         {
           "name": "bison",
           "hash": "puwlnwrdx5hhnbhpmd3lzfjl3rjxddc2",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "diffutils",
           "hash": "dyaispdugy3hzb4otgpymvllclgnurqv",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "gettext",
           "hash": "f4jssygaiqbogae3amkdn4zmyk6azl4v",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "openssl",
           "hash": "f72npmczta7e5u4gfnquwu7bytfbkqo2",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         }
       ],
       "hash": "rbvfyjojs5y6v3bqpwnsfv6j5qvzlbsa"
@@ -6874,24 +7846,33 @@
         {
           "name": "diffutils",
           "hash": "dyaispdugy3hzb4otgpymvllclgnurqv",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "m4",
           "hash": "zq7px332avdaave7742bdrnsaw4nzorz",
-          "type": [
-            "build",
-            "run"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "run"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "perl",
           "hash": "svemmomsxhvqrmbq44r6z7rlbrsuqezd",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         }
       ],
       "hash": "puwlnwrdx5hhnbhpmd3lzfjl3rjxddc2"
@@ -6978,17 +7959,23 @@
         {
           "name": "ncurses",
           "hash": "v4b6dpifez7jmt2g5tr5ebfk7fylaytb",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "pkgconf",
           "hash": "kr5ioaaxydc7inri2nwbiutxjuexnouc",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         }
       ],
       "hash": "qiykrrj7sybffezmuuinaif3m5wrux7n"
@@ -7176,23 +8163,150 @@
         {
           "name": "cmake",
           "hash": "xm7jqizk3hey32gkxk7o6vg46l4giddn",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "gmake",
           "hash": "2uwsz6npxa4yk7mm7kf2cyubsy5pio2t",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         }
       ],
       "hash": "imbpkz6fgi3wzlsssx2u42nvj5uba5c5"
     },
-    "ze54agcb7rkvhc77ako4t3msxj24s54m": {
+    "ybti2nu5hgnkaeku4xa27l634fyacsbp": {
+      "name": "whip",
+      "version": "0.2.0",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu23.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "cmake",
+        "build_type": "Release",
+        "cuda": true,
+        "cuda_arch": [
+          "89"
+        ],
+        "generator": "make",
+        "ipo": false,
+        "rocm": false,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "fefq4arbpmkvbx7mkdm5vlevugl4hwnfzktjamf3rpbownbmalaq====",
+      "dependencies": [
+        {
+          "name": "cmake",
+          "hash": "xm7jqizk3hey32gkxk7o6vg46l4giddn",
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
+        },
+        {
+          "name": "cuda",
+          "hash": "yaw6tnioz4fpkkahppa464hc4yzghq36",
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
+        },
+        {
+          "name": "gmake",
+          "hash": "2uwsz6npxa4yk7mm7kf2cyubsy5pio2t",
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
+        }
+      ],
+      "hash": "ybti2nu5hgnkaeku4xa27l634fyacsbp"
+    },
+    "trrengr7vx2q7ihqkvvtm5lvlxxfufwl": {
       "name": "pika-algorithms",
-      "version": "0.1.2",
+      "version": "0.1.3",
       "arch": {
         "platform": "linux",
         "platform_os": "ubuntu23.04",
@@ -7271,57 +8385,75 @@
         "ldflags": [],
         "ldlibs": []
       },
-      "package_hash": "6ajs7ra7undo6cbo7di234jitvuiut3eeebwzjdhxxncojkh6riq====",
+      "package_hash": "nyxfizzyurnwlcy5a5vvv2k5y7ektihn6hyamrf4bhnhugrm3ktq====",
       "dependencies": [
         {
           "name": "boost",
           "hash": "y2kg4b7fglnx2fubpchjoi74nphvcthu",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "cmake",
           "hash": "xm7jqizk3hey32gkxk7o6vg46l4giddn",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "fmt",
           "hash": "ndzhuiuuzxq5oiq2uqwpnf73qlkb2o5q",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "git",
           "hash": "5z64vgbcrmkc2upw22lueja73dju577b",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "ninja",
           "hash": "ftcwtfvdmxazlulgt7wdi4me5k5e4r6w",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "pika",
-          "hash": "be6rrc4itne3ey3a2d47qa276ri57lgv",
-          "type": [
-            "build",
-            "link"
-          ]
+          "hash": "bhsld44c7ealwlpvzpp44cogqwidlvhq",
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         }
       ],
-      "hash": "ze54agcb7rkvhc77ako4t3msxj24s54m"
+      "hash": "trrengr7vx2q7ihqkvvtm5lvlxxfufwl"
     },
-    "jwousue6tkrf5iazon4rvi4z7efvubun": {
+    "cskcc4rwocfvz367et62ujavap2repgg": {
       "name": "umpire",
       "version": "2022.03.1",
       "arch": {
@@ -7412,40 +8544,52 @@
         "ldflags": [],
         "ldlibs": []
       },
-      "package_hash": "chuybnlqgksqotwatleftv27k4pqzrxauhmmqieqlbcjgoi3m3da====",
+      "package_hash": "eyh2o5si62ob34obabfc2ouixjyyz3zapijuttfzxwbovjfrzsoq====",
       "dependencies": [
         {
           "name": "blt",
           "hash": "qqlz5yv2f63uxdqwuf6ztyysjm6usoux",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "camp",
-          "hash": "u5b4giqkvjjq4adb67kj642shhhp5rls",
-          "type": [
-            "build",
-            "link"
-          ]
+          "hash": "khy5si3tmp54nffvsxwwecbsi5msa6is",
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "cmake",
           "hash": "xm7jqizk3hey32gkxk7o6vg46l4giddn",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "gmake",
           "hash": "2uwsz6npxa4yk7mm7kf2cyubsy5pio2t",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         }
       ],
-      "hash": "jwousue6tkrf5iazon4rvi4z7efvubun"
+      "hash": "cskcc4rwocfvz367et62ujavap2repgg"
     },
     "qqlz5yv2f63uxdqwuf6ztyysjm6usoux": {
       "name": "blt",
@@ -7529,14 +8673,17 @@
         {
           "name": "cmake",
           "hash": "xm7jqizk3hey32gkxk7o6vg46l4giddn",
-          "type": [
-            "run"
-          ]
+          "parameters": {
+            "deptypes": [
+              "run"
+            ],
+            "virtuals": []
+          }
         }
       ],
       "hash": "qqlz5yv2f63uxdqwuf6ztyysjm6usoux"
     },
-    "u5b4giqkvjjq4adb67kj642shhhp5rls": {
+    "khy5si3tmp54nffvsxwwecbsi5msa6is": {
       "name": "camp",
       "version": "2022.10.1",
       "arch": {
@@ -7625,29 +8772,38 @@
         {
           "name": "blt",
           "hash": "qqlz5yv2f63uxdqwuf6ztyysjm6usoux",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "cmake",
           "hash": "xm7jqizk3hey32gkxk7o6vg46l4giddn",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "gmake",
           "hash": "2uwsz6npxa4yk7mm7kf2cyubsy5pio2t",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         }
       ],
-      "hash": "u5b4giqkvjjq4adb67kj642shhhp5rls"
+      "hash": "khy5si3tmp54nffvsxwwecbsi5msa6is"
     },
-    "4s2yxhspls3ixtzjkst4rw2gwkxgmxxw": {
+    "lc4hxwsj7wankw4kfnssazqxwkbuo2dh": {
       "name": "fftw",
       "version": "3.3.10",
       "arch": {
@@ -7736,13 +8892,18 @@
         {
           "name": "mpich",
           "hash": "pc63eobodbxmiqrgqwy7yzpgfqjj5ut4",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": [
+              "mpi"
+            ]
+          }
         }
       ],
-      "hash": "4s2yxhspls3ixtzjkst4rw2gwkxgmxxw"
+      "hash": "lc4hxwsj7wankw4kfnssazqxwkbuo2dh"
     },
     "7w7b7ni33qcnjooxrt5hkpaegvcjderi": {
       "name": "libint",
@@ -7830,46 +8991,64 @@
         {
           "name": "autoconf",
           "hash": "pzbgqchelk5xmulhv6jrgqayacsgxnc2",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "automake",
           "hash": "37ckghdzejt5pn24ue7qsihebpkcnqf2",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "boost",
           "hash": "y2kg4b7fglnx2fubpchjoi74nphvcthu",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "gmp",
           "hash": "ghuszkynvo6tjeu7sjmpucb4tbtnqidz",
-          "type": [
-            "build",
-            "link"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "libtool",
           "hash": "t7snxxpsk74ewsox2qfwlzurmyrewlcb",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "python",
           "hash": "m5jn3pa5gdztwruuno6r5bbckhcfzo5m",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         }
       ],
       "hash": "7w7b7ni33qcnjooxrt5hkpaegvcjderi"
@@ -7967,30 +9146,42 @@
         {
           "name": "autoconf",
           "hash": "pzbgqchelk5xmulhv6jrgqayacsgxnc2",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "automake",
           "hash": "37ckghdzejt5pn24ue7qsihebpkcnqf2",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "libtool",
           "hash": "t7snxxpsk74ewsox2qfwlzurmyrewlcb",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "m4",
           "hash": "zq7px332avdaave7742bdrnsaw4nzorz",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         }
       ],
       "hash": "ghuszkynvo6tjeu7sjmpucb4tbtnqidz"
@@ -8079,30 +9270,42 @@
         {
           "name": "autoconf",
           "hash": "pzbgqchelk5xmulhv6jrgqayacsgxnc2",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "automake",
           "hash": "37ckghdzejt5pn24ue7qsihebpkcnqf2",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "libtool",
           "hash": "t7snxxpsk74ewsox2qfwlzurmyrewlcb",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "perl",
           "hash": "svemmomsxhvqrmbq44r6z7rlbrsuqezd",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         }
       ],
       "hash": "ff5w3fbeyx35gw3z35656mowiqggxf25"
@@ -8193,16 +9396,22 @@
         {
           "name": "cmake",
           "hash": "xm7jqizk3hey32gkxk7o6vg46l4giddn",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         },
         {
           "name": "gmake",
           "hash": "2uwsz6npxa4yk7mm7kf2cyubsy5pio2t",
-          "type": [
-            "build"
-          ]
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
         }
       ],
       "hash": "7q5ildu464hmadzclper44wupuda2qxf"
