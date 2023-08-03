@@ -7,16 +7,16 @@
   "spack": {
     "version": "0.21.0.dev0",
     "type": "git",
-    "commit": "6a762501f8d465ff06ace3daba8441d842d327de"
+    "commit": "a14f4b5a028df4a669fbebab1e6a8f2b57288baf"
   },
   "roots": [
     {
-      "hash": "2bi4xuxkie5vbcuozepfrxbnadt3b2iq",
+      "hash": "wh3mtnt3pirykipr6ehaat65hvtsjqmf",
       "spec": "cp2k@master+cosma+dlaf+libint+libxc+spglib build_system=cmake ^cosma+scalapack+shared ^dbcsr@develop ^intel-mkl threads=openmp ^mpich@4.0.1 device=ch3 netmod=tcp"
     }
   ],
   "concrete_specs": {
-    "2bi4xuxkie5vbcuozepfrxbnadt3b2iq": {
+    "wh3mtnt3pirykipr6ehaat65hvtsjqmf": {
       "name": "cp2k",
       "version": "master",
       "arch": {
@@ -116,7 +116,7 @@
         "ldflags": [],
         "ldlibs": []
       },
-      "package_hash": "7fvtzif6ifuhcrexwin6lgr6r32amg5r34xpwyr4fgcuat4otjrq====",
+      "package_hash": "wt7fwphame7tcooomfn63cwuvycfrltyha67dingalc6w2pgpdlq====",
       "dependencies": [
         {
           "name": "cmake",
@@ -141,7 +141,7 @@
         },
         {
           "name": "dbcsr",
-          "hash": "gm7h4ekugykwlsdk5h6qmpdruaap4ycl",
+          "hash": "idnwvtpxokikv2hu7i2b3hi3j7urkrln",
           "parameters": {
             "deptypes": [
               "build",
@@ -152,7 +152,7 @@
         },
         {
           "name": "dla-future",
-          "hash": "misjtprkybjv4zfjeobckrtr4tguwlcl",
+          "hash": "yd4iwmqnxiu5yrp7nd3evyvpujt7us3t",
           "parameters": {
             "deptypes": [
               "build",
@@ -212,7 +212,7 @@
         },
         {
           "name": "libxc",
-          "hash": "ff5w3fbeyx35gw3z35656mowiqggxf25",
+          "hash": "4gydbbxcm7o3s3xrmlt2nncpng322wgt",
           "parameters": {
             "deptypes": [
               "build",
@@ -260,7 +260,7 @@
         },
         {
           "name": "py-fypp",
-          "hash": "mmrejzgz4v3rgxj7jofpobo2s4kmfmdl",
+          "hash": "i7wvnsxwucep33tjmavqxbmesfpcpzxp",
           "parameters": {
             "deptypes": [
               "build",
@@ -271,7 +271,7 @@
         },
         {
           "name": "python",
-          "hash": "m5jn3pa5gdztwruuno6r5bbckhcfzo5m",
+          "hash": "s4yjet67fatlh7qr7jpgx26pgtyg6rr4",
           "parameters": {
             "deptypes": [
               "build"
@@ -291,7 +291,7 @@
           }
         }
       ],
-      "hash": "2bi4xuxkie5vbcuozepfrxbnadt3b2iq"
+      "hash": "wh3mtnt3pirykipr6ehaat65hvtsjqmf"
     },
     "xm7jqizk3hey32gkxk7o6vg46l4giddn": {
       "name": "cmake",
@@ -3156,7 +3156,7 @@
       "package_hash": "ads43zrvkj7am47nzsnp3kilt5wuci7zema6daamp2guqq2kcqha====",
       "hash": "e2yv5g6jrwxwxcpl3hyi3brey4jzhxuy"
     },
-    "gm7h4ekugykwlsdk5h6qmpdruaap4ycl": {
+    "idnwvtpxokikv2hu7i2b3hi3j7urkrln": {
       "name": "dbcsr",
       "version": "develop",
       "arch": {
@@ -3232,6 +3232,7 @@
         "generator": "ninja",
         "ipo": false,
         "mpi": true,
+        "mpi_f08": false,
         "opencl": false,
         "openmp": true,
         "rocm": false,
@@ -3244,7 +3245,7 @@
         "ldflags": [],
         "ldlibs": []
       },
-      "package_hash": "w3aseeufr76bcybokhcctrf54cvxoawmyy675pygz5ssurekx5aq====",
+      "package_hash": "3rc3ufoficzsnuvd3qiyohkpgcwrp3odtk4ezm6fnmnfqvu5sbfq====",
       "dependencies": [
         {
           "name": "cmake",
@@ -3318,7 +3319,7 @@
         },
         {
           "name": "py-fypp",
-          "hash": "mmrejzgz4v3rgxj7jofpobo2s4kmfmdl",
+          "hash": "i7wvnsxwucep33tjmavqxbmesfpcpzxp",
           "parameters": {
             "deptypes": [
               "build"
@@ -3327,7 +3328,7 @@
           }
         }
       ],
-      "hash": "gm7h4ekugykwlsdk5h6qmpdruaap4ycl"
+      "hash": "idnwvtpxokikv2hu7i2b3hi3j7urkrln"
     },
     "6mgunlwnynlaj76s2ujychhedqhha7rm": {
       "name": "libxsmm",
@@ -5261,9 +5262,9 @@
       "package_hash": "kh26rqs3cdi5efd3po3idkw7mop3fudtxlfomeun5vt47ent3y4q====",
       "hash": "vv7qiqr4nqllzayp3p4c3w7ucyq3erni"
     },
-    "mmrejzgz4v3rgxj7jofpobo2s4kmfmdl": {
+    "i7wvnsxwucep33tjmavqxbmesfpcpzxp": {
       "name": "py-fypp",
-      "version": "2.1.1",
+      "version": "3.1",
       "arch": {
         "platform": "linux",
         "platform_os": "ubuntu23.04",
@@ -5338,11 +5339,11 @@
         "ldflags": [],
         "ldlibs": []
       },
-      "package_hash": "27cqeo4lialc5ppltxozn6istvhzknkgxue4uqy6wwli3kjphasa====",
+      "package_hash": "5zvlxk25ytekq6bwa6zwgau6t7rlehom7flb5kf6ve6n6525amjq====",
       "dependencies": [
         {
           "name": "py-pip",
-          "hash": "cg4uve5oocwcr6cei5niqy5gdzwkq6oq",
+          "hash": "hmvwyrfodh7ivwxdz5lt6ffpb2uuzg3v",
           "parameters": {
             "deptypes": [
               "build"
@@ -5352,7 +5353,7 @@
         },
         {
           "name": "py-setuptools",
-          "hash": "uapyroxpuvrlzscuwf6cqasgi6gshoeg",
+          "hash": "ffgn4hcl4hgfigijf6ki6u7lxwmzql7k",
           "parameters": {
             "deptypes": [
               "build"
@@ -5362,7 +5363,7 @@
         },
         {
           "name": "py-wheel",
-          "hash": "j3otjzjgwbkzew3v5safkkdo4ohtpvqv",
+          "hash": "5dfkwu7gkyfl77fxniihb6iaeq7d6loz",
           "parameters": {
             "deptypes": [
               "build"
@@ -5372,7 +5373,7 @@
         },
         {
           "name": "python",
-          "hash": "m5jn3pa5gdztwruuno6r5bbckhcfzo5m",
+          "hash": "s4yjet67fatlh7qr7jpgx26pgtyg6rr4",
           "parameters": {
             "deptypes": [
               "build",
@@ -5382,11 +5383,11 @@
           }
         }
       ],
-      "hash": "mmrejzgz4v3rgxj7jofpobo2s4kmfmdl"
+      "hash": "i7wvnsxwucep33tjmavqxbmesfpcpzxp"
     },
-    "cg4uve5oocwcr6cei5niqy5gdzwkq6oq": {
+    "hmvwyrfodh7ivwxdz5lt6ffpb2uuzg3v": {
       "name": "py-pip",
-      "version": "23.0",
+      "version": "23.1.2",
       "arch": {
         "platform": "linux",
         "platform_os": "ubuntu23.04",
@@ -5461,11 +5462,11 @@
         "ldflags": [],
         "ldlibs": []
       },
-      "package_hash": "o33nwakwk3e6jgwxtb5raiyq7ixxjzmqmkkwvircyhxaztty2yzq====",
+      "package_hash": "uiwpqz4dfhdj4li5open7qktodg7cym3o4pkxsj6kk4fznvg4ovq====",
       "dependencies": [
         {
           "name": "python",
-          "hash": "m5jn3pa5gdztwruuno6r5bbckhcfzo5m",
+          "hash": "s4yjet67fatlh7qr7jpgx26pgtyg6rr4",
           "parameters": {
             "deptypes": [
               "build",
@@ -5475,11 +5476,279 @@
           }
         }
       ],
-      "hash": "cg4uve5oocwcr6cei5niqy5gdzwkq6oq"
+      "hash": "hmvwyrfodh7ivwxdz5lt6ffpb2uuzg3v"
     },
-    "uapyroxpuvrlzscuwf6cqasgi6gshoeg": {
+    "s4yjet67fatlh7qr7jpgx26pgtyg6rr4": {
+      "name": "python",
+      "version": "3.11.4",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu23.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "generic",
+        "bz2": true,
+        "crypt": true,
+        "ctypes": true,
+        "dbm": true,
+        "debug": false,
+        "libxml2": true,
+        "lzma": true,
+        "nis": false,
+        "optimizations": false,
+        "patches": [
+          "13fa8bfa3e852cbf2e7b02a0313009df484bb39f55a50ada00e1a5599e956ac9",
+          "b0615b2fc96bb0cf7f180b107183b194b83b34c7614dcd6121e4a76bbf168155",
+          "f2fd060afc4b4618fe8104c4c5d771f36dc55b1db5a4623785a4ea707ec72fb4"
+        ],
+        "pic": true,
+        "pyexpat": true,
+        "pythoncmd": true,
+        "readline": true,
+        "shared": true,
+        "sqlite3": true,
+        "ssl": true,
+        "tkinter": false,
+        "uuid": true,
+        "zlib": true,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "patches": [
+        "f2fd060afc4b4618fe8104c4c5d771f36dc55b1db5a4623785a4ea707ec72fb4",
+        "b0615b2fc96bb0cf7f180b107183b194b83b34c7614dcd6121e4a76bbf168155",
+        "13fa8bfa3e852cbf2e7b02a0313009df484bb39f55a50ada00e1a5599e956ac9"
+      ],
+      "package_hash": "bmoggftntumjxyvjiffbowuubusafvd53kq6hveuvm5zlu7acjna====",
+      "dependencies": [
+        {
+          "name": "bzip2",
+          "hash": "vlhz6pyw562rllg3kxoiq6rznlihjfs4",
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
+        },
+        {
+          "name": "expat",
+          "hash": "232p4rjhuzgtxwfqs732i6p3s3azb6iy",
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
+        },
+        {
+          "name": "gdbm",
+          "hash": "l4ky47gchymhw3rsxt42yztxoryb2vc5",
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
+        },
+        {
+          "name": "gettext",
+          "hash": "f4jssygaiqbogae3amkdn4zmyk6azl4v",
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
+        },
+        {
+          "name": "libffi",
+          "hash": "fgckd6e7hiuc6swqqi3b7tf4pzybhdmw",
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
+        },
+        {
+          "name": "libxcrypt",
+          "hash": "5xam56l6vj6xhqvjeleknl5gttdba4l3",
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
+        },
+        {
+          "name": "ncurses",
+          "hash": "v4b6dpifez7jmt2g5tr5ebfk7fylaytb",
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
+        },
+        {
+          "name": "openssl",
+          "hash": "f72npmczta7e5u4gfnquwu7bytfbkqo2",
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
+        },
+        {
+          "name": "pkgconf",
+          "hash": "kr5ioaaxydc7inri2nwbiutxjuexnouc",
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": [
+              "pkgconfig"
+            ]
+          }
+        },
+        {
+          "name": "readline",
+          "hash": "qtuctjlx6umpjfsyfc4fuhdtxvs33gsn",
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
+        },
+        {
+          "name": "sqlite",
+          "hash": "6lwzoaucbx4wgckaod4iqwbsmjyxdqms",
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
+        },
+        {
+          "name": "util-linux-uuid",
+          "hash": "wq3wz5zpvglrm3g7foq3azteslgba5pt",
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": [
+              "uuid"
+            ]
+          }
+        },
+        {
+          "name": "xz",
+          "hash": "e2yv5g6jrwxwxcpl3hyi3brey4jzhxuy",
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
+        },
+        {
+          "name": "zlib",
+          "hash": "bfw5iv7pp4roogaaqg762nt524eyruya",
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
+        }
+      ],
+      "hash": "s4yjet67fatlh7qr7jpgx26pgtyg6rr4"
+    },
+    "ffgn4hcl4hgfigijf6ki6u7lxwmzql7k": {
       "name": "py-setuptools",
-      "version": "67.6.0",
+      "version": "63.4.3",
       "arch": {
         "platform": "linux",
         "platform_os": "ubuntu23.04",
@@ -5554,11 +5823,11 @@
         "ldflags": [],
         "ldlibs": []
       },
-      "package_hash": "6xqnunx4djlkbikddsx22ncayqqrxhgb5nec7rw4escdia322gra====",
+      "package_hash": "xl2p37tgdxswtqrqlwhjrypfcimj3x2iopavswgmkmkqv5auxr3a====",
       "dependencies": [
         {
           "name": "py-pip",
-          "hash": "cg4uve5oocwcr6cei5niqy5gdzwkq6oq",
+          "hash": "hmvwyrfodh7ivwxdz5lt6ffpb2uuzg3v",
           "parameters": {
             "deptypes": [
               "build"
@@ -5568,7 +5837,7 @@
         },
         {
           "name": "python",
-          "hash": "m5jn3pa5gdztwruuno6r5bbckhcfzo5m",
+          "hash": "s4yjet67fatlh7qr7jpgx26pgtyg6rr4",
           "parameters": {
             "deptypes": [
               "build",
@@ -5578,9 +5847,9 @@
           }
         }
       ],
-      "hash": "uapyroxpuvrlzscuwf6cqasgi6gshoeg"
+      "hash": "ffgn4hcl4hgfigijf6ki6u7lxwmzql7k"
     },
-    "j3otjzjgwbkzew3v5safkkdo4ohtpvqv": {
+    "5dfkwu7gkyfl77fxniihb6iaeq7d6loz": {
       "name": "py-wheel",
       "version": "0.37.1",
       "arch": {
@@ -5661,7 +5930,7 @@
       "dependencies": [
         {
           "name": "py-pip",
-          "hash": "cg4uve5oocwcr6cei5niqy5gdzwkq6oq",
+          "hash": "hmvwyrfodh7ivwxdz5lt6ffpb2uuzg3v",
           "parameters": {
             "deptypes": [
               "build"
@@ -5671,7 +5940,7 @@
         },
         {
           "name": "python",
-          "hash": "m5jn3pa5gdztwruuno6r5bbckhcfzo5m",
+          "hash": "s4yjet67fatlh7qr7jpgx26pgtyg6rr4",
           "parameters": {
             "deptypes": [
               "build",
@@ -5681,9 +5950,9 @@
           }
         }
       ],
-      "hash": "j3otjzjgwbkzew3v5safkkdo4ohtpvqv"
+      "hash": "5dfkwu7gkyfl77fxniihb6iaeq7d6loz"
     },
-    "misjtprkybjv4zfjeobckrtr4tguwlcl": {
+    "yd4iwmqnxiu5yrp7nd3evyvpujt7us3t": {
       "name": "dla-future",
       "version": "master",
       "arch": {
@@ -5753,7 +6022,7 @@
       "namespace": "dlaf",
       "parameters": {
         "build_system": "cmake",
-        "build_type": "Release",
+        "build_type": "Debug",
         "ci-check-threads": false,
         "ci-test": false,
         "cuda": false,
@@ -5778,7 +6047,7 @@
       "dependencies": [
         {
           "name": "blaspp",
-          "hash": "pywc2qlifn5ipl6hwrilnkyqutd3ti4c",
+          "hash": "yvceq5zism4yw4vkh6zefcf7ae2fwjkl",
           "parameters": {
             "deptypes": [
               "build",
@@ -5822,7 +6091,7 @@
         },
         {
           "name": "lapackpp",
-          "hash": "vsijvicxac2x2ico5jp3iaxfzfcsd24v",
+          "hash": "pt6hitf34zla27ton223cyr34r5xrxnz",
           "parameters": {
             "deptypes": [
               "build",
@@ -5878,11 +6147,11 @@
           }
         }
       ],
-      "hash": "misjtprkybjv4zfjeobckrtr4tguwlcl"
+      "hash": "yd4iwmqnxiu5yrp7nd3evyvpujt7us3t"
     },
-    "pywc2qlifn5ipl6hwrilnkyqutd3ti4c": {
+    "yvceq5zism4yw4vkh6zefcf7ae2fwjkl": {
       "name": "blaspp",
-      "version": "2022.07.00",
+      "version": "2023.06.00",
       "arch": {
         "platform": "linux",
         "platform_os": "ubuntu23.04",
@@ -5964,7 +6233,7 @@
         "ldflags": [],
         "ldlibs": []
       },
-      "package_hash": "blsxoyv7xkkvgclyujnrmj43ry7exxtplzbtb44hzo4t76l2lzhq====",
+      "package_hash": "uzrlfhetcwjt5lrlsavptmy3jwxxrjdbn2nvow6vvcsgr7jef2na====",
       "dependencies": [
         {
           "name": "cmake",
@@ -6000,11 +6269,11 @@
           }
         }
       ],
-      "hash": "pywc2qlifn5ipl6hwrilnkyqutd3ti4c"
+      "hash": "yvceq5zism4yw4vkh6zefcf7ae2fwjkl"
     },
-    "vsijvicxac2x2ico5jp3iaxfzfcsd24v": {
+    "pt6hitf34zla27ton223cyr34r5xrxnz": {
       "name": "lapackpp",
-      "version": "2022.07.00",
+      "version": "2023.06.00",
       "arch": {
         "platform": "linux",
         "platform_os": "ubuntu23.04",
@@ -6085,11 +6354,11 @@
         "ldflags": [],
         "ldlibs": []
       },
-      "package_hash": "hinqmxlg6iqwullfu3do3ljgx4egnbugrgjyzvftzp5gcdzvheca====",
+      "package_hash": "bzewhldu5f3364mt37zbmvh2aep3uffymjgqgvt2cilat4nqxjsq====",
       "dependencies": [
         {
           "name": "blaspp",
-          "hash": "pywc2qlifn5ipl6hwrilnkyqutd3ti4c",
+          "hash": "yvceq5zism4yw4vkh6zefcf7ae2fwjkl",
           "parameters": {
             "deptypes": [
               "build",
@@ -6133,7 +6402,7 @@
           }
         }
       ],
-      "hash": "vsijvicxac2x2ico5jp3iaxfzfcsd24v"
+      "hash": "pt6hitf34zla27ton223cyr34r5xrxnz"
     },
     "bhsld44c7ealwlpvzpp44cogqwidlvhq": {
       "name": "pika",
@@ -9186,7 +9455,7 @@
       ],
       "hash": "ghuszkynvo6tjeu7sjmpucb4tbtnqidz"
     },
-    "ff5w3fbeyx35gw3z35656mowiqggxf25": {
+    "4gydbbxcm7o3s3xrmlt2nncpng322wgt": {
       "name": "libxc",
       "version": "6.1.0",
       "arch": {
@@ -9257,6 +9526,8 @@
       "parameters": {
         "build_system": "autotools",
         "cuda": false,
+        "kxc": false,
+        "lxc": false,
         "shared": true,
         "cflags": [],
         "cppflags": [],
@@ -9265,7 +9536,7 @@
         "ldflags": [],
         "ldlibs": []
       },
-      "package_hash": "bfs33q2ei2pl6ghh2qehieur3cclkv6m7y2jsznaoa6ifi7ti7vq====",
+      "package_hash": "3vv622lx63doxyhlrayvk4ocjpp7ixuup3xig4imgrlqca2nogja====",
       "dependencies": [
         {
           "name": "autoconf",
@@ -9308,7 +9579,7 @@
           }
         }
       ],
-      "hash": "ff5w3fbeyx35gw3z35656mowiqggxf25"
+      "hash": "4gydbbxcm7o3s3xrmlt2nncpng322wgt"
     },
     "7q5ildu464hmadzclper44wupuda2qxf": {
       "name": "spglib",
