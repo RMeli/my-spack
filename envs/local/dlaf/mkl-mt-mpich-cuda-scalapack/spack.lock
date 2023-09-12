@@ -7,16 +7,16 @@
   "spack": {
     "version": "0.21.0.dev0",
     "type": "git",
-    "commit": "a45d129f867af59a67c026face4ad685bccad923"
+    "commit": "a3c7ad7669e42fe56dbf21f0ed6bb0cab2877c4a"
   },
   "roots": [
     {
-      "hash": "4cel3hromyzsglicydfgntc5srljmcdq",
-      "spec": "dla-future@master+cuda+miniapps+scalapack cuda_arch=89 ^intel-mkl threads=openmp ^mpich device=ch3 netmod=tcp ^pika@0.16.0 ^umpire~device_alloc"
+      "hash": "2k4k6va5umfs5spm536zcuuuypj74huz",
+      "spec": "dla-future@master+cuda+hdf5+miniapps+scalapack cuda_arch=89 ^intel-mkl threads=openmp ^mpich device=ch3 netmod=tcp ^pika@0.17.0 ^umpire~device_alloc"
     }
   ],
   "concrete_specs": {
-    "4cel3hromyzsglicydfgntc5srljmcdq": {
+    "2k4k6va5umfs5spm536zcuuuypj74huz": {
       "name": "dla-future",
       "version": "master",
       "arch": {
@@ -96,6 +96,7 @@
         "cxxstd": "17",
         "doc": false,
         "generator": "make",
+        "hdf5": true,
         "ipo": false,
         "miniapps": true,
         "rocm": false,
@@ -108,11 +109,11 @@
         "ldflags": [],
         "ldlibs": []
       },
-      "package_hash": "b7ynzjpckg23ax4xr7kz4rsr7hx4c7cgznk3xhflmbjlawhnnuia====",
+      "package_hash": "zannjh4ikh6dnmpolggc2ettri3u46wa5ssuvu5ufhgnhdsu5r2q====",
       "dependencies": [
         {
           "name": "blaspp",
-          "hash": "pywc2qlifn5ipl6hwrilnkyqutd3ti4c",
+          "hash": "yvceq5zism4yw4vkh6zefcf7ae2fwjkl",
           "parameters": {
             "deptypes": [
               "build",
@@ -153,6 +154,17 @@
           }
         },
         {
+          "name": "hdf5",
+          "hash": "p2lwhzw6gezgqlxlrqtq45r7i3wsgals",
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
+        },
+        {
           "name": "intel-mkl",
           "hash": "7u25uvptiqjcgfrjeg3t22f3vq2use6i",
           "parameters": {
@@ -167,7 +179,7 @@
         },
         {
           "name": "lapackpp",
-          "hash": "vsijvicxac2x2ico5jp3iaxfzfcsd24v",
+          "hash": "pt6hitf34zla27ton223cyr34r5xrxnz",
           "parameters": {
             "deptypes": [
               "build",
@@ -191,7 +203,7 @@
         },
         {
           "name": "pika",
-          "hash": "22wjyd4klrhug2j7hutdxmgyrdkf5jns",
+          "hash": "omkjuhyegyns6kyraitlvmex26xfvmwn",
           "parameters": {
             "deptypes": [
               "build",
@@ -202,7 +214,7 @@
         },
         {
           "name": "pika-algorithms",
-          "hash": "5mtolwp2nw7whz3baiuap3q4sdehq3ms",
+          "hash": "f742za5jptl4st6t5jjpnlxuno7xbolx",
           "parameters": {
             "deptypes": [
               "build",
@@ -234,11 +246,11 @@
           }
         }
       ],
-      "hash": "4cel3hromyzsglicydfgntc5srljmcdq"
+      "hash": "2k4k6va5umfs5spm536zcuuuypj74huz"
     },
-    "pywc2qlifn5ipl6hwrilnkyqutd3ti4c": {
+    "yvceq5zism4yw4vkh6zefcf7ae2fwjkl": {
       "name": "blaspp",
-      "version": "2022.07.00",
+      "version": "2023.06.00",
       "arch": {
         "platform": "linux",
         "platform_os": "ubuntu23.04",
@@ -320,7 +332,7 @@
         "ldflags": [],
         "ldlibs": []
       },
-      "package_hash": "blsxoyv7xkkvgclyujnrmj43ry7exxtplzbtb44hzo4t76l2lzhq====",
+      "package_hash": "uzrlfhetcwjt5lrlsavptmy3jwxxrjdbn2nvow6vvcsgr7jef2na====",
       "dependencies": [
         {
           "name": "cmake",
@@ -356,7 +368,7 @@
           }
         }
       ],
-      "hash": "pywc2qlifn5ipl6hwrilnkyqutd3ti4c"
+      "hash": "yvceq5zism4yw4vkh6zefcf7ae2fwjkl"
     },
     "xm7jqizk3hey32gkxk7o6vg46l4giddn": {
       "name": "cmake",
@@ -2168,9 +2180,9 @@
       "package_hash": "ads43zrvkj7am47nzsnp3kilt5wuci7zema6daamp2guqq2kcqha====",
       "hash": "e2yv5g6jrwxwxcpl3hyi3brey4jzhxuy"
     },
-    "vsijvicxac2x2ico5jp3iaxfzfcsd24v": {
-      "name": "lapackpp",
-      "version": "2022.07.00",
+    "p2lwhzw6gezgqlxlrqtq45r7i3wsgals": {
+      "name": "hdf5",
+      "version": "1.14.1-2",
       "arch": {
         "platform": "linux",
         "platform_os": "ubuntu23.04",
@@ -2237,13 +2249,21 @@
       },
       "namespace": "builtin",
       "parameters": {
+        "api": "default",
         "build_system": "cmake",
         "build_type": "Release",
-        "cuda": false,
+        "cxx": true,
+        "fortran": false,
         "generator": "make",
+        "hl": false,
         "ipo": false,
-        "rocm": false,
+        "java": false,
+        "map": false,
+        "mpi": true,
         "shared": true,
+        "szip": false,
+        "threadsafe": true,
+        "tools": true,
         "cflags": [],
         "cppflags": [],
         "cxxflags": [],
@@ -2251,19 +2271,8 @@
         "ldflags": [],
         "ldlibs": []
       },
-      "package_hash": "hinqmxlg6iqwullfu3do3ljgx4egnbugrgjyzvftzp5gcdzvheca====",
+      "package_hash": "d2wuj2bxmp7e3rfwt47toszbhddx4fbtkflzyxvzl3nmfsxp5xja====",
       "dependencies": [
-        {
-          "name": "blaspp",
-          "hash": "pywc2qlifn5ipl6hwrilnkyqutd3ti4c",
-          "parameters": {
-            "deptypes": [
-              "build",
-              "link"
-            ],
-            "virtuals": []
-          }
-        },
         {
           "name": "cmake",
           "hash": "xm7jqizk3hey32gkxk7o6vg46l4giddn",
@@ -2285,21 +2294,43 @@
           }
         },
         {
-          "name": "intel-mkl",
-          "hash": "7u25uvptiqjcgfrjeg3t22f3vq2use6i",
+          "name": "mpich",
+          "hash": "4egovwaeeetna3q3hfdden3767txtm6z",
           "parameters": {
             "deptypes": [
               "build",
               "link"
             ],
             "virtuals": [
-              "blas",
-              "lapack"
+              "mpi"
             ]
+          }
+        },
+        {
+          "name": "pkgconf",
+          "hash": "kr5ioaaxydc7inri2nwbiutxjuexnouc",
+          "parameters": {
+            "deptypes": [
+              "run"
+            ],
+            "virtuals": [
+              "pkgconfig"
+            ]
+          }
+        },
+        {
+          "name": "zlib",
+          "hash": "bfw5iv7pp4roogaaqg762nt524eyruya",
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
           }
         }
       ],
-      "hash": "vsijvicxac2x2ico5jp3iaxfzfcsd24v"
+      "hash": "p2lwhzw6gezgqlxlrqtq45r7i3wsgals"
     },
     "4egovwaeeetna3q3hfdden3767txtm6z": {
       "name": "mpich",
@@ -3155,9 +3186,142 @@
       "package_hash": "5atggv5uirdl2trmzmewkonyvzmzg6sg46zpvurdk43wi2gpr7pa====",
       "hash": "feqhltrz3pvpg7mybruc2jn4ah2ovofz"
     },
-    "22wjyd4klrhug2j7hutdxmgyrdkf5jns": {
+    "pt6hitf34zla27ton223cyr34r5xrxnz": {
+      "name": "lapackpp",
+      "version": "2023.06.00",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu23.04",
+        "target": {
+          "name": "zen4",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avic",
+            "avx",
+            "avx2",
+            "avx512_bf16",
+            "avx512_bitalg",
+            "avx512_vbmi2",
+            "avx512_vnni",
+            "avx512_vpopcntdq",
+            "avx512bw",
+            "avx512cd",
+            "avx512dq",
+            "avx512f",
+            "avx512ifma",
+            "avx512vbmi",
+            "avx512vl",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "erms",
+            "f16c",
+            "flush_l1d",
+            "fma",
+            "fsgsbase",
+            "gfni",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen3",
+            "x86_64_v4"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "cmake",
+        "build_type": "Release",
+        "cuda": false,
+        "generator": "make",
+        "ipo": false,
+        "rocm": false,
+        "shared": true,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "bzewhldu5f3364mt37zbmvh2aep3uffymjgqgvt2cilat4nqxjsq====",
+      "dependencies": [
+        {
+          "name": "blaspp",
+          "hash": "yvceq5zism4yw4vkh6zefcf7ae2fwjkl",
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": []
+          }
+        },
+        {
+          "name": "cmake",
+          "hash": "xm7jqizk3hey32gkxk7o6vg46l4giddn",
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
+        },
+        {
+          "name": "gmake",
+          "hash": "2uwsz6npxa4yk7mm7kf2cyubsy5pio2t",
+          "parameters": {
+            "deptypes": [
+              "build"
+            ],
+            "virtuals": []
+          }
+        },
+        {
+          "name": "intel-mkl",
+          "hash": "7u25uvptiqjcgfrjeg3t22f3vq2use6i",
+          "parameters": {
+            "deptypes": [
+              "build",
+              "link"
+            ],
+            "virtuals": [
+              "blas",
+              "lapack"
+            ]
+          }
+        }
+      ],
+      "hash": "pt6hitf34zla27ton223cyr34r5xrxnz"
+    },
+    "omkjuhyegyns6kyraitlvmex26xfvmwn": {
       "name": "pika",
-      "version": "0.16.0",
+      "version": "0.17.0",
       "arch": {
         "platform": "linux",
         "platform_os": "ubuntu23.04",
@@ -3248,7 +3412,7 @@
         "ldflags": [],
         "ldlibs": []
       },
-      "package_hash": "dlunxrfdwktwwpbg2xhsfvhcgliyzarte7s5uw6m3uuhhes4l7va====",
+      "package_hash": "xw2bnjbcb4ycvyu4vhtbqfhgjoykhpou2daborkso7ih6nz6277a====",
       "dependencies": [
         {
           "name": "boost",
@@ -3333,7 +3497,9 @@
               "build",
               "link"
             ],
-            "virtuals": []
+            "virtuals": [
+              "mpi"
+            ]
           }
         },
         {
@@ -3358,7 +3524,7 @@
           }
         }
       ],
-      "hash": "22wjyd4klrhug2j7hutdxmgyrdkf5jns"
+      "hash": "omkjuhyegyns6kyraitlvmex26xfvmwn"
     },
     "vvbovviflijvmiauge2c3djzvf53bbag": {
       "name": "boost",
@@ -6740,9 +6906,9 @@
       ],
       "hash": "ybti2nu5hgnkaeku4xa27l634fyacsbp"
     },
-    "5mtolwp2nw7whz3baiuap3q4sdehq3ms": {
+    "f742za5jptl4st6t5jjpnlxuno7xbolx": {
       "name": "pika-algorithms",
-      "version": "0.1.3",
+      "version": "0.1.4",
       "arch": {
         "platform": "linux",
         "platform_os": "ubuntu23.04",
@@ -6821,7 +6987,7 @@
         "ldflags": [],
         "ldlibs": []
       },
-      "package_hash": "nyxfizzyurnwlcy5a5vvv2k5y7ektihn6hyamrf4bhnhugrm3ktq====",
+      "package_hash": "7g7gpjxj6732th5wzcta5sppcw63lyl2e3p4pjan2np5eoxpydnq====",
       "dependencies": [
         {
           "name": "boost",
@@ -6877,7 +7043,7 @@
         },
         {
           "name": "pika",
-          "hash": "22wjyd4klrhug2j7hutdxmgyrdkf5jns",
+          "hash": "omkjuhyegyns6kyraitlvmex26xfvmwn",
           "parameters": {
             "deptypes": [
               "build",
@@ -6887,7 +7053,7 @@
           }
         }
       ],
-      "hash": "5mtolwp2nw7whz3baiuap3q4sdehq3ms"
+      "hash": "f742za5jptl4st6t5jjpnlxuno7xbolx"
     },
     "7uqribkefxzqajlj6533xq2fqnoxh6st": {
       "name": "umpire",
