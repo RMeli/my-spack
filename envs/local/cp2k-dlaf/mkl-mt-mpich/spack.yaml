@@ -6,13 +6,14 @@ spack:
       variants:
       - +mpi
       - ~cuda
+      - ~rocm
   repos:
-  - ~/git/my-spack/repos/cp2k-dlaf
+  - ~/git/my-spack/repos/cp2k-dlaf/
   - ~/git/DLA-Future/spack/
   develop:
     dla-future:
       path: ~/git/DLA-Future
-      spec: dla-future@master +scalapack
+      spec: dla-future@master +scalapack ~cuda ~rocm build_type=Debug
   view: false
   concretizer:
     unify: true

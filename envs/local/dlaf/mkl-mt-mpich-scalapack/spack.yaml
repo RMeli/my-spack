@@ -1,0 +1,8 @@
+spack:
+  specs:
+  - dla-future@master +miniapps +scalapack +hdf5 ^intel-mkl threads=openmp ^mpich device=ch3 netmod=tcp ^pika@0.18
+  view: false
+  repos:
+  - ~/git/DLA-Future/spack
+  concretizer:
+    unify: true
