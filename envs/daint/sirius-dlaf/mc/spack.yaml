@@ -1,0 +1,18 @@
+spack:
+  specs:
+  - intel-mkl threads=openmp
+  - pika@main
+  - dla-future@master +scalapack
+  - sirius +tests +scalapack +dlaf
+  view: false
+  packages:
+    all:
+      variants:
+      - +mpi
+      - ~cuda
+      - ~rocm
+      - cxxstd=17
+  repos:
+  - ~/git/SIRIUS/spack/
+  concretizer:
+    unify: true
