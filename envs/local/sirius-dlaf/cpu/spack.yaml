@@ -1,0 +1,16 @@
+spack:
+  specs:
+  - pika@main
+  - dla-future@master +scalapack
+  - sirius@develop +scalapack +dlaf +apps +tests
+  packages:
+    all:
+      variants:
+        - +mpi
+        - ~cuda
+        - ~rocm
+  repos:
+    - ~/git/SIRIUS/spack
+  view: false
+  concretizer:
+    unify: true
