@@ -1,19 +1,25 @@
 spack:
   specs:
-  - mpich@4.0.1
-  - cuda@11.8
-  - intel-oneapi-mkl +cluster ^mpich
-  - fftw@3.3.10 +openmp
-  - dbcsr@2.5.0 +cuda cuda_arch=70 +shared +openmp ^intel-oneapi-mkl ^mpich
-  - libxc ~cuda
-  - cosma +scalapack +shared ^intel-oneapi-mkl ^mpich
-  - cp2k@master +libxc +libint +cosma +spglib build_system=cmake ^intel-oneapi-mkl ^mpich
+  - cp2k@master +libxc +libint +cosma +spglib build_system=cmake
   packages:
     all:
       variants:
       - +mpi
-      - +cuda
-      - cuda_arch=80
+      - +cuda cuda_arch=80
+    libxc:
+      require: "~cuda"
+    mpi:
+      require: mpich
+    cuda:
+      require: "@11.8"
+    blas:
+      require: "intel-oneapi-mkl"
+    lapack:
+      require: "intel-oneapi-mkl"
+    scalapack:
+      require: "intel-oneapi-mkl +cluster"
+    fftw-api:
+      require: "intel-oneapi-mkl"
   view: false
   concretizer:
     unify: true

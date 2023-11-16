@@ -1,5 +1,6 @@
 spack:
   specs:
+  - mpich device=ch3 netmod=tcp
   - pika@main
   - dla-future@master +scalapack
   - sirius@develop +scalapack +dlaf +apps +tests
