@@ -1,0 +1,17 @@
+spack:
+  specs:
+  - libxc ~cuda
+  - pika@main
+  - dla-future@master +scalapack
+  - sirius@develop +scalapack +dlaf +apps +tests
+  packages:
+    all:
+      variants:
+        - +mpi
+        - +cuda
+        - cuda_arch=89
+  repos:
+    - ~/git/SIRIUS/spack
+  view: false
+  concretizer:
+    unify: true

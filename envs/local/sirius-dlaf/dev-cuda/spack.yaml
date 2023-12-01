@@ -1,0 +1,23 @@
+spack:
+  specs:
+  - sirius@develop +scalapack +dlaf +apps +tests
+  packages:
+    all:
+      variants:
+        - +mpi
+        - +cuda cuda_arch=89
+    pika:
+      require: "@0.20.0"
+    dla-future:
+      require: "@0.3.0 +scalapack"
+    libxc:
+      require: "~cuda"
+  repos:
+    - ~/git/SIRIUS/spack
+  develop:
+    sirius:
+      path: ~/git/SIRIUS
+      spec: sirius@develop +scalapack +dlaf +apps +tests
+  view: false
+  concretizer:
+    unify: true
