@@ -1,12 +1,28 @@
 spack:
   specs:
-  - dla-future@develop +miniapps ^intel-mkl threads=openmp ^cray-mpich
+  - dla-future@master +hdf5 +scalapack +miniapps
   view: false
   packages:
     all:
       variants:
       - cxxstd=17
+      - +mpi
+    blas:
+      require:
+        - intel-mkl
+    lapack:
+      require:
+        - intel-mkl
+    scalapack:
+      require:
+        -intel-mkl
+    intel-mkl:
+      require:
+        - threads=openmp
+    mpi:
+      require:
+        - cray-mpich
   repos:
-  - /scratch/e1000/rmeli/git/DLA-Future/spack # Path to DLA-Future Spack repo
+  - $HOME/git/DLA-Future/spack # Path to DLA-Future Spack repo
   concretizer:
     unify: true
