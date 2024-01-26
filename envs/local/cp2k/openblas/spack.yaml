@@ -1,0 +1,24 @@
+spack:
+  specs:
+  - cp2k@master +libxc +libint +cosma +spglib build_system=cmake
+  packages:
+    all:
+      require:
+        - any_of: ["+mpi", "@:"]
+        - any_of: ["~cuda", "@:"]
+        - any_of: ["~rocm", "@:"]
+    mpi:
+      require: mpich
+    cosma:
+      require: +shared
+    blas:
+      require: "openblas"
+    lapack:
+      require: "openblas"
+    scalapack:
+      require: "netlib-scalapack"
+    fftw-api:
+      require: "fftw"
+  view: false
+  concretizer:
+    unify: true

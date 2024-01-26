@@ -3,9 +3,9 @@ spack:
   - cp2k@master +libxc +libint +cosma +spglib build_system=cmake
   packages:
     all:
-      variants:
-      - +mpi
-      - +cuda cuda_arch=80
+      require:
+        - any_of: ["+mpi", "@:"]
+        - any_of: ["+cuda cuda_arch=80", "@:"]
     libxc:
       require: "~cuda"
     mpi:
