@@ -17,17 +17,13 @@ spack:
         - "@4.1: device=ch3 netmod=tcp"
     blas:
       require:
-        - intel-oneapi-mkl
+        - openblas
     lapack:
       require:
-        - intel-oneapi-mkl
+        - openblas
     scalapack:
       require:
-        - intel-oneapi-mkl
-    intel-oneapi-mkl:
-      require:
-        - +cluster
-        - threads=none
+        - netlib-scalapack
     dla-fortran:
       require:
         - +test
