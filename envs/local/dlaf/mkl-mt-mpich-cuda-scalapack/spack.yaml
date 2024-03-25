@@ -28,12 +28,12 @@ spack:
       - device=ch3 netmod=tcp
     pika:
       require:
-      - "@0.22.0"
+      - "@0.23.0"
   repos:
-  - ~/git/DLA-Future/spack
+  - ~/git/work/DLA-Future/spack
   concretizer:
     unify: true
   develop:
     dla-future:
       spec: dla-future@=master
-      path: ~/git/DLA-Future
+      path: ~/git/work/DLA-Future

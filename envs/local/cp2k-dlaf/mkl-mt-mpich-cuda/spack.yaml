@@ -1,16 +1,12 @@
 spack:
   specs:
-    - cp2k@2024.1 +dlaf build_system=cmake build_type=RelWithDebInfo
+    - cp2k@2024.1 +dlaf +elpa build_system=cmake build_type=RelWithDebInfo
   packages:
     all:
-      variants:
+      prefer:
       - +mpi
       - +cuda
       - cuda_arch=80
-    dbcsr:
-      require:
-        - build_type=RelWithDebInfo
-        - ~cuda
     blas:
       require:
         - intel-oneapi-mkl
@@ -36,13 +32,17 @@ spack:
         - "@4:"
         - device=ch3
         - netmod=tcp
-  develop:
     dla-future:
-      path: ~/git/DLA-Future
-      spec: dla-future@master +hdf5 +scalapack +cuda cuda_arch=89 build_type=RelWithDebInfo
-    pika:
-      path: ~/git/pika
-      spec: pika@main +cuda cuda_arch=89 build_type=RelWithDebInfo
+      require:
+        - "@0.4.0"
+        - +scalapack
+  # develop:
+  #   dla-future:
+  #     path: ~/git/DLA-Future
+  #     spec: dla-future@master +hdf5 +scalapack +cuda cuda_arch=89 build_type=RelWithDebInfo
+  #   pika:
+  #     path: ~/git/pika
+  #     spec: pika@main +cuda cuda_arch=89 build_type=RelWithDebInfo
   view: false
   concretizer:
     unify: true

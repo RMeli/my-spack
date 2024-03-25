@@ -1,12 +1,12 @@
 spack:
   specs:
-  - cp2k@master +libxc +libint +cosma +spglib +dlaf +mpi_f08 build_system=cmake
+  - cp2k@master +elpa +dlaf +mpi_f08 build_system=cmake
   packages:
     all:
-      require:
-        - any_of: [+mpi, "@:"]
-        - any_of: [~cuda, "@:"]
-        - any_of: [~rocm, "@:"]
+      prefer:
+        - +mpi
+        - ~cuda
+        - ~rocm
     mpi:
       require:
         - mpich
@@ -15,29 +15,23 @@ spack:
         - "@4.1: device=ch3 netmod=tcp"
     blas:
       require:
-        - intel-mkl
+        - intel-oneapi-mkl
     lapack:
       require:
-        - intel-mkl
+        - intel-oneapi-mkl
     scalapack:
       require:
-        - intel-mkl
-    intel-mkl:
+        - intel-oneapi-mkl
+    intel-oneapi-mkl:
       require:
+        - +cluster
         - threads=openmp
-    cosma:
-      require: 
-        - +scalapack 
-        - +shared
-    dbcsr:
-      require:
-        - +mpi_f08
     dla-future:
       require:
-        - "@0.3.1"
+        - "@0.4.0"
     pika:
       require: 
-        - "@0.20:"
+        - "@0.22.1"
   # repos:
   #  - ~/git/DLA-Future/spack/
   # develop:

@@ -22,9 +22,11 @@ spack:
         - intel-oneapi-mkl
     intel-oneapi-mkl:
       require:
-        - threads=openmp
         - mpi_family=mpich
         - +cluster
+    pika:
+      require:
+        - "@0.22.2"
     mpi:
       require:
         - mpich
@@ -33,9 +35,6 @@ spack:
         - "@4:"
         - device=ch3
         - netmod=tcp
-    pika:
-      require:
-        - "@main"
   develop:
     sirius:
       path: ~/git/SIRIUS
