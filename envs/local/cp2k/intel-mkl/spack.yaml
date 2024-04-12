@@ -1,6 +1,6 @@
 spack:
   specs:
-  - cp2k@master +libxc +libint +cosma +spglib build_system=cmake
+  - cp2k@master +libxc +libint +elpa +cosma +spglib build_system=cmake
   packages:
     all:
       require:
