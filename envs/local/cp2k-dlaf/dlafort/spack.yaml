@@ -26,6 +26,7 @@ spack:
         - intel-oneapi-mkl
     intel-oneapi-mkl:
       require:
+        - "@2022.0.1"
         - +cluster
         - threads=none
     pika:
@@ -34,11 +35,12 @@ spack:
         - "@0.23.0"
   repos:
     - ~/git/work/DLAFortran/spack/
+    - ~/git/work/DLA-Future/spack/
     - ~/git/work/my-spack/repos/cp2k-dlafort/
   develop:
     dla-future:
       path: ~/git/work/DLA-Future
-      spec: dla-future@master +miniapps +hdf5 build_type=Debug
+      spec: dla-future@master +hdf5 +miniapps +scalapack build_type=Debug
     dla-fortran:
       path: ~/git/work/DLAFortran
       spec: dla-fortran@main +test
