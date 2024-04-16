@@ -28,19 +28,17 @@ spack:
       require:
         - +cluster
         - threads=none
-    dla-fortran:
-      require:
-        - +test
-    dla-future:
-      require:
-        - "@0.4.0"
     pika:
       require: 
+        - build_type=Debug
         - "@0.23.0"
   repos:
     - ~/git/work/DLAFortran/spack/
     - ~/git/work/my-spack/repos/cp2k-dlafort/
   develop:
+    dla-future:
+      path: ~/git/work/DLA-Future
+      spec: dla-future@master +miniapps +hdf5 build_type=Debug
     dla-fortran:
       path: ~/git/work/DLAFortran
       spec: dla-fortran@main +test
