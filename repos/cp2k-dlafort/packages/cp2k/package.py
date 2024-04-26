@@ -224,7 +224,7 @@ class Cp2k(MakefilePackage, CMakePackage, CudaPackage, ROCmPackage):
         depends_on("elpa@2023.05.001:", when="@2023.2:")
 
     with when("+dlaf"):
-        depends_on("dla-fortran")
+        depends_on("dla-future-fortran")
         # depends_on("dla-future ~cuda", when="~cuda")
         # depends_on("dla-future ~rocm", when="~rocm")
         # depends_on("dla-future +cuda", when="+cuda")

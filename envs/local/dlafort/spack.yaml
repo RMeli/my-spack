@@ -1,6 +1,6 @@
 spack:
   specs:
-  - dla-fortran@main +test
+  - dla-future-fortran@main +test
   packages:
     all:
       prefer:
@@ -41,7 +41,7 @@ spack:
       spec: dla-future@0.4.0 +hdf5 +miniapps +scalapack build_type=Debug
     dla-fortran:
       path: ~/git/work/DLAFortran
-      spec: dla-fortran@main +test
+      spec: dla-future-fortran@main +test
   view: false
   concretizer:
     unify: true

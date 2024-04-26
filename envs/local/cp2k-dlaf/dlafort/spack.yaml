@@ -31,7 +31,6 @@ spack:
         - threads=none
     pika:
       require: 
-        - build_type=Debug
         - "@0.23.0"
   repos:
     - ~/git/work/DLAFortran/spack/
@@ -41,9 +40,9 @@ spack:
     dla-future:
       path: ~/git/work/DLA-Future
       spec: dla-future@master +hdf5 +miniapps +scalapack build_type=Debug
-    dla-fortran:
+    dla-future-fortran:
       path: ~/git/work/DLAFortran
-      spec: dla-fortran@main +test
+      spec: dla-future-fortran@main
   view: false
   concretizer:
     unify: true
