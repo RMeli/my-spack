@@ -35,7 +35,7 @@ spack:
         - netmod=tcp
     pika:
       require:
-        - "@main"
+        - "@0.22.2"
     dla-future:
       require:
         - "@0.4.0"

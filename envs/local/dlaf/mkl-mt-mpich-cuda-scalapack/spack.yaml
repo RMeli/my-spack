@@ -4,10 +4,9 @@ spack:
   view: false
   packages:
     all:
-      variants:
+      prefer:
+      - +cuda cuda_arch=89
       - cxxstd=17
-      require:
-      - any_of: [+cuda cuda_arch=89, '@:']
     blas:
       require:
       - intel-oneapi-mkl
@@ -28,12 +27,12 @@ spack:
       - device=ch3 netmod=tcp
     pika:
       require:
-      - "@0.23.0"
+      - "@0.22.2"
   repos:
   - ~/git/work/DLA-Future/spack
   concretizer:
     unify: true
   develop:
     dla-future:
-      spec: dla-future@=master
+      spec: dla-future@=master +miniapps +scalapack + hdf5
       path: ~/git/work/DLA-Future
