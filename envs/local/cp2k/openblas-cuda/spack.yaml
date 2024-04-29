@@ -4,11 +4,11 @@ spack:
   packages:
     all:
       prefer:
+        - +cuda cuda_arch=80
         - +mpi
         - build_type=Release
       conflict:
         - +rocm
-        - +cuda
     mpi:
       require: mpich
     mpich:
@@ -20,9 +20,12 @@ spack:
       require:
         - +shared 
         - +scalapack
+        - +cuda
     elpa:
       require:
-        - +openmp
+        - +cuda cuda_arch=80
+        - +gpu_streams
+        - ~openmp
     blas:
       require: "openblas"
     lapack:
