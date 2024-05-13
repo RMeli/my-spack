@@ -39,7 +39,7 @@ spack:
       path: ~/git/work/DLA-Future
       spec: dla-future@0.4.0 +hdf5 +miniapps +scalapack build_type=Debug
     dla-fortran:
-      path: ~/git/work/DLAFortran
+      path: ~/git/work/DLA-Future-Fortran
       spec: dla-future-fortran@main +test
   view: false
   concretizer:
