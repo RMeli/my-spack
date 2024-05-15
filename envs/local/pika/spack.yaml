@@ -1,0 +1,7 @@
+spack:
+  spec:
+    - pika@0.20
+  packages:
+    externals:
+      - spec: "hwloc"
+        prefix: 

@@ -1,6 +1,6 @@
 spack:
   specs:
-  - dla-future@master +miniapps +scalapack +hdf5
+  - dla-future@master +miniapps +scalapack
   packages:
     all:
       prefer:

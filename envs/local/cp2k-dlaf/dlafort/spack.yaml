@@ -7,6 +7,8 @@ spack:
         - +mpi
         - ~cuda
         - ~rocm
+      require:
+        - "%gcc@11.4.0"
     mpi:
       require:
         - mpich
@@ -24,20 +26,23 @@ spack:
         - intel-oneapi-mkl
     intel-oneapi-mkl:
       require:
+        - "@2022.0.1"
         - +cluster
         - threads=none
-    dla-future:
-      require:
-        - "@0.4.0"
     pika:
       require: 
-        - "@0.22.1"
-  # repos:
-  #  - ~/git/DLA-Future/spack/
-  # develop:
-  #   dla-future:
-  #     path: ~/git/DLA-Future
-  #     spec: dla-future@master +hdf5 +scalapack ~cuda ~rocm build_type=Debug
+        - "@0.23.0"
+  repos:
+    - ~/git/work/DLAFortran/spack/
+    - ~/git/work/DLA-Future/spack/
+    - ~/git/work/my-spack/repos/cp2k-dlafort/
+  develop:
+    dla-future:
+      path: ~/git/work/DLA-Future
+      spec: dla-future@master +hdf5 +miniapps +scalapack build_type=Debug
+    dla-future-fortran:
+      path: ~/git/work/DLAFortran
+      spec: dla-future-fortran@main
   view: false
   concretizer:
     unify: true

@@ -1,30 +1,27 @@
 spack:
   specs:
-  - sirius@develop +scalapack +dlaf +apps +tests
+    - cp2k@2024.1 +dlaf build_system=cmake build_type=RelWithDebInfo
   packages:
     all:
       prefer:
-        - +mpi
-        - +cuda
-        - cuda_arch=89
+      - +mpi
+      - +cuda
+      - cuda_arch=80
     blas:
       require:
-        - intel-oneapi-mkl
+        - openblas
     lapack:
       require:
-        - intel-oneapi-mkl
+        - openblas
     scalapack:
       require:
-        - intel-oneapi-mkl
-    fft:
+        - netlib-scalapack
+    fftw-api:
       require:
-        - "@3:"
-        - intel-oneapi-mkl
-    intel-oneapi-mkl:
+        - fftw
+    fftw:
       require:
-        - threads=openmp
-        - mpi_family=mpich
-        - +cluster
+        - "@3"
     mpi:
       require:
         - mpich
@@ -33,12 +30,13 @@ spack:
         - "@4:"
         - device=ch3
         - netmod=tcp
-    pika:
-      require:
-        - "@0.22.2"
     dla-future:
       require:
         - "@0.4.0"
+        - +scalapack
+    pika:
+      require:
+        - "@0.22.1"
   view: false
   concretizer:
     unify: true

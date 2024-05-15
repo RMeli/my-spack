@@ -1,12 +1,14 @@
 spack:
   specs:
-  - cp2k@master +elpa +dlaf +mpi_f08 build_system=cmake
+  - dla-future-fortran@main +test fflags="-Werror"
   packages:
     all:
       prefer:
         - +mpi
         - ~cuda
         - ~rocm
+      require:
+        - "%gcc@11.4.0"
     mpi:
       require:
         - mpich
@@ -26,18 +28,19 @@ spack:
       require:
         - +cluster
         - threads=none
-    dla-future:
-      require:
-        - "@0.4.0"
     pika:
       require: 
-        - "@0.22.1"
-  # repos:
-  #  - ~/git/DLA-Future/spack/
-  # develop:
-  #   dla-future:
-  #     path: ~/git/DLA-Future
-  #     spec: dla-future@master +hdf5 +scalapack ~cuda ~rocm build_type=Debug
+        - "@0.23.0"
+  repos:
+    - ~/git/work/DLA-Future-Fortran/spack/
+    - ~/git/work/DLA-Future/spack/
+  develop:
+    dla-future:
+      path: ~/git/work/DLA-Future
+      spec: dla-future@0.4.0 +hdf5 +miniapps +scalapack build_type=Debug
+    dla-fortran:
+      path: ~/git/work/DLA-Future-Fortran
+      spec: dla-future-fortran@main +test
   view: false
   concretizer:
     unify: true
