@@ -17,28 +17,23 @@ spack:
         - "@4.1: device=ch3 netmod=tcp"
     blas:
       require:
-        - intel-oneapi-mkl
+        - openblas
     lapack:
       require:
-        - intel-oneapi-mkl
+        - openblas
     scalapack:
       require:
-        - intel-oneapi-mkl
-    intel-oneapi-mkl:
-      require:
-        - "@2022.0.1"
-        - +cluster
-        - threads=none
+        - netlib-scalapack
     pika:
       require: 
-        - "@0.23.0"
+        - "@0.24.0"
   repos:
     - ~/git/work/DLA-Future-Fortran/spack/
     - ~/git/work/DLA-Future/spack/
   develop:
     dla-future:
       path: ~/git/work/DLA-Future
-      spec: dla-future@master +hdf5 +miniapps +scalapack build_type=Debug
+      spec: dla-future@0.4.0 +hdf5 +miniapps +scalapack build_type=Debug
     dla-fortran:
       path: ~/git/work/DLA-Future-Fortran
       spec: dla-future-fortran@main +test
