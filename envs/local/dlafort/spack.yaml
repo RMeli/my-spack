@@ -1,6 +1,6 @@
 spack:
   specs:
-  - dla-future-fortran@main +test
+  - dla-future-fortran@main +test fflags="-Werror"
   packages:
     all:
       prefer:
@@ -26,7 +26,6 @@ spack:
         - intel-oneapi-mkl
     intel-oneapi-mkl:
       require:
-        - "@2022.0.1"
         - +cluster
         - threads=none
     pika:

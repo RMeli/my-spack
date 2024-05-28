@@ -5,13 +5,15 @@ spack:
     all:
       prefer:
         - +mpi
-        - ~cuda
-        - ~rocm
+      conflict:
+        - +cuda
+        - +rocm
     mpi:
       require:
         - mpich
     mpich:
       require:
+        - "@4:"
         - device=ch3
         - netmod=tcp
     blas:
@@ -22,14 +24,22 @@ spack:
         - intel-oneapi-mkl
     scalapack:
       require:
-        - intel-oneapi-mkl +cluster
+        - intel-oneapi-mkl
+    fft:
+      require:
+        - "@3:"
+        - intel-oneapi-mkl
     intel-oneapi-mkl:
       require:
+        - threads=openmp
+        - mpi_family=mpich
         - +cluster
-        - threads=none
+    pika:
+      require:
+        - "@0.24.0"
     dla-future:
       require:
-       - "@0.4.0"
+        - "@0.4.0"
   repos:
     - ~/git/work/SIRIUS/spack
   view: false
