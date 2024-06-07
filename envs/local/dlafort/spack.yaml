@@ -28,16 +28,21 @@ spack:
       require:
         - +cluster
         - threads=none
+        - +gfortran
     pika:
       require: 
         - "@0.23.0"
+    dla-future:
+      require:
+        - "@0.4.1"
+        - +hdf5
+        - +scalapack
+        - +miniapps
+        - +test
   repos:
     - ~/git/work/DLA-Future-Fortran/spack/
     - ~/git/work/DLA-Future/spack/
   develop:
-    dla-future:
-      path: ~/git/work/DLA-Future
-      spec: dla-future@0.4.0 +hdf5 +miniapps +scalapack build_type=Debug
     dla-fortran:
       path: ~/git/work/DLA-Future-Fortran
       spec: dla-future-fortran@main +test
