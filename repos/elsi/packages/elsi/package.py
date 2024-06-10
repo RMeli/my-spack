@@ -31,6 +31,7 @@ class Elsi(CMakePackage, CudaPackage):
     )
     variant("enable_pexsi", default=False, description="Enable PEXSI support")
     variant("enable_sips", default=False, description="Enable SLEPc-SIPs support")
+    variant("enable_dlaf", default=False, description="Enable DLA-Future support")
     variant("use_external_elpa", default=False, description="Build ELPA using SPACK")
     variant("use_external_ntpoly", default=False, description="Build NTPoly using SPACK")
     variant("use_external_superlu", default=False, description="Use external SuperLU DIST")
@@ -60,6 +61,11 @@ class Elsi(CMakePackage, CudaPackage):
         depends_on("superlu-dist+cuda", when="+cuda")
         depends_on("superlu-dist~cuda", when="~cuda")
 
+    with when("+enable_dlaf"):
+        depends_on("dla-future-fortran")
+        conflicts("dla-future~cuda", when="+cuda")
+        conflicts("dla-future+cuda", when="~cuda")
+
 
     def cmake_args(self):
         libs_names = ["scalapack", "lapack", "blas"]
@@ -85,6 +91,7 @@ class Elsi(CMakePackage, CudaPackage):
             self.define_from_variant("ADD_UNDERSCORE", "add_underscore"),
             self.define_from_variant("ENABLE_PEXSI", "enable_pexsi"),
             self.define_from_variant("ENABLE_SIPS", "enable_sips"),
+            self.define_from_variant("ENABLE_DLAF", "enable_dlaf"),
             self.define_from_variant("USE_EXTERNAL_ELPA", "use_external_elpa"),
             self.define_from_variant("USE_EXTERNAL_NTPOLY", "use_external_ntpoly"),
             self.define_from_variant("USE_EXTERNAL_SUPERLU", "use_external_superlu"),
