@@ -1,0 +1,129 @@
+[+] /usr (external glibc-2.35-a6gbmc46yvlto6k25enqs2uvod2wzn4p)
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/gcc-runtime-11.4.0-7pmsvsmkytfu6wygzaa63d3kx4ctethx
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/findutils-4.9.0-j7hgdgbvmwp5wafyfpfmbnrqvhxpcelz
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/zlib-ng-2.1.6-bjkgkdeave35anjbjg5umqf2siqo3pb7
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/spglib-2.3.1-po6kpaoqndptezicezvu2mqxnyfl73p2
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/bzip2-1.0.8-6a524bobtgy7ellrl4ldiqwiius4y5y6
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/ncurses-6.5-buntu7pb5hlkvprfe7o27oy5dmcfdh3a
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/util-linux-uuid-2.38.1-npukef7byquylmzqabpugyabmrm2odqz
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/libxsmm-1.17-d6tydjuva6bnllgkmk6w5k7pqfyudex4
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/libffi-3.4.6-cecogmapj4a6hreyvqx6xoi5prcund6c
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/libxc-6.2.2-6notqa2ehhtcwgx4blm7lemyp4hp7uhs
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/xz-5.4.6-vhuojrm5zr762qtq62iziautlcom7c5t
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/libmd-1.0.4-vxnqbqk3u4xut2ayv66nnn3nsfvvuf4u
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/gmp-6.2.1-3mjfx36ttzmxjcffrst2lxtepqnthqd5
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/libxcrypt-4.4.35-jsryzyvp4grquwz2yh6sjyeuln67ld2q
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/ninja-1.11.1-lu46vsat35j5groxcokmss7zcyx3rgom
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/gsl-2.7.1-tu2rioxywectog4hw4h7mpewssety3gw
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/camp-2024.02.0-rmbt3xskbbvdmgzbwtzhb2jsoscjyopz
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/fmt-10.2.1-kg42pdknjsi67qgqihd4myfylbewa4cg
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/openblas-0.3.26-rbtmnqqwoffdowf6772rkpk4i6o2vtue
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/zstd-1.5.6-5oorsexlrcawi2rlwb47o6a7gfethdfz
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/berkeley-db-18.1.40-w4qt5lz24a5apql5vchwnypf4biyekxq
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/nghttp2-1.57.0-icwsraowfrvrzdsh2fz72owpuvqyhriv
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/libpciaccess-0.17-7bhosfxkiq6lnrawoipn7b47qaqwnt6a
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/pkgconf-2.2.0-pur6zt3lqx3k37pma6uicckpftuv4a74
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/gmake-4.4.1-kzsslwdxxhqxcdczbkj2dqrnzsozvko7
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/pigz-2.8-svawaftdbkpf2pxh5t3dpsv6j6ybv5vc
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/libbsd-0.12.1-ea5pkueyabjz6nosyojuf3e3lbdw4qrf
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/readline-8.2-t57e3hugrnltx7deucvjzhxgpdf7gp6w
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/libxml2-2.10.3-32ynd5vli3fqjvq6s7vdw5dwn7ykupis
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/libsigsegv-2.14-b56l5pxtgn6xwvd2wnpyhhs7tir3iuem
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/libtool-2.4.7-wccsgvetg2bc4h4y6qkkvkckb4nl4k2x
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/openssl-3.3.0-tp5ttwnwpiwyzjinsqzhektay4cfnc63
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/tar-1.34-2edmqormzb3f6xshbvcnelmew6ap6qj4
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/expat-2.6.2-ktdyesmpf5mbby6hz2gklsfzpyl5huwn
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/sqlite-3.43.2-sdp3aq63j2yl33ijne645axc6kib5qbu
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/gdbm-1.23-noq3ou6rhc3rpikozkekjjlpiko64fja
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/hwloc-2.9.1-ni4y45cyqpadacgvxuyjun3t2dosl5qq
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/m4-1.4.19-4fyn4itqwgzsft7t7bqr27gkrmtjfijv
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/curl-8.7.1-4werial5he5pg3f2oxzduf53a4jkagj2
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/gettext-0.22.5-4dp776wafwjtkow2ywtynvag632ahls3
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/perl-5.38.0-li6qitn4arc24kgnfkhdtodvnnnlm37x
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/mpich-4.1.2-42j6jisd24ajyo666ykjj6qll4r72xxb
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/cmake-3.27.9-m2ej5add5gtsora3vwehaydz6gt7pjyd
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/python-3.11.7-gp2ha5ukeolgtv4k2f3uf6lurwwgjsgh
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/automake-1.16.5-wzbbgdh3iydyrv55tsviyde7tobdufyc
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/autoconf-2.72-5yidqvqjcnkwilhqbgifwagrrcfvn22t
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/fftw-3.3.10-eaupkaevgpc5shbumof5e4xhpyhvnkml
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/boost-1.85.0-yp6kpa3c36jxjb7kgbl76sqpvj2wlrfl
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/netlib-scalapack-2.2.0-nqoszxiblgzefauamzdv3ffd46wjczdg
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/umpire-2024.02.0-hk3i6smhsviwge65guzqvsqdp6hrsw6y
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/hdf5-1.14.3-6adxd4qrvycdtz6yu2frnswctxpkh2c5
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/spla-1.5.5-dzdumeb7d6m7t2qmexaluq5zu5ol2jns
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/python-venv-1.0-ks4ui2aisbolxfa3rabtqroivs6r4pzk
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/spfft-1.1.0-wvyejjp7ohw2py3evfrnmhdxo6rzr6m4
+==> Installing libint-2.6.0-25anl427j2g2k5fms73gda5njjh5x433 [56/63]
+==> No binary for libint-2.6.0-25anl427j2g2k5fms73gda5njjh5x433 found: installing from source
+==> Using cached archive: /home/ubuntu/spack/var/spack/cache/_source-cache/archive/4a/4ae47e8f0b5632c3d2a956469a7920896708e9f0e396ec10071b8181e4c8d9fa.tar.gz
+==> Ran patch() for libint
+==> libint: Executing phase: 'autoreconf'
+==> libint: Executing phase: 'configure'
+==> libint: Executing phase: 'build'
+==> libint: Executing phase: 'install'
+==> libint: Successfully installed libint-2.6.0-25anl427j2g2k5fms73gda5njjh5x433
+  Stage: 0.96s.  Autoreconf: 3.00s.  Configure: 15.18s.  Build: 39m 10.45s.  Install: 44.70s.  Post-install: 0.43s.  Total: 40m 15.54s
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/libint-2.6.0-25anl427j2g2k5fms73gda5njjh5x433
+==> Installing elpa-2023.11.001-patched-rnzbftf3p3fo2mujcjtinop4mwtcvav5 [57/63]
+==> No binary for elpa-2023.11.001-patched-rnzbftf3p3fo2mujcjtinop4mwtcvav5 found: installing from source
+==> Fetching https://elpa.mpcdf.mpg.de/software/tarball-archive/Releases/2023.11.001/elpa-2023.11.001-patched.tar.gz
+==> No patches needed for elpa
+==> elpa: Executing phase: 'autoreconf'
+==> elpa: Executing phase: 'configure'
+==> elpa: Executing phase: 'build'
+==> elpa: Executing phase: 'install'
+==> elpa: Successfully installed elpa-2023.11.001-patched-rnzbftf3p3fo2mujcjtinop4mwtcvav5
+  Stage: 1.97s.  Autoreconf: 0.01s.  Configure: 31.38s.  Build: 13m 32.23s.  Install: 8.77s.  Post-install: 0.15s.  Total: 14m 15.05s
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/elpa-2023.11.001-patched-rnzbftf3p3fo2mujcjtinop4mwtcvav5
+==> Installing costa-2.2.2-chu65ws75223gt3twwxcxcuvh7lxjric [58/63]
+==> No binary for costa-2.2.2-chu65ws75223gt3twwxcxcuvh7lxjric found: installing from source
+==> Fetching https://mirror.spack.io/_source-cache/archive/e8/e87bc37aad14ac0c5922237be5d5390145c9ac6aef0350ed17d86cb2d994e67c.tar.gz
+==> No patches needed for costa
+==> costa: Executing phase: 'cmake'
+==> costa: Executing phase: 'build'
+==> costa: Executing phase: 'install'
+==> costa: Successfully installed costa-2.2.2-chu65ws75223gt3twwxcxcuvh7lxjric
+  Stage: 0.33s.  Cmake: 2.52s.  Build: 9.94s.  Install: 0.22s.  Post-install: 0.18s.  Total: 13.55s
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/costa-2.2.2-chu65ws75223gt3twwxcxcuvh7lxjric
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/py-fypp-3.1-lqpqecps7crpicnfhs4x3cmzwg6wpcqe
+==> Installing cosma-2.6.6-a25t6qiabvz67o2irrytrfryftfmyma3 [60/63]
+==> No binary for cosma-2.6.6-a25t6qiabvz67o2irrytrfryftfmyma3 found: installing from source
+==> Fetching https://mirror.spack.io/_source-cache/archive/16/1604be101e77192fbcc5551236bc87888d336e402f5409bbdd9dea900401cc37.tar.gz
+==> No patches needed for cosma
+==> cosma: Executing phase: 'cmake'
+==> cosma: Executing phase: 'build'
+==> cosma: Executing phase: 'install'
+==> cosma: Successfully installed cosma-2.6.6-a25t6qiabvz67o2irrytrfryftfmyma3
+  Stage: 2.37s.  Cmake: 10.40s.  Build: 9.88s.  Install: 0.27s.  Post-install: 0.13s.  Total: 23.34s
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/cosma-2.6.6-a25t6qiabvz67o2irrytrfryftfmyma3
+==> Installing sirius-7.5.2-pohjhej4u6io3oripchsoksiukt76ymy [61/63]
+==> No binary for sirius-7.5.2-pohjhej4u6io3oripchsoksiukt76ymy found: installing from source
+==> Fetching https://github.com/electronic-structure/SIRIUS/archive/v7.5.2.tar.gz
+==> No patches needed for sirius
+==> sirius: Executing phase: 'cmake'
+==> sirius: Executing phase: 'build'
+==> sirius: Executing phase: 'install'
+==> sirius: Successfully installed sirius-7.5.2-pohjhej4u6io3oripchsoksiukt76ymy
+  Stage: 6.83s.  Cmake: 11.32s.  Build: 2m 17.37s.  Install: 0.60s.  Post-install: 0.24s.  Total: 2m 36.73s
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/sirius-7.5.2-pohjhej4u6io3oripchsoksiukt76ymy
+==> Installing dbcsr-2.6.0-l66plyajmte6rwwbb53svicswkwjt4zh [62/63]
+==> No binary for dbcsr-2.6.0-l66plyajmte6rwwbb53svicswkwjt4zh found: installing from source
+==> Fetching https://mirror.spack.io/_source-cache/archive/c6/c67b02ff9abc7c1f529af446a9f01f3ef9e5b0574f220259128da8d5ca7e9dc6.tar.gz
+==> No patches needed for dbcsr
+==> dbcsr: Executing phase: 'cmake'
+==> dbcsr: Executing phase: 'build'
+==> dbcsr: Executing phase: 'install'
+==> dbcsr: Successfully installed dbcsr-2.6.0-l66plyajmte6rwwbb53svicswkwjt4zh
+  Stage: 3.05s.  Cmake: 11.69s.  Build: 1m 35.93s.  Install: 0.11s.  Post-install: 0.17s.  Total: 1m 51.33s
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/dbcsr-2.6.0-l66plyajmte6rwwbb53svicswkwjt4zh
+==> Installing cp2k-2024.1-lroas6xauydgpqvcax3yarceo5kygusr [63/63]
+==> No binary for cp2k-2024.1-lroas6xauydgpqvcax3yarceo5kygusr found: installing from source
+==> Fetching https://github.com/cp2k/cp2k/releases/download/v2024.1/cp2k-2024.1.tar.bz2
+==> Applied patch /home/ubuntu/spack/var/spack/repos/builtin/packages/cp2k/cmake-relwithdebinfo-2024.1.patch
+==> cp2k: Executing phase: 'cmake'
+==> cp2k: Executing phase: 'build'
+==> cp2k: Executing phase: 'install'
+==> cp2k: Successfully installed cp2k-2024.1-lroas6xauydgpqvcax3yarceo5kygusr
+  Stage: 17.18s.  Cmake: 17.51s.  Build: 10m 9.51s.  Install: 2.03s.  Post-install: 1.90s.  Total: 10m 48.76s
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-broadwell/gcc-11.4.0/cp2k-2024.1-lroas6xauydgpqvcax3yarceo5kygusr
+==> Updating view at /home/ubuntu/git/work/my-spack/envs/local/cp2k-dlaf/cp2k-2024.1-cpu/.spack-env/view
