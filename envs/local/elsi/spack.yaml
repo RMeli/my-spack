@@ -1,6 +1,6 @@
 spack:
   specs:
-  - elsi@master +enable_dlaf +tests +tests_c fflags="-fallow-argument-mismatch"
+  - elsi@master fflags="-fallow-argument-mismatch" +use_external_elpa +use_external_superlu +use_external_ntpoly
   packages:
     all:
       prefer:
@@ -29,19 +29,12 @@ spack:
     openblas:
       require:
         - threads=none
-    dla-future:
+    ntpoly:
       require:
-        - +hdf5
-        - +miniapps
-  repos:
-    - ~/git/work/my-spack/repos/elsi/
-  develop:
-    dla-future:
-      path: ~/git/work/DLA-Future/
-      spec: dla-future@master +miniapps +hdf5
-    elsi:
-      path: ~/git/work/elsi_interface
-      spec: elsi@master +enable_dlaf +tests +tests_c fflags="-fallow-argument-mismatch"
+        - +shared
+    elpa:
+      require:
+        - "@2024"
   view: false
   concretizer:
     unify: true
