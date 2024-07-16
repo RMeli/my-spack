@@ -1,6 +1,6 @@
 spack:
   specs:
-  - elsi@master fflags="-fallow-argument-mismatch" +use_external_elpa +use_external_superlu +use_external_ntpoly +use_external_omm
+  - elsi@master fflags="-fallow-argument-mismatch" +enable_dlaf
   packages:
     all:
       prefer:
@@ -33,15 +33,18 @@ spack:
       require:
         - +hdf5
         - +miniapps
-#  repos:
-#    - ~/git/work/my-spack/repos/elsi/
+    dla-future-fortran:
+      require:
+        - "@0.2.0"
+  repos:
+    - ~/git/work/my-spack/repos/elsi/
   develop:
     #    dla-future:
     #      path: ~/git/work/DLA-Future/
     #      spec: dla-future@master +miniapps +hdf5
     elsi:
       path: ~/git/work/elsi_interface
-      spec: elsi@master fflags="-fallow-argument-mismatch" +use_external_elpa +use_external_superlu +use_external_ntpoly +use_external_omm
+      spec: elsi@master fflags="-fallow-argument-mismatch" +enable_dlaf
   view: false
   concretizer:
     unify: true
