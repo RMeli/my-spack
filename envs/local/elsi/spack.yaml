@@ -1,6 +1,6 @@
 spack:
   specs:
-  - elsi@master fflags="-fallow-argument-mismatch" +use_external_elpa +use_external_superlu +use_external_ntpoly
+  - elsi@master fflags="-fallow-argument-mismatch" +use_external_elpa +enable_pexsi +use_external_pexsi +use_external_ntpoly +use_external_omm
   packages:
     all:
       prefer:
