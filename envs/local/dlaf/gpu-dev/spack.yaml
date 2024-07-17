@@ -30,9 +30,6 @@ spack:
       require:
       - device=ch3
       - netmod=tcp
-    pika:
-      require:
-      - "@0.25.0"
   repos:
   - ~/git/work/DLA-Future/spack
   concretizer:
