@@ -33,12 +33,12 @@ spack:
       require:
         - +hdf5
         - +miniapps
+    dla-future-fortran:
+      require:
+        - "@=0.2.0"
   repos:
     - ~/git/work/my-spack/repos/elsi/
   develop:
-    dla-future:
-      path: ~/git/work/DLA-Future/
-      spec: dla-future@master +miniapps +hdf5
     elsi:
       path: ~/git/work/elsi_interface
       spec: elsi@master +enable_dlaf +tests +tests_c fflags="-fallow-argument-mismatch"
