@@ -1,0 +1,41 @@
+spack:
+  specs:
+  - cp2k@master +cuda cuda_arch=90
+  packages:
+    all:
+      prefer:
+        - +cuda cuda_arch=90
+        - +mpi
+        - build_type=Release
+      conflict:
+        - +rocm
+    mpi:
+      require: mpich
+    mpich:
+      require:
+        - "@4:"
+        - netmod=tcp
+        - device=ch3 
+    libxc:
+      require: "~cuda"
+    blas:
+      require: "openblas"
+    lapack:
+      require: "openblas"
+    scalapack:
+      require: "netlib-scalapack"
+    fftw-api:
+      require: "fftw"
+    fftw:
+      require:
+        - "@3:"
+  develop:
+    dbcsr:
+      path: ~/git/work/dbcsr/
+      spec: dbcsr@develop +cuda cuda_arch=90
+    cp2k:
+      path: ~/git/work/cp2k/
+      spec: cp2k@master +cuda cuda_arch=90
+  view: false
+  concretizer:
+    unify: true
