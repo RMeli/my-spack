@@ -9,6 +9,7 @@ spack:
         - ~rocm
       require:
         - "%gcc@11.4.0"
+        - "os=ubuntu22.04"
     mpi:
       require:
         - mpich
@@ -26,14 +27,14 @@ spack:
         - netlib-scalapack
     pika:
       require: 
-        - "@0.24.0"
+        - "@0.25.0"
   repos:
     - ~/git/work/DLA-Future-Fortran/spack/
     - ~/git/work/DLA-Future/spack/
   develop:
     dla-future:
       path: ~/git/work/DLA-Future
-      spec: dla-future@0.4.0 +hdf5 +miniapps +scalapack build_type=Debug
+      spec: dla-future@master +hdf5 +miniapps +scalapack build_type=Debug
     dla-fortran:
       path: ~/git/work/DLA-Future-Fortran
       spec: dla-future-fortran@main +test

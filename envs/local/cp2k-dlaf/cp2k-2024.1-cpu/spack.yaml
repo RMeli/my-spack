@@ -1,0 +1,31 @@
+spack:
+  specs:
+     - cp2k@2024.1 +libxc +libint +spglib +cosma +spla +elpa +sirius lmax=5 +mpi_f08 build_system=cmake
+  packages:
+    all:
+      prefer:
+      - +mpi
+      - ~cuda
+      - ~rocm
+      require:
+      - '%gcc@11.4.0'
+    mpi:
+      require:
+      - mpich
+    mpich:
+      require:
+      - '@4.1'
+      - device=ch3
+      - netmod=tcp
+    blas:
+      require:
+      - openblas
+    lapack:
+      require:
+      - openblas
+    scalapack:
+      require:
+      - netlib-scalapack
+  concretizer:
+    unify: true
+  compilers: []
