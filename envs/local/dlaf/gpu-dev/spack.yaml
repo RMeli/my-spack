@@ -13,16 +13,13 @@ spack:
       - ~rocm
     blas:
       require:
-      - intel-oneapi-mkl
+      - openblas
     lapack:
       require:
-      - intel-oneapi-mkl
+      - openblas
     scalapack:
       require:
-      - intel-oneapi-mkl +cluster
-    intel-oneapi-mkl:
-      require:
-      - threads=none
+      - netlib-scalapack
     mpi:
       require:
       - mpich
