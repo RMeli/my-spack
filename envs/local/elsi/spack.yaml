@@ -1,6 +1,7 @@
 spack:
   specs:
-  - elsi@master fflags="-fallow-argument-mismatch" ~use_external_elpa ~use_external_ntpoly ~use_external_omm
+    #- elsi@2.11 +dlaf fflags="-fallow-argument-mismatch" ~use_external_elpa ~use_external_omm
+  - elsi@2.11 +dlaf fflags="-fallow-argument-mismatch"
   packages:
     all:
       prefer:
@@ -32,8 +33,8 @@ spack:
     dla-future-fortran:
       require:
         - "@=0.2.0"
-  repos:
-    - ~/git/work/my-spack/repos/elsi/
+  # repos:
+  #   - ~/git/work/my-spack/repos/elsi/
   view: false
   concretizer:
     unify: true

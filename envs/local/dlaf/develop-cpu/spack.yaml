@@ -28,7 +28,14 @@ spack:
         - threads=none 
     pika:
       require:
-        - "@0.25.0"
+        - "@0.26.1"
+    blaspp:
+      require:
+        - "@2024:"
+    lapackpp:
+      require:
+        - "@2024:"
+
   repos:
   - ~/git/work/DLA-Future/spack
   develop:
