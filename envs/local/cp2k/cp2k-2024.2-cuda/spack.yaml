@@ -1,6 +1,6 @@
 spack:
   specs:
-  - cp2k@2024.2 +cosma +spglib +spla +mpi_f08 
+  - cp2k@2024.3 +cosma +spglib +spla +mpi_f08 
   packages:
     all:
       prefer:

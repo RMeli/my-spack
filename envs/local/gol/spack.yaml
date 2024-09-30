@@ -1,0 +1,26 @@
+spack:
+  specs:
+  - gol@main
+  packages:
+    all:
+      require:
+      - +mpi
+      - ~cuda
+      - ~rocm
+      - '%gcc@12.3.0'
+    mpi:
+      require:
+      - mpich
+    mpich:
+      require:
+      - netmod=tcp
+      - device=ch3
+  repos:
+  - ~/git/oss/gol_stdexec/spack/
+  develop:
+    gol:
+      spec: gol@main
+      path: ~/git/oss/gol_stdexec/
+  view: false
+  concretizer:
+    unify: true
