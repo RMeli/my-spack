@@ -26,6 +26,8 @@ class Elsi(CMakePackage, CudaPackage):
     )
     version("master", branch="master")
 
+    generator("ninja")
+
     variant(
         "add_underscore",
         default=True,
@@ -53,7 +55,7 @@ class Elsi(CMakePackage, CudaPackage):
         description="Use external PEXSI",
         when="@2.3: +enable_pexsi",
     )
-    variant("use_external_omm", default=True, description="Use external libOMM")
+    variant("use_external_omm", default=False, description="Use external libOMM")
     variant(
         "use_mpi_iallgather",
         default=True,
@@ -162,6 +164,10 @@ class Elsi(CMakePackage, CudaPackage):
 
         if self.spec.variants["elpa2_kernel"].value != "none":
             args.append(self.define_from_variant("ELPA2_KERNEL", "elpa2_kernel"))
+        
+        if not self.spec.satisfies("^elpa+cuda"):
+            elpa_gpu_string = "nvidia-gpu" if self.spec.satisfies("^elpa@2021:") else "gpu"
+            args.append(self.define(f"ELSI_ELPA_GPU_STRING", elpa_gpu_string))
 
         args.append(self.define("INC_PATHS", ";".join(set(inc_paths))))
 
