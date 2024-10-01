@@ -1,12 +1,13 @@
 spack:
   specs:
-  - cp2k@master +libxc +libint +spglib +cosma +elpa build_system=cmake
+  - cp2k@2024.3 +libxc +libint +spglib +cosma +elpa build_system=cmake
   packages:
     all:
       prefer:
         - +cuda cuda_arch=80
         - +mpi
         - build_type=Release
+        - +openmp
       conflict:
         - +rocm
     mpi:
