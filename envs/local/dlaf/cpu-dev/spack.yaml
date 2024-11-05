@@ -1,0 +1,36 @@
+spack:
+  specs:
+  - dla-future@master +miniapps +scalapack +hdf5
+  view: false
+  packages:
+    all:
+      require:
+      - '%gcc@11.4.0'
+      prefer:
+      - +mpi
+      - ~cuda
+      - ~rocm
+    blas:
+      require:
+      - openblas
+    lapack:
+      require:
+      - openblas
+    scalapack:
+      require:
+      - netlib-scalapack
+    mpi:
+      require:
+      - mpich
+    mpich:
+      require:
+      - device=ch3
+      - netmod=tcp
+  repos:
+  - ~/git/work/DLA-Future/spack
+  concretizer:
+    unify: true
+  develop:
+    dla-future:
+      spec: dla-future@=master +miniapps +scalapack + hdf5
+      path: ~/git/work/DLA-Future

@@ -1,23 +1,54 @@
 spack:
   specs:
-  - sirius@develop +scalapack +dlaf +apps +tests
+  - sirius@develop +scalapack +elpa +dlaf +apps +tests
   packages:
     all:
-      variants:
+      prefer:
         - +mpi
-        - +cuda cuda_arch=89
-    pika:
-      require: "@0.20.0"
-    dla-future:
-      require: "@0.3.0 +scalapack"
+        - +cuda
+        - cuda_arch=89
+      require:
+        - "%gcc@11.4.0"
+    blas:
+      require:
+        - openblas
+    lapack:
+      require:
+        - openblas
+    openblas:
+      require:
+        - threads=openmp
+    scalapack:
+      require:
+        - netlib-scalapack
+    elpa:
+      require:
+        - +gpu_streams
     libxc:
-      require: "~cuda"
+      require:
+        - ~cuda
+    mpi:
+      require:
+        - mpich
+    mpich:
+      require:
+        - "@4:"
+        - device=ch3
+        - netmod=tcp
+    pika:
+      require:
+        - "@0.25.0"
+    dla-future:
+      require:
+        - "@0.4.1"
   repos:
-    - ~/git/SIRIUS/spack
+    # Fix for compilation with CUDA
+    - ~/git/work/my-spack/repos/elpa
+    - ~/git/work/SIRIUS/spack
   develop:
     sirius:
-      path: ~/git/SIRIUS
-      spec: sirius@develop +scalapack +dlaf +apps +tests
+      path: ~/git/work/SIRIUS
+      spec: sirius@develop +scalapack +dlaf +elpa +apps +tests
   view: false
   concretizer:
     unify: true

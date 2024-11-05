@@ -1,17 +1,12 @@
 spack:
   specs:
-  - cp2k@master +libxc +libint +cosma +spglib build_system=cmake
+  - cp2k@2024.1 +libxc +libint +elpa +cosma +spglib +pexsi build_system=cmake
   packages:
     all:
-      variants:
-      - +mpi
-      - +cuda cuda_arch=80
-    libxc:
-      require: "~cuda"
+      prefer:
+        - +mpi
     mpi:
       require: mpich
-    cuda:
-      require: "@11.8"
     blas:
       require: "intel-oneapi-mkl"
     lapack:

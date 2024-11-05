@@ -1,0 +1,56 @@
+spack:
+  specs:
+  - cp2k@2024.2 +cosma +spglib +spla +dlaf +mpi_f08 cuda_arch=80
+  packages:
+    all:
+      prefer:
+        - +cuda
+        - cuda_arch=89
+        - +mpi
+        - build_type=Release
+      conflict:
+        - +rocm
+      require:
+        - "%gcc@11"
+    mpi:
+      require: mpich
+    mpich:
+      require:
+        - "@4:"
+        - netmod=tcp
+        - device=ch3 
+    blas:
+      require: "openblas"
+    lapack:
+      require: "openblas"
+    scalapack:
+      require: "netlib-scalapack"
+    fftw-api:
+      require: "fftw"
+    fftw:
+      require:
+        - "@3:"
+    dbcsr:
+      require:
+        - "@2.7.0"
+        - +g2g
+        - +mpi_f08
+        - cuda_arch=80
+    libxc:
+      require: 
+        - "~cuda"
+    cosma:
+      require:
+        - +gpu_direct
+    dla-future:
+      require:
+        - "@git.202408-develop=0.6.0"
+    pika:
+      require:
+        - "@0.26.1"
+    cuda:
+      require:
+        - "@12.3"
+  view: false
+  concretizer:
+    unify: true

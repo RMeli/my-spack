@@ -1,0 +1,38 @@
+spack:
+  specs:
+  - cp2k@master +dlaf +mpi_f08 build_system=cmake
+  packages:
+    all:
+      prefer:
+      - +mpi
+      - ~cuda
+      - ~rocm
+      require:
+      - '%gcc@11.4.0'
+    mpi:
+      require:
+      - mpich
+    mpich:
+      require:
+      - '@4.1: device=ch3 netmod=tcp'
+    blas:
+      require:
+      - openblas
+    lapack:
+      require:
+      - openblas
+    scalapack:
+      require:
+      - netlib-scalapack
+    fftw-api:
+      require:
+        - fftw@3
+    dla-future-fortran:
+      require:
+      - ~test
+  repos:
+  - ~/git/work/DLA-Future-Fortran/spack/
+  view: false
+  concretizer:
+    unify: true
+  compilers: []

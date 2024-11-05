@@ -1,0 +1,25 @@
+spack:
+  specs:
+  - cp2k@master +libxc +libint +elpa +cosma +spglib build_system=cmake
+  packages:
+    all:
+      require:
+        - any_of: ["+mpi", "@:"]
+        - any_of: ["+cuda cuda_arch=80", "@:"]
+    libxc:
+      require: "~cuda"
+    mpi:
+      require: mpich
+    cuda:
+      require: "@11.8"
+    blas:
+      require: "intel-oneapi-mkl"
+    lapack:
+      require: "intel-oneapi-mkl"
+    scalapack:
+      require: "intel-oneapi-mkl +cluster"
+    fftw-api:
+      require: "intel-oneapi-mkl"
+  view: false
+  concretizer:
+    unify: true
