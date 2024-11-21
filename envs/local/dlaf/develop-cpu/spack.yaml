@@ -7,6 +7,8 @@ spack:
         - +mpi
         - ~cuda
         - ~rocm
+      require:
+        - "%gcc@11.4"
     mpi:
       require:
         - mpich
@@ -23,19 +25,6 @@ spack:
     scalapack:
       require:
         - netlib-scalapack
-    intel-oneapi-mkl:
-      require:
-        - threads=none 
-    pika:
-      require:
-        - "@0.26.1"
-    blaspp:
-      require:
-        - "@2024:"
-    lapackpp:
-      require:
-        - "@2024:"
-
   repos:
   - ~/git/work/DLA-Future/spack
   develop:
