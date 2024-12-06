@@ -29,13 +29,18 @@ spack:
         - +cluster
         - threads=none
         - +gfortran
-    dla-future:
-      require:
-        - +scalapack
-        - +miniapps
+    # dla-future:
+    #   require:
+    #     - "@0.6.0"
+    #     - +scalapack
+    #     - +miniapps
   repos:
+    - ~/git/work/DLA-Future/spack/
     - ~/git/work/DLA-Future-Fortran/spack/
   develop:
+    dla-future:
+      path: ~/git/work/DLA-Future
+      spec: dla-future@master
     dla-future-fortran:
       path: ~/git/work/DLA-Future-Fortran
       spec: dla-future-fortran@main +test
