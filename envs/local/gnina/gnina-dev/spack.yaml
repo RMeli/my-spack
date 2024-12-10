@@ -1,0 +1,26 @@
+spack:
+  specs:
+  - gnina@master +cudnn
+  view: false
+  packages:
+    all:
+      require:
+      - '%gcc@11.4.0'
+      prefer:
+      - +cuda
+      - cuda_arch=89
+    py-torch:
+      require:
+      - ~distributed
+      - ~magma
+      - ~nccl
+      - ~valgrind
+    cuda:
+      require:
+      - '@12.6'
+  concretizer:
+    unify: true
+  develop:
+    gnina:
+      path: ~/git/oss/gnina
+      spec: gnina@master +cudnn

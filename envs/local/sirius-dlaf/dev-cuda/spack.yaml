@@ -35,15 +35,11 @@ spack:
         - "@4:"
         - device=ch3
         - netmod=tcp
-    pika:
-      require:
-        - "@0.25.0"
     dla-future:
       require:
-        - "@0.4.1"
+        - +hdf5
+        - +miniapps
   repos:
-    # Fix for compilation with CUDA
-    - ~/git/work/my-spack/repos/elpa
     - ~/git/work/SIRIUS/spack
   develop:
     sirius:
@@ -52,3 +48,5 @@ spack:
   view: false
   concretizer:
     unify: true
+  config:
+    build_stage: ~/git/work/SIRIUS/spack-build-stage/
