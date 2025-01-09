@@ -1,0 +1,50 @@
+spack:
+  specs:
+  - cp2k@master
+  packages:
+    all:
+      prefer:
+        - +cuda
+        - cuda_arch=80
+        - +mpi
+        - build_type=Release
+      conflict:
+        - +rocm
+    cuda:
+      require:
+        - "cuda@12.4"
+    mpi:
+      require: mpich
+    mpich:
+      require:
+        - "@4:"
+        - netmod=tcp
+        - device=ch3 
+    blas:
+      require: "openblas"
+    lapack:
+      require: "openblas"
+    scalapack:
+      require: "netlib-scalapack"
+    fftw-api:
+      require: "fftw"
+    fftw:
+      require:
+        - "@3:"
+    libxc:
+      require: 
+        - "@7:"
+        - "~cuda"
+    dbcsr:
+      require:
+        - "@2.7.0"
+        - +mpi_f08
+    cp2k:
+      require:
+        - build_system=cmake
+        - +mpi_f08
+        - +libxc
+        - +spglib
+  view: false
+  concretizer:
+    unify: true

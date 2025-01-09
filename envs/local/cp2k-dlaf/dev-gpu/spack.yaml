@@ -1,0 +1,54 @@
+spack:
+  specs:
+  - cp2k@master +dlaf +libint +libxc
+  packages:
+    all:
+      prefer:
+        - +cuda
+        - cuda_arch=80
+        - +mpi
+        - build_type=Release
+      conflict:
+        - +rocm
+      require:
+        - "%gcc@11"
+    cuda:
+      require:
+        - "@12.4"
+    mpi:
+      require: mpich
+    mpich:
+      require:
+        - "@4:"
+        - netmod=tcp
+        - device=ch3 
+    blas:
+      require: "openblas"
+    lapack:
+      require: "openblas"
+    scalapack:
+      require: "netlib-scalapack"
+    fftw-api:
+      require: "fftw"
+    fftw:
+      require:
+        - "@3:"
+    libxc:
+      require: 
+        - "~cuda"
+    dla-future:
+      require:
+        - "@0.6.0"
+    dla-future-fortran:
+      require:
+        - "@0.2.0"
+    dbcsr:
+      require:
+        - "@2.8.0"
+  view: false
+  develop:
+    cp2k:
+      path: ~/git/work/cp2k/
+      spec: cp2k@master +dlaf +libint +libxc
+  concretizer:
+    unify: true
