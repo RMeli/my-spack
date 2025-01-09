@@ -1,0 +1,43 @@
+spack:
+  specs:
+  - dla-future@=master +miniapps +scalapack +hdf5 +mpi_gpu_aware
+  view: false
+  packages:
+    all:
+      prefer:
+      - +mpi
+      - +cuda
+      - cuda_arch=90
+      - ~rocm
+    blas:
+      require:
+      - openblas
+    lapack:
+      require:
+      - openblas
+    scalapack:
+      require:
+      - netlib-scalapack
+    mpi:
+      require:
+      - cray-mpich
+    cray-mpich:
+      buildable: false
+    umpire:
+      buildable: false
+    boost:
+      buildable: false
+    fmt:
+      buildable: false
+  repos:
+  - /capstor/scratch/cscs/rmeli/DLA-Future-MASTER/spack
+  - ~/git/work/alps-cluster-config/todi/repo
+  - ~/git/work/alps-cluster-config/site/repo
+  concretizer:
+    unify: true
+  develop:
+    dla-future:
+      spec: dla-future@=master +miniapps +scalapack +hdf5 +mpi_gpu_aware
+      path: /capstor/scratch/cscs/rmeli/DLA-Future-MASTER
+  config:
+    build_stage: /capstor/scratch/cscs/rmeli/DLA-Future-MASTER/spack-stage/
