@@ -40,6 +40,9 @@ spack:
       require:
         - +hdf5
         - +miniapps
+    cmake:
+      require:
+        - "@3.30"
   repos:
     - ~/git/work/SIRIUS/spack
   develop:

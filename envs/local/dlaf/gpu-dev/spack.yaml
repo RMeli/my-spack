@@ -29,7 +29,8 @@ spack:
       - netmod=tcp
     pika:
       require:
-      - '@0.30.0'
+      - '@0.32.0'
+      - +stdexec
       - build_type=RelWithDebInfo
   repos:
   - ~/git/work/DLA-Future/spack
