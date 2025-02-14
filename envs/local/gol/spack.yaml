@@ -15,6 +15,9 @@ spack:
       require:
       - netmod=tcp
       - device=ch3
+    pika:
+      require:
+      - "@0.32.0"
   repos:
   - ~/git/oss/gol_stdexec/spack/
   develop:

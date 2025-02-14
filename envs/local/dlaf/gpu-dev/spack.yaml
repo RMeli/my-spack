@@ -1,6 +1,6 @@
 spack:
   specs:
-  - dla-future@master +miniapps +scalapack +hdf5 build_type=RelWithDebInfo
+  - dla-future@master +miniapps +scalapack +hdf5 build_type=Release
   view: false
   packages:
     all:
@@ -11,6 +11,7 @@ spack:
       - +cuda
       - cuda_arch=89
       - ~rocm
+      - build_type=Release
     blas:
       require:
       - openblas
@@ -29,19 +30,20 @@ spack:
       - netmod=tcp
     pika:
       require:
-      - '@0.32.0'
+      - '@0.31.0'
       - +stdexec
-      - build_type=RelWithDebInfo
+      - build_type=Release
   repos:
   - ~/git/work/DLA-Future/spack
   concretizer:
     unify: true
   develop:
     dla-future:
-      spec: dla-future@=master +miniapps +scalapack + hdf5 build_type=RelWithDebInfo
+      spec: dla-future@=master +miniapps +scalapack + hdf5 build_type=Release
       path: ~/git/work/DLA-Future
   # build_stage is a directory where Spack will build packages
   # Build directories of installed packages are deleted
   # Build directories of develop packages are retained
   config:
     build_stage: ~/git/work/DLA-Future/spack-build-stage/
+    ccache: true

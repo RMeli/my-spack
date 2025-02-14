@@ -43,3 +43,4 @@ spack:
   # Build directories of develop packages are retained
   config:
     build_stage: ~/git/work/DLA-Future/spack-build-stage/
+    ccache: true
