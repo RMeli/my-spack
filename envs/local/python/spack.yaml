@@ -1,0 +1,17 @@
+spack:
+  specs:
+    - cuda
+    - python
+    - py-uv
+  concretizer:
+    unify: true
+  packages:
+    cuda:
+      require:
+        - "@12.8"
+    python:
+      require:
+        - "@3.11"
+  view:
+    default:
+      root: ${HOME}/python.view
