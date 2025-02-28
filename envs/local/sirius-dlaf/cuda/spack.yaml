@@ -1,14 +1,12 @@
 spack:
   specs:
-  - sirius@develop +scalapack +elpa +dlaf +apps +tests
+  - sirius@7.6.2 +scalapack +elpa +dlaf +apps +tests +memory_pool
   packages:
     all:
       prefer:
         - +mpi
         - +cuda
         - cuda_arch=89
-      require:
-        - "%gcc@11.4.0"
     blas:
       require:
         - openblas

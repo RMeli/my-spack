@@ -8,6 +8,7 @@ spack:
         - cuda_arch=80
         - +mpi
         - build_type=Release
+        - ~openmp
       conflict:
         - +rocm
     cuda:
@@ -37,14 +38,27 @@ spack:
         - "~cuda"
     dbcsr:
       require:
-        - "@2.7.0"
+        - "@2.8.0"
         - +mpi_f08
+    dftd4:
+      require:
+        - build_system=cmake
     cp2k:
       require:
         - build_system=cmake
-        - +mpi_f08
+        - +dftd4
+        - +libint
         - +libxc
+        - +mpi_f08
+        - +plumed
         - +spglib
   view: false
   concretizer:
     unify: true
+  develop:
+    cp2k:
+      spec: cp2k@master +dftd4 +libint +libxc +mpi_f08 +plumed +spglib build_system=cmake
+      path: ~/git/work/cp2k
+  config:
+    ccache: true
+    build_stage: ~/gihttps://packages.spack.io/package.html?name=cp2k t/work/cp2k/spack-build-stage/

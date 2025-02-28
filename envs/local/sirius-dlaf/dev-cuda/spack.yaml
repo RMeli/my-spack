@@ -7,8 +7,6 @@ spack:
         - +mpi
         - +cuda
         - cuda_arch=89
-      require:
-        - "%gcc@11.4.0"
     blas:
       require:
         - openblas
@@ -40,9 +38,6 @@ spack:
       require:
         - +hdf5
         - +miniapps
-    cmake:
-      require:
-        - "@3.30"
   repos:
     - ~/git/work/SIRIUS/spack
   develop:
