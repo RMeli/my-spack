@@ -1,6 +1,6 @@
 spack:
   specs:
-  - cp2k@master
+  - cp2k@master +dftd4 +mpi_f08
   packages:
     all:
       prefer:
@@ -21,18 +21,6 @@ spack:
       require: "openblas"
     lapack:
       require: "openblas"
-    # blas:
-    #   require: "flexiblas"
-    # lapack:
-    #   require: "flexiblas"
-    # blas:
-    #   require: "amdblis"
-    # lapack:
-    #   require: "amdlibflame"
-    # blas:
-    #   require: "blis"
-    # lapack:
-    #   require: "libflame"
     scalapack:
       require: "netlib-scalapack"
     fftw-api:
@@ -40,14 +28,6 @@ spack:
     fftw:
       require:
         - "@3:"
-    # blas:
-    #   require: "intel-oneapi-mkl"
-    # lapack:
-    #   require: "intel-oneapi-mkl"
-    # scalapack:
-    #   require: "intel-oneapi-mkl +cluster"
-    # fftw-api:
-    #   require: "intel-oneapi-mkl"
     libxc:
       require: 
         - "@7:"
@@ -59,9 +39,6 @@ spack:
     multicharge:
       path: ~/git/work/multicharge
       spec: multicharge@main build_system=cmake
-    cp2k:
-      path: ~/git/work/cp2k
-      spec: cp2k@master +dlaf +dftd4 +mpi_f08 build_system=cmake
   config:
     build_stage: ~/git/work/cp2k/spack-build-stage/
   view: false
