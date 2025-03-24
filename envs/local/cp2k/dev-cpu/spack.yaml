@@ -1,0 +1,61 @@
+spack:
+  specs:
+  - cp2k@master
+  packages:
+    all:
+      prefer:
+        - ~cuda
+        - ~rocm
+        - +mpi
+        - build_type=Release
+      conflict:
+        - +rocm
+    cuda:
+      require:
+        - "cuda@12.4"
+    mpi:
+      require: mpich
+    mpich:
+      require:
+        - "@4:"
+        - netmod=tcp
+        - device=ch3 
+    blas:
+      require: "openblas"
+    lapack:
+      require: "openblas"
+    scalapack:
+      require: "netlib-scalapack"
+    fftw-api:
+      require: "fftw"
+    fftw:
+      require:
+        - "@3:"
+    libxc:
+      require: 
+        - "@7:"
+        - "~cuda"
+    dbcsr:
+      require:
+        - "@2.8.0"
+        - +mpi_f08
+    cp2k:
+      require:
+        - build_system=cmake
+        - +mpi_f08
+        - +pytorch
+    py-torch:
+      require:
+        - "@2.5"
+        - ~cuda
+        - ~rocm
+        - ~distributed
+        - +custom-protobuf
+        - ~kineto
+  develop:
+    cp2k:
+      path: ~/git/work/cp2k
+      spec: cp2k@master +mpi_f08 +pytorch build_system=cmake
+  view: false
+  concretizer:
+    unify: true

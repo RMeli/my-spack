@@ -1,6 +1,6 @@
 spack:
   specs:
-  - sirius +scalapack +tests
+  - sirius@7.6.0 +scalapack +tests +pugixml
   view: false
   concretizer:
     unify: true

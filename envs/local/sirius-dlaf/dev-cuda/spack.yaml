@@ -7,8 +7,6 @@ spack:
         - +mpi
         - +cuda
         - cuda_arch=89
-      require:
-        - "%gcc@11.4.0"
     blas:
       require:
         - openblas
@@ -26,6 +24,7 @@ spack:
         - +gpu_streams
     libxc:
       require:
+        - "@7"
         - ~cuda
     mpi:
       require:

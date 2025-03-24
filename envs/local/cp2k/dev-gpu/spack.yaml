@@ -1,0 +1,64 @@
+spack:
+  specs:
+  - cp2k@master
+  packages:
+    all:
+      prefer:
+        - +cuda
+        - cuda_arch=80
+        - +mpi
+        - build_type=Release
+        - ~openmp
+      conflict:
+        - +rocm
+    cuda:
+      require:
+        - "cuda@12.4"
+    mpi:
+      require: mpich
+    mpich:
+      require:
+        - "@4:"
+        - netmod=tcp
+        - device=ch3 
+    blas:
+      require: "openblas"
+    lapack:
+      require: "openblas"
+    scalapack:
+      require: "netlib-scalapack"
+    fftw-api:
+      require: "fftw"
+    fftw:
+      require:
+        - "@3:"
+    libxc:
+      require: 
+        - "@7:"
+        - "~cuda"
+    dbcsr:
+      require:
+        - "@2.8.0"
+        - +mpi_f08
+    dftd4:
+      require:
+        - build_system=cmake
+    cp2k:
+      require:
+        - build_system=cmake
+        - +dftd4
+        - +libint
+        - +libxc
+        - +mpi_f08
+        - +plumed
+        - +spglib
+  view: false
+  concretizer:
+    unify: true
+  develop:
+    cp2k:
+      spec: cp2k@master +dftd4 +libint +libxc +mpi_f08 +plumed +spglib build_system=cmake
+      path: ~/git/work/cp2k
+  config:
+    ccache: true
+    build_stage: ~/gihttps://packages.spack.io/package.html?name=cp2k t/work/cp2k/spack-build-stage/
