@@ -32,6 +32,7 @@ spack:
       - +stdexec
   repos:
   - ~/git/work/DLA-Future/spack
+  - ~/git/work/my-spack/repos/spack-v1/
   concretizer:
     unify: true
   develop:
