@@ -1,0 +1,32 @@
+spack:
+  specs:
+  - sirius@develop +scalapack +apps +tests
+  packages:
+    all:
+      variants:
+        - ~cuda
+        - ~rocm
+    mpi:
+      require:
+        - mpich
+    blas:
+      require:
+        - openblas
+    lapack:
+      require:
+        - openblas
+    scalapack:
+      require:
+        - netlib-scalapack
+    libxc:
+      require:
+        - "@7"
+  repos:
+    - ~/git/work/SIRIUS/spack
+  develop:
+    sirius:
+      spec: sirius@develop +scalapack +apps +tests
+      path: ~/git/work/SIRIUS
+  view: false
+  concretizer:
+    unify: true
