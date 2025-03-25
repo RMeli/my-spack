@@ -1,0 +1,34 @@
+spack:
+  specs:
+     - cp2k@master +libxc +libint +spglib +dlaf +mpi_f08 build_system=cmake
+  packages:
+    all:
+      prefer:
+      - +mpi
+      - ~cuda
+      - ~rocm
+      require:
+      - '%gcc@11.4.0'
+    mpi:
+      require:
+      - mpich
+    mpich:
+      require:
+      - '@4.1'
+      - device=ch3
+      - netmod=tcp
+    blas:
+      require:
+      - openblas
+    lapack:
+      require:
+      - openblas
+    scalapack:
+      require:
+      - netlib-scalapack
+  develop:
+    cp2k:
+      spec: cp2k@master +libxc +libint +spglib +dlaf +mpi_f08 build_system=cmake
+      path: ~/git/work/cp2k/
+  concretizer:
+    unify: true

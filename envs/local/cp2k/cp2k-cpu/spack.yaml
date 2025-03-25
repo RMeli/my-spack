@@ -1,20 +1,25 @@
 spack:
   specs:
-  - cp2k@2024.1 +libxc +libint +elpa +cosma +spglib +pexsi build_system=cmake
+    - cp2k@master +spglib build_system=cmake +smeagol
   packages:
     all:
       prefer:
+        - '%gcc@11.4'
         - +mpi
     mpi:
       require: mpich
     blas:
-      require: "intel-oneapi-mkl"
+      require: "openblas"
     lapack:
-      require: "intel-oneapi-mkl"
+      require: "openblas"
     scalapack:
-      require: "intel-oneapi-mkl +cluster"
+      require: "netlib-scalapack"
     fftw-api:
-      require: "intel-oneapi-mkl"
+      require: "fftw" 
+  develop:
+    cp2k:
+      spec: cp2k@master +spglib build_system=cmake +smeagol
+      path: ~/git/work/cp2k/
   view: false
   concretizer:
     unify: true
