@@ -14,10 +14,10 @@ spack:
       - build_type=Release
     blas:
       require:
-      - openblas
+      - intal-oneapi-mkl
     lapack:
       require:
-      - openblas
+      - intel-oneapi-mkl
     scalapack:
       require:
       - netlib-scalapack

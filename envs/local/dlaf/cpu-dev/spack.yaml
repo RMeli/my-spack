@@ -19,6 +19,9 @@ spack:
     scalapack:
       require:
       - netlib-scalapack
+    openblas:
+      require:
+      - "@0.3.29"
     mpi:
       require:
       - mpich
