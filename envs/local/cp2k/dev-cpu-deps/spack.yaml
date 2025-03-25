@@ -39,6 +39,11 @@ spack:
     multicharge:
       path: ~/git/work/multicharge
       spec: multicharge@main build_system=cmake
+    dftd4:
+      path: ~/git/work/dftd4
+      spec: dftd4@main build_system=cmake
+  repos:
+    - ~/git/work/my-spack/repos/spack-v1/
   config:
     build_stage: ~/git/work/cp2k/spack-build-stage/
   view: false

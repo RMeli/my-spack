@@ -30,11 +30,12 @@ spack:
       - netmod=tcp
     pika:
       require:
-      - '@0.31.0'
+      - '@0.32.0'
       - +stdexec
       - build_type=Release
   repos:
-  - ~/git/work/DLA-Future/spack
+  - ~/git/work/DLA-Future/spack/
+  - ~/git/work/my-spack/repos/spack-v1/
   concretizer:
     unify: true
   develop:

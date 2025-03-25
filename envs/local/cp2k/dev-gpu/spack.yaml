@@ -40,25 +40,36 @@ spack:
       require:
         - "@2.8.0"
         - +mpi_f08
-    dftd4:
+    pika:
       require:
-        - build_system=cmake
+        - "@0.32"
+    dla-future:
+      require:
+        - +scalapack
+        - ~hdf5
     cp2k:
       require:
         - build_system=cmake
-        - +dftd4
         - +libint
         - +libxc
         - +mpi_f08
         - +plumed
         - +spglib
+        - +dlaf
+        - ~hdf5
+        - ~smeagol
   view: false
   concretizer:
     unify: true
+  repos:
+    - ~/git/work/my-spack/repos/spack-v1
   develop:
     cp2k:
-      spec: cp2k@master +dftd4 +libint +libxc +mpi_f08 +plumed +spglib build_system=cmake
+      spec: cp2k@master +libint +libxc +mpi_f08 +plumed +spglib +dlaf ~hdf5 ~smeagol build_system=cmake
       path: ~/git/work/cp2k
+    dla-future:
+      spec: dla-future@master +scalapack ~hdf5
+      path: ~/git/work/DLA-Future/
   config:
     ccache: true
-    build_stage: ~/gihttps://packages.spack.io/package.html?name=cp2k t/work/cp2k/spack-build-stage/
+    build_stage: ~/git/work/cp2k/spack-build-stage/
