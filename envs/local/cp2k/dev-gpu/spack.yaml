@@ -5,7 +5,7 @@ spack:
     all:
       prefer:
         - +cuda
-        - cuda_arch=80
+        - cuda_arch=89
         - +mpi
         - build_type=Release
         - ~openmp
@@ -40,6 +40,7 @@ spack:
       require:
         - "@2.8.0"
         - +mpi_f08
+        - cuda_arch=80
     pika:
       require:
         - "@0.32"
@@ -49,6 +50,7 @@ spack:
         - ~hdf5
     cp2k:
       require:
+        - cuda_arch=80
         - build_system=cmake
         - +libint
         - +libxc
@@ -63,13 +65,18 @@ spack:
     unify: true
   repos:
     - ~/git/work/my-spack/repos/spack-v1
+    - ~/git/work/DLA-Future/spack/
+    - ~/git/work/DLA-Future-Fortran/spack/
   develop:
     cp2k:
-      spec: cp2k@master +libint +libxc +mpi_f08 +plumed +spglib +dlaf ~hdf5 ~smeagol build_system=cmake
+      spec: cp2k@master +libint +libxc +mpi_f08 +spglib +dlaf ~hdf5 ~smeagol build_system=cmake
       path: ~/git/work/cp2k
     dla-future:
       spec: dla-future@master +scalapack ~hdf5
       path: ~/git/work/DLA-Future/
+    dla-future-fortran:
+      spec: dla-future-fortran@main
+      path: ~/git/work/DLA-Future-Fortran
   config:
     ccache: true
     build_stage: ~/git/work/cp2k/spack-build-stage/
