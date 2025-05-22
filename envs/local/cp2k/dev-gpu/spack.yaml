@@ -27,6 +27,9 @@ spack:
       require: "openblas"
     scalapack:
       require: "netlib-scalapack"
+    netlib-scalapack:
+      require:
+        - "@2.2.0"
     fftw-api:
       require: "fftw"
     fftw:
@@ -48,6 +51,7 @@ spack:
       require:
         - +scalapack
         - ~hdf5
+        - '@0.10.0'
     cp2k:
       require:
         - cuda_arch=80
@@ -65,15 +69,15 @@ spack:
     unify: true
   repos:
     - ~/git/work/my-spack/repos/spack-v1
-    - ~/git/work/DLA-Future/spack/
+    #    - ~/git/work/DLA-Future/spack/
     - ~/git/work/DLA-Future-Fortran/spack/
   develop:
     cp2k:
       spec: cp2k@master +libint +libxc +mpi_f08 +spglib +dlaf ~hdf5 ~smeagol build_system=cmake
       path: ~/git/work/cp2k
-    dla-future:
-      spec: dla-future@master +scalapack ~hdf5
-      path: ~/git/work/DLA-Future/
+    # dla-future:
+    #   spec: dla-future@master +scalapack ~hdf5
+    #   path: ~/git/work/DLA-Future/
     dla-future-fortran:
       spec: dla-future-fortran@main
       path: ~/git/work/DLA-Future-Fortran
