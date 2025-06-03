@@ -1,6 +1,6 @@
 spack:
   specs:
-  - cp2k@master
+  - cp2k@master +dftd4 +mpi_f08
   packages:
     all:
       prefer:
@@ -36,9 +36,14 @@ spack:
         - "@2.8.0"
         - +mpi_f08
   develop:
-    cp2k:
-      path: ~/git/work/cp2k
-      spec: cp2k@master +dlaf +mpi_f08 build_system=cmake
+    multicharge:
+      path: ~/git/work/multicharge
+      spec: multicharge@main build_system=cmake
+    dftd4:
+      path: ~/git/work/dftd4
+      spec: dftd4@main build_system=cmake
+  repos:
+    - ~/git/work/my-spack/repos/spack-v1/
   config:
     build_stage: ~/git/work/cp2k/spack-build-stage/
   view: false

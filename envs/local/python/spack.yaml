@@ -3,12 +3,16 @@ spack:
     - cuda
     - python
     - py-uv
+    - cmake
   concretizer:
     unify: true
   packages:
+    cmake:
+      require:
+        - "@3"
     cuda:
       require:
-        - "@12.8"
+        - "@12.4"
     python:
       require:
         - "@3.11"

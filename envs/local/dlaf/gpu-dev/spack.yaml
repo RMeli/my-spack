@@ -28,19 +28,24 @@ spack:
       require:
       - device=ch3
       - netmod=tcp
+    openblas:
+      require:
+        - '@0.3.28'
+        - 'threads=openmp'
     pika:
       require:
-      - '@0.31.0'
+      - '@0.32.0'
       - +stdexec
       - build_type=Release
   repos:
-  - ~/git/work/DLA-Future/spack
+  - ~/git/work/DLA-Future-develop/spack/
+  - ~/git/work/my-spack/repos/spack-v1/
   concretizer:
     unify: true
   develop:
     dla-future:
-      spec: dla-future@=master +miniapps +scalapack + hdf5 build_type=Release
-      path: ~/git/work/DLA-Future
+      spec: dla-future@master +miniapps +scalapack + hdf5 build_type=Release
+      path: ~/git/work/DLA-Future-develop
   # build_stage is a directory where Spack will build packages
   # Build directories of installed packages are deleted
   # Build directories of develop packages are retained

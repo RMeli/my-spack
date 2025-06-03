@@ -14,16 +14,24 @@ spack:
         - mpich
     mpich:
       require:
-        - "@4.1: device=ch3 netmod=tcp"
+        - "@4.1:"
+        - device=ch3
+        - netmod=tcp
     blas:
       require:
-        - intel-oneapi-mkl
+        - openblas
     lapack:
       require:
-        - intel-oneapi-mkl
+        - openblas
     scalapack:
       require:
-        - intel-oneapi-mkl
+        - netlib-scalapack
+    netlib-scalapack:
+      require:
+        - '@2.2.2'
+    openblas:
+      require:
+        - threads=none
     intel-oneapi-mkl:
       require:
         - +cluster
@@ -32,13 +40,16 @@ spack:
   repos:
     - ~/git/work/DLA-Future/spack/
     - ~/git/work/DLA-Future-Fortran/spack/
+    - ~/git/work/my-spack/repos/spack-v1/
   develop:
-    dla-future:
-      path: ~/git/work/DLA-Future
-      spec: dla-future@master +scalapack +miniapps
     dla-future-fortran:
       path: ~/git/work/DLA-Future-Fortran
       spec: dla-future-fortran@main +test
+    dla-future:
+      path: ~/git/work/DLA-Future
+      spec: dla-future@master +scalapack +miniapps
+  config:
+    build_stage: ~/git/work/DLA-Future-Fortran/spack-build-stage/
   view: false
   concretizer:
     unify: true

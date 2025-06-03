@@ -28,13 +28,19 @@ spack:
     pika:
       require: 
         - "@0.25.0"
+    dla-future:
+      require:
+        - "+hdf5"
+        - "+miniapps"
+        - "+scalapack"
+        - "@git.5b4dcebf82b2c21ed094909db63cc44313fcc2cb"
   repos:
     - ~/git/work/DLA-Future-Fortran/spack/
     - ~/git/work/DLA-Future/spack/
   develop:
-    dla-future:
-      path: ~/git/work/DLA-Future
-      spec: dla-future@master +hdf5 +miniapps +scalapack build_type=Debug
+    # dla-future:
+    #   path: ~/git/work/DLA-Future
+    #   spec: dla-future@master +hdf5 +miniapps +scalapack build_type=Debug
     dla-fortran:
       path: ~/git/work/DLA-Future-Fortran
       spec: dla-future-fortran@main +test
