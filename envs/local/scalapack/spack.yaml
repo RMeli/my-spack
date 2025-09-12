@@ -1,6 +1,6 @@
 spack:
   specs:
-  - dla-future-fortran@main +test
+  - netlib-scalapack@2.2.2
   packages:
     all:
       prefer:
@@ -22,25 +22,14 @@ spack:
     scalapack:
       require:
         - netlib-scalapack
-    dla-future:
-      require:
-        - "+hdf5"
-        - "+miniapps"
-        - "+scalapack"
   repos:
-    - ~/git/work/DLA-Future-Fortran/spack/
-    - ~/git/work/DLA-Future/spack/
     - ~/git/work/my-spack/repos/spack-v1/
   develop:
     netlib-scalapack:
       path: ~/git/work/scalapack/
-      spec: netlib-scalapack@master
-    dla-future:
-      path: ~/git/work/DLA-Future
-      spec: dla-future@master +hdf5 +miniapps +scalapack build_type=RelWithDebInfo
-    dla-future-fortran:
-      path: ~/git/work/DLA-Future-Fortran
-      spec: dla-future-fortran@main +test
+      spec: netlib-scalapack@2.2.2
   view: false
   concretizer:
     unify: true
+  config:
+    build_stage: ~/git/work/scalapack/spack-build-stage/
