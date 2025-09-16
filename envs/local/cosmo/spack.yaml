@@ -9,8 +9,10 @@ spack:
     - py-metatensor-torch
     - py-metatomic-torch
     - py-vesin
-    - py-ase
     - py-ipython
+    - kokkos +wrapper
+    - lammps@git.metatomic=develop fft_kokkos=cufft +kokkos +python +metatomic
+    - mpich
   packages:
     all:
       prefer:
@@ -35,3 +37,5 @@ spack:
     root: ./spack-view
   concretizer:
     unify: true
+  repos:
+    - ~/git/work/my-spack/repos/cosmo/
