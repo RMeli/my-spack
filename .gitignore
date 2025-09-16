@@ -5,3 +5,10 @@ spack-view
 
 # python
 __pycache__/
+
+# PyTorch
+*.pt
+
+# lammps
+log.lammps
+

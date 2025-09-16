@@ -11,7 +11,7 @@ spack:
     - py-vesin
     - py-ipython
     - kokkos +wrapper
-    - lammps@git.metatomic=develop fft_kokkos=cufft +kokkos +python +metatomic
+    - lammps@git.metatomic=develop fft_kokkos=cufft +kokkos +python +metatomic +replica +mc +molecule +misc +plumed +manifold +qtb +reaction +shock #+spin +mpiio +extra-pair +extra-fix
     - mpich
   packages:
     all:
