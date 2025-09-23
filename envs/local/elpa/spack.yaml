@@ -1,0 +1,34 @@
+spack:
+  specs:
+  - elpa
+  packages:
+    all:
+      prefer:
+        - +cuda
+        - cuda_arch=89
+        - +mpi
+        - build_type=Release
+      conflict:
+        - +rocm
+    mpi:
+      require: mpich
+    mpich:
+      require:
+        - "@4:"
+        - netmod=tcp
+        - device=ch3 
+    blas:
+      require: 
+        - openblas
+    lapack:
+      require: 
+        - openblas
+    scalapack:
+      require: 
+        - netlib-scalapack
+    elpa:
+      require:
+        - +mpi
+  view: false
+  concretizer:
+    unify: true
