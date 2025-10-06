@@ -4,73 +4,73 @@ spack:
   packages:
     all:
       prefer:
-        - +cuda
-        - cuda_arch=89
-        - +mpi
-        - build_type=Release
-        - ~openmp
+      - +cuda
+      - cuda_arch=89
+      - +mpi
+      - build_type=Release
+      - ~openmp
       conflict:
-        - +rocm
+      - +rocm
     cuda:
       require:
-        - "cuda@12.4"
+      - cuda@12.4
     mpi:
       require: mpich
     mpich:
       require:
-        - "@4:"
-        - netmod=tcp
-        - device=ch3 
+      - '@4:'
+      - netmod=tcp
+      - device=ch3
     blas:
-      require: "openblas"
+      require: openblas
     lapack:
-      require: "openblas"
+      require: openblas
     scalapack:
-      require: "netlib-scalapack"
+      require: netlib-scalapack
     netlib-scalapack:
       require:
-        - "@2.2.0"
+      - '@2.2.0'
     fftw-api:
-      require: "fftw"
+      require: fftw
     fftw:
       require:
-        - "@3:"
+      - '@3:'
     libxc:
-      require: 
-        - "@7:"
-        - "~cuda"
+      require:
+      - '@7:'
+      - ~cuda
     dbcsr:
       require:
-        - "@2.8.0"
-        - +mpi_f08
-        - cuda_arch=80
+      - '@2.8.0'
+      - +mpi_f08
+      - cuda_arch=80
     pika:
       require:
-        - "@0.32"
+      - '@0.32'
     dla-future:
       require:
-        - +scalapack
-        - ~hdf5
-        - '@0.10.0'
+      - +scalapack
+      - ~hdf5
+      - '@0.10.0'
     cp2k:
       require:
-        - cuda_arch=80
-        - build_system=cmake
-        - +libint
-        - +libxc
-        - +mpi_f08
-        - +plumed
-        - +spglib
-        - +dlaf
-        - ~hdf5
-        - ~smeagol
+      - cuda_arch=80
+      - build_system=cmake
+      - +libint
+      - +libxc
+      - +mpi_f08
+      - +plumed
+      - +spglib
+      - +dlaf
+      - ~hdf5
+      - ~smeagol
   view: false
   concretizer:
     unify: true
-  repos:
-    - ~/git/work/my-spack/repos/spack-v1
+    #  repos:
+    #    - ~/git/work/my-spack/repos/spack-v1
     #    - ~/git/work/DLA-Future/spack/
-    - ~/git/work/DLA-Future-Fortran/spack/
+    #    - ~/git/work/DLA-Future-Fortran/spack/
   develop:
     cp2k:
       spec: cp2k@master +libint +libxc +mpi_f08 +spglib +dlaf ~hdf5 ~smeagol build_system=cmake
@@ -78,9 +78,9 @@ spack:
     # dla-future:
     #   spec: dla-future@master +scalapack ~hdf5
     #   path: ~/git/work/DLA-Future/
-    dla-future-fortran:
-      spec: dla-future-fortran@main
-      path: ~/git/work/DLA-Future-Fortran
+    #dla-future-fortran:
+    #  spec: dla-future-fortran@main
+    #  path: ~/git/work/DLA-Future-Fortran
   config:
     ccache: true
     build_stage: ~/git/work/cp2k/spack-build-stage/

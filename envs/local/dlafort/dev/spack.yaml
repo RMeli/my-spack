@@ -4,43 +4,42 @@ spack:
   packages:
     all:
       prefer:
-        - +mpi
-        - ~cuda
-        - ~rocm
+      - +mpi
+      - ~cuda
+      - ~rocm
       require:
-        - "%gcc@11.4.0"
+      - '%gcc@11.4.0'
     mpi:
       require:
-        - mpich
+      - mpich
     mpich:
       require:
-        - "@4.1:"
-        - device=ch3
-        - netmod=tcp
+      - '@4.1:'
+      - device=ch3
+      - netmod=tcp
     blas:
       require:
-        - openblas
+      - openblas
     lapack:
       require:
-        - openblas
+      - openblas
     scalapack:
       require:
-        - netlib-scalapack
+      - netlib-scalapack
     netlib-scalapack:
       require:
-        - '@2.2.2'
+      - '@2.2.0'
     openblas:
       require:
-        - threads=none
+      - threads=none
     intel-oneapi-mkl:
       require:
-        - +cluster
-        - threads=none
-        - +gfortran
+      - +cluster
+      - threads=none
+      - +gfortran
   repos:
-    - ~/git/work/DLA-Future/spack/
-    - ~/git/work/DLA-Future-Fortran/spack/
-    - ~/git/work/my-spack/repos/spack-v1/
+    dlaf: ~/git/work/DLA-Future/spack/
+    dla-future-fortran-repo: ~/git/work/DLA-Future-Fortran/spack/
   develop:
     dla-future-fortran:
       path: ~/git/work/DLA-Future-Fortran

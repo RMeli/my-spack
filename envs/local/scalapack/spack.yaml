@@ -1,0 +1,35 @@
+spack:
+  specs:
+  - netlib-scalapack@2.2.2
+  packages:
+    all:
+      prefer:
+        - +mpi
+        - ~cuda
+        - ~rocm
+    mpi:
+      require:
+        - mpich
+    mpich:
+      require:
+        - "@4.1: device=ch3 netmod=tcp"
+    blas:
+      require:
+        - openblas
+    lapack:
+      require:
+        - openblas
+    scalapack:
+      require:
+        - netlib-scalapack
+  repos:
+    - ~/git/work/my-spack/repos/spack-v1/
+  develop:
+    netlib-scalapack:
+      path: ~/git/work/scalapack/
+      spec: netlib-scalapack@2.2.2
+  view: false
+  concretizer:
+    unify: true
+  config:
+    build_stage: ~/git/work/scalapack/spack-build-stage/

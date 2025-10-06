@@ -1,5 +1,14 @@
 # spack
-.spack-env
+.spack-env/
+spack-view
+._spack-view/
 
 # python
-__pycache__
+__pycache__/
+
+# PyTorch
+*.pt
+
+# lammps
+log.lammps
+

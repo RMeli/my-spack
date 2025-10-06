@@ -1,0 +1,25 @@
+spack:
+  specs:
+    - python
+    - py-uv
+    - cmake
+    - ninja
+    - cuda
+    - openblas
+    - mpich netmod=tcp device=ch3
+    - netlib-scalapack
+  concretizer:
+    unify: true
+  packages:
+    cmake:
+      require:
+        - "@3"
+    cuda:
+      require:
+        - "@12.8"
+    python:
+      require:
+        - "@3.11"
+  view:
+    default:
+      root: ${HOME}/cuda.view

@@ -4,11 +4,9 @@ spack:
   packages:
     all:
       prefer:
-      - +mpi
-      - ~cuda
-      - ~rocm
-      require:
-      - os=ubuntu22.04
+        - +mpi
+        - ~cuda
+        - ~rocm
     mpi:
       require:
       - mpich
@@ -23,26 +21,26 @@ spack:
       - openblas
     scalapack:
       require:
-      - netlib-scalapack
-    pika:
-      require:
-      - '@0.32.0'
+        - netlib-scalapack
     dla-future:
       require:
-      - +hdf5
-      - +miniapps
-      - +scalapack
-      - '@0.10.0'
+        - "+hdf5"
+        - "+miniapps"
+        - "+scalapack"
   repos:
-    dla-future-fortran-repo: ~/git/work/DLA-Future-Fortran/spack/
-    #    dlaf: ~/git/work/DLA-Future/spack/
+    - ~/git/work/DLA-Future-Fortran/spack/
+    - ~/git/work/DLA-Future/spack/
+    - ~/git/work/my-spack/repos/spack-v1/
   develop:
+    netlib-scalapack:
+      path: ~/git/work/scalapack/
+      spec: netlib-scalapack@master
+    dla-future:
+      path: ~/git/work/DLA-Future
+      spec: dla-future@master +hdf5 +miniapps +scalapack build_type=RelWithDebInfo
     dla-future-fortran:
       path: ~/git/work/DLA-Future-Fortran
       spec: dla-future-fortran@main +test
-    # dla-future:
-    #   path: ~/git/work/DLA-Future
-    #   spec: dla-future@master +hdf5 +miniapps +scalapack build_type=Debug
   view: false
   concretizer:
     unify: true

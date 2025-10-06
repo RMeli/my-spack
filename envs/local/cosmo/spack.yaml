@@ -1,0 +1,41 @@
+spack:
+  specs:
+    - libmetatensor@0.1.17
+    - libmetatensor-torch@0.8.0
+    - libmetatomic-torch@0.1.4
+    - py-metatensor-core
+    - py-metatensor-learn
+    - py-metatensor-operations
+    - py-metatensor-torch
+    - py-metatomic-torch
+    - py-vesin
+    - py-ipython
+    - kokkos +wrapper
+    - lammps@git.metatomic=develop fft_kokkos=cufft +kokkos +python +metatomic +replica +mc +molecule +misc +plumed +manifold +qtb +reaction +shock #+spin +mpiio +extra-pair +extra-fix
+    - mpich
+  packages:
+    all:
+      prefer:
+        - +cuda
+        - cuda_arch=89
+    py-torch:
+      require:
+        - ~distributed
+        - ~magma
+        - ~nccl
+        - ~valgrind
+        - +custom-protobuf
+    blas:
+      require: "openblas"
+    lapack:
+      require: "openblas"
+    scalapack:
+      require: "netlib-scalapack"
+    fftw-api:
+      require: "fftw" 
+  view:
+    root: ./spack-view
+  concretizer:
+    unify: true
+  repos:
+    - ~/git/work/my-spack/repos/cosmo/

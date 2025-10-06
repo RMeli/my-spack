@@ -1,0 +1,48 @@
+spack:
+  specs:
+  - cp2k@2025.2 +libxc +libint +spglib +cosma +spla +elpa +dlaf +sirius +plumed +dftd4 +libvori lmax=5 build_system=cmake
+  packages:
+    all:
+      prefer:
+        - +cuda
+        - +openmp
+        - cuda_arch=80
+        - +mpi
+        - build_type=Release
+      conflict:
+        - +rocm
+    mpi:
+      require: mpich
+    mpich:
+      require:
+        - "@4:"
+        - netmod=tcp
+        - device=ch3 
+    blas:
+      require: "openblas"
+    lapack:
+      require: "openblas"
+    scalapack:
+      require: "netlib-scalapack"
+    fftw-api:
+      require: "fftw"
+    fftw:
+      require:
+        - "@3:"
+    libxc:
+      require:
+        - "~cuda"
+    sirius:
+      require:
+        - +dlaf
+        - +elpa
+        - +scalapack
+    mctc-lib:
+      require:
+        - ~openmp
+    umpire:
+      require:
+        - "@2024.07.0"
+  view: false
+  concretizer:
+    unify: true
