@@ -4,46 +4,47 @@ spack:
   packages:
     all:
       prefer:
-        - +mpi
-        - ~cuda
-        - ~rocm
+      - +mpi
+      - ~cuda
+      - ~rocm
       require:
-        - "%gcc@11.4.0"
-        - "os=ubuntu22.04"
+      - os=ubuntu22.04
     mpi:
       require:
-        - mpich
+      - mpich
     mpich:
       require:
-        - "@4.1: device=ch3 netmod=tcp"
+      - '@4.1: device=ch3 netmod=tcp'
     blas:
       require:
-        - openblas
+      - openblas
     lapack:
       require:
-        - openblas
+      - openblas
     scalapack:
       require:
-        - netlib-scalapack
+      - netlib-scalapack
     pika:
-      require: 
-        - "@0.25.0"
+      require:
+      - '@0.32.0'
     dla-future:
       require:
-        - "+hdf5"
-        - "+miniapps"
-        - "+scalapack"
-        - "@git.5b4dcebf82b2c21ed094909db63cc44313fcc2cb"
+      - +hdf5
+      - +miniapps
+      - +scalapack
+      - '@0.10.0'
   repos:
-    - ~/git/work/DLA-Future-Fortran/spack/
-    - ~/git/work/DLA-Future/spack/
+    dla-future-fortran-repo: ~/git/work/DLA-Future-Fortran/spack/
+    #    dlaf: ~/git/work/DLA-Future/spack/
   develop:
+    dla-future-fortran:
+      path: ~/git/work/DLA-Future-Fortran
+      spec: dla-future-fortran@main +test
     # dla-future:
     #   path: ~/git/work/DLA-Future
     #   spec: dla-future@master +hdf5 +miniapps +scalapack build_type=Debug
-    dla-fortran:
-      path: ~/git/work/DLA-Future-Fortran
-      spec: dla-future-fortran@main +test
   view: false
   concretizer:
     unify: true
+  config:
+    build_stage: ~/git/work/DLA-Future-Fortran/spack-build-stage/

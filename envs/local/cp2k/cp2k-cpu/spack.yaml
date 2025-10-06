@@ -1,21 +1,37 @@
 spack:
   specs:
-    - cp2k@master +spglib build_system=cmake +smeagol
+  - cp2k@master +spglib build_system=cmake +smeagol
   packages:
+    gcc:
+      externals:
+      - spec: gcc@11.4.0 languages:='c,c++,fortran'
+        prefix: /usr
+        extra_attributes:
+          compilers:
+            c: /usr/bin/gcc
+            cxx: /usr/bin/g++
+            fortran: /usr/bin/gfortran
+      - spec: gcc@12.3.0 languages:='c,c++,fortran'
+        prefix: /usr
+        extra_attributes:
+          compilers:
+            c: /usr/bin/gcc-12
+            cxx: /usr/bin/g++-12
+            fortran: /usr/bin/gfortran-12
     all:
       prefer:
-        - '%gcc@11.4'
-        - +mpi
+      - '%gcc@11.4'
+      - +mpi
     mpi:
       require: mpich
     blas:
-      require: "openblas"
+      require: openblas
     lapack:
-      require: "openblas"
+      require: openblas
     scalapack:
-      require: "netlib-scalapack"
+      require: netlib-scalapack
     fftw-api:
-      require: "fftw" 
+      require: fftw
   develop:
     cp2k:
       spec: cp2k@master +spglib build_system=cmake +smeagol
@@ -23,3 +39,5 @@ spack:
   view: false
   concretizer:
     unify: true
+  config:
+    build_stage: ~/git/work/cp2k/spack-build-stage/
