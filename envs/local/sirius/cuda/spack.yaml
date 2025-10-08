@@ -1,15 +1,44 @@
 spack:
   specs:
-  - intel-oneapi-mkl +cluster
-  - libxc ~cuda
-  - sirius@develop +scalapack +elpa +apps +tests ^intel-oneapi-mkl
+  - sirius@develop +scalapack ~dlaf +apps +tests
   packages:
     all:
-      variants:
+      prefer:
         - +cuda
         - cuda_arch=89
-  repos:
-    - ~/git/SIRIUS/ci/github-ci/spack
+        - +mpi
+        - build_type=Release
+      conflict:
+        - +rocm
+    mpi:
+      require: mpich
+    mpich:
+      require:
+        - "@4:"
+        - netmod=tcp
+        - device=ch3 
+    blas:
+      require: "openblas"
+    lapack:
+      require: "openblas"
+    scalapack:
+      require: "netlib-scalapack"
+    fftw-api:
+      require: "fftw"
+    fftw:
+      require:
+        - "@3:"
+    libxc:
+      require: 
+        - "~cuda"
   view: false
+  repos:
+    - ~/git/work/SIRIUS/ci/sirius-uenv-recipe-gh200/spack_repo/sirius_ci/
+  develop:
+    sirius:
+      path: ~/git/work/SIRIUS/
+      spec: sirius@develop +scalapack ~dlaf +apps +tests
   concretizer:
     unify: true
+  config:
+    build_stage: ~/git/work/SIRIUS/spack-build-stage/

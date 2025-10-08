@@ -43,6 +43,7 @@ spack:
     umpire:
       require:
         - "@2024.07.0"
-  view: false
+  view:
+    root: .spack-view/
   concretizer:
     unify: true

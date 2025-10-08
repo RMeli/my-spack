@@ -1,7 +1,7 @@
 spack:
   specs:
     - libmetatensor@0.1.17
-    - libmetatensor-torch@0.8.0
+    - libmetatensor-torch@0.8.1
     - libmetatomic-torch@0.1.4
     - py-metatensor-core
     - py-metatensor-learn

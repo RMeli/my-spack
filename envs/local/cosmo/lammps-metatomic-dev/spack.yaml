@@ -1,0 +1,44 @@
+spack:
+  specs:
+    - libmetatensor@0.1.17
+    - libmetatensor-torch@0.8.1
+    - libmetatomic-torch@0.1.4
+    - kokkos +wrapper
+    - lammps
+  packages:
+    all:
+      prefer:
+        - +cuda
+        - cuda_arch=89
+        - +mpi
+    py-torch:
+      require:
+        - ~distributed
+        - ~magma
+        - ~nccl
+        - ~valgrind
+        - +custom-protobuf
+    blas:
+      require: "openblas"
+    lapack:
+      require: "openblas"
+    scalapack:
+      require: "netlib-scalapack"
+    fftw-api:
+      require: "fftw" 
+    mpi:
+      require: "mpich"
+    mpich:
+      require:
+        - "netmod=tcp"
+        - "device=ch3"
+  develop:
+    lammps:
+      spec: lammps@develop fft_kokkos=cufft +kokkos +python +metatomic build_type=RelWithDebInfo +cuda cuda_arch=89
+      path: ~/git/work/lammps-metatomic 
+  concretizer:
+    unify: true
+  repos:
+    - ~/git/work/my-spack/repos/cosmo/
+  config:
+    build_stage: ~/git/work/lammps-metatomic/spack-build-stage/

@@ -1,0 +1,45 @@
+
+package kokkos newton on neigh half
+# ------------------------------ INITIALIZATION -------------------------------
+boundary p p p
+units      metal
+dimension  3
+boundary   p p p
+atom_style atomic
+atom_modify map array sort 0 0
+
+# ----------------------------- ATOM DEFINITION -------------------------------
+read_data positions500_large22.data
+
+region r1 block INF INF INF INF 35 INF 
+group surf1 region r1
+
+# ------------------------- INTERACTIONS ---------------------------
+
+pair_style metatomic mymodel.pt device cuda check_consistency off 
+pair_coeff * * 3 15 16 
+
+# ------------------------------- THERMO STYLE --------------------------------
+thermo_style custom step pe
+
+# ---------------------------------- DUMPS ------------------------------------
+compute pe_peratom all pe/atom
+
+dump dump_positions all custom 100 positions.dump id mass type element xu yu zu
+dump_modify dump_positions element Li P S sort id
+
+# ----------------------------------- RUN -------------------------------------
+timestep 0.001
+
+run_style verlet
+
+variable dt equal step
+
+restart 10000 restart.meta
+
+fix 1 surf1 nvt temp 300 300 $(100.0*dt) #iso 1.01325 1.01325 1.0
+
+run 10
+
+
+

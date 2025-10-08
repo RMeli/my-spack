@@ -1,6 +1,6 @@
 # spack
 .spack-env/
-spack-view
+spack-view/
 ._spack-view/
 
 # python
