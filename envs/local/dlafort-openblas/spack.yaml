@@ -9,16 +9,16 @@ spack:
         - ~rocm
     mpi:
       require:
-        - mpich
+      - mpich
     mpich:
       require:
-        - "@4.1: device=ch3 netmod=tcp"
+      - '@4.1: device=ch3 netmod=tcp'
     blas:
       require:
-        - openblas
+      - openblas
     lapack:
       require:
-        - openblas
+      - openblas
     scalapack:
       require:
         - netlib-scalapack
@@ -44,3 +44,5 @@ spack:
   view: false
   concretizer:
     unify: true
+  config:
+    build_stage: ~/git/work/DLA-Future-Fortran/spack-build-stage/
