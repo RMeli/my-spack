@@ -3,13 +3,7 @@ spack:
     - libmetatensor@0.1.17
     - libmetatensor-torch@0.8.1
     - libmetatomic-torch@0.1.4
-    - py-metatensor-core
-    - py-metatensor-learn
-    - py-metatensor-operations
-    - py-metatensor-torch
-    - py-metatomic-torch
-    - py-vesin
-    - py-ipython
+    - py-torch
     - kokkos +wrapper
     - lammps@git.metatomic=develop fft_kokkos=cufft +kokkos +python +metatomic +replica +mc +molecule +misc +plumed +manifold +qtb +reaction +shock #+spin +mpiio +extra-pair +extra-fix
     - mpich
