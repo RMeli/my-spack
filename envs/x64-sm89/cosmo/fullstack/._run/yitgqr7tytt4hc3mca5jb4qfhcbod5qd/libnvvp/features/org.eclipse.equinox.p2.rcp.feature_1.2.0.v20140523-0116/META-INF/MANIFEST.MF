@@ -1,0 +1,1 @@
+/home/rmeli/spack/opt/spack/linux-zen4/cuda-12.9.0-4n3obrrtthjwmdmqh3cohi5g2unmjk5t/libnvvp/features/org.eclipse.equinox.p2.rcp.feature_1.2.0.v20140523-0116/META-INF/MANIFEST.MF

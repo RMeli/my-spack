@@ -1,0 +1,1 @@
+/home/rmeli/spack/opt/spack/linux-zen4/py-typing-extensions-4.14.1-yk72yyhit7s4jf4cx5pledvzpqu5kpdx/.spack/repos/spack_repo/builtin/packages/py_typing_extensions/package.py

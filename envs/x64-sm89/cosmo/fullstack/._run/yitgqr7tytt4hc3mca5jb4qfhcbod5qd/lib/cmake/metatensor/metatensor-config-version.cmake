@@ -1,0 +1,1 @@
+/home/rmeli/spack/opt/spack/linux-zen4/libmetatensor-0.1.17-lpggkbckjuggehwp67jhmyjkzhvwo2jc/lib/cmake/metatensor/metatensor-config-version.cmake

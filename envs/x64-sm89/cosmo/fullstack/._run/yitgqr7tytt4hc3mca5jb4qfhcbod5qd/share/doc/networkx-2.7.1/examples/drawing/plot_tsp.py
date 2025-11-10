@@ -1,0 +1,1 @@
+/home/rmeli/spack/opt/spack/linux-zen4/py-networkx-2.7.1-ptuxwww7ptoqoys4yvckd6ywwi64f2em/share/doc/networkx-2.7.1/examples/drawing/plot_tsp.py

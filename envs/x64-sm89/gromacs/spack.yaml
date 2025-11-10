@@ -1,0 +1,39 @@
+spack:
+  specs:
+    - cmake
+    - cuda@12.9
+    - blas
+    - lapack
+    - hwloc
+    - fftw
+    - python@3.12
+    - plumed@2.10 +pytorch
+    - gromacs@2025 +hwloc +plumed
+  packages:
+    all:
+      prefer:
+        - +cuda
+        - cuda_arch=89
+        - +mpi
+    py-torch:
+      require:
+        - ~distributed
+        - ~magma
+        - ~nccl
+        - ~valgrind
+        - +custom-protobuf
+    blas:
+      require: "openblas"
+    lapack:
+      require: "openblas"
+    scalapack:
+      require: "netlib-scalapack"
+    fftw-api:
+      require: "fftw" 
+    mpi:
+      require:
+        - mpich
+  view:
+    root: ./spack-view
+  concretizer:
+    unify: true

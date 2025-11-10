@@ -1,0 +1,1 @@
+/home/rmeli/spack/opt/spack/linux-zen4/py-fonttools-4.39.4-mdxls5fr5tzrs5tlnnzev2kn2urfut74/.spack/repos/spack_repo/builtin/packages/py_fonttools/package.py

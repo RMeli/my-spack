@@ -1,0 +1,1 @@
+/home/rmeli/spack/opt/spack/linux-zen4/py-metatensor-operations-0.3.4-3lft3teba66tecdoa4uulpp3xw7hc46e/.spack/repos/spack_repo/builtin/packages/py_metatensor_operations/package.py

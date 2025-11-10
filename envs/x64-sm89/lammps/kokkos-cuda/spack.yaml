@@ -1,0 +1,27 @@
+spack:
+  specs:
+    - kokkos +wrapper
+    - lammps fft_kokkos=cufft +kokkos
+  packages:
+    all:
+      prefer:
+        - +cuda
+        - cuda_arch=89
+        - +mpi
+    blas:
+      require: "openblas"
+    lapack:
+      require: "openblas"
+    scalapack:
+      require: "netlib-scalapack"
+    fftw-api:
+      require: "fftw" 
+    mpi:
+      require:
+        - mpich
+  view:
+    root: ./spack-view
+  concretizer:
+    unify: true
+  repos:
+    - ~/git/work/my-spack/repos/cosmo/

@@ -1,0 +1,41 @@
+spack:
+  specs:
+    - cuda@12.9
+    - py-torch
+    - py-vesin
+    - libmetatensor
+    - libmetatensor-torch@0.7
+    - libmetatomic-torch
+    - py-metatensor-core
+    - py-metatensor-torch
+    - py-metatomic-torch
+    - py-metatrain +soap_bpnn
+  packages:
+    all:
+      prefer:
+        - +cuda
+        - cuda_arch=89
+        - +mpi
+    py-torch:
+      require:
+        - ~distributed
+        - ~magma
+        - ~nccl
+        - ~valgrind
+        - +custom-protobuf
+    blas:
+      require: "openblas"
+    lapack:
+      require: "openblas"
+    scalapack:
+      require: "netlib-scalapack"
+    fftw-api:
+      require: "fftw" 
+    mpi:
+      require:
+        - mpich
+  view:
+    root: ./spack-view
+    link: run
+  concretizer:
+    unify: true

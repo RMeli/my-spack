@@ -1,0 +1,1 @@
+/home/rmeli/spack/opt/spack/linux-zen4/libpng-1.6.47-vkmhrksztjing366mnoghvdm5c6vyuzm/include/libpng16/pngconf.h

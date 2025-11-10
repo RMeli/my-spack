@@ -5,13 +5,14 @@ spack:
     - libmetatomic-torch@0.1.4
     - py-torch
     - kokkos +wrapper
-    - lammps@git.metatomic=develop fft_kokkos=cufft +kokkos +python +metatomic +replica +mc +molecule +misc +plumed +manifold +qtb +reaction +shock #+spin +mpiio +extra-pair +extra-fix
+    - lammps@git.metatomic=develop fft_kokkos=cufft +kokkos +metatomic
     - mpich
   packages:
     all:
       prefer:
         - +cuda
         - cuda_arch=89
+        - +mpi
     py-torch:
       require:
         - ~distributed
@@ -27,6 +28,9 @@ spack:
       require: "netlib-scalapack"
     fftw-api:
       require: "fftw" 
+    mpi:
+      require:
+        - mpich
   view:
     root: ./spack-view
   concretizer:

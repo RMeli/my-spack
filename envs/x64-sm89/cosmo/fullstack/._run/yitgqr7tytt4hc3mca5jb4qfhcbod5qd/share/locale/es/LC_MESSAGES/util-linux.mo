@@ -1,0 +1,1 @@
+/home/rmeli/spack/opt/spack/linux-zen4/util-linux-uuid-2.41-5rkhbkxbsncp2kmuofckng6orz5ezwir/share/locale/es/LC_MESSAGES/util-linux.mo

@@ -1,0 +1,31 @@
+spack:
+  specs:
+    - plumed@2.8 optional_modules=none ~python
+  packages:
+    all:
+      prefer:
+        - +cuda
+        - cuda_arch=89
+        - +mpi
+    py-torch:
+      require:
+        - ~distributed
+        - ~magma
+        - ~nccl
+        - ~valgrind
+        - +custom-protobuf
+    blas:
+      require: "openblas"
+    lapack:
+      require: "openblas"
+    scalapack:
+      require: "netlib-scalapack"
+    fftw-api:
+      require: "fftw" 
+    mpi:
+      require:
+        - mpich
+  view:
+    root: ./spack-view
+  concretizer:
+    unify: true
