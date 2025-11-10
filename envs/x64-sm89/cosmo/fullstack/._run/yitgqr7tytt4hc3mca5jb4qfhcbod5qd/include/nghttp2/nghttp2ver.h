@@ -1,1 +1,0 @@
-/home/rmeli/spack/opt/spack/linux-zen4/nghttp2-1.65.0-7f3ynoeodmfrlphw4c6xuad74aequjtu/include/nghttp2/nghttp2ver.h

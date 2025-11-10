@@ -1,1 +1,0 @@
-/home/rmeli/spack/opt/spack/linux-zen4/py-wigners-0.3.1-zx34467qwhfqokdogcj4j5wxsfstaaau/.spack/repos/spack_repo/builtin/packages/py_wigners/package.py

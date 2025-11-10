@@ -1,1 +1,0 @@
-/home/rmeli/spack/opt/spack/linux-zen4/freetype-2.13.2-oyi2zrqqbim7cukcdmd662eaekm37c3i/include/freetype2/freetype/ftchapters.h

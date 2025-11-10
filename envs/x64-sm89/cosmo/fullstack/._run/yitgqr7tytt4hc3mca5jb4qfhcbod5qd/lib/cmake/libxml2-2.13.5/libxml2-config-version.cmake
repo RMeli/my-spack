@@ -1,1 +1,0 @@
-/home/rmeli/spack/opt/spack/linux-zen4/libxml2-2.13.5-pwp7tejvoyhsvdasd3myknmlaznr2i4a/lib/cmake/libxml2-2.13.5/libxml2-config-version.cmake

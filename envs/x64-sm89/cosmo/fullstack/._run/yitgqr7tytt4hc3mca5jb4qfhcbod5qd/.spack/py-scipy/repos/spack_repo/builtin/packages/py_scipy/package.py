@@ -1,1 +1,0 @@
-/home/rmeli/spack/opt/spack/linux-zen4/py-scipy-1.16.1-4yfssrpyrjrxenhvycuyi3hvvpn5zfkj/.spack/repos/spack_repo/builtin/packages/py_scipy/package.py

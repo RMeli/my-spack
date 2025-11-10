@@ -1,1 +1,0 @@
-/home/rmeli/spack/opt/spack/linux-zen4/py-markupsafe-2.1.3-befysaaxp644jyysk2dsj3lsiyc6igwo/.spack/repos/spack_repo/builtin/packages/py_markupsafe/package.py

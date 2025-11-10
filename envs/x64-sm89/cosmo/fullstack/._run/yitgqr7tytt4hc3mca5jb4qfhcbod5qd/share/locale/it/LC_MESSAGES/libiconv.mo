@@ -1,1 +1,0 @@
-/home/rmeli/spack/opt/spack/linux-zen4/libiconv-1.18-l32tem3jvm5ojrrewvivzl2h377zyhtt/share/locale/it/LC_MESSAGES/libiconv.mo

@@ -1,1 +1,0 @@
-/home/rmeli/spack/opt/spack/linux-zen4/py-pyparsing-3.1.2-fisofr6bya2ygivlzbip33ca2krsm7lq/.spack/repos/spack_repo/builtin/packages/py_pyparsing/package.py

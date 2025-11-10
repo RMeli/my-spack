@@ -1,1 +1,0 @@
-/home/rmeli/spack/opt/spack/linux-zen4/gettext-0.23.1-iv46p2ykae2bnzclmawvurawzl5msx2e/share/doc/gettext/examples/hello-c++-gnome/m4/gnome.m4

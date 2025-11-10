@@ -1,1 +1,0 @@
-/home/rmeli/spack/opt/spack/linux-zen4/libmetatensor-torch-0.7.6-txjf6ucsyzmublk34757z3gikqakuroq/include/metatensor/torch/misc.hpp

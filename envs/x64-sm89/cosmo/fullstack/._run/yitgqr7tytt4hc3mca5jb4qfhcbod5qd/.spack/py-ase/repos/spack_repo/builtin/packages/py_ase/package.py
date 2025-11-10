@@ -1,1 +1,0 @@
-/home/rmeli/spack/opt/spack/linux-zen4/py-ase-3.26.0-3di5c4kfslocrtshnelzxsefesucg6c3/.spack/repos/spack_repo/builtin/packages/py_ase/package.py

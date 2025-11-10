@@ -1,1 +1,0 @@
-/home/rmeli/spack/opt/spack/linux-zen4/py-metatensor-torch-0.7.6-rj5juzoozhna3i24gj5eqpfdehgv5dts/.spack/repos/spack_repo/builtin/packages/py_metatensor_torch/package.py

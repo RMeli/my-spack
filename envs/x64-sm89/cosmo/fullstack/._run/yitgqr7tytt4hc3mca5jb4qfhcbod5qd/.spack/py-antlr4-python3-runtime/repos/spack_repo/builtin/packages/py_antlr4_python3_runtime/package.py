@@ -1,1 +1,0 @@
-/home/rmeli/spack/opt/spack/linux-zen4/py-antlr4-python3-runtime-4.9.3-ctgjcd7xvwvhytwhort4qk6pwnyjtumi/.spack/repos/spack_repo/builtin/packages/py_antlr4_python3_runtime/package.py

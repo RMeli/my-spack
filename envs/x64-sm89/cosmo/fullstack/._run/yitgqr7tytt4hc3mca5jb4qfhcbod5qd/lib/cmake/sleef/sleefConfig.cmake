@@ -1,1 +1,0 @@
-/home/rmeli/spack/opt/spack/linux-zen4/sleef-3.8-yp6l5umpxswqhv3mh6vubicqwb3wzick/lib/cmake/sleef/sleefConfig.cmake

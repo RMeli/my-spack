@@ -1,1 +1,0 @@
-/home/rmeli/spack/opt/spack/linux-zen4/py-urllib3-2.1.0-wiyrntfexq6avczfkred5chyeuc3wisx/.spack/repos/spack_repo/builtin/packages/py_urllib3/package.py

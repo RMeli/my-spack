@@ -1,1 +1,0 @@
-/home/rmeli/spack/opt/spack/linux-zen4/py-metatensor-learn-0.3.2-xfbmtok52xj63wv3ys42vjfzwt33qcvr/.spack/spack-build-env.txt

@@ -1,1 +1,0 @@
-/home/rmeli/spack/opt/spack/linux-zen4/py-metatrain-2025.10-2zn7aczekuiglkv4yflj25mdyqaoaefl/.spack/repos/spack_repo/builtin/packages/py_metatrain/package.py

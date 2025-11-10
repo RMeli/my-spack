@@ -1,1 +1,0 @@
-/home/rmeli/spack/opt/spack/linux-zen4/psimd-2020-05-17-aoc2axwkthd5evzqtyrhoo3pkpwqaitv/.spack/repos/spack_repo/builtin/packages/psimd/package.py

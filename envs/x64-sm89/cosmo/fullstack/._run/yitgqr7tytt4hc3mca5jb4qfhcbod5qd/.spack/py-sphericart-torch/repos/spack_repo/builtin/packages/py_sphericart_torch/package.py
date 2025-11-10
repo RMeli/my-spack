@@ -1,1 +1,0 @@
-/home/rmeli/spack/opt/spack/linux-zen4/py-sphericart-torch-1.0.3-ni4jhhkfymtza4itijuywqft66veben3/.spack/repos/spack_repo/builtin/packages/py_sphericart_torch/package.py

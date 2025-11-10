@@ -2,6 +2,8 @@
 .spack-env/
 spack-view/
 ._spack-view/
+run/
+._run/
 
 # python
 __pycache__/

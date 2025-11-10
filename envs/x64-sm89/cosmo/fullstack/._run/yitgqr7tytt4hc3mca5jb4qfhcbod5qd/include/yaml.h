@@ -1,1 +1,0 @@
-/home/rmeli/spack/opt/spack/linux-zen4/libyaml-0.2.5-yxkbtjzf22unyxeyfu7u6lxezftcteay/include/yaml.h

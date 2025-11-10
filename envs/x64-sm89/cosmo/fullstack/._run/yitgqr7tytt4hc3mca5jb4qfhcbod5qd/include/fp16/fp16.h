@@ -1,1 +1,0 @@
-/home/rmeli/spack/opt/spack/linux-zen4/fp16-2020-05-14-xbfsuca3pzftmxlfkyaqv7enoiypmw5w/include/fp16/fp16.h
