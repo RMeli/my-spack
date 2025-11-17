@@ -30,9 +30,6 @@ spack:
     openblas:
       require:
         - threads=none
-    dla-future-fortran:
-      require:
-        - "@=0.2.0"
   # repos:
   #   - ~/git/work/my-spack/repos/elsi/
   view: false

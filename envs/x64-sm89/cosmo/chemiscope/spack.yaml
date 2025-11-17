@@ -1,0 +1,16 @@
+spack:
+  specs:
+    - py-chemiscope
+    - py-ase
+  packages:
+    blas:
+      require: "openblas"
+    lapack:
+      require: "openblas"
+    fftw-api:
+      require: "fftw" 
+  view:
+    root: ./spack-view
+    link: run
+  concretizer:
+    unify: true

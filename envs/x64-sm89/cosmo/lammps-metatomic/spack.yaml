@@ -2,10 +2,11 @@ spack:
   specs:
     - libmetatensor@0.1.17
     - libmetatensor-torch@0.8.1
-    - libmetatomic-torch@0.1.4
+    - libmetatomic-torch@0.1.5
     - py-torch
     - kokkos +wrapper
-    - lammps@git.metatomic=develop fft_kokkos=cufft +kokkos +metatomic
+    - lammps@git.ab8157aa61185e7a51bcf4eb26f062cff748af1d=develop fft_kokkos=cufft +kokkos +metatomic +plumed +extra-command +extra-compute +extra-dump +extra-fix +extra-molecule +extra-pair
+    - plumed@2.10 +metatomic
     - mpich
   packages:
     all:

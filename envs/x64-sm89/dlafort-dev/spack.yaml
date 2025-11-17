@@ -1,34 +1,33 @@
 spack:
   specs:
-  - dla-future-fortran@main +test fflags="-Werror"
+  - dla-future-fortran@main +test
   packages:
     all:
       prefer:
       - +mpi
       - ~cuda
       - ~rocm
-      require:
-      - '%gcc@11.4.0'
     mpi:
       require:
       - mpich
     mpich:
       require:
-      - '@4.1:'
       - device=ch3
       - netmod=tcp
     blas:
       require:
-      - openblas
+       - openblas
+#      - netlib-lapack ~external-blas
     lapack:
       require:
-      - openblas
+       - openblas
+#      - netlib-lapack ~external-blas
     scalapack:
       require:
       - netlib-scalapack
     netlib-scalapack:
       require:
-      - '@2.2.0'
+      - '@2.2.2'
     openblas:
       require:
       - threads=none
@@ -47,6 +46,9 @@ spack:
     dla-future:
       path: ~/git/work/DLA-Future
       spec: dla-future@master +scalapack +miniapps
+    netlib-scalapack:
+      path: ~/git/work/scalapack
+      spec: netlib-scalapack@2.2.2
   config:
     build_stage: ~/git/work/DLA-Future-Fortran/spack-build-stage/
   view: false
