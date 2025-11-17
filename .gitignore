@@ -7,10 +7,10 @@ run/
 
 # python
 __pycache__/
+.ipnb_checkpoints/
 
 # PyTorch
 *.pt
 
 # lammps
 log.lammps
-
