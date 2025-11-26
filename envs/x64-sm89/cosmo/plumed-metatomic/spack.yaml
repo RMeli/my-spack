@@ -5,7 +5,7 @@ spack:
     - libmetatomic-torch
     - py-torch
     - mpich
-    - plumed +mpi +pytorch +metatomic
+    - plumed +mpi +pytorch +metatomic ~gsl
   packages:
     all:
       prefer:
