@@ -1,0 +1,1 @@
+/home/rmeli/spack/opt/spack/linux-zen4/py-pydantic-core-2.41.5-fh2olaas6dulh3g7yvzzamqr36e6lecq/.spack/repos/spack_repo/builtin/packages/py_pydantic_core/package.py

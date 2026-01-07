@@ -1,0 +1,1 @@
+/home/rmeli/spack/opt/spack/linux-zen4/cuda-12.9.0-4n3obrrtthjwmdmqh3cohi5g2unmjk5t/nsight-compute-2025.2.0/docs/_static/js/theme.js

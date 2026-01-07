@@ -1,0 +1,1 @@
+/home/rmeli/spack/opt/spack/linux-zen4/xz-5.6.3-cnyvm5eqmc5yjxu4tut5k42sdrp4zfsy/share/locale/cs/LC_MESSAGES/xz.mo

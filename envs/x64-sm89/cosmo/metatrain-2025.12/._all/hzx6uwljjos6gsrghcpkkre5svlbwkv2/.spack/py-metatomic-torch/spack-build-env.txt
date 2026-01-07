@@ -1,0 +1,1 @@
+/home/rmeli/spack/opt/spack/linux-zen4/py-metatomic-torch-0.1.6-pxnnv2o7hme7yo3pnez2o3vc7ek373tx/.spack/spack-build-env.txt

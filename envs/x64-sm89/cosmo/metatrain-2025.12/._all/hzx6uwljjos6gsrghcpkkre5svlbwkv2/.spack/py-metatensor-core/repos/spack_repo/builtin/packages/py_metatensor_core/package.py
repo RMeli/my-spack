@@ -1,0 +1,1 @@
+/home/rmeli/spack/opt/spack/linux-zen4/py-metatensor-core-0.1.17-jmfoaougzbfzhe47lko366vezhbcdy3g/.spack/repos/spack_repo/builtin/packages/py_metatensor_core/package.py

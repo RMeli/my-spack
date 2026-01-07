@@ -1,0 +1,38 @@
+spack:
+  specs:
+  - cp2k@2025.6 build_system=cmake +cosma +dftd4 +elpa +hdf5 +libvori +mpi +mpi_f08 +plumed +spglib +spla +tblite +trexio
+  packages:
+    all:
+      prefer:
+        - +cuda
+        - cuda_arch=89
+        - +mpi
+        - build_type=Release
+      conflict:
+        - +rocm
+    mpi:
+      require: mpich
+    mpich:
+      require:
+        - "@4.3.2"
+    blas:
+      require: "openblas"
+    lapack:
+      require: "openblas"
+    scalapack:
+      require: "netlib-scalapack"
+    fftw-api:
+      require: "fftw"
+    fftw:
+      require:
+        - "@3:"
+    libxc:
+      require:
+        - ~cuda
+    py-torch:
+      require:
+        - ~distributed
+        - ~nccl
+  view: false
+  concretizer:
+    unify: true

@@ -1,0 +1,1 @@
+/home/rmeli/spack/opt/spack/linux-zen4/libmetatensor-0.1.17-homvz272iseerbjszi6cgotyn5avajog/.spack/repos/spack_repo/builtin/packages/libmetatensor/package.py

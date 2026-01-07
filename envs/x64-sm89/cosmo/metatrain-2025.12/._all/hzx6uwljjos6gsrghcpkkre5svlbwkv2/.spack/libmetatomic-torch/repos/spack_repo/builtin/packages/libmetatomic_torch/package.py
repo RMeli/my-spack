@@ -1,0 +1,1 @@
+/home/rmeli/spack/opt/spack/linux-zen4/libmetatomic-torch-0.1.6-43np7vfolwalzfoql5nvdcig6cynwxjw/.spack/repos/spack_repo/builtin/packages/libmetatomic_torch/package.py

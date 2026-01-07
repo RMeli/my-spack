@@ -8,7 +8,7 @@ spack:
     - fftw
     - python@3.12
     - plumed@2.10 +pytorch
-    - gromacs@2025 +hwloc +plumed
+    - gromacs@2025.0 +hwloc +plumed
   packages:
     all:
       prefer:

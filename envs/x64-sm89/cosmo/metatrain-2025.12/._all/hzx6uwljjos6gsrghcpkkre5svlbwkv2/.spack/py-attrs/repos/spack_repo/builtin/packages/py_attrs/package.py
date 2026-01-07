@@ -1,0 +1,1 @@
+/home/rmeli/spack/opt/spack/linux-zen4/py-attrs-25.3.0-hnaf2ua27usqkuwujpjxe7o5orybueaf/.spack/repos/spack_repo/builtin/packages/py_attrs/package.py

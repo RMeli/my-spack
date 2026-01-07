@@ -1,0 +1,1 @@
+/home/rmeli/spack/opt/spack/linux-zen4/pthreadpool-2023-08-29-ez4roct2fyvc4f7itsl4cd2q3cudp67x/.spack/spack-build-env.txt

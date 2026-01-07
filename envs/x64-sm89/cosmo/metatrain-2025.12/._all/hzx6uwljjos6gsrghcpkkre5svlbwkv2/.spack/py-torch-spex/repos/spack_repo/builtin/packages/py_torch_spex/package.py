@@ -1,0 +1,1 @@
+/home/rmeli/spack/opt/spack/linux-zen4/py-torch-spex-0.1.0-eacdpgltvbcpwjudfj35aj72mdtwsjrc/.spack/repos/spack_repo/builtin/packages/py_torch_spex/package.py

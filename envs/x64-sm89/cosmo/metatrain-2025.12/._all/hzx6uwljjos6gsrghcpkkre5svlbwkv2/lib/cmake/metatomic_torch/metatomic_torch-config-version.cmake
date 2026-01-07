@@ -1,0 +1,1 @@
+/home/rmeli/spack/opt/spack/linux-zen4/libmetatomic-torch-0.1.6-43np7vfolwalzfoql5nvdcig6cynwxjw/lib/cmake/metatomic_torch/metatomic_torch-config-version.cmake
