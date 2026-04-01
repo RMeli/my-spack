@@ -1,0 +1,27 @@
+spack:
+  specs:
+  - quantum-espresso +libxc
+  packages:
+    all:
+      prefer:
+      - +mpi
+      - ~cuda
+      - ~rocm
+    mpi:
+      require:
+      - mpich
+    blas:
+      require:
+      - openblas
+    lapack:
+      require:
+      - openblas
+    scalapack:
+      require:
+      - netlib-scalapack
+    libxc:
+      require:
+      - ~cuda 
+  view: false
+  concretizer:
+    unify: true
