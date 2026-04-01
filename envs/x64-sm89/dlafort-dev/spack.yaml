@@ -1,6 +1,6 @@
 spack:
   specs:
-  - dla-future-fortran@main +test
+  - dla-future-fortran
   packages:
     all:
       prefer:

@@ -1,6 +1,6 @@
 spack:
   specs:
-  - cp2k@2025.6 build_system=cmake +cosma +dftd4 +elpa +hdf5 +libvori +mpi +mpi_f08 +plumed +spglib +spla +tblite +trexio
+  - cp2k@2026.1 build_system=cmake ~cosma +dftd4 +elpa +hdf5 +libvori +mpi +mpi_f08 +plumed +spglib ~spla +tblite +trexio
   packages:
     all:
       prefer:
@@ -14,7 +14,7 @@ spack:
       require: mpich
     mpich:
       require:
-        - "@4.3.2"
+        - "@4:"
     blas:
       require: "openblas"
     lapack:

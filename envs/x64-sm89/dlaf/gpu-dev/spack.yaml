@@ -16,6 +16,10 @@ spack:
     lapack:
       require:
       - openblas
+    openblas:
+      require:
+      - "@0.3.28"
+      - threads=openmp
     scalapack:
       require:
       - netlib-scalapack
@@ -44,4 +48,4 @@ spack:
   # Build directories of develop packages are retained
   config:
     build_stage: ~/git/work/DLA-Future/spack-build-stage/
-    ccache: true
+    ccache: false
