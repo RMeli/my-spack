@@ -1,6 +1,8 @@
 spack:
+  repos:
+  - ./repo
   specs:
-  - plumed@2.10.0 ~pytorch
+  - plumed@2.10.0 +pytorch
   packages:
     all:
       prefer:
@@ -18,6 +20,10 @@ spack:
     mpi:
       require:
       - mpich
+    py-torch:
+      require:
+      - ~nccl
+      - ~distributed
   view:
     root: ./spack-view
   concretizer:
