@@ -1,6 +1,6 @@
 spack:
-  repos:
-  - ./repo
+  #  repos:
+  #- ./repo
   specs:
   - plumed@2.10.0 +pytorch
   packages:
