@@ -1,0 +1,1 @@
+/home/rmeli/spack/opt/spack/linux-zen4/py-contourpy-1.3.3-cbpxnm6ykrnnwuroowqckhdy4b5do452/.spack/repos/spack_repo/builtin/packages/py_contourpy/package.py

@@ -1,0 +1,1 @@
+/home/rmeli/spack/opt/spack/linux-zen4/py-certifi-2026.2.25-hpigtrwtdqlqemdjqs7wfd3atppobgci/.spack/repos/spack_repo/builtin/packages/py_certifi/package.py

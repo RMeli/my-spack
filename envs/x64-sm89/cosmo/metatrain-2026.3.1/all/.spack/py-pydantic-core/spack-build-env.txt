@@ -1,0 +1,1 @@
+/home/rmeli/spack/opt/spack/linux-zen4/py-pydantic-core-2.41.5-n3l4ngpyirib7r67pmwsrs5wgkjqoyur/.spack/spack-build-env.txt

@@ -1,0 +1,1 @@
+/home/rmeli/spack/opt/spack/linux-zen4/gdbm-1.26-rdwfpm4g3r5rd7moenmipjhka4r3th27/share/locale/ru/LC_MESSAGES/gdbm.mo

@@ -1,0 +1,1 @@
+/home/rmeli/spack/opt/spack/linux-zen4/cudnn-9.21.0.82-12-gjeh4qhsxkp4cquidw4xdwvt2vaayec4/include/cudnn_cnn.h

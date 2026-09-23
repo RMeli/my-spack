@@ -1,0 +1,1 @@
+/home/rmeli/spack/opt/spack/linux-zen4/py-six-1.17.0-67kqtcf2j5mwxdeu27lmzuc75uca2oxn/.spack/repos/spack_repo/builtin/packages/py_six/package.py

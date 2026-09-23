@@ -1,0 +1,1 @@
+/home/rmeli/spack/opt/spack/linux-zen4/py-metatensor-learn-0.5.0-axmqdmalzcwlwtssgazdzlgkszxtwaj3/.spack/repos/spack_repo/builtin/packages/py_metatensor_learn/package.py

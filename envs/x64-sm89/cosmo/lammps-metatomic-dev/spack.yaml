@@ -25,12 +25,12 @@ spack:
     mpi:
       require: 
         - mpich
-    libmetatensor-torch:
-      require:
-        - " @0.8.1"
     kokkos:
       require:
         - +wrapper
+    libmetatomic:
+      require:
+        - "@git.metatomic-core=develop"
   develop:
     lammps:
       spec: lammps@git.metatomic=develop fft_kokkos=cufft +kokkos +python +metatomic +cuda cuda_arch=89

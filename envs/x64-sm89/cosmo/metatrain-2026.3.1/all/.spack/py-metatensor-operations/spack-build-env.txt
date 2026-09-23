@@ -1,0 +1,1 @@
+/home/rmeli/spack/opt/spack/linux-zen4/py-metatensor-operations-0.5.0-em7bgb4nw5ifr436qc6h4nkiws4mpw6w/.spack/spack-build-env.txt

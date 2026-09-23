@@ -1,6 +1,6 @@
 spack:
   specs:
-  - cp2k@master +dlaf +libint +libxc
+  - cp2k
   packages:
     all:
       prefer:
@@ -10,18 +10,15 @@ spack:
         - build_type=Release
       conflict:
         - +rocm
-      require:
-        - "%gcc@11"
-    cuda:
-      require:
-        - "@12.4"
     mpi:
       require: mpich
     mpich:
       require:
-        - "@4:"
+        - "@4"
         - netmod=tcp
         - device=ch3 
+        #- netmod=ofi
+        #- device=ch4
     blas:
       require: "openblas"
     lapack:
@@ -36,19 +33,12 @@ spack:
     libxc:
       require: 
         - "~cuda"
-    dla-future:
-      require:
-        - "@0.6.0"
-    dla-future-fortran:
-      require:
-        - "@0.2.0"
-    dbcsr:
-      require:
-        - "@2.8.0"
   view: false
   develop:
     cp2k:
       path: ~/git/work/cp2k/
-      spec: cp2k@master +dlaf +libint +libxc
+      spec: cp2k@master +dlaf +libint +libxc +spglib +elpa
   concretizer:
     unify: true
+  config:
+    build_stage: ~/git/work/cp2k/spack-build-stage

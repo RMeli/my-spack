@@ -1,0 +1,1 @@
+/home/rmeli/spack/opt/spack/linux-zen4/py-huggingface-hub-0.34.3-zf5d2eib2ai7npe2xlcj56d4fub4scrr/.spack/repos/spack_repo/builtin/packages/py_huggingface_hub/package.py

@@ -1,0 +1,1 @@
+/home/rmeli/spack/opt/spack/linux-zen4/fxdiv-2020-04-17-ho6c3zpwlpnipa7p6jmos2tbbfgpevxj/.spack/spack-build-env.txt

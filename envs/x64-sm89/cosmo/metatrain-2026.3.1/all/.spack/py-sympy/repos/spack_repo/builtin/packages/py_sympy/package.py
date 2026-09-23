@@ -1,0 +1,1 @@
+/home/rmeli/spack/opt/spack/linux-zen4/py-sympy-1.14.0-tkwrphfpxpsx4if4pxvkmatnuevnygim/.spack/repos/spack_repo/builtin/packages/py_sympy/package.py

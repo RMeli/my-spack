@@ -1,6 +1,6 @@
 spack:
   specs:
-  - dla-future@master +miniapps +scalapack +hdf5 build_type=Release
+  - dla-future
   view: false
   packages:
     all:
@@ -18,7 +18,6 @@ spack:
       - openblas
     openblas:
       require:
-      - "@0.3.28"
       - threads=openmp
     scalapack:
       require:
@@ -28,20 +27,21 @@ spack:
       - mpich
     mpich:
       require:
-      - device=ch3
-      - netmod=tcp
+      #- device=ch3
+      #- netmod=tcp
+      - device=ch4
+      - netmod=ofi
     pika:
       require:
-      - '@0.34.0'
       - +stdexec
-      - build_type=Release
+      - build_type=RelWithDebInfo
   repos:
     - ~/git/work/DLA-Future/spack/
   concretizer:
     unify: true
   develop:
     dla-future:
-      spec: dla-future@master +miniapps +scalapack + hdf5 build_type=Release
+      spec: dla-future@master +miniapps +scalapack + hdf5 build_type=RelWithDebInfo
       path: ~/git/work/DLA-Future
   # build_stage is a directory where Spack will build packages
   # Build directories of installed packages are deleted
