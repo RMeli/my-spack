@@ -54,19 +54,29 @@ class Lammps(CMakePackage, CudaPackage, ROCmPackage, PythonExtension):
         deprecated=True,
     )
     version(
-        "20240829.4", sha256="e7d6d60b94ada5acc2e1e9966ae12547fd550d6967d4511b8655c77e24878728"
+        "20240829.4",
+        sha256="e7d6d60b94ada5acc2e1e9966ae12547fd550d6967d4511b8655c77e24878728",
     )
     version(
-        "20230802.4", sha256="6eed007cc24cda80b5dd43372b2ad4268b3982bb612669742c8c336b79137b5b"
+        "20230802.4",
+        sha256="6eed007cc24cda80b5dd43372b2ad4268b3982bb612669742c8c336b79137b5b",
     )
     version(
-        "20220623.4", sha256="42541b4dbd0d339d16ddb377e76d192bc3d1d5712fdf9e2cdc838fc980d0a0cf"
+        "20220623.4",
+        sha256="42541b4dbd0d339d16ddb377e76d192bc3d1d5712fdf9e2cdc838fc980d0a0cf",
     )
     version(
-        "20210929.3", sha256="e4c274f0dc5fdedc43f2b365156653d1105197a116ff2bafe893523cdb22532e"
+        "20210929.3",
+        sha256="e4c274f0dc5fdedc43f2b365156653d1105197a116ff2bafe893523cdb22532e",
     )
-    version("20201029", sha256="759705e16c1fedd6aa6e07d028cc0c78d73c76b76736668420946a74050c3726")
-    version("20200303", sha256="a1a2e3e763ef5baecea258732518d75775639db26e60af1634ab385ed89224d1")
+    version(
+        "20201029",
+        sha256="759705e16c1fedd6aa6e07d028cc0c78d73c76b76736668420946a74050c3726",
+    )
+    version(
+        "20200303",
+        sha256="a1a2e3e763ef5baecea258732518d75775639db26e60af1634ab385ed89224d1",
+    )
 
     depends_on("c", type="build")
     depends_on("cxx", type="build")
@@ -251,15 +261,23 @@ class Lammps(CMakePackage, CudaPackage, ROCmPackage, PythonExtension):
         variant(
             pkg_name,
             default=pkg_options.get("default", False),
-            description="Activate the {} package".format(pkg_name.replace("-package", "")),
+            description="Activate the {} package".format(
+                pkg_name.replace("-package", "")
+            ),
             when=pkg_options.get("when", None),
         )
-    variant("lib", default=True, description="Build the liblammps in addition to the executable")
+    variant(
+        "lib",
+        default=True,
+        description="Build the liblammps in addition to the executable",
+    )
     variant("mpi", default=True, description="Build with mpi")
     variant("jpeg", default=False, description="Build with jpeg support")
     variant("png", default=False, description="Build with png support")
     variant("ffmpeg", default=False, description="Build with ffmpeg support")
-    variant("curl", default=False, description="Build with curl support", when="@20240829:")
+    variant(
+        "curl", default=False, description="Build with curl support", when="@20240829:"
+    )
     variant("openmp", default=True, description="Build with OpenMP")
     variant("opencl", default=False, description="Build with OpenCL")
     variant(
@@ -322,7 +340,11 @@ class Lammps(CMakePackage, CudaPackage, ROCmPackage, PythonExtension):
         values=("double", "mixed", "single"),
         multi=False,
     )
-    variant("tools", default=False, description="Build LAMMPS tools (msi2lmp, binary2txt, chain)")
+    variant(
+        "tools",
+        default=False,
+        description="Build LAMMPS tools (msi2lmp, binary2txt, chain)",
+    )
 
     depends_on("cmake@3.16:", when="@20231121:", type="build")
     depends_on("mpi", when="+mpi")
@@ -395,7 +417,9 @@ class Lammps(CMakePackage, CudaPackage, ROCmPackage, PythonExtension):
             depends_on("n2p2@2.1.4:")
             depends_on("n2p2+shared", when="+lib")
     depends_on("scafacos", when="+scafacos")
-    depends_on("scafacos cflags=-fPIC cxxflags=-fPIC fflags=-fPIC", when="+scafacos+lib")
+    depends_on(
+        "scafacos cflags=-fPIC cxxflags=-fPIC fflags=-fPIC", when="+scafacos+lib"
+    )
     depends_on("vtk", when="+user-vtk")
     depends_on("vtk", when="+vtk")
     depends_on("hipcub", when="~kokkos +rocm")
@@ -405,16 +429,20 @@ class Lammps(CMakePackage, CudaPackage, ROCmPackage, PythonExtension):
     depends_on("gsl@2.6:", when="+rheo")
     depends_on("tbb", when="+intel %oneapi")
     depends_on("libmetatensor-torch", when="+metatomic")
+    depends_on("libmetatomic", when="+metatomic")
     depends_on("libmetatomic-torch", when="+metatomic")
     depends_on("py-torch", when="+metatomic")
 
     # propagate CUDA and ROCm architecture when +kokkos
     for arch in CudaPackage.cuda_arch_values:
-        depends_on("kokkos+cuda cuda_arch=%s" % arch, when="+kokkos+cuda cuda_arch=%s" % arch)
+        depends_on(
+            "kokkos+cuda cuda_arch=%s" % arch, when="+kokkos+cuda cuda_arch=%s" % arch
+        )
 
     for arch in ROCmPackage.amdgpu_targets:
         depends_on(
-            "kokkos+rocm amdgpu_target=%s" % arch, when="+kokkos+rocm amdgpu_target=%s" % arch
+            "kokkos+rocm amdgpu_target=%s" % arch,
+            when="+kokkos+rocm amdgpu_target=%s" % arch,
         )
 
     depends_on("googletest", type="test")
@@ -469,10 +497,18 @@ class Lammps(CMakePackage, CudaPackage, ROCmPackage, PythonExtension):
         when="@:20220602",
         msg="ROCm builds of the GPU package not maintained prior to version 20220623",
     )
-    conflicts("+intel", when="%aocc@:3.2.9999", msg="+intel with AOCC requires version 4 or newer")
-    conflicts("fft=nvpl", when="@:20240829", msg="fft=nvpl requires newer LAMMPS version")
     conflicts(
-        "fft_kokkos=nvpl", when="@:20240829", msg="fft_kokkos=nvpl requires newer LAMMPS version"
+        "+intel",
+        when="%aocc@:3.2.9999",
+        msg="+intel with AOCC requires version 4 or newer",
+    )
+    conflicts(
+        "fft=nvpl", when="@:20240829", msg="fft=nvpl requires newer LAMMPS version"
+    )
+    conflicts(
+        "fft_kokkos=nvpl",
+        when="@:20240829",
+        msg="fft_kokkos=nvpl requires newer LAMMPS version",
     )
     conflicts(
         "fft_kokkos=mkl_gpu",
@@ -514,7 +550,9 @@ class Lammps(CMakePackage, CudaPackage, ROCmPackage, PythonExtension):
     # This patch merged to LAMMPS trunk at 20221222 and backported to
     # stable version 20220623.4. We still patch all other affected
     # versions here
-    patch("intel-aocc.patch", when="@20220324:20220623.3,20220803:20221103 +intel %aocc")
+    patch(
+        "intel-aocc.patch", when="@20220324:20220623.3,20220803:20221103 +intel %aocc"
+    )
 
     patch(
         "https://github.com/lammps/lammps/commit/562300996285fdec4ef74542383276898555af06.patch?full_index=1",
@@ -634,13 +672,16 @@ class Lammps(CMakePackage, CudaPackage, ROCmPackage, PythonExtension):
                     "-DOpenMP_CXX_LIB_NAMES=" + self.spec["llvm-openmp"].libs.names[0],
                     "-DOpenMP_C_LIB_NAMES=" + self.spec["llvm-openmp"].libs.names[0],
                     "-DOpenMP_CXX_LIBRARIES=" + self.spec["llvm-openmp"].libs[0],
-                    "-DOpenMP_CXX_INCLUDE_DIR=" + self.spec["llvm-openmp"].headers.directories[0],
+                    "-DOpenMP_CXX_INCLUDE_DIR="
+                    + self.spec["llvm-openmp"].headers.directories[0],
                     "-DOpenMP_omp_LIBRARY=" + self.spec["llvm-openmp"].libs[0],
                 ]
             )
 
         # Overwrite generic cpu tune option
-        args.append(self.define("CMAKE_TUNE_FLAGS", microarchitecture_flags(self.spec, "c")))
+        args.append(
+            self.define("CMAKE_TUNE_FLAGS", microarchitecture_flags(self.spec, "c"))
+        )
 
         args.append(self.define_from_variant("LAMMPS_SIZES", "lammps_sizes"))
 
@@ -657,15 +698,22 @@ class Lammps(CMakePackage, CudaPackage, ROCmPackage, PythonExtension):
         if spec.satisfies("+kspace"):
             args.append(self.define_from_variant("FFT", "fft"))
             args.append(self.define_from_variant("FFT_USE_HEFFTE", "heffte"))
-            if spec.satisfies("fft=fftw3 ^armpl-gcc") or spec.satisfies("fft=fftw3 ^acfl"):
+            if spec.satisfies("fft=fftw3 ^armpl-gcc") or spec.satisfies(
+                "fft=fftw3 ^acfl"
+            ):
                 args.append(self.define("FFTW3_LIBRARY", self.spec["fftw-api"].libs[0]))
                 args.append(
-                    self.define("FFTW3_INCLUDE_DIR", self.spec["fftw-api"].headers.directories[0])
+                    self.define(
+                        "FFTW3_INCLUDE_DIR",
+                        self.spec["fftw-api"].headers.directories[0],
+                    )
                 )
             # Using the -DFFT_SINGLE setting trades off a little accuracy
             # for reduced memory use and parallel communication costs
             # for transposing 3d FFT data.
-            args.append(self.define("FFT_SINGLE", spec.satisfies("fftw_precision=single")))
+            args.append(
+                self.define("FFT_SINGLE", spec.satisfies("fftw_precision=single"))
+            )
 
         if spec.satisfies("+user-adios") or spec.satisfies("+adios"):
             args.append(self.define("ADIOS2_DIR", self.spec["adios2"].prefix))
@@ -677,7 +725,9 @@ class Lammps(CMakePackage, CudaPackage, ROCmPackage, PythonExtension):
                 args.append(self.define("PLUMED_MODE", "static"))
         if spec.satisfies("+user-smd") or spec.satisfies("+machdyn"):
             args.append(self.define("DOWNLOAD_EIGEN3", False))
-            args.append(self.define("EIGEN3_INCLUDE_DIR", self.spec["eigen"].prefix.include))
+            args.append(
+                self.define("EIGEN3_INCLUDE_DIR", self.spec["eigen"].prefix.include)
+            )
         if spec.satisfies("+user-hdnnp") or spec.satisfies("+ml-hdnnp"):
             args.append(self.define("DOWNLOAD_N2P2", False))
             args.append(self.define("N2P2_DIR", self.spec["n2p2"].prefix))
