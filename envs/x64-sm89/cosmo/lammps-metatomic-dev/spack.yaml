@@ -31,6 +31,9 @@ spack:
     libmetatomic:
       require:
         - "@git.metatomic-core=develop"
+    cuda:
+      require:
+        - "@13.4"
   develop:
     lammps:
       spec: lammps@git.metatomic=develop fft_kokkos=cufft +kokkos +python +metatomic +cuda cuda_arch=89
